@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Cestom\StoreBundle\Entity\Membre" table="MEMBRE">
+    <id name="idmembre" type="integer" column="IDMEMBRE">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="emailMembre" type="string" column="EMAIL_MEMBRE" length="255" nullable="false"/>
+    <field name="password" type="string" column="PASSWORD" length="1024" nullable="false"/>
+    <field name="username" type="string" column="USERNAME" length="255" nullable="false"/>
+    <field name="nomMembre" type="string" column="NOM_MEMBRE" length="255" nullable="true"/>
+    <field name="prenomMembre" type="string" column="PRENOM_MEMBRE" length="255" nullable="true"/>
+    <field name="adresseMembre" type="string" column="ADRESSE_MEMBRE" length="255" nullable="true"/>
+    <field name="numeroPassportMembre" type="string" column="NUMERO_PASSPORT_MEMBRE" length="15" nullable="true"/>
+    <field name="dateExpiMembre" type="string" column="DATE_EXPI_MEMBRE" length="255" nullable="true"/>
+    <field name="dateEtabMembre" type="string" column="DATE_ETAB_MEMBRE" length="255" nullable="true"/>
+    <field name="promotionMembre" type="integer" column="PROMOTION_MEMBRE" nullable="true"/>
+    <field name="dateNaissanceMembre" type="string" column="DATE_NAISSANCE_MEMBRE" length="255" nullable="true"/>
+    <field name="contactUrgence" type="string" column="CONTACT_URGENCE" length="2048" nullable="true"/>
+    <field name="infoComplementmembre" type="string" column="INFO_COMPLEMENTMEMBRE" length="4096" nullable="true"/>
+    <field name="photoMimMembre" type="blob" column="PHOTO_MIM_MEMBRE" nullable="true"/>
+    <field name="dernierLyceeFrequente" type="string" column="DERNIER_LYCEE_FREQUENTE" length="255" nullable="true"/>
+  </entity>
+</doctrine-mapping>

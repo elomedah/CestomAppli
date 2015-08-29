@@ -1,0 +1,130 @@
+<?php
+
+namespace Cestom\StoreBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Membre
+ *
+ * @ORM\Table(name="MEMBRE")
+ * @ORM\Entity
+ */
+class Membre
+{
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="EMAIL_MEMBRE", type="string", length=255, nullable=false)
+     */
+    private $emailMembre;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="PASSWORD", type="string", length=1024, nullable=false)
+     */
+    private $password;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="USERNAME", type="string", length=255, nullable=false)
+     */
+    private $username;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="NOM_MEMBRE", type="string", length=255, nullable=true)
+     */
+    private $nomMembre;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="PRENOM_MEMBRE", type="string", length=255, nullable=true)
+     */
+    private $prenomMembre;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="ADRESSE_MEMBRE", type="string", length=255, nullable=true)
+     */
+    private $adresseMembre;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="NUMERO_PASSPORT_MEMBRE", type="string", length=15, nullable=true)
+     */
+    private $numeroPassportMembre;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="DATE_EXPI_MEMBRE", type="string", length=255, nullable=true)
+     */
+    private $dateExpiMembre;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="DATE_ETAB_MEMBRE", type="string", length=255, nullable=true)
+     */
+    private $dateEtabMembre;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="PROMOTION_MEMBRE", type="integer", nullable=true)
+     */
+    private $promotionMembre;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="DATE_NAISSANCE_MEMBRE", type="string", length=255, nullable=true)
+     */
+    private $dateNaissanceMembre;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="CONTACT_URGENCE", type="string", length=2048, nullable=true)
+     */
+    private $contactUrgence;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="INFO_COMPLEMENTMEMBRE", type="string", length=4096, nullable=true)
+     */
+    private $infoComplementmembre;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="PHOTO_MIM_MEMBRE", type="blob", nullable=true)
+     */
+    private $photoMimMembre;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="DERNIER_LYCEE_FREQUENTE", type="string", length=255, nullable=true)
+     */
+    private $dernierLyceeFrequente;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="IDMEMBRE", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $idmembre;
+
+
+}

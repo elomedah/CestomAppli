@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Cestom\StoreBundle\Entity\Telephone" table="TELEPHONE">
+    <indexes>
+      <index name="IDX_1CDEEFF543ACAC9" columns="IDMEMBRE"/>
+    </indexes>
+    <id name="numeroTel" type="string" column="NUMERO_TEL" length="20"/>
+    <id name="idmembre" association-key="true"/>
+    <one-to-one field="idmembre" target-entity="Membre">
+      <join-columns>
+        <join-column name="IDMEMBRE" referenced-column-name="IDMEMBRE"/>
+      </join-columns>
+    </one-to-one>
+  </entity>
+</doctrine-mapping>

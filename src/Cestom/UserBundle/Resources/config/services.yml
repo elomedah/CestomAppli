@@ -1,0 +1,4 @@
+services:
+#    cestom_user.example:
+#        class: Cestom\UserBundle\Example
+#        arguments: [@service_id, "plain_value", %parameter%]

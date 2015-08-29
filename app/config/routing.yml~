@@ -1,0 +1,13 @@
+cestom_store:
+    resource: "@CestomStoreBundle/Resources/config/routing.yml"
+    prefix:   /
+
+cestom_user:
+    resource: "@CestomUserBundle/Resources/config/routing.yml"
+    prefix:   /
+
+cestom_admin:
+    resource: "@CestomAdminBundle/Resources/config/routing.yml"
+    prefix:   /
+
+
