@@ -13,3 +13,15 @@ cestom_admin_modifier_formation:
 cestom_admin_ajouter_formation:
     path:     /admin/ajouterFormation/{idmembre}
     defaults: { _controller: CestomAdminBundle:AjouterFormation:ajouterFormationMembre }
+cestom_admin_ajouter_ville:
+    path:     /admin/ville/
+    defaults: { _controller: CestomAdminBundle:AjouterVille:ajouterVille }
+cestom_admin_modifier_ville:
+    path:     /admin/modifierVille/{idville}
+    defaults: { _controller: CestomAdminBundle:ModifierVille:modifierVille }
+cestom_admin_ajouter_universite:
+    path:     /admin/ville/
+    defaults: { _controller: CestomAdminBundle:AjouterUniversite:ajouterUniversite }
+cestom_admin_modifier_universite:
+    path:     /admin/modifierVille/{iduniversite}
+    defaults: { _controller: CestomAdminBundle:ModifierUniversite:modifierUniversite }

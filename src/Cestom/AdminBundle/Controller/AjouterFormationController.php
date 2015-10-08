@@ -34,8 +34,9 @@ if ($request->getMethod() == 'POST') {
 
       if ($form->isValid()) {
 if (isset ($_POST['dateDebutFormation'])) {
-}
    $formation->setDateDebutFormation($_POST['dateDebutFormation']);
+}
+
 $membre = $em->getRepository('CestomStoreBundle:Membre')
                 ->findOneByidmembre($idmembre);
        $formation->setIdmembre($membre);

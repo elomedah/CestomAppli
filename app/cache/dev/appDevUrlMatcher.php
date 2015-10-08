@@ -169,6 +169,34 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
                 return $this->mergeDefaults(array_replace($matches, array('_route' => 'cestom_admin_ajouter_formation')), array (  '_controller' => 'Cestom\\AdminBundle\\Controller\\AjouterFormationController::ajouterFormationMembreAction',));
             }
 
+            // cestom_admin_ajouter_ville
+            if (rtrim($pathinfo, '/') === '/admin/ville') {
+                if (substr($pathinfo, -1) !== '/') {
+                    return $this->redirect($pathinfo.'/', 'cestom_admin_ajouter_ville');
+                }
+
+                return array (  '_controller' => 'Cestom\\AdminBundle\\Controller\\AjouterVilleController::ajouterVilleAction',  '_route' => 'cestom_admin_ajouter_ville',);
+            }
+
+            // cestom_admin_modifier_ville
+            if (0 === strpos($pathinfo, '/admin/modifierVille') && preg_match('#^/admin/modifierVille/(?P<idville>[^/]++)$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'cestom_admin_modifier_ville')), array (  '_controller' => 'Cestom\\AdminBundle\\Controller\\ModifierVilleController::modifierVilleAction',));
+            }
+
+            // cestom_admin_ajouter_universite
+            if (rtrim($pathinfo, '/') === '/admin/universite') {
+                if (substr($pathinfo, -1) !== '/') {
+                    return $this->redirect($pathinfo.'/', 'cestom_admin_ajouter_universite');
+                }
+
+                return array (  '_controller' => 'Cestom\\AdminBundle\\Controller\\AjouterUniversiteController::ajouterUniversiteAction',  '_route' => 'cestom_admin_ajouter_universite',);
+            }
+
+            // cestom_admin_modifier_universite
+            if (0 === strpos($pathinfo, '/admin/modifierUniversite') && preg_match('#^/admin/modifierUniversite/(?P<iduniversite>[^/]++)$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'cestom_admin_modifier_universite')), array (  '_controller' => 'Cestom\\AdminBundle\\Controller\\ModifierUniversiteController::modifierUniversiteAction',));
+            }
+
         }
 
         throw 0 < count($allow) ? new MethodNotAllowedException(array_unique($allow)) : new ResourceNotFoundException();

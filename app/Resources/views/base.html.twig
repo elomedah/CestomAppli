@@ -1,303 +1,257 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-		<meta charset="utf-8" />
-		<title>Admin Cestom</title>
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+        <meta charset="utf-8" />
+        <title>Admin Cestom</title>
 
-		<meta name="description" content="overview &amp; stats" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+        <meta name="description" content="overview &amp; stats" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
 
-		<!-- bootstrap & fontawesome -->
-		<link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css')}}" />
-                		<link rel="stylesheet" href="{{ asset('assets/css/dataTable.min.css')}}" />
-		<link rel="stylesheet" href="{{ asset('assets/css/font-awesome.min.css')}}" />
+        <!-- bootstrap & fontawesome -->
+        <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css')}}" />
+        <link rel="stylesheet" href="{{ asset('assets/css/dataTable.min.css')}}" />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+        <!-- page specific plugin styles -->
 
-		<!-- page specific plugin styles -->
+        <!-- text fonts -->
+        <link rel="stylesheet" href="{{ asset('assets/css/ace-fonts.css')}}" />
 
-		<!-- text fonts -->
-		<link rel="stylesheet" href="{{ asset('assets/css/ace-fonts.css')}}" />
+        <!-- ace styles -->
+        <link rel="stylesheet" href="{{ asset('assets/css/ace.min.css')}}" />
+        <link rel="stylesheet" href="{{ asset('assets/css/ace-skins.min.css')}}" />
+        <link rel="stylesheet" href="{{ asset('assets/css/ace-rtl.min.css')}}" />
 
-		<!-- ace styles -->
-		<link rel="stylesheet" href="{{ asset('assets/css/ace.min.css')}}" />
-		<link rel="stylesheet" href="{{ asset('assets/css/ace-skins.min.css')}}" />
-		<link rel="stylesheet" href="{{ asset('assets/css/ace-rtl.min.css')}}" />
+        <script src="{{ asset('assets/js/ace-extra.min.js')}}"></script>
+        {% block style %}  {% endblock %}
+    </head>
 
-		<script src="{{ asset('assets/js/ace-extra.min.js')}}"></script>
-{% block style %}  {% endblock %}
-	</head>
-         
-	<body class="no-skin">
-		<!-- #section:basics/navbar.layout -->
-		{% block tetiere %}
-               <!-- #section:basics/navbar.layout -->
-		<div id="navbar" class="navbar navbar-default">
-			<script type="text/javascript">
-				try{ace.settings.check('navbar' , 'fixed')}catch(e){}
-			</script>
+    <body class="no-skin">
+        <!-- #section:basics/navbar.layout -->
+        {% block tetiere %}
+            <!-- #section:basics/navbar.layout -->
+            <div id="navbar" class="navbar navbar-default">
+                <script type="text/javascript">
+                    try {
+                        ace.settings.check('navbar', 'fixed')
+                    } catch (e) {
+                    }
+                </script>
 
-			<div class="navbar-container" id="navbar-container">
-				<!-- #section:basics/sidebar.mobile.toggle -->
-				<button type="button" class="navbar-toggle menu-toggler pull-left" id="menu-toggler">
-					<span class="sr-only">Toggle sidebar</span>
+                <div class="navbar-container" id="navbar-container">
+                    <!-- #section:basics/sidebar.mobile.toggle -->
+                    <button type="button" class="navbar-toggle menu-toggler pull-left" id="menu-toggler">
+                        <span class="sr-only">Toggle sidebar</span>
 
-					<span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
 
-					<span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
 
-					<span class="icon-bar"></span>
-				</button>
+                        <span class="icon-bar"></span>
+                    </button>
 
-				<!-- /section:basics/sidebar.mobile.toggle -->
-				<div class="navbar-header pull-left">
-					<!-- #section:basics/navbar.layout.brand -->
-					<a href="#" class="navbar-brand">
-						<small>
-							<i class="fa fa-leaf"></i>
-							Administration Cestom
-						</small>
-					</a>
+                    <!-- /section:basics/sidebar.mobile.toggle -->
+                    <div class="navbar-header pull-left">
+                        <!-- #section:basics/navbar.layout.brand -->
+                        <a href="#" class="navbar-brand">
+                            <small>
+                                <i class="fa fa-leaf"></i>
+                                Administration Cestom
+                            </small>
+                        </a>
 
-					
-				</div>
 
-				<!-- #section:basics/navbar.dropdown -->
-				
-				<!-- /section:basics/navbar.dropdown -->
-			</div><!-- /.navbar-container -->
-		</div>
+                    </div>
 
-                {% endblock %}
-		<!-- /section:basics/navbar.layout -->
-		<div class="main-container" id="main-container">
-			<script type="text/javascript">
-				try{ace.settings.check('main-container' , 'fixed')}catch(e){}
-			</script>
+                    <!-- #section:basics/navbar.dropdown -->
 
-			<!-- #section:basics/sidebar -->
-			<div id="sidebar" class="sidebar                  responsive">
-				<script type="text/javascript">
-					try{ace.settings.check('sidebar' , 'fixed')}catch(e){}
-				</script>
+                    <!-- /section:basics/navbar.dropdown -->
+                </div><!-- /.navbar-container -->
+            </div>
 
-				<ul class="nav nav-list">
-					<li class="active">
-						<a href="{{ path('cestom_admin_homepage')  }}">
-							<i class="menu-icon fa fa-user"></i>
-							<span class="menu-text"> Gestion des membres </span>
-						</a>
+        {% endblock %}
+        <!-- /section:basics/navbar.layout -->
+        <div class="main-container" id="main-container">
+            <script type="text/javascript">
+                try {
+                    ace.settings.check('main-container', 'fixed')
+                } catch (e) {
+                }
+            </script>
 
-						<b class="arrow"></b>
-					</li>
+            <!-- #section:basics/sidebar -->
+            <div id="sidebar" class="sidebar                  responsive">
+                <script type="text/javascript">
+                    try {
+                        ace.settings.check('sidebar', 'fixed')
+                    } catch (e) {
+                    }
+                </script>
 
-					<li class="">
-						<a href="#" class="dropdown-toggle">
-							<i class="menu-icon fa fa-money"></i>
-							<span class="menu-text"> Bourse </span>
+                <ul class="nav nav-list">
+                    <li class=" main active">
+                        <a class="mainactive " href="{{ path('cestom_admin_homepage')  }}">
+                            <i class="menu-icon fa fa-user"></i>
+                            <span class="menu-text"> Gestion des membres </span>
+                        </a>
 
-							<b class="arrow fa fa-angle-down"></b>
-						</a>
+                        <b class="arrow"></b>
+                    </li>
 
-						<b class="arrow"></b>
+                    <li class=" main ">
+                        <a href="#" class="mainactive ">
+                            <i class="menu-icon fa fa-money"></i>
+                            <span class="menu-text"> Bourse </span>
 
-						<ul class="submenu">
-							<li class="">
-								<a href="#" class="dropdown-toggle">
-									<i class="menu-icon fa fa-caret-right"></i>
 
-									Boursier AMCI
-									<b class="arrow fa fa-angle-down"></b>
-								</a>
+                        </a>
 
-								<b class="arrow"></b>
-							</li>
-							<li class="">
-								<a href="#" class="dropdown-toggle">
-									<i class="menu-icon fa fa-caret-right"></i>
-									Non Boursier AMCI
-									<b class="arrow fa fa-angle-down"></b>
-								</a>
 
-								<b class="arrow"></b>
-							</li>
-						</ul>
-							
-					</li>
 
-					
-					<li class="">
-						<a href="#" class="dropdown-toggle">
-							<i class="menu-icon fa fa-credit-card"></i>
-							<span class="menu-text"> Carte consulaire </span>
+                    </li>
 
-							<b class="arrow fa fa-angle-down"></b>
-						</a>
 
-						<b class="arrow"></b>
+                    <li class=" main ">
+                        <a href="#" class="mainactive ">
+                            <i class="menu-icon fa fa-credit-card"></i>
+                            <span class="menu-text"> Carte consulaire </span>
 
-						<ul class="submenu">
-							<li class="">
-								<a href="">
-									<i class="menu-icon fa fa-caret-right"></i>
-									Demandes
-								</a>
 
-								<b class="arrow"></b>
-							</li>
+                        </a>
 
-							<li class="">
-								<a href="">
-									<i class="menu-icon fa fa-caret-right"></i>
-									Livraisons
-								</a>
+                    </li>
+                    <li class="main">
+                        <a href="#" class="mainactive">
+                            <i class="menu-icon fa fa-life-ring"></i>
+                            <span class="menu-text"> Prise en charge </span>
 
-								<b class="arrow"></b>
-							</li>
+                        </a>
 
-						</ul>
-					</li>
 
-			
-					
-						<li class="">
-						<a href="#" class="dropdown-toggle">
-							<i class="menu-icon fa fa-life-ring"></i>
-							<span class="menu-text"> Prise en charge </span>
+                    </li>
+                    <li class="main">
+                        <a class="mainactive" href="{{ path('cestom_admin_ajouter_ville')  }}">
+                            <i class="menu-icon fa fa-building"></i>
+                            <span class="menu-text"> Gestion des villes </span>
+                        </a>
 
-							<b class="arrow fa fa-angle-down"></b>
-						</a>
+                        <b class="arrow"></b>
+                    </li>
 
-						<b class="arrow"></b>
+                    <li class="main">
+                        <a class="mainactive" href="{{ path('cestom_admin_ajouter_universite')  }}">
+                            <i class="menu-icon fa fa-graduation-cap"></i>
+                            <span class="menu-text"> Universités </span>
+                        </a>
 
-						<ul class="submenu">
-							<li class="">
-								<a href="">
-									<i class="menu-icon fa fa-caret-right"></i>
-									Demandes
-								</a>
+                        <b class="arrow"></b>
+                    </li>
 
-								<b class="arrow"></b>
-							</li>
+                </ul>
+                </li>
+                </ul><!-- /.nav-list -->
 
-							<li class="">
-								<a href="">
-									<i class="menu-icon fa fa-caret-right"></i>
-									Livraisons
-								</a>
+                <!-- #section:basics/sidebar.layout.minimize -->
+                <div class="sidebar-toggle sidebar-collapse" id="sidebar-collapse">
+                    <i class="ace-icon fa fa-angle-double-left" data-icon1="ace-icon fa fa-angle-double-left" data-icon2="ace-icon fa fa-angle-double-right"></i>
+                </div>
 
-								<b class="arrow"></b>
-							</li>
 
-						</ul>
-					</li>
+            </div>
 
-						</ul>
-					</li>
-				</ul><!-- /.nav-list -->
+            <!-- /section:basics/sidebar -->
+            <div class="main-content">
+                <!-- #section:basics/content.breadcrumbs -->
 
-				<!-- #section:basics/sidebar.layout.minimize -->
-				<div class="sidebar-toggle sidebar-collapse" id="sidebar-collapse">
-					<i class="ace-icon fa fa-angle-double-left" data-icon1="ace-icon fa fa-angle-double-left" data-icon2="ace-icon fa fa-angle-double-right"></i>
-				</div>
+                <div class="breadcrumbs" id="breadcrumbs">
+                    {% block navigation %}
 
-				
-			</div>
+                    {% endblock %}
+                    <!-- #section:basics/content.searchbox -->
+                    <div class="nav-search" id="nav-search">
+                        <form class="form-search">
+                            <span class="input-icon">
+                                <input type="text" placeholder="Search ..." class="nav-search-input" id="nav-search-input" autocomplete="off" />
+                                <i class="ace-icon fa fa-search nav-search-icon"></i>
+                            </span>
+                        </form>
+                    </div><!-- /.nav-search -->
 
-			<!-- /section:basics/sidebar -->
-			<div class="main-content">
-				<!-- #section:basics/content.breadcrumbs -->
-				
-                                <div class="breadcrumbs" id="breadcrumbs">
-				{% block navigation %}
-                                     
-                                {% endblock %}
-					<!-- #section:basics/content.searchbox -->
-					<div class="nav-search" id="nav-search">
-						<form class="form-search">
-							<span class="input-icon">
-								<input type="text" placeholder="Search ..." class="nav-search-input" id="nav-search-input" autocomplete="off" />
-								<i class="ace-icon fa fa-search nav-search-icon"></i>
-							</span>
-						</form>
-					</div><!-- /.nav-search -->
+                    <!-- /section:basics/content.searchbox -->
+                </div>
 
-					<!-- /section:basics/content.searchbox -->
-				</div>
 
-                               
-				<!-- /section:basics/content.breadcrumbs -->
-			
-                                <div class="page-content">
-					<!-- #section:settings.box -->
-					
-					<!-- /section:settings.box -->
-					<div class="page-header">
-						<h1>
-							{% block soustitre %} 
-                                                            
-                                                        {% endblock %}
-						</h1>
-					</div><!-- /.page-header -->
-                                 
-                                
-                                  {% block content %}
+                <!-- /section:basics/content.breadcrumbs -->
 
-                                  {% endblock %}
-							
-				</div><!-- /.page-content -->
-                              
-                                
-			</div><!-- /.main-content -->
+                <div class="page-content">
+                    <!-- #section:settings.box -->
 
-			{% block footer %}
-                        <div class="footer">
-				<div class="footer-inner">
-					<!-- #section:basics/footer -->
-					<div class="footer-content">
-						<span class="bigger-120">
-							<span class="blue bolder">Cestom</span>
-							Application &copy; 2014-2015
-						</span>
+                    <!-- /section:settings.box -->
+                    <div class="page-header">
+                        <h1>
+                            {% block soustitre %} 
 
-						&nbsp; &nbsp;
-						<span class="action-buttons">
-							<a href="#">
-								<i class="ace-icon fa fa-twitter-square light-blue bigger-150"></i>
-							</a>
+                            {% endblock %}
+                        </h1>
+                    </div><!-- /.page-header -->
 
-							<a href="#">
-								<i class="ace-icon fa fa-facebook-square text-primary bigger-150"></i>
-							</a>
 
-							<a href="#">
-								<i class="ace-icon fa fa-rss-square orange bigger-150"></i>
-							</a>
-						</span>
-					</div>
+                    {% block content %}
 
-					<!-- /section:basics/footer -->
-				</div>
-			</div>
-                        {% endblock %}
+                    {% endblock %}
 
-			<a href="#" id="btn-scroll-up" class="btn-scroll-up btn btn-sm btn-inverse">
-				<i class="ace-icon fa fa-angle-double-up icon-only bigger-110"></i>
-			</a>
-		</div><!-- /.main-container -->
+                </div><!-- /.page-content -->
 
-			<!-- basic scripts -->
 
-	
-	
-                <script src="{{ asset('assets/js/jquery.min.js')}}"></script>
+            </div><!-- /.main-content -->
 
-		<script src="{{ asset('assets/js/bootstrap.min.js')}}"></script>
+            {% block footer %}
+                <div class="footer">
+                    <div class="footer-inner">
+                        <!-- #section:basics/footer -->
+                        <div class="footer-content">
+                            <span class="bigger-120">
+                                <span class="blue bolder">Cestom</span>
+                                Application &copy; 2014-2015
+                            </span>
 
-		<script src="{{ asset('assets/js/jquery-ui.custom.min.js')}}"></script>
-	 		<script src="{{ asset('assets/js/ace-elements.min.js')}}"></script>
+                            &nbsp; &nbsp;
+                            <span class="action-buttons">
+                                <a href="#">
+                                    <i class="ace-icon fa fa-twitter-square light-blue bigger-150"></i>
+                                </a>
 
-		<script src="{{ asset('assets/js/ace.min.js')}}"></script>
-	{% block javascript %}
-            
+                                <a href="#">
+                                    <i class="ace-icon fa fa-facebook-square text-primary bigger-150"></i>
+                                </a>
+
+                                <a href="#">
+                                    <i class="ace-icon fa fa-rss-square orange bigger-150"></i>
+                                </a>
+                            </span>
+                        </div>
+
+                        <!-- /section:basics/footer -->
+                    </div>
+                </div>
             {% endblock %}
-	</html>
+
+            <a href="#" id="btn-scroll-up" class="btn-scroll-up btn btn-sm btn-inverse">
+                <i class="ace-icon fa fa-angle-double-up icon-only bigger-110"></i>
+            </a>
+        </div><!-- /.main-container -->
+
+        <!-- basic scripts -->
+        <script src="{{ asset('assets/js/jquery.min.js')}}"></script>
+
+        <script src="{{ asset('assets/js/bootstrap.min.js')}}"></script>
+
+        <script src="{{ asset('assets/js/jquery-ui.custom.min.js')}}"></script>
+        <script src="{{ asset('assets/js/ace-elements.min.js')}}"></script>
+
+        <script src="{{ asset('assets/js/ace.min.js')}}"></script>
+                     
+        {% block javascript %}
+
+        {% endblock %}
+</html>

@@ -1,6 +1,6 @@
 <?php
 
-/* @Doctrine/Collector/db.html.twig */
+/* DoctrineBundle:Collector:db.html.twig */
 class __TwigTemplate_e9bdf794a5ab227dcda7e5d51964adebdab9def2201bddbd82bc8860ab4f3b21 extends Twig_Template
 {
     public function __construct(Twig_Environment $env)
@@ -761,7 +761,7 @@ class __TwigTemplate_e9bdf794a5ab227dcda7e5d51964adebdab9def2201bddbd82bc8860ab4
 
     public function getTemplateName()
     {
-        return "@Doctrine/Collector/db.html.twig";
+        return "DoctrineBundle:Collector:db.html.twig";
     }
 
     public function isTraitable()
