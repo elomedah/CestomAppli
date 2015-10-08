@@ -140,9 +140,35 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
         }
 
-        // cestom_admin_homepage
-        if ($pathinfo === '/admin/ville') {
-            return array (  '_controller' => 'Cestom\\AdminBundle\\Controller\\DefaultController::indexAction',  '_route' => 'cestom_admin_homepage',);
+        if (0 === strpos($pathinfo, '/admin')) {
+            // cestom_admin_homepage
+            if ($pathinfo === '/admin/gestionMembre') {
+                return array (  '_controller' => 'Cestom\\AdminBundle\\Controller\\GestionMembreController::membreAction',  '_route' => 'cestom_admin_homepage',);
+            }
+
+            // cestom_admin_ajouter_member
+            if ($pathinfo === '/admin/ajouterMembre') {
+                return array (  '_controller' => 'Cestom\\AdminBundle\\Controller\\AjouterMembreController::ajouterMembreAction',  '_route' => 'cestom_admin_ajouter_member',);
+            }
+
+            if (0 === strpos($pathinfo, '/admin/modifier')) {
+                // cestom_admin_modifier_member
+                if (0 === strpos($pathinfo, '/admin/modifierMembre') && preg_match('#^/admin/modifierMembre/(?P<idmembre>[^/]++)$#s', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'cestom_admin_modifier_member')), array (  '_controller' => 'Cestom\\AdminBundle\\Controller\\ModifierMembreController::modifierMembreAction',));
+                }
+
+                // cestom_admin_modifier_formation
+                if (0 === strpos($pathinfo, '/admin/modifierFormation') && preg_match('#^/admin/modifierFormation/(?P<idmembre>[^/]++)/(?P<idformation>[^/]++)$#s', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'cestom_admin_modifier_formation')), array (  '_controller' => 'Cestom\\AdminBundle\\Controller\\ModifierFormationController::modifierFormationMembreAction',));
+                }
+
+            }
+
+            // cestom_admin_ajouter_formation
+            if (0 === strpos($pathinfo, '/admin/ajouterFormation') && preg_match('#^/admin/ajouterFormation/(?P<idmembre>[^/]++)$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'cestom_admin_ajouter_formation')), array (  '_controller' => 'Cestom\\AdminBundle\\Controller\\AjouterFormationController::ajouterFormationMembreAction',));
+            }
+
         }
 
         throw 0 < count($allow) ? new MethodNotAllowedException(array_unique($allow)) : new ResourceNotFoundException();

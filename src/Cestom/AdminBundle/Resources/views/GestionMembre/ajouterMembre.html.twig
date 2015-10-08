@@ -1,0 +1,102 @@
+
+{# app/Resources/views/blog/index.html.twig #}
+{% extends 'base.html.twig' %}
+ {% block style %} 
+<link rel="stylesheet" href="{{asset('assets/css/jquery-ui.custom.min.css')}}" />
+		<link rel="stylesheet" href="{{asset('assets/css/datepicker.css')}}" />
+		
+		<link rel="stylesheet" href="{{asset('assets/css/bootstrap-datetimepicker.css')}}" />
+ {% endblock %}
+
+
+
+{% block navigation %}
+
+
+    <ul class="breadcrumb">
+        <li>
+            <i class="ace-icon fa fa-home home-icon"></i>
+            <a href="#">Home</a>
+        </li>
+         <li>
+            
+            <a href="#">Gestion des membres</a>
+        </li>
+       
+        <li class="active">Ajouter un membre</li>
+    </ul>
+
+{% endblock %}
+
+
+
+{% block soustitre %} 
+
+    Ajout d'un nouveau membre
+
+{% endblock %}
+
+{% block content %}
+    
+    {% for flashMessage in app.session.flashbag.get('message') %}
+<div class="alert alert-block alert-danger">
+<div class="flash-notice">
+
+{{ flashMessage }}
+</div>
+</div>
+{% endfor %}
+
+
+
+    <div class="widget-body">
+        <div class="widget-main no-padding">
+            <form {{ form_enctype(form) }}  method = "POST"  action = " {{ path('cestom_admin_ajouter_member')  }}">	
+              
+                {% include "CestomAdminBundle:GestionMembre:formulaireMembre.html.twig" %}
+<div class="form-actions center">
+                    <button id="valider" type="submit" class="btn btn-sm btn-success">
+                        Ajouter
+                        <i class="ace-icon fa fa-save icon-on-right bigger-110"></i>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+{% endblock %}
+
+{% block javascript %}
+             <script src="{{asset('assets/js/date-time/bootstrap-datepicker.min.js')}}"></script>
+    <script src="{{asset('assets/js/date-time/bootstrap-timepicker.min.js')}}"></script>
+    <script src="{{asset('assets/js/date-time/moment.min.js')}}"></script>
+
+    <script src="{{asset('assets/js/date-time/bootstrap-datetimepicker.min.js')}}">< /script>
+                < script src = "{{asset('assets/js/jquery.autosize.min.js')}}" ></script>
+    <script  src = "{{asset('assets/js/jquery.ui.addresspicker.js')}}"></script>
+    <script src="{{asset('assets/js/jquery.maskedinput.min.js')}}"></script>
+   <script src="{{asset('assets/js/bootstrap-tag.min.js')}}"></script>
+<script src="{{asset('assets/js/ace-elements.min.js')}}"></script>
+<script src="{{asset('assets/js/ace.min.js')}}"></script>
+    <script type="text/javascript">
+        jQuery(function($) {
+//datepicker plugin
+            //link
+            $('.date-picker').datepicker({
+                autoclose: true,
+                todayHighlight: true
+            })
+                    //show datepicker when clicking on the icon
+                    .next().on(ace.click_event, function() {
+                $(this).prev().focus();
+            });
+            $('#date-debut').datetimepicker().next().on(ace.click_event, function() {
+                $(this).prev().focus();
+            });
+        });
+        </script>
+        
+            {% endblock %}
+
+

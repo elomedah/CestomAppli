@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Telephone
  *
- * @ORM\Table(name="TELEPHONE", indexes={@ORM\Index(name="IDX_1CDEEFF543ACAC9", columns={"IDMEMBRE"})})
+ * @ORM\Table(name="TELEPHONE", indexes={@ORM\Index(name="FK_TELEPHONE_MEMBRE", columns={"IDMEMBRE"})})
  * @ORM\Entity
  */
 class Telephone
@@ -17,16 +17,14 @@ class Telephone
      *
      * @ORM\Column(name="NUMERO_TEL", type="string", length=20)
      * @ORM\Id
-     * @ORM\GeneratedValue(strategy="NONE")
+     * @ORM\GeneratedValue(strategy="IDENTITY")
      */
     private $numeroTel;
 
     /**
      * @var \Cestom\StoreBundle\Entity\Membre
      *
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="NONE")
-     * @ORM\OneToOne(targetEntity="Cestom\StoreBundle\Entity\Membre")
+     * @ORM\ManyToOne(targetEntity="Cestom\StoreBundle\Entity\Membre")
      * @ORM\JoinColumns({
      *   @ORM\JoinColumn(name="IDMEMBRE", referencedColumnName="IDMEMBRE")
      * })
@@ -34,19 +32,6 @@ class Telephone
     private $idmembre;
 
 
-
-    /**
-     * Set numeroTel
-     *
-     * @param string $numeroTel
-     * @return Telephone
-     */
-    public function setNumeroTel($numeroTel)
-    {
-        $this->numeroTel = $numeroTel;
-
-        return $this;
-    }
 
     /**
      * Get numeroTel
@@ -64,7 +49,7 @@ class Telephone
      * @param \Cestom\StoreBundle\Entity\Membre $idmembre
      * @return Telephone
      */
-    public function setIdmembre(\Cestom\StoreBundle\Entity\Membre $idmembre)
+    public function setIdmembre(\Cestom\StoreBundle\Entity\Membre $idmembre = null)
     {
         $this->idmembre = $idmembre;
 

@@ -7,11 +7,18 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Formation
  *
- * @ORM\Table(name="FORMATION", indexes={@ORM\Index(name="FK_FORMATION_MEMBRE", columns={"IDMEMBRE"}), @ORM\Index(name="IDX_4823F5011825B59", columns={"IDUNIV"})})
+ * @ORM\Table(name="FORMATION", indexes={@ORM\Index(name="FK_FORMATION_MEMBRE", columns={"IDMEMBRE"}), @ORM\Index(name="FK_UNIVERSITE_FORMATION", columns={"IDUNIV"})})
  * @ORM\Entity
  */
 class Formation
 {
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="LIBELLE_FORMATION", type="string", length=255, nullable=false)
+     */
+    private $libelleFormation;
+
     /**
      * @var string
      *
@@ -27,9 +34,9 @@ class Formation
     private $programmeBourse;
 
     /**
-     * @var \DateTime
+     * @var string
      *
-     * @ORM\Column(name="DATE_DEBUT_FORMATION", type="date", nullable=true)
+     * @ORM\Column(name="DATE_DEBUT_FORMATION", type="string", length=255, nullable=true)
      */
     private $dateDebutFormation;
 
@@ -41,20 +48,18 @@ class Formation
     private $dureeFormation;
 
     /**
-     * @var string
+     * @var integer
      *
-     * @ORM\Column(name="LIBELLE_FORMATION", type="string", length=255)
+     * @ORM\Column(name="ID_FORMATION", type="integer")
      * @ORM\Id
-     * @ORM\GeneratedValue(strategy="NONE")
+     * @ORM\GeneratedValue(strategy="IDENTITY")
      */
-    private $libelleFormation;
+    private $idFormation;
 
     /**
      * @var \Cestom\StoreBundle\Entity\Membre
      *
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="NONE")
-     * @ORM\OneToOne(targetEntity="Cestom\StoreBundle\Entity\Membre")
+     * @ORM\ManyToOne(targetEntity="Cestom\StoreBundle\Entity\Membre")
      * @ORM\JoinColumns({
      *   @ORM\JoinColumn(name="IDMEMBRE", referencedColumnName="IDMEMBRE")
      * })
@@ -64,9 +69,7 @@ class Formation
     /**
      * @var \Cestom\StoreBundle\Entity\Universite
      *
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="NONE")
-     * @ORM\OneToOne(targetEntity="Cestom\StoreBundle\Entity\Universite")
+     * @ORM\ManyToOne(targetEntity="Cestom\StoreBundle\Entity\Universite")
      * @ORM\JoinColumns({
      *   @ORM\JoinColumn(name="IDUNIV", referencedColumnName="IDUNIV")
      * })

@@ -3,24 +3,25 @@
   <entity name="Cestom\StoreBundle\Entity\Formation" table="FORMATION">
     <indexes>
       <index name="FK_FORMATION_MEMBRE" columns="IDMEMBRE"/>
-      <index name="IDX_4823F5011825B59" columns="IDUNIV"/>
+      <index name="FK_UNIVERSITE_FORMATION" columns="IDUNIV"/>
     </indexes>
-    <id name="libelleFormation" type="string" column="LIBELLE_FORMATION" length="255"/>
-    <id name="iduniv" association-key="true"/>
-    <id name="idmembre" association-key="true"/>
+    <id name="idFormation" type="integer" column="ID_FORMATION">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="libelleFormation" type="string" column="LIBELLE_FORMATION" length="255" nullable="false"/>
     <field name="diplomeViseFormation" type="string" column="DIPLOME_VISE_FORMATION" length="255" nullable="false"/>
     <field name="programmeBourse" type="string" column="PROGRAMME_BOURSE" length="255" nullable="true"/>
-    <field name="dateDebutFormation" type="date" column="DATE_DEBUT_FORMATION" nullable="true"/>
+    <field name="dateDebutFormation" type="string" column="DATE_DEBUT_FORMATION" length="255" nullable="true"/>
     <field name="dureeFormation" type="decimal" column="DUREE_FORMATION" precision="10" scale="0" nullable="true"/>
-    <one-to-one field="idmembre" target-entity="Membre">
+    <many-to-one field="idmembre" target-entity="Membre">
       <join-columns>
         <join-column name="IDMEMBRE" referenced-column-name="IDMEMBRE"/>
       </join-columns>
-    </one-to-one>
-    <one-to-one field="iduniv" target-entity="Universite">
+    </many-to-one>
+    <many-to-one field="iduniv" target-entity="Universite">
       <join-columns>
         <join-column name="IDUNIV" referenced-column-name="IDUNIV"/>
       </join-columns>
-    </one-to-one>
+    </many-to-one>
   </entity>
 </doctrine-mapping>

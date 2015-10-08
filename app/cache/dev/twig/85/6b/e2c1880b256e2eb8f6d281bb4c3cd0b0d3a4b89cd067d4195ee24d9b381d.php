@@ -10,15 +10,13 @@ class __TwigTemplate_856be2c1880b256e2eb8f6d281bb4c3cd0b0d3a4b89cd067d4195ee24d9
         $this->parent = false;
 
         $this->blocks = array(
+            'style' => array($this, 'block_style'),
             'tetiere' => array($this, 'block_tetiere'),
-            'notification' => array($this, 'block_notification'),
-            'listenotification' => array($this, 'block_listenotification'),
-            'message' => array($this, 'block_message'),
-            'listemessage' => array($this, 'block_listemessage'),
             'navigation' => array($this, 'block_navigation'),
             'soustitre' => array($this, 'block_soustitre'),
             'content' => array($this, 'block_content'),
             'footer' => array($this, 'block_footer'),
+            'javascript' => array($this, 'block_javascript'),
         );
     }
 
@@ -40,8 +38,12 @@ class __TwigTemplate_856be2c1880b256e2eb8f6d281bb4c3cd0b0d3a4b89cd067d4195ee24d9
         // line 12
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("assets/css/bootstrap.min.css"), "html", null, true);
         echo "\" />
-\t\t<link rel=\"stylesheet\" href=\"";
+                \t\t<link rel=\"stylesheet\" href=\"";
         // line 13
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("assets/css/dataTable.min.css"), "html", null, true);
+        echo "\" />
+\t\t<link rel=\"stylesheet\" href=\"";
+        // line 14
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("assets/css/font-awesome.min.css"), "html", null, true);
         echo "\" />
 
@@ -49,37 +51,40 @@ class __TwigTemplate_856be2c1880b256e2eb8f6d281bb4c3cd0b0d3a4b89cd067d4195ee24d9
 
 \t\t<!-- text fonts -->
 \t\t<link rel=\"stylesheet\" href=\"";
-        // line 18
+        // line 19
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("assets/css/ace-fonts.css"), "html", null, true);
         echo "\" />
 
 \t\t<!-- ace styles -->
 \t\t<link rel=\"stylesheet\" href=\"";
-        // line 21
+        // line 22
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("assets/css/ace.min.css"), "html", null, true);
         echo "\" />
 \t\t<link rel=\"stylesheet\" href=\"";
-        // line 22
+        // line 23
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("assets/css/ace-skins.min.css"), "html", null, true);
         echo "\" />
 \t\t<link rel=\"stylesheet\" href=\"";
-        // line 23
+        // line 24
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("assets/css/ace-rtl.min.css"), "html", null, true);
         echo "\" />
 
 \t\t<script src=\"";
-        // line 25
+        // line 26
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("assets/js/ace-extra.min.js"), "html", null, true);
         echo "\"></script>
-
-\t</head>
-
+";
+        // line 27
+        $this->displayBlock('style', $context, $blocks);
+        // line 28
+        echo "\t</head>
+         
 \t<body class=\"no-skin\">
 \t\t<!-- #section:basics/navbar.layout -->
 \t\t";
-        // line 31
+        // line 32
         $this->displayBlock('tetiere', $context, $blocks);
-        // line 169
+        // line 71
         echo "\t\t<!-- /section:basics/navbar.layout -->
 \t\t<div class=\"main-container\" id=\"main-container\">
 \t\t\t<script type=\"text/javascript\">
@@ -94,7 +99,10 @@ class __TwigTemplate_856be2c1880b256e2eb8f6d281bb4c3cd0b0d3a4b89cd067d4195ee24d9
 
 \t\t\t\t<ul class=\"nav nav-list\">
 \t\t\t\t\t<li class=\"active\">
-\t\t\t\t\t\t<a href=\"#\">
+\t\t\t\t\t\t<a href=\"";
+        // line 85
+        echo $this->env->getExtension('routing')->getPath("cestom_admin_homepage");
+        echo "\">
 \t\t\t\t\t\t\t<i class=\"menu-icon fa fa-user\"></i>
 \t\t\t\t\t\t\t<span class=\"menu-text\"> Gestion des membres </span>
 \t\t\t\t\t\t</a>
@@ -104,7 +112,7 @@ class __TwigTemplate_856be2c1880b256e2eb8f6d281bb4c3cd0b0d3a4b89cd067d4195ee24d9
 
 \t\t\t\t\t<li class=\"\">
 \t\t\t\t\t\t<a href=\"#\" class=\"dropdown-toggle\">
-\t\t\t\t\t\t\t<i class=\"menu-icon fa fa-desktop\"></i>
+\t\t\t\t\t\t\t<i class=\"menu-icon fa fa-money\"></i>
 \t\t\t\t\t\t\t<span class=\"menu-text\"> Bourse </span>
 
 \t\t\t\t\t\t\t<b class=\"arrow fa fa-angle-down\"></b>
@@ -139,7 +147,7 @@ class __TwigTemplate_856be2c1880b256e2eb8f6d281bb4c3cd0b0d3a4b89cd067d4195ee24d9
 \t\t\t\t\t
 \t\t\t\t\t<li class=\"\">
 \t\t\t\t\t\t<a href=\"#\" class=\"dropdown-toggle\">
-\t\t\t\t\t\t\t<i class=\"menu-icon fa fa-pencil-square-o\"></i>
+\t\t\t\t\t\t\t<i class=\"menu-icon fa fa-credit-card\"></i>
 \t\t\t\t\t\t\t<span class=\"menu-text\"> Carte consulaire </span>
 
 \t\t\t\t\t\t\t<b class=\"arrow fa fa-angle-down\"></b>
@@ -173,7 +181,7 @@ class __TwigTemplate_856be2c1880b256e2eb8f6d281bb4c3cd0b0d3a4b89cd067d4195ee24d9
 \t\t\t\t\t
 \t\t\t\t\t\t<li class=\"\">
 \t\t\t\t\t\t<a href=\"#\" class=\"dropdown-toggle\">
-\t\t\t\t\t\t\t<i class=\"menu-icon fa fa-pencil-square-o\"></i>
+\t\t\t\t\t\t\t<i class=\"menu-icon fa fa-life-ring\"></i>
 \t\t\t\t\t\t\t<span class=\"menu-text\"> Prise en charge </span>
 
 \t\t\t\t\t\t\t<b class=\"arrow fa fa-angle-down\"></b>
@@ -221,9 +229,9 @@ class __TwigTemplate_856be2c1880b256e2eb8f6d281bb4c3cd0b0d3a4b89cd067d4195ee24d9
 \t\t\t\t
                                 <div class=\"breadcrumbs\" id=\"breadcrumbs\">
 \t\t\t\t";
-        // line 309
+        // line 211
         $this->displayBlock('navigation', $context, $blocks);
-        // line 312
+        // line 214
         echo "\t\t\t\t\t<!-- #section:basics/content.searchbox -->
 \t\t\t\t\t<div class=\"nav-search\" id=\"nav-search\">
 \t\t\t\t\t\t<form class=\"form-search\">
@@ -247,17 +255,17 @@ class __TwigTemplate_856be2c1880b256e2eb8f6d281bb4c3cd0b0d3a4b89cd067d4195ee24d9
 \t\t\t\t\t<div class=\"page-header\">
 \t\t\t\t\t\t<h1>
 \t\t\t\t\t\t\t";
-        // line 334
+        // line 236
         $this->displayBlock('soustitre', $context, $blocks);
-        // line 337
+        // line 239
         echo "\t\t\t\t\t\t</h1>
 \t\t\t\t\t</div><!-- /.page-header -->
                                  
                                 
                                   ";
-        // line 341
+        // line 243
         $this->displayBlock('content', $context, $blocks);
-        // line 344
+        // line 246
         echo "\t\t\t\t\t\t\t
 \t\t\t\t</div><!-- /.page-content -->
                               
@@ -265,9 +273,9 @@ class __TwigTemplate_856be2c1880b256e2eb8f6d281bb4c3cd0b0d3a4b89cd067d4195ee24d9
 \t\t\t</div><!-- /.main-content -->
 
 \t\t\t";
-        // line 350
+        // line 252
         $this->displayBlock('footer', $context, $blocks);
-        // line 380
+        // line 282
         echo "
 \t\t\t<a href=\"#\" id=\"btn-scroll-up\" class=\"btn-scroll-up btn btn-sm btn-inverse\">
 \t\t\t\t<i class=\"ace-icon fa fa-angle-double-up icon-only bigger-110\"></i>
@@ -279,34 +287,46 @@ class __TwigTemplate_856be2c1880b256e2eb8f6d281bb4c3cd0b0d3a4b89cd067d4195ee24d9
 \t
 \t
                 <script src=\"";
-        // line 390
+        // line 292
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("assets/js/jquery.min.js"), "html", null, true);
         echo "\"></script>
 
 \t\t<script src=\"";
-        // line 392
+        // line 294
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("assets/js/bootstrap.min.js"), "html", null, true);
         echo "\"></script>
 
 \t\t<script src=\"";
-        // line 394
+        // line 296
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("assets/js/jquery-ui.custom.min.js"), "html", null, true);
         echo "\"></script>
-\t
-\t\t<script src=\"";
-        // line 396
-        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("assets/js/ace.min.js"), "html", null, true);
+\t \t\t<script src=\"";
+        // line 297
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("assets/js/ace-elements.min.js"), "html", null, true);
         echo "\"></script>
 
-\t
-\t</html>
+\t\t<script src=\"";
+        // line 299
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("assets/js/ace.min.js"), "html", null, true);
+        echo "\"></script>
+\t";
+        // line 300
+        $this->displayBlock('javascript', $context, $blocks);
+        // line 303
+        echo "\t</html>
 ";
     }
 
-    // line 31
+    // line 27
+    public function block_style($context, array $blocks = array())
+    {
+        echo "  ";
+    }
+
+    // line 32
     public function block_tetiere($context, array $blocks = array())
     {
-        // line 32
+        // line 33
         echo "               <!-- #section:basics/navbar.layout -->
 \t\t<div id=\"navbar\" class=\"navbar navbar-default\">
 \t\t\t<script type=\"text/javascript\">
@@ -339,111 +359,7 @@ class __TwigTemplate_856be2c1880b256e2eb8f6d281bb4c3cd0b0d3a4b89cd067d4195ee24d9
 \t\t\t\t</div>
 
 \t\t\t\t<!-- #section:basics/navbar.dropdown -->
-\t\t\t\t<div class=\"navbar-buttons navbar-header pull-right\" role=\"navigation\">
-\t\t\t\t\t<ul class=\"nav ace-nav\">
-\t\t\t\t\t\t
-
-\t\t\t\t\t\t<li class=\"purple\">
-\t\t\t\t\t\t\t<a data-toggle=\"dropdown\" class=\"dropdown-toggle\" href=\"#\">
-\t\t\t\t\t\t\t\t<i class=\"ace-icon fa fa-bell icon-animated-bell\"></i>
-\t\t\t\t\t\t\t\t<span class=\"badge badge-important\">
-\t\t\t\t\t\t\t\t\t";
-        // line 72
-        $this->displayBlock('notification', $context, $blocks);
-        // line 73
-        echo "                                                                </span>
-\t\t\t\t\t\t\t</a>
-
-\t\t\t\t\t\t\t<ul class=\"dropdown-menu-right dropdown-navbar navbar-pink dropdown-menu dropdown-caret dropdown-close\">
-\t\t\t\t\t\t\t\t
-\t\t\t\t\t\t\t";
-        // line 78
-        $this->displayBlock('listenotification', $context, $blocks);
-        // line 82
-        echo "
-\t\t\t\t\t\t\t\t<li class=\"dropdown-footer\">
-\t\t\t\t\t\t\t\t\t<a href=\"#\">
-\t\t\t\t\t\t\t\t\t\tVoir toutes les  notifications
-\t\t\t\t\t\t\t\t\t\t<i class=\"ace-icon fa fa-arrow-right\"></i>
-\t\t\t\t\t\t\t\t\t</a>
-\t\t\t\t\t\t\t\t</li>
-\t\t\t\t\t\t\t</ul>
-\t\t\t\t\t\t</li>
-
-\t\t\t\t\t\t<li class=\"green\">
-\t\t\t\t\t\t\t<a data-toggle=\"dropdown\" class=\"dropdown-toggle\" href=\"#\">
-\t\t\t\t\t\t\t\t<i class=\"ace-icon fa fa-envelope icon-animated-vertical\"></i>
-\t\t\t\t\t\t\t\t<span class=\"badge badge-success\">
-                                                                    ";
-        // line 96
-        $this->displayBlock('message', $context, $blocks);
-        // line 99
-        echo "                                                                </span>
-\t\t\t\t\t\t\t</a>
-
-\t\t\t\t\t\t\t<ul class=\"dropdown-menu-right dropdown-navbar dropdown-menu dropdown-caret dropdown-close\">
-\t\t\t\t\t\t\t\t
-
-\t\t\t\t\t\t\t\t<li class=\"dropdown-content\">
-\t\t\t\t\t\t\t\t\t<ul class=\"dropdown-menu dropdown-navbar\">
-\t\t\t\t\t\t\t\t\t";
-        // line 107
-        $this->displayBlock('listemessage', $context, $blocks);
-        // line 110
-        echo "\t\t\t\t\t\t\t\t\t</ul>
-\t\t\t\t\t\t\t\t</li>
-
-\t\t\t\t\t\t\t\t<li class=\"dropdown-footer\">
-\t\t\t\t\t\t\t\t\t<a href=\"inbox.html\">
-\t\t\t\t\t\t\t\t\t\tVoir tous les messages
-\t\t\t\t\t\t\t\t\t\t<i class=\"ace-icon fa fa-arrow-right\"></i>
-\t\t\t\t\t\t\t\t\t</a>
-\t\t\t\t\t\t\t\t</li>
-\t\t\t\t\t\t\t</ul>
-\t\t\t\t\t\t</li>
-
-\t\t\t\t\t\t<!-- #section:basics/navbar.user_menu -->
-\t\t\t\t\t\t<li class=\"light-blue\">
-\t\t\t\t\t\t\t<a data-toggle=\"dropdown\" href=\"#\" class=\"dropdown-toggle\">
-\t\t\t\t\t\t\t\t<img class=\"nav-user-photo\" src=\"../assets/avatars/user.jpg\" alt=\"Jason's Photo\" />
-\t\t\t\t\t\t\t\t<span class=\"user-info\">
-\t\t\t\t\t\t\t\t\t<small>Bienvenue ,</small>
-\t\t\t\t\t\t\t\t\tAdmin
-\t\t\t\t\t\t\t\t</span>
-
-\t\t\t\t\t\t\t\t<i class=\"ace-icon fa fa-caret-down\"></i>
-\t\t\t\t\t\t\t</a>
-
-\t\t\t\t\t\t\t<ul class=\"user-menu dropdown-menu-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close\">
-\t\t\t\t\t\t\t\t<li>
-\t\t\t\t\t\t\t\t\t<a href=\"#\">
-\t\t\t\t\t\t\t\t\t\t<i class=\"ace-icon fa fa-cog\"></i>
-\t\t\t\t\t\t\t\t\t\tParamètres
-\t\t\t\t\t\t\t\t\t</a>
-\t\t\t\t\t\t\t\t</li>
-
-\t\t\t\t\t\t\t\t<li>
-\t\t\t\t\t\t\t\t\t<a href=\"profile.html\">
-\t\t\t\t\t\t\t\t\t\t<i class=\"ace-icon fa fa-user\"></i>
-\t\t\t\t\t\t\t\t\t\tProfile
-\t\t\t\t\t\t\t\t\t</a>
-\t\t\t\t\t\t\t\t</li>
-
-\t\t\t\t\t\t\t\t<li class=\"divider\"></li>
-
-\t\t\t\t\t\t\t\t<li>
-\t\t\t\t\t\t\t\t\t<a href=\"#\">
-\t\t\t\t\t\t\t\t\t\t<i class=\"ace-icon fa fa-power-off\"></i>
-\t\t\t\t\t\t\t\t\t\tDéconnexion
-\t\t\t\t\t\t\t\t\t</a>
-\t\t\t\t\t\t\t\t</li>
-\t\t\t\t\t\t\t</ul>
-\t\t\t\t\t\t</li>
-
-\t\t\t\t\t\t<!-- /section:basics/navbar.user_menu -->
-\t\t\t\t\t</ul>
-\t\t\t\t</div>
-
+\t\t\t\t
 \t\t\t\t<!-- /section:basics/navbar.dropdown -->
 \t\t\t</div><!-- /.navbar-container -->
 \t\t</div>
@@ -451,46 +367,15 @@ class __TwigTemplate_856be2c1880b256e2eb8f6d281bb4c3cd0b0d3a4b89cd067d4195ee24d9
                 ";
     }
 
-    // line 72
-    public function block_notification($context, array $blocks = array())
-    {
-        echo " NA ";
-    }
-
-    // line 78
-    public function block_listenotification($context, array $blocks = array())
-    {
-        echo " 
-\t\t\t\t\t\t\t\t
-
-\t\t\t\t\t\t\t ";
-    }
-
-    // line 96
-    public function block_message($context, array $blocks = array())
-    {
-        echo " 
-                                                                        
-                                                                     ";
-    }
-
-    // line 107
-    public function block_listemessage($context, array $blocks = array())
-    {
-        echo " \t
-                                                                           
-                                                                        ";
-    }
-
-    // line 309
+    // line 211
     public function block_navigation($context, array $blocks = array())
     {
-        // line 310
+        // line 212
         echo "                                     
                                 ";
     }
 
-    // line 334
+    // line 236
     public function block_soustitre($context, array $blocks = array())
     {
         echo " 
@@ -498,18 +383,18 @@ class __TwigTemplate_856be2c1880b256e2eb8f6d281bb4c3cd0b0d3a4b89cd067d4195ee24d9
                                                         ";
     }
 
-    // line 341
+    // line 243
     public function block_content($context, array $blocks = array())
     {
-        // line 342
+        // line 244
         echo "
                                   ";
     }
 
-    // line 350
+    // line 252
     public function block_footer($context, array $blocks = array())
     {
-        // line 351
+        // line 253
         echo "                        <div class=\"footer\">
 \t\t\t\t<div class=\"footer-inner\">
 \t\t\t\t\t<!-- #section:basics/footer -->
@@ -541,6 +426,14 @@ class __TwigTemplate_856be2c1880b256e2eb8f6d281bb4c3cd0b0d3a4b89cd067d4195ee24d9
                         ";
     }
 
+    // line 300
+    public function block_javascript($context, array $blocks = array())
+    {
+        // line 301
+        echo "            
+            ";
+    }
+
     public function getTemplateName()
     {
         return "base.html.twig";
@@ -553,6 +446,6 @@ class __TwigTemplate_856be2c1880b256e2eb8f6d281bb4c3cd0b0d3a4b89cd067d4195ee24d9
 
     public function getDebugInfo()
     {
-        return array (  513 => 351,  510 => 350,  505 => 342,  502 => 341,  494 => 334,  489 => 310,  486 => 309,  478 => 107,  470 => 96,  461 => 78,  455 => 72,  393 => 110,  391 => 107,  381 => 99,  379 => 96,  363 => 82,  361 => 78,  354 => 73,  352 => 72,  310 => 32,  307 => 31,  298 => 396,  293 => 394,  288 => 392,  283 => 390,  271 => 380,  269 => 350,  261 => 344,  259 => 341,  253 => 337,  251 => 334,  227 => 312,  225 => 309,  83 => 169,  81 => 31,  72 => 25,  67 => 23,  63 => 22,  59 => 21,  53 => 18,  45 => 13,  41 => 12,  28 => 1,);
+        return array (  433 => 301,  430 => 300,  398 => 253,  395 => 252,  390 => 244,  387 => 243,  379 => 236,  374 => 212,  371 => 211,  330 => 33,  327 => 32,  321 => 27,  316 => 303,  314 => 300,  310 => 299,  305 => 297,  301 => 296,  296 => 294,  291 => 292,  279 => 282,  277 => 252,  269 => 246,  267 => 243,  261 => 239,  259 => 236,  235 => 214,  233 => 211,  104 => 85,  88 => 71,  86 => 32,  80 => 28,  78 => 27,  74 => 26,  69 => 24,  65 => 23,  61 => 22,  55 => 19,  47 => 14,  43 => 13,  39 => 12,  26 => 1,);
     }
 }

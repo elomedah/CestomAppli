@@ -1,3 +1,15 @@
 cestom_admin_homepage:
-    path:     /admin/ville
-    defaults: { _controller: CestomAdminBundle:Default:index }
+    path:     /admin/gestionMembre
+    defaults: { _controller: CestomAdminBundle:GestionMembre:membre }
+cestom_admin_ajouter_member:
+    path:     /admin/ajouterMembre
+    defaults: { _controller: CestomAdminBundle:AjouterMembre:ajouterMembre }
+cestom_admin_modifier_member:
+    path:     /admin/modifierMembre/{idmembre}
+    defaults: { _controller: CestomAdminBundle:ModifierMembre:modifierMembre }
+cestom_admin_modifier_formation:
+    path:     /admin/modifierFormation/{idmembre}/{idformation}
+    defaults: { _controller: CestomAdminBundle:ModifierFormation:modifierFormationMembre }
+cestom_admin_ajouter_formation:
+    path:     /admin/ajouterFormation/{idmembre}
+    defaults: { _controller: CestomAdminBundle:AjouterFormation:ajouterFormationMembre }

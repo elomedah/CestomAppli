@@ -22,9 +22,16 @@ class Membre
     /**
      * @var string
      *
-     * @ORM\Column(name="PASSWORD", type="string", length=1024, nullable=false)
+     * @ORM\Column(name="PASSWORD", type="string", length=1024, nullable=true)
      */
     private $password;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="SEXE", type="string", length=1, nullable=true)
+     */
+    private $sexe;
 
     /**
      * @var string
@@ -46,13 +53,6 @@ class Membre
      * @ORM\Column(name="PRENOM_MEMBRE", type="string", length=255, nullable=true)
      */
     private $prenomMembre;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="ADRESSE_MEMBRE", type="string", length=255, nullable=true)
-     */
-    private $adresseMembre;
 
     /**
      * @var string
@@ -175,6 +175,29 @@ class Membre
     }
 
     /**
+     * Set sexe
+     *
+     * @param string $sexe
+     * @return Membre
+     */
+    public function setSexe($sexe)
+    {
+        $this->sexe = $sexe;
+
+        return $this;
+    }
+
+    /**
+     * Get sexe
+     *
+     * @return string 
+     */
+    public function getSexe()
+    {
+        return $this->sexe;
+    }
+
+    /**
      * Set username
      *
      * @param string $username
@@ -241,29 +264,6 @@ class Membre
     public function getPrenomMembre()
     {
         return $this->prenomMembre;
-    }
-
-    /**
-     * Set adresseMembre
-     *
-     * @param string $adresseMembre
-     * @return Membre
-     */
-    public function setAdresseMembre($adresseMembre)
-    {
-        $this->adresseMembre = $adresseMembre;
-
-        return $this;
-    }
-
-    /**
-     * Get adresseMembre
-     *
-     * @return string 
-     */
-    public function getAdresseMembre()
-    {
-        return $this->adresseMembre;
     }
 
     /**

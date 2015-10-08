@@ -7,11 +7,18 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Formation
  *
- * @ORM\Table(name="FORMATION", indexes={@ORM\Index(name="FK_FORMATION_MEMBRE", columns={"IDMEMBRE"}), @ORM\Index(name="IDX_4823F5011825B59", columns={"IDUNIV"})})
+ * @ORM\Table(name="FORMATION", indexes={@ORM\Index(name="FK_FORMATION_MEMBRE", columns={"IDMEMBRE"}), @ORM\Index(name="FK_UNIVERSITE_FORMATION", columns={"IDUNIV"})})
  * @ORM\Entity
  */
 class Formation
 {
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="LIBELLE_FORMATION", type="string", length=255, nullable=false)
+     */
+    private $libelleFormation;
+
     /**
      * @var string
      *
@@ -27,9 +34,9 @@ class Formation
     private $programmeBourse;
 
     /**
-     * @var \DateTime
+     * @var string
      *
-     * @ORM\Column(name="DATE_DEBUT_FORMATION", type="date", nullable=true)
+     * @ORM\Column(name="DATE_DEBUT_FORMATION", type="string", length=255, nullable=true)
      */
     private $dateDebutFormation;
 
@@ -41,20 +48,18 @@ class Formation
     private $dureeFormation;
 
     /**
-     * @var string
+     * @var integer
      *
-     * @ORM\Column(name="LIBELLE_FORMATION", type="string", length=255)
+     * @ORM\Column(name="ID_FORMATION", type="integer")
      * @ORM\Id
-     * @ORM\GeneratedValue(strategy="NONE")
+     * @ORM\GeneratedValue(strategy="IDENTITY")
      */
-    private $libelleFormation;
+    private $idFormation;
 
     /**
      * @var \Cestom\StoreBundle\Entity\Membre
      *
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="NONE")
-     * @ORM\OneToOne(targetEntity="Cestom\StoreBundle\Entity\Membre")
+     * @ORM\ManyToOne(targetEntity="Cestom\StoreBundle\Entity\Membre")
      * @ORM\JoinColumns({
      *   @ORM\JoinColumn(name="IDMEMBRE", referencedColumnName="IDMEMBRE")
      * })
@@ -64,9 +69,7 @@ class Formation
     /**
      * @var \Cestom\StoreBundle\Entity\Universite
      *
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="NONE")
-     * @ORM\OneToOne(targetEntity="Cestom\StoreBundle\Entity\Universite")
+     * @ORM\ManyToOne(targetEntity="Cestom\StoreBundle\Entity\Universite")
      * @ORM\JoinColumns({
      *   @ORM\JoinColumn(name="IDUNIV", referencedColumnName="IDUNIV")
      * })
@@ -74,6 +77,29 @@ class Formation
     private $iduniv;
 
 
+
+    /**
+     * Set libelleFormation
+     *
+     * @param string $libelleFormation
+     * @return Formation
+     */
+    public function setLibelleFormation($libelleFormation)
+    {
+        $this->libelleFormation = $libelleFormation;
+
+        return $this;
+    }
+
+    /**
+     * Get libelleFormation
+     *
+     * @return string 
+     */
+    public function getLibelleFormation()
+    {
+        return $this->libelleFormation;
+    }
 
     /**
      * Set diplomeViseFormation
@@ -124,7 +150,7 @@ class Formation
     /**
      * Set dateDebutFormation
      *
-     * @param \DateTime $dateDebutFormation
+     * @param string $dateDebutFormation
      * @return Formation
      */
     public function setDateDebutFormation($dateDebutFormation)
@@ -137,7 +163,7 @@ class Formation
     /**
      * Get dateDebutFormation
      *
-     * @return \DateTime 
+     * @return string 
      */
     public function getDateDebutFormation()
     {
@@ -168,26 +194,13 @@ class Formation
     }
 
     /**
-     * Set libelleFormation
+     * Get idFormation
      *
-     * @param string $libelleFormation
-     * @return Formation
+     * @return integer 
      */
-    public function setLibelleFormation($libelleFormation)
+    public function getIdFormation()
     {
-        $this->libelleFormation = $libelleFormation;
-
-        return $this;
-    }
-
-    /**
-     * Get libelleFormation
-     *
-     * @return string 
-     */
-    public function getLibelleFormation()
-    {
-        return $this->libelleFormation;
+        return $this->idFormation;
     }
 
     /**
@@ -196,7 +209,7 @@ class Formation
      * @param \Cestom\StoreBundle\Entity\Membre $idmembre
      * @return Formation
      */
-    public function setIdmembre(\Cestom\StoreBundle\Entity\Membre $idmembre)
+    public function setIdmembre(\Cestom\StoreBundle\Entity\Membre $idmembre = null)
     {
         $this->idmembre = $idmembre;
 
@@ -219,7 +232,7 @@ class Formation
      * @param \Cestom\StoreBundle\Entity\Universite $iduniv
      * @return Formation
      */
-    public function setIduniv(\Cestom\StoreBundle\Entity\Universite $iduniv)
+    public function setIduniv(\Cestom\StoreBundle\Entity\Universite $iduniv = null)
     {
         $this->iduniv = $iduniv;
 

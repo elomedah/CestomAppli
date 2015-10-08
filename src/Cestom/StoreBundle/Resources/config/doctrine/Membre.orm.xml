@@ -5,11 +5,11 @@
       <generator strategy="IDENTITY"/>
     </id>
     <field name="emailMembre" type="string" column="EMAIL_MEMBRE" length="255" nullable="false"/>
-    <field name="password" type="string" column="PASSWORD" length="1024" nullable="false"/>
+    <field name="password" type="string" column="PASSWORD" length="1024" nullable="true"/>
+    <field name="sexe" type="string" column="SEXE" length="1" nullable="true"/>
     <field name="username" type="string" column="USERNAME" length="255" nullable="false"/>
     <field name="nomMembre" type="string" column="NOM_MEMBRE" length="255" nullable="true"/>
     <field name="prenomMembre" type="string" column="PRENOM_MEMBRE" length="255" nullable="true"/>
-    <field name="adresseMembre" type="string" column="ADRESSE_MEMBRE" length="255" nullable="true"/>
     <field name="numeroPassportMembre" type="string" column="NUMERO_PASSPORT_MEMBRE" length="15" nullable="true"/>
     <field name="dateExpiMembre" type="string" column="DATE_EXPI_MEMBRE" length="255" nullable="true"/>
     <field name="dateEtabMembre" type="string" column="DATE_ETAB_MEMBRE" length="255" nullable="true"/>
