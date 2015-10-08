@@ -158,11 +158,22 @@ class __TwigTemplate_4df2d5f61e09ec20f97d667332ced77a91c826a2df9842e22695e2ea4e9
 \t\t\t\t\t\t\t\t\t\t\t\t</a>
 \t\t\t\t\t\t\t\t\t\t\t</li>
 
-\t\t\t\t\t\t\t\t\t\t\t
+\t\t\t\t\t\t\t\t\t\t\t<li class=\"dropdown\">
+\t\t\t\t\t\t\t\t\t\t\t\t<a  href=\"";
+        // line 77
+        echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("cestom_admin_ajouter_ville_membre", array("idmembre" => (isset($context["idmembre"]) ? $context["idmembre"] : $this->getContext($context, "idmembre")))), "html", null, true);
+        echo "\">
+\t\t\t\t\t\t\t\t\t\t\t\t\t<i class=\"green ace-icon fa fa-building bigger-120\"></i>
+\t\t\t\t\t\t\t\t\t\t\t\t\t
+                                                                                                    Villes du Membre
+\t\t\t\t\t\t\t\t\t\t\t\t</a>
+
+\t\t\t\t\t\t\t\t\t\t\t\t
+\t\t\t\t\t\t\t\t\t\t\t</li>
 
 \t\t\t\t\t\t\t\t\t\t\t<li class=\"dropdown\">
 \t\t\t\t\t\t\t\t\t\t\t\t<a  href=\"";
-        // line 79
+        // line 87
         echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("cestom_admin_ajouter_formation", array("idmembre" => (isset($context["idmembre"]) ? $context["idmembre"] : $this->getContext($context, "idmembre")))), "html", null, true);
         echo "\">
 \t\t\t\t\t\t\t\t\t\t\t\t\t<i class=\"green ace-icon fa fa-graduation-cap bigger-120\"></i>
@@ -179,16 +190,16 @@ class __TwigTemplate_4df2d5f61e09ec20f97d667332ced77a91c826a2df9842e22695e2ea4e9
                                                                                       <div class=\"widget-body\">
         <div class=\"widget-main no-padding\">
             <form ";
-        // line 93
+        // line 101
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), 'enctype');
         echo "  method = \"POST\"  action = \"";
         echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("cestom_admin_modifier_member", array("idmembre" => (isset($context["idmembre"]) ? $context["idmembre"] : $this->getContext($context, "idmembre")))), "html", null, true);
         echo "\">\t
               
                 ";
-        // line 95
+        // line 103
         $this->env->loadTemplate("CestomAdminBundle:GestionMembre:formulaireMembre.html.twig")->display($context);
-        // line 96
+        // line 104
         echo "<div class=\"form-actions center\">
                     <button id=\"valider\" type=\"submit\" class=\"btn btn-sm btn-success\">
                         Modifier
@@ -225,48 +236,48 @@ class __TwigTemplate_4df2d5f61e09ec20f97d667332ced77a91c826a2df9842e22695e2ea4e9
 ";
     }
 
-    // line 131
+    // line 139
     public function block_javascript($context, array $blocks = array())
     {
-        // line 132
+        // line 140
         echo "             <script src=\"";
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("assets/js/date-time/bootstrap-datepicker.min.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 133
+        // line 141
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("assets/js/date-time/bootstrap-timepicker.min.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 134
+        // line 142
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("assets/js/date-time/moment.min.js"), "html", null, true);
         echo "\"></script>
 
     <script src=\"";
-        // line 136
+        // line 144
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("assets/js/date-time/bootstrap-datetimepicker.min.js"), "html", null, true);
         echo "\">< /script>
                 < script src = \"";
-        // line 137
+        // line 145
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("assets/js/jquery.autosize.min.js"), "html", null, true);
         echo "\" ></script>
     <script  src = \"";
-        // line 138
+        // line 146
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("assets/js/jquery.ui.addresspicker.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 139
+        // line 147
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("assets/js/jquery.maskedinput.min.js"), "html", null, true);
         echo "\"></script>
    <script src=\"";
-        // line 140
+        // line 148
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("assets/js/bootstrap-tag.min.js"), "html", null, true);
         echo "\"></script>
 <script src=\"";
-        // line 141
+        // line 149
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("assets/js/ace-elements.min.js"), "html", null, true);
         echo "\"></script>
 <script src=\"";
-        // line 142
+        // line 150
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("assets/js/ace.min.js"), "html", null, true);
         echo "\"></script>
     <script type=\"text/javascript\">
@@ -302,6 +313,6 @@ class __TwigTemplate_4df2d5f61e09ec20f97d667332ced77a91c826a2df9842e22695e2ea4e9
 
     public function getDebugInfo()
     {
-        return array (  270 => 142,  266 => 141,  262 => 140,  258 => 139,  254 => 138,  250 => 137,  246 => 136,  241 => 134,  237 => 133,  232 => 132,  229 => 131,  192 => 96,  190 => 95,  183 => 93,  166 => 79,  154 => 70,  139 => 57,  129 => 53,  124 => 50,  120 => 49,  117 => 48,  107 => 44,  102 => 41,  98 => 40,  95 => 39,  92 => 38,  82 => 32,  63 => 13,  60 => 12,  54 => 8,  49 => 6,  45 => 5,  40 => 4,  11 => 3,);
+        return array (  281 => 150,  277 => 149,  273 => 148,  269 => 147,  265 => 146,  261 => 145,  257 => 144,  252 => 142,  248 => 141,  243 => 140,  240 => 139,  203 => 104,  201 => 103,  194 => 101,  177 => 87,  164 => 77,  154 => 70,  139 => 57,  129 => 53,  124 => 50,  120 => 49,  117 => 48,  107 => 44,  102 => 41,  98 => 40,  95 => 39,  92 => 38,  82 => 32,  63 => 13,  60 => 12,  54 => 8,  49 => 6,  45 => 5,  40 => 4,  11 => 3,);
     }
 }

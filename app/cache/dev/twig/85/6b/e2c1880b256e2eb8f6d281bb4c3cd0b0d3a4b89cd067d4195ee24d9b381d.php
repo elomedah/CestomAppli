@@ -100,7 +100,7 @@ class __TwigTemplate_856be2c1880b256e2eb8f6d281bb4c3cd0b0d3a4b89cd067d4195ee24d9
                 </script>
 
                 <ul class=\"nav nav-list\">
-                    <li class=\" main active\">
+                    <li id=\"menu_membre\" class=\" main \">
                         <a class=\"mainactive \" href=\"";
         // line 93
         echo $this->env->getExtension('routing')->getPath("cestom_admin_homepage");
@@ -125,7 +125,7 @@ class __TwigTemplate_856be2c1880b256e2eb8f6d281bb4c3cd0b0d3a4b89cd067d4195ee24d9
                     </li>
 
 
-                    <li class=\" main \">
+                    <li id=\"menu_carteconsulaire\" class=\" main \">
                         <a href=\"#\" class=\"mainactive \">
                             <i class=\"menu-icon fa fa-credit-card\"></i>
                             <span class=\"menu-text\"> Carte consulaire </span>
@@ -134,7 +134,7 @@ class __TwigTemplate_856be2c1880b256e2eb8f6d281bb4c3cd0b0d3a4b89cd067d4195ee24d9
                         </a>
 
                     </li>
-                    <li class=\"main\">
+                    <li id=\"menu_prisecharge\" class=\"main\">
                         <a href=\"#\" class=\"mainactive\">
                             <i class=\"menu-icon fa fa-life-ring\"></i>
                             <span class=\"menu-text\"> Prise en charge </span>
@@ -143,7 +143,7 @@ class __TwigTemplate_856be2c1880b256e2eb8f6d281bb4c3cd0b0d3a4b89cd067d4195ee24d9
 
 
                     </li>
-                    <li class=\"main\">
+                    <li id=\"menu_ville\" class=\"main\">
                         <a class=\"mainactive\" href=\"";
         // line 133
         echo $this->env->getExtension('routing')->getPath("cestom_admin_ajouter_ville");
@@ -155,7 +155,7 @@ class __TwigTemplate_856be2c1880b256e2eb8f6d281bb4c3cd0b0d3a4b89cd067d4195ee24d9
                         <b class=\"arrow\"></b>
                     </li>
 
-                    <li class=\"main\">
+                    <li id=\"menu_universite\" class=\"main\">
                         <a class=\"mainactive\" href=\"";
         // line 142
         echo $this->env->getExtension('routing')->getPath("cestom_admin_ajouter_universite");

@@ -20,6 +20,18 @@ class BureauVille
     private $posteMembre;
 
     /**
+     * @var \Cestom\StoreBundle\Entity\AnneeScolaire
+     *
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="NONE")
+     * @ORM\OneToOne(targetEntity="Cestom\StoreBundle\Entity\AnneeScolaire")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="ANNEE_SCOLAIRE", referencedColumnName="ANNEE_SCOLAIRE")
+     * })
+     */
+    private $anneeScolaire;
+
+    /**
      * @var \Cestom\StoreBundle\Entity\Membre
      *
      * @ORM\Id
@@ -42,18 +54,6 @@ class BureauVille
      * })
      */
     private $idville;
-
-    /**
-     * @var \Cestom\StoreBundle\Entity\AnneeScolaire
-     *
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="NONE")
-     * @ORM\OneToOne(targetEntity="Cestom\StoreBundle\Entity\AnneeScolaire")
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="ANNEE_SCOLAIRE", referencedColumnName="ANNEE_SCOLAIRE")
-     * })
-     */
-    private $anneeScolaire;
 
 
 
@@ -78,6 +78,29 @@ class BureauVille
     public function getPosteMembre()
     {
         return $this->posteMembre;
+    }
+
+    /**
+     * Set anneeScolaire
+     *
+     * @param \Cestom\StoreBundle\Entity\AnneeScolaire $anneeScolaire
+     * @return BureauVille
+     */
+    public function setAnneeScolaire(\Cestom\StoreBundle\Entity\AnneeScolaire $anneeScolaire)
+    {
+        $this->anneeScolaire = $anneeScolaire;
+
+        return $this;
+    }
+
+    /**
+     * Get anneeScolaire
+     *
+     * @return \Cestom\StoreBundle\Entity\AnneeScolaire 
+     */
+    public function getAnneeScolaire()
+    {
+        return $this->anneeScolaire;
     }
 
     /**
@@ -124,28 +147,5 @@ class BureauVille
     public function getIdville()
     {
         return $this->idville;
-    }
-
-    /**
-     * Set anneeScolaire
-     *
-     * @param \Cestom\StoreBundle\Entity\AnneeScolaire $anneeScolaire
-     * @return BureauVille
-     */
-    public function setAnneeScolaire(\Cestom\StoreBundle\Entity\AnneeScolaire $anneeScolaire)
-    {
-        $this->anneeScolaire = $anneeScolaire;
-
-        return $this;
-    }
-
-    /**
-     * Get anneeScolaire
-     *
-     * @return \Cestom\StoreBundle\Entity\AnneeScolaire 
-     */
-    public function getAnneeScolaire()
-    {
-        return $this->anneeScolaire;
     }
 }

@@ -273,7 +273,9 @@ class __TwigTemplate_f8c07938a786e87d304b6920c81f6e7bda005138fa4b0f6b15b0c6534bc
                                                             jQuery(function(\$) {
 //datepicker plugin
                                                           
-
+                             
+                                  \$('.main').removeClass('active');
+                                  \$('#menu_universite').addClass('active');
                                                                 \$('#listuniv').DataTable();
                                                             });
     </script>

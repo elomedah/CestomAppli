@@ -251,6 +251,8 @@ class __TwigTemplate_572c932fda299710d42b7f81c6dbb231720d971d056ff742987a4472a38
 \t\t\tjQuery(function(\$) {
 \t\t\t\t\$('#listuser').DataTable();
 \t\t\t\t
+                                  \$('.main').removeClass('active');
+                                  \$('#menu_membre').addClass('active');
 \t\t\t    } );
                       
 </script>

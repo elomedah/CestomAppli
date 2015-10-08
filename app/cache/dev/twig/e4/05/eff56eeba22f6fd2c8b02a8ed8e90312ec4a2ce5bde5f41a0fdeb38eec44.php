@@ -158,11 +158,22 @@ class __TwigTemplate_e405eff56eeba22f6fd2c8b02a8ed8e90312ec4a2ce5bde5f41a0fdeb38
                                         </a>
                                     </li>
 
+\t\t\t\t\t<li class=\"dropdown\">
+\t\t\t\t\t\t\t\t\t\t\t\t<a  href=\"";
+        // line 77
+        echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("cestom_admin_ajouter_ville_membre", array("idmembre" => (isset($context["idmembre"]) ? $context["idmembre"] : $this->getContext($context, "idmembre")))), "html", null, true);
+        echo "\">
+\t\t\t\t\t\t\t\t\t\t\t\t\t<i class=\"green ace-icon fa fa-building bigger-120\"></i>
+\t\t\t\t\t\t\t\t\t\t\t\t\t
+                                                                                                    Villes du Membre
+\t\t\t\t\t\t\t\t\t\t\t\t</a>
 
+\t\t\t\t\t\t\t\t\t\t\t\t
+\t\t\t\t\t\t\t\t\t\t\t</li>
 
                                     <li class=\"active\">
                                         <a  href=\"";
-        // line 79
+        // line 87
         echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("cestom_admin_ajouter_formation", array("idmembre" => (isset($context["idmembre"]) ? $context["idmembre"] : $this->getContext($context, "idmembre")))), "html", null, true);
         echo "\">
                                             <i class=\"green ace-icon fa fa-graduation-cap bigger-120\"></i>
@@ -181,16 +192,16 @@ class __TwigTemplate_e405eff56eeba22f6fd2c8b02a8ed8e90312ec4a2ce5bde5f41a0fdeb38
                                             
 
                                                 <form ";
-        // line 95
+        // line 103
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), 'enctype');
         echo "  method = \"POST\"  action = \"";
         echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("cestom_admin_modifier_formation", array("idmembre" => (isset($context["idmembre"]) ? $context["idmembre"] : $this->getContext($context, "idmembre")), "idformation" => (isset($context["idformation"]) ? $context["idformation"] : $this->getContext($context, "idformation")))), "html", null, true);
         echo "\">\t
 
                                                     ";
-        // line 97
+        // line 105
         $this->env->loadTemplate("CestomAdminBundle:GestionMembre:formulaireFormation.html.twig")->display($context);
-        // line 98
+        // line 106
         echo "                                                    <div class=\"form-actions center\">
                                                         <button id=\"valider\" type=\"submit\" class=\"btn btn-sm btn-success\">
                                                             Modifier
@@ -227,11 +238,11 @@ class __TwigTemplate_e405eff56eeba22f6fd2c8b02a8ed8e90312ec4a2ce5bde5f41a0fdeb38
 
                                                     <tbody>
                                                         ";
-        // line 133
+        // line 141
         $context['_parent'] = (array) $context;
         $context['_seq'] = twig_ensure_traversable((isset($context["formations"]) ? $context["formations"] : $this->getContext($context, "formations")));
         foreach ($context['_seq'] as $context["_key"] => $context["formation"]) {
-            // line 134
+            // line 142
             echo "                                                            <tr>
 
                                                                 <td class=\"center\">
@@ -247,7 +258,7 @@ class __TwigTemplate_e405eff56eeba22f6fd2c8b02a8ed8e90312ec4a2ce5bde5f41a0fdeb38
 
 
                                                                     <a class=\"green\" href=\"";
-            // line 148
+            // line 156
             echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("cestom_admin_modifier_formation", array("idmembre" => (isset($context["idmembre"]) ? $context["idmembre"] : $this->getContext($context, "idmembre")), "idformation" => $this->getAttribute($context["formation"], "idFormation", array()))), "html", null, true);
             echo "\">
                                                                         <i class=\"ace-icon fa fa-pencil bigger-130\"></i>
@@ -256,28 +267,28 @@ class __TwigTemplate_e405eff56eeba22f6fd2c8b02a8ed8e90312ec4a2ce5bde5f41a0fdeb38
                                                                 </td>
 
                                                                 <td>";
-            // line 154
+            // line 162
             echo twig_escape_filter($this->env, $this->getAttribute($context["formation"], "libelleFormation", array()), "html", null, true);
             echo "</td>
                                                                 <td>";
-            // line 155
+            // line 163
             echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($context["formation"], "iduniv", array()), "nomuniv", array()), "html", null, true);
             echo "</td>
                                                                 <td>";
-            // line 156
+            // line 164
             echo twig_escape_filter($this->env, $this->getAttribute($context["formation"], "diplomeViseFormation", array()), "html", null, true);
             echo " </td>
                                                                 <td>";
-            // line 157
+            // line 165
             echo twig_escape_filter($this->env, $this->getAttribute($context["formation"], "dureeFormation", array()), "html", null, true);
             echo "</td>
 
                                                                 <td>";
-            // line 159
+            // line 167
             echo twig_escape_filter($this->env, $this->getAttribute($context["formation"], "dateDebutFormation", array()), "html", null, true);
             echo "</td>
                                                                 <td>";
-            // line 160
+            // line 168
             echo twig_escape_filter($this->env, $this->getAttribute($context["formation"], "programmeBourse", array()), "html", null, true);
             echo "</td>
 
@@ -287,7 +298,7 @@ class __TwigTemplate_e405eff56eeba22f6fd2c8b02a8ed8e90312ec4a2ce5bde5f41a0fdeb38
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['formation'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 164
+        // line 172
         echo "                                                    </tbody>
                                                 </table>
 
@@ -323,56 +334,56 @@ class __TwigTemplate_e405eff56eeba22f6fd2c8b02a8ed8e90312ec4a2ce5bde5f41a0fdeb38
 ";
     }
 
-    // line 198
+    // line 206
     public function block_javascript($context, array $blocks = array())
     {
-        // line 199
+        // line 207
         echo "    <script src=\"";
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("assets/js/date-time/bootstrap-datepicker.min.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 200
+        // line 208
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("assets/js/date-time/bootstrap-timepicker.min.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 201
+        // line 209
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("assets/js/date-time/moment.min.js"), "html", null, true);
         echo "\"></script>
 
     <script src=\"";
-        // line 203
+        // line 211
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("assets/js/date-time/bootstrap-datetimepicker.min.js"), "html", null, true);
         echo "\">< /script>
                                                                     < script src = \"";
-        // line 204
+        // line 212
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("assets/js/jquery.autosize.min.js"), "html", null, true);
         echo "\" ></script>
     <script  src = \"";
-        // line 205
+        // line 213
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("assets/js/jquery.ui.addresspicker.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 206
+        // line 214
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("assets/js/jquery.maskedinput.min.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 207
+        // line 215
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("assets/js/bootstrap-tag.min.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 208
+        // line 216
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("assets/js/ace-elements.min.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 209
+        // line 217
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("assets/js/ace.min.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 210
+        // line 218
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("assets/js/jquery.dataTables.min.js"), "html", null, true);
         echo "\"></script>
     <script\tsrc=\"";
-        // line 211
+        // line 219
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("assets/js/jquery.dataTables.bootstrap.js"), "html", null, true);
         echo "\"></script>
     <script type=\"text/javascript\">
@@ -392,6 +403,10 @@ class __TwigTemplate_e405eff56eeba22f6fd2c8b02a8ed8e90312ec4a2ce5bde5f41a0fdeb38
                                                                 });
 
                                                                 \$('#listformation').DataTable();
+                                                                
+                                                                        
+                                  \$('.main').removeClass('active');
+                                  \$('#menu_membre').addClass('active');
                                                             });
     </script>
 
@@ -410,6 +425,6 @@ class __TwigTemplate_e405eff56eeba22f6fd2c8b02a8ed8e90312ec4a2ce5bde5f41a0fdeb38
 
     public function getDebugInfo()
     {
-        return array (  376 => 211,  372 => 210,  368 => 209,  364 => 208,  360 => 207,  356 => 206,  352 => 205,  348 => 204,  344 => 203,  339 => 201,  335 => 200,  330 => 199,  327 => 198,  291 => 164,  281 => 160,  277 => 159,  272 => 157,  268 => 156,  264 => 155,  260 => 154,  251 => 148,  235 => 134,  231 => 133,  194 => 98,  192 => 97,  185 => 95,  166 => 79,  154 => 70,  139 => 57,  129 => 53,  124 => 50,  120 => 49,  117 => 48,  107 => 44,  102 => 41,  98 => 40,  95 => 39,  92 => 38,  82 => 32,  63 => 13,  60 => 12,  54 => 8,  49 => 6,  45 => 5,  40 => 4,  11 => 3,);
+        return array (  387 => 219,  383 => 218,  379 => 217,  375 => 216,  371 => 215,  367 => 214,  363 => 213,  359 => 212,  355 => 211,  350 => 209,  346 => 208,  341 => 207,  338 => 206,  302 => 172,  292 => 168,  288 => 167,  283 => 165,  279 => 164,  275 => 163,  271 => 162,  262 => 156,  246 => 142,  242 => 141,  205 => 106,  203 => 105,  196 => 103,  177 => 87,  164 => 77,  154 => 70,  139 => 57,  129 => 53,  124 => 50,  120 => 49,  117 => 48,  107 => 44,  102 => 41,  98 => 40,  95 => 39,  92 => 38,  82 => 32,  63 => 13,  60 => 12,  54 => 8,  49 => 6,  45 => 5,  40 => 4,  11 => 3,);
     }
 }

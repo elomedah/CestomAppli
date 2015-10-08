@@ -5,19 +5,23 @@
       <index name="FK_VILLE_MEMBRE2" columns="IDMEMBRE"/>
       <index name="IDX_BAD8C10FAA834BC0" columns="IDVILLE"/>
     </indexes>
-    <id name="dateDebut" type="string" column="DATE_DEBUT" length="20"/>
-    <id name="idmembre" association-key="true"/>
-    <id name="idville" association-key="true"/>
+    <unique-constraints>
+      <unique-constraint name="IDVILLE" columns="IDVILLE,IDMEMBRE,DATE_DEBUT"/>
+    </unique-constraints>
+    <id name="idvillemembre" type="integer" column="IDVILLEMEMBRE">
+      <generator strategy="IDENTITY"/>
+    </id>
     <field name="adresse" type="string" column="ADRESSE" length="512" nullable="true"/>
-    <one-to-one field="idville" target-entity="Ville">
+    <field name="dateDebut" type="string" column="DATE_DEBUT" length="20" nullable="true"/>
+    <many-to-one field="idville" target-entity="Ville">
       <join-columns>
         <join-column name="IDVILLE" referenced-column-name="IDVILLE"/>
       </join-columns>
-    </one-to-one>
-    <one-to-one field="idmembre" target-entity="Membre">
+    </many-to-one>
+    <many-to-one field="idmembre" target-entity="Membre">
       <join-columns>
         <join-column name="IDMEMBRE" referenced-column-name="IDMEMBRE"/>
       </join-columns>
-    </one-to-one>
+    </many-to-one>
   </entity>
 </doctrine-mapping>

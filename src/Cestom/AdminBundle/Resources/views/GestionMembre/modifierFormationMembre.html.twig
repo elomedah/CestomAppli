@@ -73,7 +73,15 @@
                                         </a>
                                     </li>
 
+					<li class="dropdown">
+												<a  href="{{path('cestom_admin_ajouter_ville_membre',{'idmembre':idmembre})}}">
+													<i class="green ace-icon fa fa-building bigger-120"></i>
+													
+                                                                                                    Villes du Membre
+												</a>
 
+												
+											</li>
 
                                     <li class="active">
                                         <a  href="{{path('cestom_admin_ajouter_formation',{'idmembre':idmembre})}}">
@@ -226,6 +234,10 @@
                                                                 });
 
                                                                 $('#listformation').DataTable();
+                                                                
+                                                                        
+                                  $('.main').removeClass('active');
+                                  $('#menu_membre').addClass('active');
                                                             });
     </script>
 

@@ -300,10 +300,11 @@ class __TwigTemplate_08c954535f329fe5998d9d04fad5a4514e12c4db137cfd2e8a7d7a7e7cc
         echo "\"></script>
     <script type=\"text/javascript\">
                                                             jQuery(function(\$) {
-//datepicker plugin
-                                                          
-
+  \$('.main').removeClass('active');
+                                  \$('#menu_ville').addClass('active');
                                                                 \$('#listville').DataTable();
+                                                                        
+                                
                                                             });
     </script>
 

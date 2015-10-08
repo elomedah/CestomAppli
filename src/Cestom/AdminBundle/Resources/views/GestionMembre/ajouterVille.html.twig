@@ -184,10 +184,12 @@
     <script	src="{{asset('assets/js/jquery.dataTables.bootstrap.js')}}"></script>
     <script type="text/javascript">
                                                             jQuery(function($) {
-//datepicker plugin
-                                                          
-
+                                 
+                                  $('.main').removeClass('active');
+                                  $('#menu_ville').addClass('active');
                                                                 $('#listville').DataTable();
+                                                                
+                                       
                                                             });
     </script>
 

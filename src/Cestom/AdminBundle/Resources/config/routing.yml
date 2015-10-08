@@ -1,27 +1,33 @@
 cestom_admin_homepage:
-    path:     /admin/gestionMembre
+    path:     /admin/membre/gestionMembre
     defaults: { _controller: CestomAdminBundle:GestionMembre:membre }
 cestom_admin_ajouter_member:
-    path:     /admin/ajouterMembre
+    path:     /admin/membre/ajouterMembre
     defaults: { _controller: CestomAdminBundle:AjouterMembre:ajouterMembre }
 cestom_admin_modifier_member:
-    path:     /admin/modifierMembre/{idmembre}
+    path:     /admin/membre/modifierMembre/{idmembre}
     defaults: { _controller: CestomAdminBundle:ModifierMembre:modifierMembre }
 cestom_admin_modifier_formation:
-    path:     /admin/modifierFormation/{idmembre}/{idformation}
+    path:     /admin/formation/modifierFormation/{idmembre}/{idformation}
     defaults: { _controller: CestomAdminBundle:ModifierFormation:modifierFormationMembre }
 cestom_admin_ajouter_formation:
-    path:     /admin/ajouterFormation/{idmembre}
+    path:     /admin/formation/ajouterFormation/{idmembre}
     defaults: { _controller: CestomAdminBundle:AjouterFormation:ajouterFormationMembre }
 cestom_admin_ajouter_ville:
-    path:     /admin/ville/
+    path:     /admin/ville/gestionVille
     defaults: { _controller: CestomAdminBundle:AjouterVille:ajouterVille }
 cestom_admin_modifier_ville:
-    path:     /admin/modifierVille/{idville}
+    path:     /admin/ville/modifierVille/{idville}
     defaults: { _controller: CestomAdminBundle:ModifierVille:modifierVille }
 cestom_admin_ajouter_universite:
-    path:     /admin/universite/
+    path:     /admin/universite/gestionUniversite
     defaults: { _controller: CestomAdminBundle:AjouterUniversite:ajouterUniversite }
 cestom_admin_modifier_universite:
-    path:     /admin/modifierUniversite/{iduniversite}
+    path:     /admin/universite/modifierUniversite/{iduniversite}
     defaults: { _controller: CestomAdminBundle:ModifierUniversite:modifierUniversite }
+cestom_admin_ajouter_ville_membre:
+    path:     /admin/villeMembre/gestionVilleMembre/{idmembre}
+    defaults: { _controller: CestomAdminBundle:AjouterVilleMembre:ajouterVilleMembre }
+cestom_admin_modifier_ville_membre:
+    path:     /admin/villeMembre/modifierVilleMembre/{idmembre}/{idvillemembre}
+    defaults: { _controller: CestomAdminBundle:ModifierVilleMembre:modifierVilleMembre }
