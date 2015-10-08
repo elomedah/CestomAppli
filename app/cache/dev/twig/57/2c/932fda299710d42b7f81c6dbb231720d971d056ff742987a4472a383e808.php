@@ -124,7 +124,7 @@ class __TwigTemplate_572c932fda299710d42b7f81c6dbb231720d971d056ff742987a4472a38
     
     <div>
         <div class=\"table-header\">
-           
+           Les membres
 \t</div>
         <table id=\"listuser\" class=\"table table-striped table-bordered table-hover \" >
             <thead>
@@ -249,7 +249,23 @@ class __TwigTemplate_572c932fda299710d42b7f81c6dbb231720d971d056ff742987a4472a38
         echo "\"></script>
 <script type=\"text/javascript\">
 \t\t\tjQuery(function(\$) {
-\t\t\t\t\$('#listuser').DataTable();
+\t\t\t\t\$('#listuser').DataTable({
+                                                                    
+                                                                    \"language\": {
+            \"lengthMenu\": \"Afficher _MENU_ lignes\",
+            \"zeroRecords\": \"Aucune donnée retrouvée\",
+             \"sSearch\": \"Rechercher\",
+            \"info\": \"Page _PAGE_ sur _PAGES_\",
+            \"infoEmpty\": \"Aucune données\",
+            \"oPaginate\": {
+            \"sFirst\":    \"Premier\",
+            \"sLast\":    \"FIn\",
+            \"sNext\":    \"Suivant\",
+            \"sPrevious\": \"Précedent\"
+        },
+            \"infoFiltered\": \"(filtré sur _MAX_ total lignes)\"
+        }
+                                                                });
 \t\t\t\t
                                   \$('.main').removeClass('active');
                                   \$('#menu_membre').addClass('active');

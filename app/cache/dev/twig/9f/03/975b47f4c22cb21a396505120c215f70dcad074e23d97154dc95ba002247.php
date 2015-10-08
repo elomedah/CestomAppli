@@ -389,7 +389,23 @@ class __TwigTemplate_9f03975b47f4c22cb21a396505120c215f70dcad074e23d97154dc95ba0
                                                                     \$(this).prev().focus();
                                                                 });
 
-                                                                \$('#listformation').DataTable();
+                                                                \$('#listformation').DataTable({
+                                                                    
+                                                                    \"language\": {
+            \"lengthMenu\": \"Afficher _MENU_ lignes\",
+            \"zeroRecords\": \"Aucune donnée retrouvée\",
+             \"sSearch\": \"Rechercher\",
+            \"info\": \"Page _PAGE_ sur _PAGES_\",
+            \"infoEmpty\": \"Aucune données\",
+            \"oPaginate\": {
+            \"sFirst\":    \"Premier\",
+            \"sLast\":    \"FIn\",
+            \"sNext\":    \"Suivant\",
+            \"sPrevious\": \"Précedent\"
+        },
+            \"infoFiltered\": \"(filtré sur _MAX_ total lignes)\"
+        }
+                                                                });
                                                                 
                                                 
                                                             });

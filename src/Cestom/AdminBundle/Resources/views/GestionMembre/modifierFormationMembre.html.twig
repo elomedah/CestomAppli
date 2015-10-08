@@ -233,7 +233,23 @@
                                                                     $(this).prev().focus();
                                                                 });
 
-                                                                $('#listformation').DataTable();
+                                                                $('#listformation').DataTable({
+                                                                    
+                                                                    "language": {
+            "lengthMenu": "Afficher _MENU_ lignes",
+            "zeroRecords": "Aucune donnée retrouvée",
+             "sSearch": "Rechercher",
+            "info": "Page _PAGE_ sur _PAGES_",
+            "infoEmpty": "Aucune données",
+            "oPaginate": {
+            "sFirst":    "Premier",
+            "sLast":    "FIn",
+            "sNext":    "Suivant",
+            "sPrevious": "Précédent"
+        },
+            "infoFiltered": "(filtré sur _MAX_ total lignes)"
+        }
+                                                                });
                                                                 
                                                                         
                                   $('.main').removeClass('active');

@@ -276,7 +276,23 @@ class __TwigTemplate_f8c07938a786e87d304b6920c81f6e7bda005138fa4b0f6b15b0c6534bc
                              
                                   \$('.main').removeClass('active');
                                   \$('#menu_universite').addClass('active');
-                                                                \$('#listuniv').DataTable();
+                                                                \$('#listuniv').DataTable({
+                                                                    
+                                                                    \"language\": {
+            \"lengthMenu\": \"Afficher _MENU_ lignes\",
+            \"zeroRecords\": \"Aucune donnée retrouvée\",
+             \"sSearch\": \"Rechercher\",
+            \"info\": \"Page _PAGE_ sur _PAGES_\",
+            \"infoEmpty\": \"Aucune données\",
+            \"oPaginate\": {
+            \"sFirst\":    \"Premier\",
+            \"sLast\":    \"FIn\",
+            \"sNext\":    \"Suivant\",
+            \"sPrevious\": \"Précedent\"
+        },
+            \"infoFiltered\": \"(filtré sur _MAX_ total lignes)\"
+        }
+                                                                });
                                                             });
     </script>
 

@@ -303,7 +303,23 @@ class __TwigTemplate_f3d8f24a7738254a3d814fa6fa7a3f36e28b99da1384c47cb686d51b738
                                  
                                   \$('.main').removeClass('active');
                                   \$('#menu_ville').addClass('active');
-                                                                \$('#listville').DataTable();
+                                                                \$('#listville').DataTable({
+                                                                    
+                                                                    \"language\": {
+            \"lengthMenu\": \"Afficher _MENU_ lignes\",
+            \"zeroRecords\": \"Aucune donnée retrouvée\",
+             \"sSearch\": \"Rechercher\",
+            \"info\": \"Page _PAGE_ sur _PAGES_\",
+            \"infoEmpty\": \"Aucune données\",
+            \"oPaginate\": {
+            \"sFirst\":    \"Premier\",
+            \"sLast\":    \"FIn\",
+            \"sNext\":    \"Suivant\",
+            \"sPrevious\": \"Précedent\"
+        },
+            \"infoFiltered\": \"(filtré sur _MAX_ total lignes)\"
+        }
+                                                                });
                                                                 
                                        
                                                             });
