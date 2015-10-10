@@ -42,6 +42,7 @@ if (isset ($_POST['dateDebutFormation'])) {
                         ->getRepository('CestomStoreBundle:Universite')
                         ->findOneBynomuniv(htmlspecialchars($_POST['form']['iduniv']));
       $formation->setIduniv($universite);
+ try {
       $em->persist($formation);
       $em->flush();
 
@@ -49,7 +50,12 @@ if (isset ($_POST['dateDebutFormation'])) {
 
 
       return $this->redirect($this->generateUrl('cestom_admin_ajouter_formation',array('idmembre'=>$idmembre,'idformation'=>$idformation)));
-  }else {
+} catch (\Exception $e) {
+      $request->getSession()->getFlashBag()->add('messageerror', 'Echec de la modification de la formation : Cette formation existe déjà');
+    return $this->render('CestomAdminBundle:GestionMembre:modifierFormationMembre.html.twig', array(
+      'form' => $form->createView(),'idmembre'=>$idmembre,'dateDebutFormation'=>$formation->getDateDebutFormation(),'formations'=> $formations,'idformation'=>$idformation  ));
+    }  
+}else {
 $request->getSession()->getFlashBag()->add('messageerror', 'Echec de la modification de la formation');
     return $this->render('CestomAdminBundle:GestionMembre:modifierFormationMembre.html.twig', array(
       'form' => $form->createView(),'idmembre'=>$idmembre,'dateDebutFormation'=>$formation->getDateDebutFormation(),'formations'=> $formations,'idformation'=>$idformation

@@ -27,12 +27,24 @@ if ($request->getMethod() == 'POST') {
        $form->bind($request);
 
       if ($form->isValid()) {
+ try {
       $em->persist($ville);
       $em->flush();
-      $request->getSession()->getFlashBag()->add('messagesucces', 'Ville ajoutée avec succès');
+$request->getSession()->getFlashBag()->add('messagesucces', 'Ville ajoutée avec succès');
 
 
       return $this->redirect($this->generateUrl('cestom_admin_ajouter_ville'));
+      }
+ catch (\Exception $e) {
+       $request->getSession()->getFlashBag()->add('messageerror', 'Echec d\'ajout de la ville');
+       $request->getSession()->getFlashBag()->add('messageerror', 'Duplication de la ville. Veuillez vérifier si la ville n\' existe déjà !!');
+    return $this->render('CestomAdminBundle:GestionMembre:ajouterVille.html.twig', array(
+      'form' => $form->createView(),'villes'=> $villes
+    ));
+    }
+
+
+
   }else {
 $request->getSession()->getFlashBag()->add('messageerror', 'Echec d\'ajout de la ville');
     return $this->render('CestomAdminBundle:GestionMembre:ajouterVille.html.twig', array(

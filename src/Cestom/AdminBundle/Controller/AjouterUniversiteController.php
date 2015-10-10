@@ -29,12 +29,20 @@ if ($request->getMethod() == 'POST') {
        $form->bind($request);
 
       if ($form->isValid()) {
+try{
       $em->persist($universite);
       $em->flush();
       $request->getSession()->getFlashBag()->add('messagesucces', 'Université ajoutée avec succès');
 
 
       return $this->redirect($this->generateUrl('cestom_admin_ajouter_universite'));
+}
+ catch (\Exception $e) {
+$request->getSession()->getFlashBag()->add('messageerror', 'Echec d\'ajout de l\' université: l\'université/Ecole existe déjà');
+    return $this->render('CestomAdminBundle:GestionMembre:ajouterUniversite.html.twig', array(
+      'form' => $form->createView(), 'universites'=> $universites
+    ));
+}
   }else {
 $request->getSession()->getFlashBag()->add('messageerror', 'Echec d\'ajout de l\' université');
     return $this->render('CestomAdminBundle:GestionMembre:ajouterUniversite.html.twig', array(

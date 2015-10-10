@@ -43,14 +43,21 @@ $membre = $em->getRepository('CestomStoreBundle:Membre')
                         ->getRepository('CestomStoreBundle:Ville')
                         ->findOneBynomville(htmlspecialchars($_POST['form']['idville']));
       $villemembre->setIdville($ville);
-      $em->persist($villemembre);
+ try {      
+$em->persist($villemembre);
       $em->flush();
 
       $request->getSession()->getFlashBag()->add('messagesucces', 'Ville du membre modifiée avec succès');
 
 
       return $this->redirect($this->generateUrl('cestom_admin_ajouter_ville_membre',array('idmembre'=>$idmembre)));
-  }else {
+   } catch (\Exception $e) {
+     $request->getSession()->getFlashBag()->add('messageerror', 'Echec de la modification : Ces informations existent déjà pour un autre membre');
+$request->getSession()->getFlashBag()->add('messageerror', 'Echec de modification de la ville du membre : Information déjà ajoutée au membre');
+    return $this->render('CestomAdminBundle:GestionMembre:modifierVilleMembre.html.twig', array(
+      'form' => $form->createView(),'idmembre'=>$idmembre,'dateDebut'=>$villemembre->getDateDebut(),'villesmembre'=> $villesmembre,'idvillemembre'=>$idvillemembre
+    ));
+    } }else {
 $request->getSession()->getFlashBag()->add('messageerror', 'Echec de modification de la ville du membre');
     return $this->render('CestomAdminBundle:GestionMembre:modifierVilleMembre.html.twig', array(
       'form' => $form->createView(),'idmembre'=>$idmembre,'dateDebut'=>$villemembre->getDateDebut(),'villesmembre'=> $villesmembre,'idvillemembre'=>$idvillemembre

@@ -42,6 +42,7 @@ if ($request->getMethod() == 'POST') {
       $membre->setDateEtabMembre(htmlspecialchars($_POST['dateemission']))   ;
       $membre->setDateExpiMembre(htmlspecialchars($_POST['datereception']))   ;
       $membre->setSexe($_POST['sexe']);
+ try {
       $em->persist($membre);
       $em->flush();
 
@@ -49,6 +50,13 @@ if ($request->getMethod() == 'POST') {
 return $this->render('CestomAdminBundle:GestionMembre:modifierMembre.html.twig', array(
       'form' => $form->createView(),'idmembre'=> $idmembre,'sexe'=> $membre->getSexe(),'datenaissance'=>$membre->getDateNaissanceMembre(),'dateemission'=>$membre->getDateEtabMembre(),'dateexpiration'=>$membre->getDateExpiMembre()));
   
+} catch (\Exception $e) {
+     $request->getSession()->getFlashBag()->add('messageerror', 'Echec de la modification : Ces informations existent déjà pour un autre membre');
+    return $this->render('CestomAdminBundle:GestionMembre:modifierMembre.html.twig', array(
+      'form' => $form->createView(),'idmembre'=> $idmembre,'sexe'=> $membre->getSexe(),'datenaissance'=>$membre->getDateNaissanceMembre(),'dateemission'=>$membre->getDateEtabMembre(),'dateexpiration'=>$membre->getDateExpiMembre()
+  
+    ));
+    }  
 
   }else {
 $request->getSession()->getFlashBag()->add('messageerror', 'Echec de la modification');

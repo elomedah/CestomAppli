@@ -30,13 +30,20 @@ if ($request->getMethod() == 'POST') {
        $form->bind($request);
 
       if ($form->isValid()) {
+ try {
       $em->persist($universite);
       $em->flush();
       $request->getSession()->getFlashBag()->add('messagesucces', 'Université modifiée avec succès');
 
 
       return $this->redirect($this->generateUrl('cestom_admin_ajouter_universite'));
-  }else {
+} catch (\Exception $e) {
+     $request->getSession()->getFlashBag()->add('messageerror', 'Echec de la modification : Ces informations existent déjà pour un autre membre');
+  $request->getSession()->getFlashBag()->add('messageerror', 'Echec de modification de l\' université :  Université existe déjà');
+    return $this->render('CestomAdminBundle:GestionMembre:modifierUniversite.html.twig', array(
+      'form' => $form->createView(), 'universites'=> $universites, 'iduniversite'=>$iduniversite
+    ));
+    }  }else {
 $request->getSession()->getFlashBag()->add('messageerror', 'Echec de modification de l\' université');
     return $this->render('CestomAdminBundle:GestionMembre:modifierUniversite.html.twig', array(
       'form' => $form->createView(), 'universites'=> $universites, 'iduniversite'=>$iduniversite

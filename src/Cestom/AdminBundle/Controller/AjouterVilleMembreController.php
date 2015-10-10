@@ -41,6 +41,7 @@ $membre = $em->getRepository('CestomStoreBundle:Membre')
                         ->getRepository('CestomStoreBundle:Ville')
                         ->findOneBynomville(htmlspecialchars($_POST['form']['idville']));
       $villemembre->setIdville($ville);
+ try {
       $em->persist($villemembre);
       $em->flush();
 
@@ -48,6 +49,13 @@ $membre = $em->getRepository('CestomStoreBundle:Membre')
 
 
       return $this->redirect($this->generateUrl('cestom_admin_ajouter_ville_membre',array('idmembre'=>$idmembre)));
+      } catch (\Exception $e) {
+       $request->getSession()->getFlashBag()->add('messageerror', 'Echec d\'ajout de la ville au membre');
+       $request->getSession()->getFlashBag()->add('messageerror', 'Duplication de la donnée : veuillez vérifier les informations saisies');
+    return $this->render('CestomAdminBundle:GestionMembre:ajouterVilleMembre.html.twig', array(
+      'form' => $form->createView(),'idmembre'=>$idmembre,'dateDebut'=>$villemembre->getDateDebut(),'villesmembre'=> $villesmembre
+    ));
+    }
   }else {
 $request->getSession()->getFlashBag()->add('messageerror', 'Echec d\'ajout de la ville au membre');
     return $this->render('CestomAdminBundle:GestionMembre:ajouterVilleMembre.html.twig', array(

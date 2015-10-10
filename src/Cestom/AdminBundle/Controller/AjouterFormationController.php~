@@ -34,8 +34,9 @@ if ($request->getMethod() == 'POST') {
 
       if ($form->isValid()) {
 if (isset ($_POST['dateDebutFormation'])) {
-}
    $formation->setDateDebutFormation($_POST['dateDebutFormation']);
+}
+
 $membre = $em->getRepository('CestomStoreBundle:Membre')
                 ->findOneByidmembre($idmembre);
        $formation->setIdmembre($membre);
@@ -44,6 +45,7 @@ $membre = $em->getRepository('CestomStoreBundle:Membre')
                         ->getRepository('CestomStoreBundle:Universite')
                         ->findOneBynomuniv(htmlspecialchars($_POST['form']['iduniv']));
       $formation->setIduniv($universite);
+try {
       $em->persist($formation);
       $em->flush();
 
@@ -51,6 +53,15 @@ $membre = $em->getRepository('CestomStoreBundle:Membre')
 
 
       return $this->redirect($this->generateUrl('cestom_admin_ajouter_formation',array('idmembre'=>$idmembre)));
+
+}
+ catch (\Exception $e) {
+$request->getSession()->getFlashBag()->add('messageerror', 'Echec d\'ajout de la formation');
+$request->getSession()->getFlashBag()->add('messageerror', 'Duplication de la formation pour le même membre');
+    return $this->render('CestomAdminBundle:GestionMembre:ajouterFormationMembre.html.twig', array(
+      'form' => $form->createView(),'idmembre'=>$idmembre,'dateDebutFormation'=>$formation->getDateDebutFormation(),'formations'=> $formations
+    ));
+}
   }else {
 $request->getSession()->getFlashBag()->add('messageerror', 'Echec d\'ajout de la formation');
     return $this->render('CestomAdminBundle:GestionMembre:ajouterFormationMembre.html.twig', array(

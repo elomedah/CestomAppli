@@ -14,16 +14,16 @@ class AjouterMembreController extends Controller
     $membre = new Membre();
     // On ajoute les champs de l'entité que l'on veut à notre formulaire
     $form = $this->createFormBuilder($membre)
-      ->add('emailMembre',      'email', array( 'required' => false))
-      ->add('username',     'text', array( 'required' => false))
-      ->add('nomMembre',   'text', array('required' => false))
-      ->add('prenomMembre',    'text', array( 'required' => false))
-      ->add('numeroPassportMembre',     'text', array( 'required' => false))
-      ->add('promotionMembre',     'text', array('required' => false))
-      ->add('contactUrgence',     'textarea', array( 'required' => false))
+      ->add('emailMembre',      'email', array( 'required' => true))
+      ->add('username',     'text', array( 'required' => true))
+      ->add('nomMembre',   'text', array('required' => true))
+      ->add('prenomMembre',    'text', array( 'required' => true))
+      ->add('numeroPassportMembre',     'text', array( 'required' => true))
+      ->add('promotionMembre',     'text', array('required' => true))
+      ->add('contactUrgence',     'textarea', array( 'required' => true))
       ->add('infoComplementmembre',     'textarea', array( 'required' => false))
       ->add('photoMimMembre',     'file', array( 'required' => false))
-      ->add('username',     'text', array( 'required' => false)) 
+      ->add('username',     'text', array( 'required' => true)) 
       ->getForm();
   
 // On récupère la requête
@@ -40,13 +40,26 @@ if ($request->getMethod() == 'POST') {
       $membre->setDateEtabMembre(htmlspecialchars($_POST['dateemission']))   ;
       $membre->setDateExpiMembre(htmlspecialchars($_POST['datereception']))   ;
       if ( isset($_POST['sexe']) ) { $membre->setSexe($_POST['sexe']) ;}
-      $em->persist($membre);
+     
+
+try {
+       $em->persist($membre);
       $em->flush();
 
       $request->getSession()->getFlashBag()->add('messagesucces', 'Utilisateur ajouté avec succès');
 
 
       return $this->redirect($this->generateUrl('cestom_admin_homepage'));
+
+}
+ catch (\Exception $e) {
+$request->getSession()->getFlashBag()->add('messageerror', 'Utilisateur non ajouté avec succès. Membre existe déjà (email).');
+    return $this->render('CestomAdminBundle:GestionMembre:ajouterMembre.html.twig', array(
+      'form' => $form->createView(),'sexe'=> $membre->getSexe(),'datenaissance'=>$membre->getDateNaissanceMembre(),'dateemission'=>$membre->getDateEtabMembre(),'dateexpiration'=>$membre->getDateExpiMembre()));
+  
+}
+
+
   }else {
 $request->getSession()->getFlashBag()->add('messageerror', 'Utilisateur non ajouté avec succès');
     return $this->render('CestomAdminBundle:GestionMembre:ajouterMembre.html.twig', array(

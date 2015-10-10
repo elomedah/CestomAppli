@@ -29,12 +29,19 @@ if ($request->getMethod() == 'POST') {
 
       if ($form->isValid()) {
       $em->persist($ville);
+ try {
       $em->flush();
       $request->getSession()->getFlashBag()->add('messagesucces', 'Ville modifiée avec succès');
 
 
       return $this->redirect($this->generateUrl('cestom_admin_ajouter_ville'));
-  }else {
+  } catch (\Exception $e) {
+    
+$request->getSession()->getFlashBag()->add('messageerror', 'Echec de modification de la ville : ce nom de ville existe déjà');
+    return $this->render('CestomAdminBundle:GestionMembre:modifierVille.html.twig', array(
+      'form' => $form->createView(),'villes'=> $villes,'idville'=>$idville
+    ));
+    }}else {
 $request->getSession()->getFlashBag()->add('messageerror', 'Echec de modification de la ville');
     return $this->render('CestomAdminBundle:GestionMembre:modifierVille.html.twig', array(
       'form' => $form->createView(),'villes'=> $villes,'idville'=>$idville
