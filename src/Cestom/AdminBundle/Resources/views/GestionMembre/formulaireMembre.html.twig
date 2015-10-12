@@ -6,21 +6,15 @@
                             Général
                         </h4>
                     </div>			
-                    <div class="col-sm-10 widget-main">
+                    
+                     <div class="col-sm-10 widget-main">
 
-                        {{ form_label(form.username, "Nom usuel", {'label_attr': {'class': 'col-sm-3 control-label '}}) }}
+                        {{ form_label(form.username, "Username ", {'label_attr': {'class': 'col-sm-3 control-label '}}) }}
 
                         {{ form_widget(form.username, {'attr': {'class': 'col-xs-10 col-sm-5'}}) }}
 
-                    </div>
-
-                    <div class="col-sm-10 widget-main">
-
-                        {{ form_label(form.emailMembre, "Email", {'label_attr': {'class': 'col-sm-3 control-label '}}) }}
-
-                        {{ form_widget(form.emailMembre, {'attr': {'class': 'col-xs-10 col-sm-5'}}) }}
-
-                    </div>
+                    </div>   
+                        
                     <div class="col-sm-10 widget-main">
 
                         {{ form_label(form.nomMembre, "Nom ", {'label_attr': {'class': 'col-sm-3 control-label '}}) }}
@@ -76,13 +70,34 @@
                         </div>
                        
                         
-			
+			  <div class="col-sm-10 widget-main">
+
+                        {{ form_label(form.telephonefirst, "Télephone 1 ", {'label_attr': {'class': 'col-sm-3 control-label '}}) }}
+
+                        {{ form_widget(form.telephonefirst, {'attr': {'class': 'col-xs-10 col-sm-5'}}) }}
+
+                    </div> 
+  <div class="col-sm-10 widget-main">
+
+                        {{ form_label(form.telephonesecond, "Télephone 2 ", {'label_attr': {'class': 'col-sm-3 control-label '}}) }}
+
+                        {{ form_widget(form.telephonesecond, {'attr': {'class': 'col-xs-10 col-sm-5'}}) }}
+
+                    </div> 
 
                     <div class="col-sm-10 widget-main">
 
                         {{ form_label(form.promotionMembre, "Promotion ", {'label_attr': {'class': 'col-sm-3 control-label '}}) }}
 
                         {{ form_widget(form.promotionMembre, {'attr': {'class': 'col-xs-10 col-sm-5'}}) }}
+
+                    </div>
+                        
+                        <div class="col-sm-10 widget-main">
+
+                        {{ form_label(form.dernierLyceeFrequente, "Dernier lycée fréquenté ", {'label_attr': {'class': 'col-sm-3 control-label '}}) }}
+
+                        {{ form_widget(form.dernierLyceeFrequente, {'attr': {'class': 'col-xs-10 col-sm-5'}}) }}
 
                     </div>
                     <div class="col-sm-10 widget-main">

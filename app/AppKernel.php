@@ -19,6 +19,8 @@ class AppKernel extends Kernel
             new Cestom\AdminBundle\CestomAdminBundle(),
             new Cestom\UserBundle\CestomUserBundle(),
             new Cestom\StoreBundle\CestomStoreBundle(),
+            new FOS\UserBundle\FOSUserBundle(),
+
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

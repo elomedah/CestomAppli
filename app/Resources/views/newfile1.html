@@ -1,0 +1,76 @@
+{% trans_default_domain 'FOSUserBundle' %}
+
+  
+    <div id="signup-box" class="signup-box widget-box no-border">
+									<div class="widget-body">
+										<div class="widget-main">
+											<h4 class="header green lighter bigger">
+												<i class="ace-icon fa fa-users blue"></i>
+												S'enregistrer 
+											</h4>
+
+											<div class="space-6"></div>
+											
+<form action="{{ path('fos_user_registration_register') }}"  method="POST" >
+												<fieldset>
+													<label class="block clearfix">
+														<span class="block input-icon input-icon-right">
+															<input name="_email" type="email" class="form-control" placeholder="Email" />
+															<i class="ace-icon fa fa-envelope"></i>
+														</span>
+													</label>
+
+													<label class="block clearfix">
+														<span class="block input-icon input-icon-right">
+															<input name="_username" type="text" class="form-control" placeholder="Username" />
+															<i class="ace-icon fa fa-user"></i>
+														</span>
+													</label>
+
+													<label class="block clearfix">
+														<span class="block input-icon input-icon-right">
+															<input name="_password" type="password" class="form-control" placeholder="Password" />
+															<i class="ace-icon fa fa-lock"></i>
+														</span>
+													</label>
+
+													<label class="block clearfix">
+														<span class="block input-icon input-icon-right">
+															<input type="_password_confirmation" class="form-control" placeholder="Repeat password" />
+															<i class="ace-icon fa fa-retweet"></i>
+														</span>
+													</label>
+
+													<label class="block">
+														<input type="checkbox" class="ace" />
+														<span class="lbl">
+															J'accepte les conditions de la CESTOM
+															<a href="#">Règlement ici</a>
+														</span>
+													</label>
+
+													<div class="space-24"></div>
+
+													<div class="clearfix">
+														
+														<button type="button" class="width-65 pull-right btn btn-sm btn-success">
+															<span class="bigger-110"> S'inscrire</span>
+
+															<i class="ace-icon fa fa-arrow-right icon-on-right"></i>
+														</button>
+													</div>
+												</fieldset>
+											</form>
+
+										</div>
+										<div class="toolbar center">
+											<a href="{{ path('fos_user_security_check') }}" data-target="#login-box" class="back-to-login-link">
+												<i class="ace-icon fa fa-arrow-left"></i>
+												Retour à la connexion
+											</a>
+										</div>
+									</div><!-- /.widget-body -->
+                                                                        
+								</div><!-- /.signup-box -->
+    
+

@@ -6,28 +6,18 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * Ville
- *
- * @ORM\Table(name="VILLE", uniqueConstraints={@ORM\UniqueConstraint(name="NOMVILLE", columns={"NOMVILLE"})})
- * @ORM\Entity
  */
 class Ville
 {
     /**
      * @var string
-     *
-     * @ORM\Column(name="NOMVILLE", type="string", length=255, nullable=false)
      */
     private $nomville;
 
     /**
      * @var integer
-     *
-     * @ORM\Column(name="IDVILLE", type="integer")
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="IDENTITY")
      */
     private $idville;
-
 
 
     /**

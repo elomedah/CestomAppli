@@ -6,15 +6,10 @@
       <index name="FK_BUREAU_VILLE3" columns="ANNEE_SCOLAIRE"/>
       <index name="IDX_9C37DC74AA834BC0" columns="IDVILLE"/>
     </indexes>
+    <id name="anneeScolaire" association-key="true"/>
     <id name="idville" association-key="true"/>
     <id name="idmembre" association-key="true"/>
-    <id name="anneeScolaire" association-key="true"/>
     <field name="posteMembre" type="string" column="POSTE_MEMBRE" length="255" nullable="false"/>
-    <one-to-one field="anneeScolaire" target-entity="AnneeScolaire">
-      <join-columns>
-        <join-column name="ANNEE_SCOLAIRE" referenced-column-name="ANNEE_SCOLAIRE"/>
-      </join-columns>
-    </one-to-one>
     <one-to-one field="idmembre" target-entity="Membre">
       <join-columns>
         <join-column name="IDMEMBRE" referenced-column-name="IDMEMBRE"/>
@@ -23,6 +18,11 @@
     <one-to-one field="idville" target-entity="Ville">
       <join-columns>
         <join-column name="IDVILLE" referenced-column-name="IDVILLE"/>
+      </join-columns>
+    </one-to-one>
+    <one-to-one field="anneeScolaire" target-entity="AnneeScolaire">
+      <join-columns>
+        <join-column name="ANNEE_SCOLAIRE" referenced-column-name="ANNEE_SCOLAIRE"/>
       </join-columns>
     </one-to-one>
   </entity>

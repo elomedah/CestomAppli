@@ -6,76 +6,53 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * Formation
- *
- * @ORM\Table(name="FORMATION", indexes={@ORM\Index(name="FK_FORMATION_MEMBRE", columns={"IDMEMBRE"}), @ORM\Index(name="FK_UNIVERSITE_FORMATION", columns={"IDUNIV"})})
- * @ORM\Entity
  */
 class Formation
 {
     /**
      * @var string
-     *
-     * @ORM\Column(name="LIBELLE_FORMATION", type="string", length=255, nullable=false)
      */
     private $libelleFormation;
 
     /**
      * @var string
-     *
-     * @ORM\Column(name="DIPLOME_VISE_FORMATION", type="string", length=255, nullable=false)
      */
     private $diplomeViseFormation;
 
     /**
      * @var string
-     *
-     * @ORM\Column(name="PROGRAMME_BOURSE", type="string", length=255, nullable=true)
      */
     private $programmeBourse;
 
     /**
      * @var string
-     *
-     * @ORM\Column(name="DATE_DEBUT_FORMATION", type="string", length=255, nullable=true)
      */
     private $dateDebutFormation;
 
     /**
      * @var string
-     *
-     * @ORM\Column(name="DUREE_FORMATION", type="decimal", precision=10, scale=0, nullable=true)
      */
     private $dureeFormation;
 
     /**
+     * @var string
+     */
+    private $competenceAcquise;
+
+    /**
      * @var integer
-     *
-     * @ORM\Column(name="ID_FORMATION", type="integer")
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="IDENTITY")
      */
     private $idFormation;
 
     /**
-     * @var \Cestom\StoreBundle\Entity\Universite
-     *
-     * @ORM\ManyToOne(targetEntity="Cestom\StoreBundle\Entity\Universite")
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="IDUNIV", referencedColumnName="IDUNIV")
-     * })
-     */
-    private $iduniv;
-
-    /**
      * @var \Cestom\StoreBundle\Entity\Membre
-     *
-     * @ORM\ManyToOne(targetEntity="Cestom\StoreBundle\Entity\Membre")
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="IDMEMBRE", referencedColumnName="IDMEMBRE")
-     * })
      */
     private $idmembre;
 
+    /**
+     * @var \Cestom\StoreBundle\Entity\Universite
+     */
+    private $iduniv;
 
 
     /**
@@ -194,6 +171,29 @@ class Formation
     }
 
     /**
+     * Set competenceAcquise
+     *
+     * @param string $competenceAcquise
+     * @return Formation
+     */
+    public function setCompetenceAcquise($competenceAcquise)
+    {
+        $this->competenceAcquise = $competenceAcquise;
+
+        return $this;
+    }
+
+    /**
+     * Get competenceAcquise
+     *
+     * @return string 
+     */
+    public function getCompetenceAcquise()
+    {
+        return $this->competenceAcquise;
+    }
+
+    /**
      * Get idFormation
      *
      * @return integer 
@@ -201,29 +201,6 @@ class Formation
     public function getIdFormation()
     {
         return $this->idFormation;
-    }
-
-    /**
-     * Set iduniv
-     *
-     * @param \Cestom\StoreBundle\Entity\Universite $iduniv
-     * @return Formation
-     */
-    public function setIduniv(\Cestom\StoreBundle\Entity\Universite $iduniv = null)
-    {
-        $this->iduniv = $iduniv;
-
-        return $this;
-    }
-
-    /**
-     * Get iduniv
-     *
-     * @return \Cestom\StoreBundle\Entity\Universite 
-     */
-    public function getIduniv()
-    {
-        return $this->iduniv;
     }
 
     /**
@@ -247,5 +224,28 @@ class Formation
     public function getIdmembre()
     {
         return $this->idmembre;
+    }
+
+    /**
+     * Set iduniv
+     *
+     * @param \Cestom\StoreBundle\Entity\Universite $iduniv
+     * @return Formation
+     */
+    public function setIduniv(\Cestom\StoreBundle\Entity\Universite $iduniv = null)
+    {
+        $this->iduniv = $iduniv;
+
+        return $this;
+    }
+
+    /**
+     * Get iduniv
+     *
+     * @return \Cestom\StoreBundle\Entity\Universite 
+     */
+    public function getIduniv()
+    {
+        return $this->iduniv;
     }
 }

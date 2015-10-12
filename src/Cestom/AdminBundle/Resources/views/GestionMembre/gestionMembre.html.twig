@@ -18,6 +18,9 @@
 {% block soustitre %} 
 
     Liste des membres
+    
+     <!-- #section:basics/content.searchbox -->
+                   
 
 {% endblock %}
 
@@ -40,12 +43,30 @@
 </div>
 </div>
 {% endfor %}
+<div class="nav-search" id="nav-search">
+                        <form   method = "POST"  action = "{{ path('cestom_admin_homepage')}}"class="form-search">
+                            <span class="input-icon">
+                                <input name="ville" type="choice" placeholder="Ville ..." class="nav-search-input" id="nav-search-input" autocomplete="off" />
+                                <i class="ace-icon fa fa-search nav-search-icon"></i>
+                            </span>
+                            <span class="input-icon">
+                                <input name="universite" type="text" placeholder="Université ..." class="nav-search-input" id="nav-search-input" autocomplete="off" />
+                                <i class="ace-icon fa fa-search nav-search-icon"></i>
+                            </span>
+                            
+                              <button id="ajouter" type="submit" class="btn btn-sm btn-success">
+                             Rechercher
+                             </button>
+                        </form>
+                    </div><!-- /.nav-search -->
     <div> 
     <a href="{{ path('cestom_admin_ajouter_member')}}"> 
         <button id="ajouter" type="button" class="btn btn-sm btn-success">
                         Ajouter nouveau
                     </button>
     </a>
+        
+         
     </div>
         <br>
     
@@ -95,14 +116,14 @@
                        
                           
 
-                            <a class="green" href="{{path('cestom_admin_modifier_member',{'idmembre': membre.idMembre})}}">
+                            <a class="green" href="{{path('cestom_admin_modifier_member',{'idmembre': membre.idmembre})}}">
                                 <i class="ace-icon fa fa-pencil bigger-130"></i>
                             </a>
 
                     </td>
                     <td>{{ membre.nomMembre}} </td>
                     <td>{{membre.prenomMembre}}</td>
-                    <td>{{membre.username}} </td>
+                    <td>{{membre.id.username}} </td>
                     <td>{{membre.sexe}}</td>
                     
                     <th>{{membre.numeroPassportMembre}}</th>
@@ -131,7 +152,7 @@
             "zeroRecords": "Aucune donnée retrouvée",
              "sSearch": "Rechercher",
             "info": "Page _PAGE_ sur _PAGES_",
-            "infoEmpty": "Aucune données",
+            "infoEmpty": "Aucune donnée",
             "oPaginate": {
             "sFirst":    "Premier",
             "sLast":    "FIn",

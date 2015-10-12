@@ -12,7 +12,7 @@
       <generator strategy="IDENTITY"/>
     </id>
     <field name="adresse" type="string" column="ADRESSE" length="512" nullable="true"/>
-    <field name="dateDebut" type="string" column="DATE_DEBUT" length="20" nullable="true"/>
+    <field name="dateDebut" type="string" column="DATE_DEBUT" length="20" nullable="false"/>
     <many-to-one field="idville" target-entity="Ville">
       <join-columns>
         <join-column name="IDVILLE" referenced-column-name="IDVILLE"/>

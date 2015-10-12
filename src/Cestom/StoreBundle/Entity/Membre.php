@@ -6,173 +6,89 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * Membre
- *
- * @ORM\Table(name="MEMBRE")
- * @ORM\Entity
  */
 class Membre
 {
     /**
      * @var string
-     *
-     * @ORM\Column(name="EMAIL_MEMBRE", type="string", length=255, nullable=false)
-     */
-    private $emailMembre;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="PASSWORD", type="string", length=1024, nullable=true)
-     */
-    private $password;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="SEXE", type="string", length=1, nullable=true)
      */
     private $sexe;
 
     /**
      * @var string
-     *
-     * @ORM\Column(name="USERNAME", type="string", length=255, nullable=false)
-     */
-    private $username;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="NOM_MEMBRE", type="string", length=255, nullable=true)
      */
     private $nomMembre;
 
     /**
      * @var string
-     *
-     * @ORM\Column(name="PRENOM_MEMBRE", type="string", length=255, nullable=true)
      */
     private $prenomMembre;
 
     /**
      * @var string
-     *
-     * @ORM\Column(name="NUMERO_PASSPORT_MEMBRE", type="string", length=15, nullable=true)
      */
     private $numeroPassportMembre;
 
     /**
      * @var string
-     *
-     * @ORM\Column(name="DATE_EXPI_MEMBRE", type="string", length=255, nullable=true)
      */
     private $dateExpiMembre;
 
     /**
      * @var string
-     *
-     * @ORM\Column(name="DATE_ETAB_MEMBRE", type="string", length=255, nullable=true)
      */
     private $dateEtabMembre;
 
     /**
      * @var integer
-     *
-     * @ORM\Column(name="PROMOTION_MEMBRE", type="integer", nullable=true)
      */
     private $promotionMembre;
 
     /**
      * @var string
-     *
-     * @ORM\Column(name="DATE_NAISSANCE_MEMBRE", type="string", length=255, nullable=true)
      */
     private $dateNaissanceMembre;
 
     /**
      * @var string
-     *
-     * @ORM\Column(name="CONTACT_URGENCE", type="string", length=2048, nullable=true)
      */
     private $contactUrgence;
 
     /**
      * @var string
-     *
-     * @ORM\Column(name="INFO_COMPLEMENTMEMBRE", type="string", length=4096, nullable=true)
+     */
+    private $telephonefirst;
+
+    /**
+     * @var string
+     */
+    private $telephonesecond;
+
+    /**
+     * @var string
      */
     private $infoComplementmembre;
 
     /**
      * @var string
-     *
-     * @ORM\Column(name="PHOTO_MIM_MEMBRE", type="blob", nullable=true)
      */
     private $photoMimMembre;
 
     /**
      * @var string
-     *
-     * @ORM\Column(name="DERNIER_LYCEE_FREQUENTE", type="string", length=255, nullable=true)
      */
     private $dernierLyceeFrequente;
 
     /**
      * @var integer
-     *
-     * @ORM\Column(name="IDMEMBRE", type="integer")
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="IDENTITY")
      */
     private $idmembre;
 
-
-
     /**
-     * Set emailMembre
-     *
-     * @param string $emailMembre
-     * @return Membre
+     * @var \Cestom\StoreBundle\Entity\Fosuser
      */
-    public function setEmailMembre($emailMembre)
-    {
-        $this->emailMembre = $emailMembre;
+    private $id;
 
-        return $this;
-    }
-
-    /**
-     * Get emailMembre
-     *
-     * @return string 
-     */
-    public function getEmailMembre()
-    {
-        return $this->emailMembre;
-    }
-
-    /**
-     * Set password
-     *
-     * @param string $password
-     * @return Membre
-     */
-    public function setPassword($password)
-    {
-        $this->password = $password;
-
-        return $this;
-    }
-
-    /**
-     * Get password
-     *
-     * @return string 
-     */
-    public function getPassword()
-    {
-        return $this->password;
-    }
 
     /**
      * Set sexe
@@ -195,29 +111,6 @@ class Membre
     public function getSexe()
     {
         return $this->sexe;
-    }
-
-    /**
-     * Set username
-     *
-     * @param string $username
-     * @return Membre
-     */
-    public function setUsername($username)
-    {
-        $this->username = $username;
-
-        return $this;
-    }
-
-    /**
-     * Get username
-     *
-     * @return string 
-     */
-    public function getUsername()
-    {
-        return $this->username;
     }
 
     /**
@@ -405,6 +298,52 @@ class Membre
     }
 
     /**
+     * Set telephonefirst
+     *
+     * @param string $telephonefirst
+     * @return Membre
+     */
+    public function setTelephonefirst($telephonefirst)
+    {
+        $this->telephonefirst = $telephonefirst;
+
+        return $this;
+    }
+
+    /**
+     * Get telephonefirst
+     *
+     * @return string 
+     */
+    public function getTelephonefirst()
+    {
+        return $this->telephonefirst;
+    }
+
+    /**
+     * Set telephonesecond
+     *
+     * @param string $telephonesecond
+     * @return Membre
+     */
+    public function setTelephonesecond($telephonesecond)
+    {
+        $this->telephonesecond = $telephonesecond;
+
+        return $this;
+    }
+
+    /**
+     * Get telephonesecond
+     *
+     * @return string 
+     */
+    public function getTelephonesecond()
+    {
+        return $this->telephonesecond;
+    }
+
+    /**
      * Set infoComplementmembre
      *
      * @param string $infoComplementmembre
@@ -481,5 +420,28 @@ class Membre
     public function getIdmembre()
     {
         return $this->idmembre;
+    }
+
+    /**
+     * Set id
+     *
+     * @param \Cestom\StoreBundle\Entity\Fosuser $id
+     * @return Membre
+     */
+    public function setId(\Cestom\StoreBundle\Entity\Fosuser $id = null)
+    {
+        $this->id = $id;
+
+        return $this;
+    }
+
+    /**
+     * Get id
+     *
+     * @return \Cestom\StoreBundle\Entity\Fosuser 
+     */
+    public function getId()
+    {
+        return $this->id;
     }
 }

@@ -17,16 +17,18 @@ class ModifierMembreController extends Controller
     
     // On ajoute les champs de l'entité que l'on veut à notre formulaire
     $form = $this->createFormBuilder($membre)
-      ->add('emailMembre',      'email', array( 'required' => false))
-      ->add('username',     'text', array( 'required' => false))
-      ->add('nomMembre',   'text', array('required' => false))
-      ->add('prenomMembre',    'text', array( 'required' => false))
-      ->add('numeroPassportMembre',     'text', array( 'required' => false))
-      ->add('promotionMembre',     'text', array('required' => false))
-      ->add('contactUrgence',     'textarea', array( 'required' => false))
+      
+       ->add('nomMembre',   'text', array('required' => true))
+      ->add('prenomMembre',    'text', array( 'required' => true))
+      ->add('numeroPassportMembre',     'text', array( 'required' => true))
+      ->add('promotionMembre',     'text', array('required' => true))
+      ->add('contactUrgence',     'textarea', array( 'required' => true))
       ->add('infoComplementmembre',     'textarea', array( 'required' => false))
       ->add('photoMimMembre',     'file', array( 'required' => false))
-      ->add('username',     'text', array( 'required' => false)) 
+       ->add('telephonefirst',     'text', array( 'required' => false))
+       ->add('telephonesecond',     'text', array( 'required' => false))
+      ->add('dernierLyceeFrequente',     'text', array( 'required' => true)) 
+      ->add('username', 'text', array('mapped' => false,'disabled'=>true,'data' => $membre->getId()->getUsername()))
       ->getForm();
 
 // On récupère la requête
@@ -36,12 +38,13 @@ if ($request->getMethod() == 'POST') {
        $form->bind($request);
 
       if ($form->isValid()) {
+
       // On l'enregistre notre objet $advert dans la base de données, par exemple
       $em = $this->getDoctrine()->getManager();
       $membre->setDateNaissanceMembre(htmlspecialchars($_POST['datenaissance']))   ;
       $membre->setDateEtabMembre(htmlspecialchars($_POST['dateemission']))   ;
       $membre->setDateExpiMembre(htmlspecialchars($_POST['datereception']))   ;
-      $membre->setSexe($_POST['sexe']);
+      if ( isset($_POST['sexe']) ) { $membre->setSexe($_POST['sexe']) ;}
  try {
       $em->persist($membre);
       $em->flush();
@@ -73,4 +76,19 @@ $request->getSession()->getFlashBag()->add('messageerror', 'Echec de la modifica
 
 }
 
+public  function collectUsername(){
+ $repository = $this->getDoctrine()
+		->getManager()
+		->getRepository('CestomStoreBundle:Fosuser');
+	
+	    $users=$repository->findAll();
+
+  $listusers= array(); 
+
+   foreach ( $users as $user){
+    $listusers[$user->getUsername()] =$user->getUsername(); 
+  
+}
+return $listusers ;
+}
 }

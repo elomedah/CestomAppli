@@ -35,8 +35,9 @@ if ($request->getMethod() == 'POST') {
 
       if ($form->isValid()) {
 if (isset ($_POST['dateDebutFormation'])) {
+$formation->setDateDebutFormation($_POST['dateDebutFormation']);
 }
-   $formation->setDateDebutFormation($_POST['dateDebutFormation']);
+   
   $universite = $this->getDoctrine()
                         ->getManager()
                         ->getRepository('CestomStoreBundle:Universite')

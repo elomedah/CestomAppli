@@ -10,4 +10,5 @@ cestom_admin:
     resource: "@CestomAdminBundle/Resources/config/routing.yml"
     prefix:   /
 
-
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"
