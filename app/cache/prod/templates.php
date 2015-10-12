@@ -79,6 +79,7 @@
   'DoctrineBundle:Collector:db.html.twig' => '/var/www/cestom/vendor/doctrine/doctrine-bundle/Resources/views/Collector/db.html.twig',
   'CestomAdminBundle:Default:index.html.twig' => '/var/www/cestom/src/Cestom/AdminBundle/Resources/views/Default/index.html.twig',
   'CestomAdminBundle::layout.html.twig' => '/var/www/cestom/src/Cestom/AdminBundle/Resources/views/layout.html.twig',
+  'CestomAdminBundle:GestionMembre:ajouterFormationMembre.html.twig~' => '/var/www/cestom/src/Cestom/AdminBundle/Resources/views/GestionMembre/ajouterFormationMembre.html.twig~',
   'CestomAdminBundle:GestionMembre:modifierFormationMembre.html.twig' => '/var/www/cestom/src/Cestom/AdminBundle/Resources/views/GestionMembre/modifierFormationMembre.html.twig',
   'CestomAdminBundle:GestionMembre:ajouterVille.html.twig' => '/var/www/cestom/src/Cestom/AdminBundle/Resources/views/GestionMembre/ajouterVille.html.twig',
   'CestomAdminBundle:GestionMembre:formulaireVille.html.twig' => '/var/www/cestom/src/Cestom/AdminBundle/Resources/views/GestionMembre/formulaireVille.html.twig',
