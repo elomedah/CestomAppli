@@ -1,0 +1,39 @@
+ {{ form_errors(form) }}
+                 			
+                    <div class="col-sm-10 widget-main">
+
+                        {{ form_label(form.idville, "Ville ", {'label_attr': {'class': 'col-sm-3 control-label '}}) }}
+
+                        {{ form_widget(form.idville, {'attr': {'class': 'col-xs-10 col-sm-5'}}) }}
+
+                    </div>
+
+                    <div class="col-sm-10 widget-main">
+
+                        {{ form_label(form.anneeScolaire, "Année scolaire", {'label_attr': {'class': 'col-sm-3 control-label '}}) }}
+
+                        {{ form_widget(form.anneeScolaire, {'attr': {'class': 'col-xs-10 col-sm-5'}}) }}
+
+                    </div>
+                    
+                     <div class="col-sm-10 widget-main">
+
+                        {{ form_label(form.idmembre, "Nom du membre", {'label_attr': {'class': 'col-sm-3 control-label '}}) }}
+
+                        {{ form_widget(form.idmembre, {'attr': {'class': 'col-xs-10 col-sm-5'}}) }}
+
+                    </div>
+
+                       <div class="col-sm-10 widget-main">
+
+                        {{ form_label(form.posteMembre, "Poste du membre", {'label_attr': {'class': 'col-sm-3 control-label '}}) }}
+
+                        {{ form_widget(form.posteMembre, {'attr': {'class': 'col-xs-10 col-sm-5'}}) }}
+
+                    </div>
+                      
+                </fieldset>
+                        
+            {{ form_rest(form) }}
+
+                

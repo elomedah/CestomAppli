@@ -155,7 +155,7 @@ class __TwigTemplate_f3d8f24a7738254a3d814fa6fa7a3f36e28b99da1384c47cb686d51b738
                                     <li class=\"dropdown\">
                                         <a  href=\"";
         // line 77
-        echo $this->env->getExtension('routing')->getPath("cestom_admin_ajouter_ville");
+        echo $this->env->getExtension('routing')->getPath("cestom_admin_ajouter_bureau_ville");
         echo "\">
                                             <i class=\"green ace-icon fa fa-star bigger-120\"></i>
                                             Bureau de la ville
@@ -247,16 +247,23 @@ class __TwigTemplate_f3d8f24a7738254a3d814fa6fa7a3f36e28b99da1384c47cb686d51b738
         echo $this->env->getExtension('routing')->getPath("cestom_admin_ajouter_ville");
         echo "\">\t
 
+ <fieldset>
+                    <div class=\"col-sm-10 widget-main\">
+                        <h4 class=\"header blue bolder smaller\">
+                            Ajouter une ville
+                        </h4>
+                    </div>
                                                     ";
-        // line 147
+        // line 153
         $this->env->loadTemplate("CestomAdminBundle:GestionMembre:formulaireVille.html.twig")->display($context);
-        // line 148
+        // line 154
         echo "                                                    <div class=\"form-actions center\">
                                                         <button id=\"valider\" type=\"submit\" class=\"btn btn-sm btn-success\">
                                                             Ajouter
                                                             <i class=\"ace-icon fa fa-save icon-on-right bigger-110\"></i>
                                                         </button>
                                                     </div>
+ </fieldset>
                                                 </form>
 
 
@@ -285,17 +292,17 @@ class __TwigTemplate_f3d8f24a7738254a3d814fa6fa7a3f36e28b99da1384c47cb686d51b738
 ";
     }
 
-    // line 181
+    // line 188
     public function block_javascript($context, array $blocks = array())
     {
-        // line 182
+        // line 189
         echo "    
     <script src=\"";
-        // line 183
+        // line 190
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("assets/js/jquery.dataTables.min.js"), "html", null, true);
         echo "\"></script>
     <script\tsrc=\"";
-        // line 184
+        // line 191
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("assets/js/jquery.dataTables.bootstrap.js"), "html", null, true);
         echo "\"></script>
     <script type=\"text/javascript\">
@@ -340,6 +347,6 @@ class __TwigTemplate_f3d8f24a7738254a3d814fa6fa7a3f36e28b99da1384c47cb686d51b738
 
     public function getDebugInfo()
     {
-        return array (  299 => 184,  295 => 183,  292 => 182,  289 => 181,  254 => 148,  252 => 147,  245 => 145,  240 => 142,  229 => 137,  220 => 131,  204 => 117,  200 => 116,  158 => 77,  146 => 68,  131 => 55,  121 => 51,  116 => 48,  112 => 47,  109 => 46,  99 => 42,  94 => 39,  90 => 38,  87 => 37,  84 => 36,  74 => 30,  55 => 11,  52 => 10,  45 => 5,  40 => 4,  11 => 3,);
+        return array (  306 => 191,  302 => 190,  299 => 189,  296 => 188,  260 => 154,  258 => 153,  245 => 145,  240 => 142,  229 => 137,  220 => 131,  204 => 117,  200 => 116,  158 => 77,  146 => 68,  131 => 55,  121 => 51,  116 => 48,  112 => 47,  109 => 46,  99 => 42,  94 => 39,  90 => 38,  87 => 37,  84 => 36,  74 => 30,  55 => 11,  52 => 10,  45 => 5,  40 => 4,  11 => 3,);
     }
 }

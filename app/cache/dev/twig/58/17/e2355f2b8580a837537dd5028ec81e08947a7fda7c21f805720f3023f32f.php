@@ -290,17 +290,23 @@ class __TwigTemplate_5817e2355f2b8580a837537dd5028ec81e08947a7fda7c21f805720f302
         echo "  method = \"POST\"  action = \"";
         echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("cestom_admin_ajouter_formation", array("idmembre" => (isset($context["idmembre"]) ? $context["idmembre"] : $this->getContext($context, "idmembre")))), "html", null, true);
         echo "\">\t
-
+                          <fieldset>
+                    <div class=\"col-sm-10 widget-main\">
+                        <h4 class=\"header blue bolder smaller\">
+                            Ajouter une formation
+                        </h4>
+                    </div>
                                                     ";
-        // line 167
+        // line 172
         $this->env->loadTemplate("CestomAdminBundle:GestionMembre:formulaireFormation.html.twig")->display($context);
-        // line 168
+        // line 173
         echo "                                                    <div class=\"form-actions center\">
                                                         <button id=\"valider\" type=\"submit\" class=\"btn btn-sm btn-success\">
                                                             Ajouter
                                                             <i class=\"ace-icon fa fa-save icon-on-right bigger-110\"></i>
                                                         </button>
                                                     </div>
+                          </fieldset>
                                                 </form>
                                             </div>
                                         </div>
@@ -331,56 +337,56 @@ class __TwigTemplate_5817e2355f2b8580a837537dd5028ec81e08947a7fda7c21f805720f302
 ";
     }
 
-    // line 203
+    // line 209
     public function block_javascript($context, array $blocks = array())
     {
-        // line 204
+        // line 210
         echo "    <script src=\"";
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("assets/js/date-time/bootstrap-datepicker.min.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 205
+        // line 211
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("assets/js/date-time/bootstrap-timepicker.min.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 206
+        // line 212
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("assets/js/date-time/moment.min.js"), "html", null, true);
         echo "\"></script>
 
     <script src=\"";
-        // line 208
+        // line 214
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("assets/js/date-time/bootstrap-datetimepicker.min.js"), "html", null, true);
         echo "\">< /script>
                                                                     < script src = \"";
-        // line 209
+        // line 215
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("assets/js/jquery.autosize.min.js"), "html", null, true);
         echo "\" ></script>
     <script  src = \"";
-        // line 210
+        // line 216
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("assets/js/jquery.ui.addresspicker.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 211
+        // line 217
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("assets/js/jquery.maskedinput.min.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 212
+        // line 218
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("assets/js/bootstrap-tag.min.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 213
+        // line 219
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("assets/js/ace-elements.min.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 214
+        // line 220
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("assets/js/ace.min.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 215
+        // line 221
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("assets/js/jquery.dataTables.min.js"), "html", null, true);
         echo "\"></script>
     <script\tsrc=\"";
-        // line 216
+        // line 222
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("assets/js/jquery.dataTables.bootstrap.js"), "html", null, true);
         echo "\"></script>
     <script type=\"text/javascript\">
@@ -439,6 +445,6 @@ class __TwigTemplate_5817e2355f2b8580a837537dd5028ec81e08947a7fda7c21f805720f302
 
     public function getDebugInfo()
     {
-        return array (  384 => 216,  380 => 215,  376 => 214,  372 => 213,  368 => 212,  364 => 211,  360 => 210,  356 => 209,  352 => 208,  347 => 206,  343 => 205,  338 => 204,  335 => 203,  298 => 168,  296 => 167,  289 => 165,  280 => 158,  270 => 154,  266 => 153,  261 => 151,  257 => 150,  253 => 149,  249 => 148,  240 => 142,  224 => 128,  220 => 127,  177 => 87,  163 => 76,  154 => 70,  139 => 57,  129 => 53,  124 => 50,  120 => 49,  117 => 48,  107 => 44,  102 => 41,  98 => 40,  95 => 39,  92 => 38,  82 => 32,  63 => 13,  60 => 12,  54 => 8,  49 => 6,  45 => 5,  40 => 4,  11 => 3,);
+        return array (  390 => 222,  386 => 221,  382 => 220,  378 => 219,  374 => 218,  370 => 217,  366 => 216,  362 => 215,  358 => 214,  353 => 212,  349 => 211,  344 => 210,  341 => 209,  303 => 173,  301 => 172,  289 => 165,  280 => 158,  270 => 154,  266 => 153,  261 => 151,  257 => 150,  253 => 149,  249 => 148,  240 => 142,  224 => 128,  220 => 127,  177 => 87,  163 => 76,  154 => 70,  139 => 57,  129 => 53,  124 => 50,  120 => 49,  117 => 48,  107 => 44,  102 => 41,  98 => 40,  95 => 39,  92 => 38,  82 => 32,  63 => 13,  60 => 12,  54 => 8,  49 => 6,  45 => 5,  40 => 4,  11 => 3,);
     }
 }

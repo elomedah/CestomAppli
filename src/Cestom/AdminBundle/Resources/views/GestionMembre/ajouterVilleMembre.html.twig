@@ -101,7 +101,12 @@
                                             
 
                                                 <form {{ form_enctype(form) }}  method = "POST"  action = "{{ path('cestom_admin_ajouter_ville_membre',{'idmembre':idmembre})}}">	
-
+<fieldset >
+                    <div class="col-sm-10 widget-main">
+                        <h4 class="header blue bolder smaller">
+                            Ajouter une ville au membre
+                        </h4>
+                    </div>
                                                     {% include "CestomAdminBundle:GestionMembre:formulaireVilleMembre.html.twig" %}
                                                     <div class="form-actions center">
                                                         <button id="valider" type="submit" class="btn btn-sm btn-success">
@@ -109,6 +114,7 @@
                                                             <i class="ace-icon fa fa-save icon-on-right bigger-110"></i>
                                                         </button>
                                                     </div>
+</fieldset>
                                                 </form>
                                                     
                                                     

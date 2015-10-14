@@ -31,3 +31,9 @@ cestom_admin_ajouter_ville_membre:
 cestom_admin_modifier_ville_membre:
     path:     /admin/villeMembre/modifierVilleMembre/{idmembre}/{idvillemembre}
     defaults: { _controller: CestomAdminBundle:ModifierVilleMembre:modifierVilleMembre }
+cestom_admin_ajouter_bureau_ville:
+    path:     /admin/ville/bureau/ajouterBureau
+    defaults: { _controller: CestomAdminBundle:AjouterBureauMembre:ajouterBureauMembre }
+cestom_admin_modifier_bureau_ville:
+    path:     /admin/ville/bureau/modifierBureau/{idbureau}
+    defaults: { _controller: CestomAdminBundle:ModifierBureauMembre:modifierBureauMembre }

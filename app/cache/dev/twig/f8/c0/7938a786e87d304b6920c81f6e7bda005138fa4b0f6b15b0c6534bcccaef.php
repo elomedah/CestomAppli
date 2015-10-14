@@ -225,17 +225,23 @@ class __TwigTemplate_f8c07938a786e87d304b6920c81f6e7bda005138fa4b0f6b15b0c6534bc
         echo "  method = \"POST\"  action = \"";
         echo $this->env->getExtension('routing')->getPath("cestom_admin_ajouter_universite");
         echo "\">\t
-
+ <fieldset>
+                    <div class=\"col-sm-10 widget-main\">
+                        <h4 class=\"header blue bolder smaller\">
+                            Ajouter une nouvelle université
+                        </h4>
+                    </div>
                                                     ";
-        // line 126
+        // line 131
         $this->env->loadTemplate("CestomAdminBundle:GestionMembre:formulaireUniversite.html.twig")->display($context);
-        // line 127
+        // line 132
         echo "                                                    <div class=\"form-actions center\">
                                                         <button id=\"valider\" type=\"submit\" class=\"btn btn-sm btn-success\">
                                                             Ajouter
                                                             <i class=\"ace-icon fa fa-save icon-on-right bigger-110\"></i>
                                                         </button>
                                                     </div>
+ </fieldset>
                                                 </form>
                             <!-- /section:elements.tab -->
                         </div><!-- /.col -->
@@ -256,17 +262,17 @@ class __TwigTemplate_f8c07938a786e87d304b6920c81f6e7bda005138fa4b0f6b15b0c6534bc
 ";
     }
 
-    // line 152
+    // line 158
     public function block_javascript($context, array $blocks = array())
     {
-        // line 153
+        // line 159
         echo "    
     <script src=\"";
-        // line 154
+        // line 160
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("assets/js/jquery.dataTables.min.js"), "html", null, true);
         echo "\"></script>
     <script\tsrc=\"";
-        // line 155
+        // line 161
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("assets/js/jquery.dataTables.bootstrap.js"), "html", null, true);
         echo "\"></script>
     <script type=\"text/javascript\">
@@ -311,6 +317,6 @@ class __TwigTemplate_f8c07938a786e87d304b6920c81f6e7bda005138fa4b0f6b15b0c6534bc
 
     public function getDebugInfo()
     {
-        return array (  270 => 155,  266 => 154,  263 => 153,  260 => 152,  233 => 127,  231 => 126,  224 => 124,  217 => 119,  206 => 114,  202 => 113,  198 => 112,  189 => 106,  173 => 92,  169 => 91,  131 => 55,  121 => 51,  116 => 48,  112 => 47,  109 => 46,  99 => 42,  94 => 39,  90 => 38,  87 => 37,  84 => 36,  74 => 30,  55 => 11,  52 => 10,  45 => 5,  40 => 4,  11 => 3,);
+        return array (  276 => 161,  272 => 160,  269 => 159,  266 => 158,  238 => 132,  236 => 131,  224 => 124,  217 => 119,  206 => 114,  202 => 113,  198 => 112,  189 => 106,  173 => 92,  169 => 91,  131 => 55,  121 => 51,  116 => 48,  112 => 47,  109 => 46,  99 => 42,  94 => 39,  90 => 38,  87 => 37,  84 => 36,  74 => 30,  55 => 11,  52 => 10,  45 => 5,  40 => 4,  11 => 3,);
     }
 }

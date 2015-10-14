@@ -198,15 +198,31 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
             }
 
-            if (0 === strpos($pathinfo, '/admin/villeMembre')) {
-                // cestom_admin_ajouter_ville_membre
-                if (0 === strpos($pathinfo, '/admin/villeMembre/gestionVilleMembre') && preg_match('#^/admin/villeMembre/gestionVilleMembre/(?P<idmembre>[^/]++)$#s', $pathinfo, $matches)) {
-                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'cestom_admin_ajouter_ville_membre')), array (  '_controller' => 'Cestom\\AdminBundle\\Controller\\AjouterVilleMembreController::ajouterVilleMembreAction',));
+            if (0 === strpos($pathinfo, '/admin/ville')) {
+                if (0 === strpos($pathinfo, '/admin/villeMembre')) {
+                    // cestom_admin_ajouter_ville_membre
+                    if (0 === strpos($pathinfo, '/admin/villeMembre/gestionVilleMembre') && preg_match('#^/admin/villeMembre/gestionVilleMembre/(?P<idmembre>[^/]++)$#s', $pathinfo, $matches)) {
+                        return $this->mergeDefaults(array_replace($matches, array('_route' => 'cestom_admin_ajouter_ville_membre')), array (  '_controller' => 'Cestom\\AdminBundle\\Controller\\AjouterVilleMembreController::ajouterVilleMembreAction',));
+                    }
+
+                    // cestom_admin_modifier_ville_membre
+                    if (0 === strpos($pathinfo, '/admin/villeMembre/modifierVilleMembre') && preg_match('#^/admin/villeMembre/modifierVilleMembre/(?P<idmembre>[^/]++)/(?P<idvillemembre>[^/]++)$#s', $pathinfo, $matches)) {
+                        return $this->mergeDefaults(array_replace($matches, array('_route' => 'cestom_admin_modifier_ville_membre')), array (  '_controller' => 'Cestom\\AdminBundle\\Controller\\ModifierVilleMembreController::modifierVilleMembreAction',));
+                    }
+
                 }
 
-                // cestom_admin_modifier_ville_membre
-                if (0 === strpos($pathinfo, '/admin/villeMembre/modifierVilleMembre') && preg_match('#^/admin/villeMembre/modifierVilleMembre/(?P<idmembre>[^/]++)/(?P<idvillemembre>[^/]++)$#s', $pathinfo, $matches)) {
-                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'cestom_admin_modifier_ville_membre')), array (  '_controller' => 'Cestom\\AdminBundle\\Controller\\ModifierVilleMembreController::modifierVilleMembreAction',));
+                if (0 === strpos($pathinfo, '/admin/ville/bureau')) {
+                    // cestom_admin_ajouter_bureau_ville
+                    if ($pathinfo === '/admin/ville/bureau/ajouterBureau') {
+                        return array (  '_controller' => 'Cestom\\AdminBundle\\Controller\\AjouterBureauMembreController::ajouterBureauMembreAction',  '_route' => 'cestom_admin_ajouter_bureau_ville',);
+                    }
+
+                    // cestom_admin_modifier_bureau_ville
+                    if (0 === strpos($pathinfo, '/admin/ville/bureau/modifierBureau') && preg_match('#^/admin/ville/bureau/modifierBureau/(?P<idbureau>[^/]++)$#s', $pathinfo, $matches)) {
+                        return $this->mergeDefaults(array_replace($matches, array('_route' => 'cestom_admin_modifier_bureau_ville')), array (  '_controller' => 'Cestom\\AdminBundle\\Controller\\ModifierBureauMembreController::modifierBureauMembreAction',));
+                    }
+
                 }
 
             }

@@ -98,7 +98,12 @@
                                     <div id="formation" class="tab-pane in active">
                                         <div class="widget-body">
 
-                                            
+                                             <fieldset>
+                    <div class="col-sm-10 widget-main">
+                        <h4 class="header blue bolder smaller">
+                            Modifier une formation
+                        </h4>
+                    </div>
 
                                                 <form {{ form_enctype(form) }}  method = "POST"  action = "{{ path('cestom_admin_modifier_formation',{'idmembre':idmembre,'idformation':idformation})}}">	
 
@@ -109,6 +114,7 @@
                                                             <i class="ace-icon fa fa-pencil icon-on-right bigger-110"></i>
                                                         </button>
                                                     </div>
+ </fieldset>
                                                 </form>
                                                     
                                                     

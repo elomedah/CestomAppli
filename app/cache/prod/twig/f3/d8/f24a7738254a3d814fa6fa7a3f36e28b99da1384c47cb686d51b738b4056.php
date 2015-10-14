@@ -155,7 +155,7 @@ class __TwigTemplate_f3d8f24a7738254a3d814fa6fa7a3f36e28b99da1384c47cb686d51b738
                                     <li class=\"dropdown\">
                                         <a  href=\"";
         // line 77
-        echo $this->env->getExtension('routing')->getPath("cestom_admin_ajouter_ville");
+        echo $this->env->getExtension('routing')->getPath("cestom_admin_ajouter_bureau");
         echo "\">
                                             <i class=\"green ace-icon fa fa-star bigger-120\"></i>
                                             Bureau de la ville

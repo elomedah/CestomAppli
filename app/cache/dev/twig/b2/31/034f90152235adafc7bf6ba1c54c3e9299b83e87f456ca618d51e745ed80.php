@@ -19,21 +19,16 @@ class __TwigTemplate_b231034f90152235adafc7bf6ba1c54c3e9299b83e87f456ca618d51e74
         echo " ";
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), 'errors');
         echo "
-                 <fieldset >
-                    <div class=\"col-sm-10 widget-main\">
-                        <h4 class=\"header blue bolder smaller\">
-                            Gestion des formations
-                        </h4>
-                    </div>\t\t\t
+                \t\t\t
                     <div class=\"col-sm-10 widget-main\">
 
                         ";
-        // line 10
+        // line 5
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "libelleFormation", array()), 'label', array("label_attr" => array("class" => "col-sm-3 control-label "), "label" => "Libelle de la formation"));
         echo "
 
                         ";
-        // line 12
+        // line 7
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "libelleFormation", array()), 'widget', array("attr" => array("class" => "col-xs-10 col-sm-5")));
         echo "
 
@@ -42,12 +37,12 @@ class __TwigTemplate_b231034f90152235adafc7bf6ba1c54c3e9299b83e87f456ca618d51e74
                     <div class=\"col-sm-10 widget-main\">
 
                         ";
-        // line 18
+        // line 13
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "iduniv", array()), 'label', array("label_attr" => array("class" => "col-sm-3 control-label "), "label" => "Université"));
         echo "
 
                         ";
-        // line 20
+        // line 15
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "iduniv", array()), 'widget', array("attr" => array("class" => "col-xs-10 col-sm-5")));
         echo "
 
@@ -55,12 +50,12 @@ class __TwigTemplate_b231034f90152235adafc7bf6ba1c54c3e9299b83e87f456ca618d51e74
                     <div class=\"col-sm-10 widget-main\">
 
                         ";
-        // line 25
+        // line 20
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "diplomeViseFormation", array()), 'label', array("label_attr" => array("class" => "col-sm-3 control-label "), "label" => "Diplôme visé "));
         echo "
 
                         ";
-        // line 27
+        // line 22
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "diplomeViseFormation", array()), 'widget', array("attr" => array("class" => "col-xs-10 col-sm-5")));
         echo "
 
@@ -69,12 +64,12 @@ class __TwigTemplate_b231034f90152235adafc7bf6ba1c54c3e9299b83e87f456ca618d51e74
                     <div class=\"col-sm-10 widget-main\">
 
                         ";
-        // line 33
+        // line 28
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "dureeFormation", array()), 'label', array("label_attr" => array("class" => "col-sm-3 control-label "), "label" => "Durée de la formation "));
         echo "
 
                         ";
-        // line 35
+        // line 30
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "dureeFormation", array()), 'widget', array("attr" => array("class" => "col-xs-10 col-sm-5")));
         echo "
 
@@ -88,7 +83,7 @@ class __TwigTemplate_b231034f90152235adafc7bf6ba1c54c3e9299b83e87f456ca618d51e74
 
                                     <div class=\"input-group col-xs-10 col-sm-5\">
                                         <input value=\"";
-        // line 46
+        // line 41
         echo twig_escape_filter($this->env, (isset($context["dateDebutFormation"]) ? $context["dateDebutFormation"] : $this->getContext($context, "dateDebutFormation")), "html", null, true);
         echo "\" name=\"dateDebutFormation\" class=\" required form-control date-picker\" id=\"datenaissance\" type=\"text\" data-date-format=\"dd-mm-yyyy\" />
 \t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<span class=\"input-group-addon\">
@@ -103,12 +98,12 @@ class __TwigTemplate_b231034f90152235adafc7bf6ba1c54c3e9299b83e87f456ca618d51e74
                     <div class=\"col-sm-10 widget-main\">
 
                         ";
-        // line 58
+        // line 53
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "programmeBourse", array()), 'label', array("label_attr" => array("class" => "col-sm-3 control-label "), "label" => "Programme de bourse "));
         echo "
 
                         ";
-        // line 60
+        // line 55
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "programmeBourse", array()), 'widget', array("attr" => array("class" => "col-xs-10 col-sm-5")));
         echo "
 
@@ -116,11 +111,12 @@ class __TwigTemplate_b231034f90152235adafc7bf6ba1c54c3e9299b83e87f456ca618d51e74
                 </fieldset>
                         
             ";
-        // line 65
+        // line 60
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), 'rest');
         echo "
 
-                ";
+                
+";
     }
 
     public function getTemplateName()
@@ -135,6 +131,6 @@ class __TwigTemplate_b231034f90152235adafc7bf6ba1c54c3e9299b83e87f456ca618d51e74
 
     public function getDebugInfo()
     {
-        return array (  120 => 65,  112 => 60,  107 => 58,  92 => 46,  78 => 35,  73 => 33,  64 => 27,  59 => 25,  51 => 20,  46 => 18,  37 => 12,  32 => 10,  19 => 1,);
+        return array (  115 => 60,  107 => 55,  102 => 53,  87 => 41,  73 => 30,  68 => 28,  59 => 22,  54 => 20,  46 => 15,  41 => 13,  32 => 7,  27 => 5,  19 => 1,);
     }
 }

@@ -155,7 +155,7 @@ class __TwigTemplate_08c954535f329fe5998d9d04fad5a4514e12c4db137cfd2e8a7d7a7e7cc
                                     <li class=\"dropdown\">
                                         <a  href=\"";
         // line 77
-        echo $this->env->getExtension('routing')->getPath("cestom_admin_ajouter_ville");
+        echo $this->env->getExtension('routing')->getPath("cestom_admin_ajouter_bureau_ville");
         echo "\">
                                             <i class=\"green ace-icon fa fa-star bigger-120\"></i>
                                             Bureau de la ville
@@ -177,17 +177,23 @@ class __TwigTemplate_08c954535f329fe5998d9d04fad5a4514e12c4db137cfd2e8a7d7a7e7cc
         echo "  method = \"POST\"  action = \"";
         echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("cestom_admin_modifier_ville", array("idville" => (isset($context["idville"]) ? $context["idville"] : $this->getContext($context, "idville")))), "html", null, true);
         echo "\">\t
-
+ <fieldset >
+                    <div class=\"col-sm-10 widget-main\">
+                        <h4 class=\"header blue bolder smaller\">
+                            Modifier une ville
+                        </h4>
+                    </div>
                                                     ";
-        // line 94
+        // line 99
         $this->env->loadTemplate("CestomAdminBundle:GestionMembre:formulaireVille.html.twig")->display($context);
-        // line 95
+        // line 100
         echo "                                                    <div class=\"form-actions center\">
                                                         <button id=\"valider\" type=\"submit\" class=\"btn btn-sm btn-success\">
                                                             Modifier
                                                             <i class=\"ace-icon fa fa-pencil icon-on-right bigger-110\"></i>
                                                         </button>
                                                     </div>
+ </fieldset >
                                                 </form>
                                                     
                                                     
@@ -213,11 +219,11 @@ class __TwigTemplate_08c954535f329fe5998d9d04fad5a4514e12c4db137cfd2e8a7d7a7e7cc
 
                                                     <tbody>
                                                         ";
-        // line 125
+        // line 131
         $context['_parent'] = (array) $context;
         $context['_seq'] = twig_ensure_traversable((isset($context["villes"]) ? $context["villes"] : $this->getContext($context, "villes")));
         foreach ($context['_seq'] as $context["_key"] => $context["ville"]) {
-            // line 126
+            // line 132
             echo "                                                            <tr>
 
                                                                 <td class=\"center\">
@@ -233,7 +239,7 @@ class __TwigTemplate_08c954535f329fe5998d9d04fad5a4514e12c4db137cfd2e8a7d7a7e7cc
 
 
                                                                     <a class=\"green\" href=\"";
-            // line 140
+            // line 146
             echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("cestom_admin_modifier_ville", array("idville" => $this->getAttribute($context["ville"], "idville", array()))), "html", null, true);
             echo "\">
                                                                         <i class=\"ace-icon fa fa-pencil bigger-130\"></i>
@@ -242,7 +248,7 @@ class __TwigTemplate_08c954535f329fe5998d9d04fad5a4514e12c4db137cfd2e8a7d7a7e7cc
                                                                 </td>
 
                                                                 <td>";
-            // line 146
+            // line 152
             echo twig_escape_filter($this->env, $this->getAttribute($context["ville"], "nomville", array()), "html", null, true);
             echo "</td>
                                                                 
@@ -253,7 +259,7 @@ class __TwigTemplate_08c954535f329fe5998d9d04fad5a4514e12c4db137cfd2e8a7d7a7e7cc
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['ville'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 151
+        // line 157
         echo "                                                    </tbody>
                                                 </table>
 
@@ -285,17 +291,17 @@ class __TwigTemplate_08c954535f329fe5998d9d04fad5a4514e12c4db137cfd2e8a7d7a7e7cc
 ";
     }
 
-    // line 181
+    // line 187
     public function block_javascript($context, array $blocks = array())
     {
-        // line 182
+        // line 188
         echo "    
     <script src=\"";
-        // line 183
+        // line 189
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("assets/js/jquery.dataTables.min.js"), "html", null, true);
         echo "\"></script>
     <script\tsrc=\"";
-        // line 184
+        // line 190
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("assets/js/jquery.dataTables.bootstrap.js"), "html", null, true);
         echo "\"></script>
     <script type=\"text/javascript\">
@@ -339,6 +345,6 @@ class __TwigTemplate_08c954535f329fe5998d9d04fad5a4514e12c4db137cfd2e8a7d7a7e7cc
 
     public function getDebugInfo()
     {
-        return array (  299 => 184,  295 => 183,  292 => 182,  289 => 181,  257 => 151,  246 => 146,  237 => 140,  221 => 126,  217 => 125,  185 => 95,  183 => 94,  176 => 92,  158 => 77,  146 => 68,  131 => 55,  121 => 51,  116 => 48,  112 => 47,  109 => 46,  99 => 42,  94 => 39,  90 => 38,  87 => 37,  84 => 36,  74 => 30,  55 => 11,  52 => 10,  45 => 5,  40 => 4,  11 => 3,);
+        return array (  305 => 190,  301 => 189,  298 => 188,  295 => 187,  263 => 157,  252 => 152,  243 => 146,  227 => 132,  223 => 131,  190 => 100,  188 => 99,  176 => 92,  158 => 77,  146 => 68,  131 => 55,  121 => 51,  116 => 48,  112 => 47,  109 => 46,  99 => 42,  94 => 39,  90 => 38,  87 => 37,  84 => 36,  74 => 30,  55 => 11,  52 => 10,  45 => 5,  40 => 4,  11 => 3,);
     }
 }

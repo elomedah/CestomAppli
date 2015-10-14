@@ -12,12 +12,17 @@ class BureauVille
     /**
      * @var string
      */
+    private $anneeScolaire;
+
+    /**
+     * @var string
+     */
     private $posteMembre;
 
     /**
-     * @var \Cestom\StoreBundle\Entity\Membre
+     * @var integer
      */
-    private $idmembre;
+    private $idbureau;
 
     /**
      * @var \Cestom\StoreBundle\Entity\Ville
@@ -25,10 +30,33 @@ class BureauVille
     private $idville;
 
     /**
-     * @var \Cestom\StoreBundle\Entity\AnneeScolaire
+     * @var \Cestom\StoreBundle\Entity\Membre
      */
-    private $anneeScolaire;
+    private $idmembre;
 
+
+    /**
+     * Set anneeScolaire
+     *
+     * @param string $anneeScolaire
+     * @return BureauVille
+     */
+    public function setAnneeScolaire($anneeScolaire)
+    {
+        $this->anneeScolaire = $anneeScolaire;
+
+        return $this;
+    }
+
+    /**
+     * Get anneeScolaire
+     *
+     * @return string 
+     */
+    public function getAnneeScolaire()
+    {
+        return $this->anneeScolaire;
+    }
 
     /**
      * Set posteMembre
@@ -54,26 +82,13 @@ class BureauVille
     }
 
     /**
-     * Set idmembre
+     * Get idbureau
      *
-     * @param \Cestom\StoreBundle\Entity\Membre $idmembre
-     * @return BureauVille
+     * @return integer 
      */
-    public function setIdmembre(\Cestom\StoreBundle\Entity\Membre $idmembre)
+    public function getIdbureau()
     {
-        $this->idmembre = $idmembre;
-
-        return $this;
-    }
-
-    /**
-     * Get idmembre
-     *
-     * @return \Cestom\StoreBundle\Entity\Membre 
-     */
-    public function getIdmembre()
-    {
-        return $this->idmembre;
+        return $this->idbureau;
     }
 
     /**
@@ -82,7 +97,7 @@ class BureauVille
      * @param \Cestom\StoreBundle\Entity\Ville $idville
      * @return BureauVille
      */
-    public function setIdville(\Cestom\StoreBundle\Entity\Ville $idville)
+    public function setIdville(\Cestom\StoreBundle\Entity\Ville $idville = null)
     {
         $this->idville = $idville;
 
@@ -100,25 +115,25 @@ class BureauVille
     }
 
     /**
-     * Set anneeScolaire
+     * Set idmembre
      *
-     * @param \Cestom\StoreBundle\Entity\AnneeScolaire $anneeScolaire
+     * @param \Cestom\StoreBundle\Entity\Membre $idmembre
      * @return BureauVille
      */
-    public function setAnneeScolaire(\Cestom\StoreBundle\Entity\AnneeScolaire $anneeScolaire)
+    public function setIdmembre(\Cestom\StoreBundle\Entity\Membre $idmembre = null)
     {
-        $this->anneeScolaire = $anneeScolaire;
+        $this->idmembre = $idmembre;
 
         return $this;
     }
 
     /**
-     * Get anneeScolaire
+     * Get idmembre
      *
-     * @return \Cestom\StoreBundle\Entity\AnneeScolaire 
+     * @return \Cestom\StoreBundle\Entity\Membre 
      */
-    public function getAnneeScolaire()
+    public function getIdmembre()
     {
-        return $this->anneeScolaire;
+        return $this->idmembre;
     }
 }

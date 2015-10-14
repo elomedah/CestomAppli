@@ -197,17 +197,23 @@ class __TwigTemplate_7e65cdf16176fdad54a3d7885f9d43f9d7bd00ed4bb6fcbd451598c0a55
         echo "  method = \"POST\"  action = \"";
         echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("cestom_admin_ajouter_ville_membre", array("idmembre" => (isset($context["idmembre"]) ? $context["idmembre"] : $this->getContext($context, "idmembre")))), "html", null, true);
         echo "\">\t
-
+<fieldset >
+                    <div class=\"col-sm-10 widget-main\">
+                        <h4 class=\"header blue bolder smaller\">
+                            Ajouter une ville au membre
+                        </h4>
+                    </div>
                                                     ";
-        // line 105
+        // line 110
         $this->env->loadTemplate("CestomAdminBundle:GestionMembre:formulaireVilleMembre.html.twig")->display($context);
-        // line 106
+        // line 111
         echo "                                                    <div class=\"form-actions center\">
                                                         <button id=\"valider\" type=\"submit\" class=\"btn btn-sm btn-success\">
                                                             Ajouter
                                                             <i class=\"ace-icon fa fa-save icon-on-right bigger-110\"></i>
                                                         </button>
                                                     </div>
+</fieldset>
                                                 </form>
                                                     
                                                     
@@ -235,11 +241,11 @@ class __TwigTemplate_7e65cdf16176fdad54a3d7885f9d43f9d7bd00ed4bb6fcbd451598c0a55
 
                                                     <tbody>
                                                         ";
-        // line 138
+        // line 144
         $context['_parent'] = (array) $context;
         $context['_seq'] = twig_ensure_traversable((isset($context["villesmembre"]) ? $context["villesmembre"] : $this->getContext($context, "villesmembre")));
         foreach ($context['_seq'] as $context["_key"] => $context["villemembre"]) {
-            // line 139
+            // line 145
             echo "                                                            <tr>
 
                                                                 <td class=\"center\">
@@ -255,7 +261,7 @@ class __TwigTemplate_7e65cdf16176fdad54a3d7885f9d43f9d7bd00ed4bb6fcbd451598c0a55
 
 
                                                                     <a class=\"green\" href=\"";
-            // line 153
+            // line 159
             echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("cestom_admin_modifier_ville_membre", array("idmembre" => (isset($context["idmembre"]) ? $context["idmembre"] : $this->getContext($context, "idmembre")), "idvillemembre" => $this->getAttribute($context["villemembre"], "idvillemembre", array()))), "html", null, true);
             echo "\">
                                                                         <i class=\"ace-icon fa fa-pencil bigger-130\"></i>
@@ -264,15 +270,15 @@ class __TwigTemplate_7e65cdf16176fdad54a3d7885f9d43f9d7bd00ed4bb6fcbd451598c0a55
                                                                 </td>
 
                                                                 <td>";
-            // line 159
+            // line 165
             echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($context["villemembre"], "idville", array()), "nomville", array()), "html", null, true);
             echo "</td>
                                                                 <td>";
-            // line 160
+            // line 166
             echo twig_escape_filter($this->env, $this->getAttribute($context["villemembre"], "adresse", array()), "html", null, true);
             echo "</td>
                                                                 <td>";
-            // line 161
+            // line 167
             echo twig_escape_filter($this->env, $this->getAttribute($context["villemembre"], "dateDebut", array()), "html", null, true);
             echo " </td>
                                                                 
@@ -283,7 +289,7 @@ class __TwigTemplate_7e65cdf16176fdad54a3d7885f9d43f9d7bd00ed4bb6fcbd451598c0a55
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['villemembre'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 166
+        // line 172
         echo "                                                    </tbody>
                                                 </table>
 
@@ -319,56 +325,56 @@ class __TwigTemplate_7e65cdf16176fdad54a3d7885f9d43f9d7bd00ed4bb6fcbd451598c0a55
 ";
     }
 
-    // line 200
+    // line 206
     public function block_javascript($context, array $blocks = array())
     {
-        // line 201
+        // line 207
         echo "    <script src=\"";
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("assets/js/date-time/bootstrap-datepicker.min.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 202
+        // line 208
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("assets/js/date-time/bootstrap-timepicker.min.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 203
+        // line 209
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("assets/js/date-time/moment.min.js"), "html", null, true);
         echo "\"></script>
 
     <script src=\"";
-        // line 205
+        // line 211
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("assets/js/date-time/bootstrap-datetimepicker.min.js"), "html", null, true);
         echo "\">< /script>
                                                                     < script src = \"";
-        // line 206
+        // line 212
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("assets/js/jquery.autosize.min.js"), "html", null, true);
         echo "\" ></script>
     <script  src = \"";
-        // line 207
+        // line 213
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("assets/js/jquery.ui.addresspicker.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 208
+        // line 214
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("assets/js/jquery.maskedinput.min.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 209
+        // line 215
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("assets/js/bootstrap-tag.min.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 210
+        // line 216
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("assets/js/ace-elements.min.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 211
+        // line 217
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("assets/js/ace.min.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 212
+        // line 218
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("assets/js/jquery.dataTables.min.js"), "html", null, true);
         echo "\"></script>
     <script\tsrc=\"";
-        // line 213
+        // line 219
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("assets/js/jquery.dataTables.bootstrap.js"), "html", null, true);
         echo "\"></script>
     <script type=\"text/javascript\">
@@ -426,6 +432,6 @@ class __TwigTemplate_7e65cdf16176fdad54a3d7885f9d43f9d7bd00ed4bb6fcbd451598c0a55
 
     public function getDebugInfo()
     {
-        return array (  372 => 213,  368 => 212,  364 => 211,  360 => 210,  356 => 209,  352 => 208,  348 => 207,  344 => 206,  340 => 205,  335 => 203,  331 => 202,  326 => 201,  323 => 200,  287 => 166,  276 => 161,  272 => 160,  268 => 159,  259 => 153,  243 => 139,  239 => 138,  205 => 106,  203 => 105,  196 => 103,  177 => 87,  164 => 77,  154 => 70,  139 => 57,  129 => 53,  124 => 50,  120 => 49,  117 => 48,  107 => 44,  102 => 41,  98 => 40,  95 => 39,  92 => 38,  82 => 32,  63 => 13,  60 => 12,  54 => 8,  49 => 6,  45 => 5,  40 => 4,  11 => 3,);
+        return array (  378 => 219,  374 => 218,  370 => 217,  366 => 216,  362 => 215,  358 => 214,  354 => 213,  350 => 212,  346 => 211,  341 => 209,  337 => 208,  332 => 207,  329 => 206,  293 => 172,  282 => 167,  278 => 166,  274 => 165,  265 => 159,  249 => 145,  245 => 144,  210 => 111,  208 => 110,  196 => 103,  177 => 87,  164 => 77,  154 => 70,  139 => 57,  129 => 53,  124 => 50,  120 => 49,  117 => 48,  107 => 44,  102 => 41,  98 => 40,  95 => 39,  92 => 38,  82 => 32,  63 => 13,  60 => 12,  54 => 8,  49 => 6,  45 => 5,  40 => 4,  11 => 3,);
     }
 }

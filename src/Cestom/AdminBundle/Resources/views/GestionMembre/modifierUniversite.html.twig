@@ -69,7 +69,12 @@
                             <!-- #section:elements.tab -->
                                                          
  <form {{ form_enctype(form) }}  method = "POST"  action = "{{ path('cestom_admin_modifier_universite',{'iduniversite':iduniversite})}}">	
-
+                 <fieldset>
+                    <div class="col-sm-10 widget-main">
+                        <h4 class="header blue bolder smaller">
+                            Modifier les infos de l' université
+                        </h4>
+                    </div>
                                                     {% include "CestomAdminBundle:GestionMembre:formulaireUniversite.html.twig" %}
                                                     <div class="form-actions center">
                                                         <button id="valider" type="submit" class="btn btn-sm btn-success">
@@ -77,6 +82,7 @@
                                                             <i class="ace-icon fa fa-pencil icon-on-right bigger-110"></i>
                                                         </button>
                                                     </div>
+                 </fieldset>
                                                 </form>
                                                     
                                                 <div class="table-header">

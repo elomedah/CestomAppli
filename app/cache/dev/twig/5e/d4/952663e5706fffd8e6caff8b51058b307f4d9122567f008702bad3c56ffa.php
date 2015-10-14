@@ -19,21 +19,16 @@ class __TwigTemplate_5ed4952663e5706fffd8e6caff8b51058b307f4d9122567f008702bad3c
         echo " ";
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), 'errors');
         echo "
-                 <fieldset >
-                    <div class=\"col-sm-10 widget-main\">
-                        <h4 class=\"header blue bolder smaller\">
-                            Gestion des universités
-                        </h4>
-                    </div>\t\t\t
+\t\t\t
                     <div class=\"col-sm-10 widget-main\">
 
                         ";
-        // line 10
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "nomuniv", array()), 'label', array("label_attr" => array("class" => "col-sm-3 control-label "), "label" => "Non de l'université/Ecole"));
+        // line 5
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "nomuniv", array()), 'label', array("label_attr" => array("class" => "col-sm-3 control-label "), "label" => "Nom de l'université/Ecole"));
         echo "
 
                         ";
-        // line 12
+        // line 7
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "nomuniv", array()), 'widget', array("attr" => array("class" => "col-xs-10 col-sm-5")));
         echo "
 
@@ -42,12 +37,12 @@ class __TwigTemplate_5ed4952663e5706fffd8e6caff8b51058b307f4d9122567f008702bad3c
                     <div class=\"col-sm-10 widget-main\">
 
                         ";
-        // line 18
+        // line 13
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "contactuniv", array()), 'label', array("label_attr" => array("class" => "col-sm-3 control-label "), "label" => "Contact de l'université"));
         echo "
 
                         ";
-        // line 20
+        // line 15
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "contactuniv", array()), 'widget', array("attr" => array("class" => "col-xs-10 col-sm-5")));
         echo "
 
@@ -55,12 +50,12 @@ class __TwigTemplate_5ed4952663e5706fffd8e6caff8b51058b307f4d9122567f008702bad3c
                     <div class=\"col-sm-10 widget-main\">
 
                         ";
-        // line 25
+        // line 20
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "addresseuniv", array()), 'label', array("label_attr" => array("class" => "col-sm-3 control-label "), "label" => "Adresse "));
         echo "
 
                         ";
-        // line 27
+        // line 22
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "addresseuniv", array()), 'widget', array("attr" => array("class" => "col-xs-10 col-sm-5")));
         echo "
 
@@ -70,11 +65,12 @@ class __TwigTemplate_5ed4952663e5706fffd8e6caff8b51058b307f4d9122567f008702bad3c
                 </fieldset>
                         
             ";
-        // line 34
+        // line 29
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), 'rest');
         echo "
 
-                ";
+                
+";
     }
 
     public function getTemplateName()
@@ -89,6 +85,6 @@ class __TwigTemplate_5ed4952663e5706fffd8e6caff8b51058b307f4d9122567f008702bad3c
 
     public function getDebugInfo()
     {
-        return array (  74 => 34,  64 => 27,  59 => 25,  51 => 20,  46 => 18,  37 => 12,  32 => 10,  19 => 1,);
+        return array (  69 => 29,  59 => 22,  54 => 20,  46 => 15,  41 => 13,  32 => 7,  27 => 5,  19 => 1,);
     }
 }

@@ -189,25 +189,31 @@ class __TwigTemplate_e405eff56eeba22f6fd2c8b02a8ed8e90312ec4a2ce5bde5f41a0fdeb38
                                     <div id=\"formation\" class=\"tab-pane in active\">
                                         <div class=\"widget-body\">
 
-                                            
+                                             <fieldset>
+                    <div class=\"col-sm-10 widget-main\">
+                        <h4 class=\"header blue bolder smaller\">
+                            Modifier une formation
+                        </h4>
+                    </div>
 
                                                 <form ";
-        // line 103
+        // line 108
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), 'enctype');
         echo "  method = \"POST\"  action = \"";
         echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("cestom_admin_modifier_formation", array("idmembre" => (isset($context["idmembre"]) ? $context["idmembre"] : $this->getContext($context, "idmembre")), "idformation" => (isset($context["idformation"]) ? $context["idformation"] : $this->getContext($context, "idformation")))), "html", null, true);
         echo "\">\t
 
                                                     ";
-        // line 105
+        // line 110
         $this->env->loadTemplate("CestomAdminBundle:GestionMembre:formulaireFormation.html.twig")->display($context);
-        // line 106
+        // line 111
         echo "                                                    <div class=\"form-actions center\">
                                                         <button id=\"valider\" type=\"submit\" class=\"btn btn-sm btn-success\">
                                                             Modifier
                                                             <i class=\"ace-icon fa fa-pencil icon-on-right bigger-110\"></i>
                                                         </button>
                                                     </div>
+ </fieldset>
                                                 </form>
                                                     
                                                     
@@ -238,11 +244,11 @@ class __TwigTemplate_e405eff56eeba22f6fd2c8b02a8ed8e90312ec4a2ce5bde5f41a0fdeb38
 
                                                     <tbody>
                                                         ";
-        // line 141
+        // line 147
         $context['_parent'] = (array) $context;
         $context['_seq'] = twig_ensure_traversable((isset($context["formations"]) ? $context["formations"] : $this->getContext($context, "formations")));
         foreach ($context['_seq'] as $context["_key"] => $context["formation"]) {
-            // line 142
+            // line 148
             echo "                                                            <tr>
 
                                                                 <td class=\"center\">
@@ -258,7 +264,7 @@ class __TwigTemplate_e405eff56eeba22f6fd2c8b02a8ed8e90312ec4a2ce5bde5f41a0fdeb38
 
 
                                                                     <a class=\"green\" href=\"";
-            // line 156
+            // line 162
             echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("cestom_admin_modifier_formation", array("idmembre" => (isset($context["idmembre"]) ? $context["idmembre"] : $this->getContext($context, "idmembre")), "idformation" => $this->getAttribute($context["formation"], "idFormation", array()))), "html", null, true);
             echo "\">
                                                                         <i class=\"ace-icon fa fa-pencil bigger-130\"></i>
@@ -267,28 +273,28 @@ class __TwigTemplate_e405eff56eeba22f6fd2c8b02a8ed8e90312ec4a2ce5bde5f41a0fdeb38
                                                                 </td>
 
                                                                 <td>";
-            // line 162
+            // line 168
             echo twig_escape_filter($this->env, $this->getAttribute($context["formation"], "libelleFormation", array()), "html", null, true);
             echo "</td>
                                                                 <td>";
-            // line 163
+            // line 169
             echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($context["formation"], "iduniv", array()), "nomuniv", array()), "html", null, true);
             echo "</td>
                                                                 <td>";
-            // line 164
+            // line 170
             echo twig_escape_filter($this->env, $this->getAttribute($context["formation"], "diplomeViseFormation", array()), "html", null, true);
             echo " </td>
                                                                 <td>";
-            // line 165
+            // line 171
             echo twig_escape_filter($this->env, $this->getAttribute($context["formation"], "dureeFormation", array()), "html", null, true);
             echo "</td>
 
                                                                 <td>";
-            // line 167
+            // line 173
             echo twig_escape_filter($this->env, $this->getAttribute($context["formation"], "dateDebutFormation", array()), "html", null, true);
             echo "</td>
                                                                 <td>";
-            // line 168
+            // line 174
             echo twig_escape_filter($this->env, $this->getAttribute($context["formation"], "programmeBourse", array()), "html", null, true);
             echo "</td>
 
@@ -298,7 +304,7 @@ class __TwigTemplate_e405eff56eeba22f6fd2c8b02a8ed8e90312ec4a2ce5bde5f41a0fdeb38
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['formation'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 172
+        // line 178
         echo "                                                    </tbody>
                                                 </table>
 
@@ -334,56 +340,56 @@ class __TwigTemplate_e405eff56eeba22f6fd2c8b02a8ed8e90312ec4a2ce5bde5f41a0fdeb38
 ";
     }
 
-    // line 206
+    // line 212
     public function block_javascript($context, array $blocks = array())
     {
-        // line 207
+        // line 213
         echo "    <script src=\"";
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("assets/js/date-time/bootstrap-datepicker.min.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 208
+        // line 214
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("assets/js/date-time/bootstrap-timepicker.min.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 209
+        // line 215
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("assets/js/date-time/moment.min.js"), "html", null, true);
         echo "\"></script>
 
     <script src=\"";
-        // line 211
+        // line 217
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("assets/js/date-time/bootstrap-datetimepicker.min.js"), "html", null, true);
         echo "\">< /script>
                                                                     < script src = \"";
-        // line 212
+        // line 218
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("assets/js/jquery.autosize.min.js"), "html", null, true);
         echo "\" ></script>
     <script  src = \"";
-        // line 213
+        // line 219
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("assets/js/jquery.ui.addresspicker.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 214
+        // line 220
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("assets/js/jquery.maskedinput.min.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 215
+        // line 221
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("assets/js/bootstrap-tag.min.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 216
+        // line 222
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("assets/js/ace-elements.min.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 217
+        // line 223
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("assets/js/ace.min.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 218
+        // line 224
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("assets/js/jquery.dataTables.min.js"), "html", null, true);
         echo "\"></script>
     <script\tsrc=\"";
-        // line 219
+        // line 225
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("assets/js/jquery.dataTables.bootstrap.js"), "html", null, true);
         echo "\"></script>
     <script type=\"text/javascript\">
@@ -441,6 +447,6 @@ class __TwigTemplate_e405eff56eeba22f6fd2c8b02a8ed8e90312ec4a2ce5bde5f41a0fdeb38
 
     public function getDebugInfo()
     {
-        return array (  387 => 219,  383 => 218,  379 => 217,  375 => 216,  371 => 215,  367 => 214,  363 => 213,  359 => 212,  355 => 211,  350 => 209,  346 => 208,  341 => 207,  338 => 206,  302 => 172,  292 => 168,  288 => 167,  283 => 165,  279 => 164,  275 => 163,  271 => 162,  262 => 156,  246 => 142,  242 => 141,  205 => 106,  203 => 105,  196 => 103,  177 => 87,  164 => 77,  154 => 70,  139 => 57,  129 => 53,  124 => 50,  120 => 49,  117 => 48,  107 => 44,  102 => 41,  98 => 40,  95 => 39,  92 => 38,  82 => 32,  63 => 13,  60 => 12,  54 => 8,  49 => 6,  45 => 5,  40 => 4,  11 => 3,);
+        return array (  393 => 225,  389 => 224,  385 => 223,  381 => 222,  377 => 221,  373 => 220,  369 => 219,  365 => 218,  361 => 217,  356 => 215,  352 => 214,  347 => 213,  344 => 212,  308 => 178,  298 => 174,  294 => 173,  289 => 171,  285 => 170,  281 => 169,  277 => 168,  268 => 162,  252 => 148,  248 => 147,  210 => 111,  208 => 110,  201 => 108,  177 => 87,  164 => 77,  154 => 70,  139 => 57,  129 => 53,  124 => 50,  120 => 49,  117 => 48,  107 => 44,  102 => 41,  98 => 40,  95 => 39,  92 => 38,  82 => 32,  63 => 13,  60 => 12,  54 => 8,  49 => 6,  45 => 5,  40 => 4,  11 => 3,);
     }
 }

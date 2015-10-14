@@ -150,17 +150,23 @@ class __TwigTemplate_a5a1781ab8a133386cd9e7e74beb01ec05cead81b4317b4fa3152b27608
         echo "  method = \"POST\"  action = \"";
         echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("cestom_admin_modifier_universite", array("iduniversite" => (isset($context["iduniversite"]) ? $context["iduniversite"] : $this->getContext($context, "iduniversite")))), "html", null, true);
         echo "\">\t
-
+                 <fieldset>
+                    <div class=\"col-sm-10 widget-main\">
+                        <h4 class=\"header blue bolder smaller\">
+                            Modifier les infos de l' université
+                        </h4>
+                    </div>
                                                     ";
-        // line 73
+        // line 78
         $this->env->loadTemplate("CestomAdminBundle:GestionMembre:formulaireUniversite.html.twig")->display($context);
-        // line 74
+        // line 79
         echo "                                                    <div class=\"form-actions center\">
                                                         <button id=\"valider\" type=\"submit\" class=\"btn btn-sm btn-success\">
                                                             Modifier
                                                             <i class=\"ace-icon fa fa-pencil icon-on-right bigger-110\"></i>
                                                         </button>
                                                     </div>
+                 </fieldset>
                                                 </form>
                                                     
                                                 <div class=\"table-header\">
@@ -187,11 +193,11 @@ class __TwigTemplate_a5a1781ab8a133386cd9e7e74beb01ec05cead81b4317b4fa3152b27608
 
                                                     <tbody>
                                                         ";
-        // line 105
+        // line 111
         $context['_parent'] = (array) $context;
         $context['_seq'] = twig_ensure_traversable((isset($context["universites"]) ? $context["universites"] : $this->getContext($context, "universites")));
         foreach ($context['_seq'] as $context["_key"] => $context["universite"]) {
-            // line 106
+            // line 112
             echo "                                                            <tr>
 
                                                                 <td class=\"center\">
@@ -207,7 +213,7 @@ class __TwigTemplate_a5a1781ab8a133386cd9e7e74beb01ec05cead81b4317b4fa3152b27608
 
 
                                                                     <a class=\"green\" href=\"";
-            // line 120
+            // line 126
             echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("cestom_admin_modifier_universite", array("iduniversite" => $this->getAttribute($context["universite"], "iduniv", array()))), "html", null, true);
             echo "\">
                                                                         <i class=\"ace-icon fa fa-pencil bigger-130\"></i>
@@ -216,15 +222,15 @@ class __TwigTemplate_a5a1781ab8a133386cd9e7e74beb01ec05cead81b4317b4fa3152b27608
                                                                 </td>
 
                                                                 <td>";
-            // line 126
+            // line 132
             echo twig_escape_filter($this->env, $this->getAttribute($context["universite"], "nomuniv", array()), "html", null, true);
             echo "</td>
                                                                                                                                 <td>";
-            // line 127
+            // line 133
             echo twig_escape_filter($this->env, $this->getAttribute($context["universite"], "contactuniv", array()), "html", null, true);
             echo "</td>
                                                                 <td>";
-            // line 128
+            // line 134
             echo twig_escape_filter($this->env, $this->getAttribute($context["universite"], "addresseuniv", array()), "html", null, true);
             echo "</td>
 
@@ -235,7 +241,7 @@ class __TwigTemplate_a5a1781ab8a133386cd9e7e74beb01ec05cead81b4317b4fa3152b27608
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['universite'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 133
+        // line 139
         echo "                                                    </tbody>
                                                 </table>
 
@@ -258,17 +264,17 @@ class __TwigTemplate_a5a1781ab8a133386cd9e7e74beb01ec05cead81b4317b4fa3152b27608
 ";
     }
 
-    // line 154
+    // line 160
     public function block_javascript($context, array $blocks = array())
     {
-        // line 155
+        // line 161
         echo "    
     <script src=\"";
-        // line 156
+        // line 162
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("assets/js/jquery.dataTables.min.js"), "html", null, true);
         echo "\"></script>
     <script\tsrc=\"";
-        // line 157
+        // line 163
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("assets/js/jquery.dataTables.bootstrap.js"), "html", null, true);
         echo "\"></script>
     <script type=\"text/javascript\">
@@ -315,6 +321,6 @@ class __TwigTemplate_a5a1781ab8a133386cd9e7e74beb01ec05cead81b4317b4fa3152b27608
 
     public function getDebugInfo()
     {
-        return array (  272 => 157,  268 => 156,  265 => 155,  262 => 154,  239 => 133,  228 => 128,  224 => 127,  220 => 126,  211 => 120,  195 => 106,  191 => 105,  158 => 74,  156 => 73,  149 => 71,  136 => 60,  126 => 56,  121 => 53,  117 => 52,  114 => 51,  104 => 47,  99 => 44,  95 => 43,  92 => 42,  89 => 41,  79 => 35,  55 => 11,  52 => 10,  45 => 5,  40 => 4,  11 => 3,);
+        return array (  278 => 163,  274 => 162,  271 => 161,  268 => 160,  245 => 139,  234 => 134,  230 => 133,  226 => 132,  217 => 126,  201 => 112,  197 => 111,  163 => 79,  161 => 78,  149 => 71,  136 => 60,  126 => 56,  121 => 53,  117 => 52,  114 => 51,  104 => 47,  99 => 44,  95 => 43,  92 => 42,  89 => 41,  79 => 35,  55 => 11,  52 => 10,  45 => 5,  40 => 4,  11 => 3,);
     }
 }

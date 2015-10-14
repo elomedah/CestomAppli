@@ -45,14 +45,14 @@ class Formation
     private $idFormation;
 
     /**
-     * @var \Cestom\StoreBundle\Entity\Membre
-     */
-    private $idmembre;
-
-    /**
      * @var \Cestom\StoreBundle\Entity\Universite
      */
     private $iduniv;
+
+    /**
+     * @var \Cestom\StoreBundle\Entity\Membre
+     */
+    private $idmembre;
 
 
     /**
@@ -204,29 +204,6 @@ class Formation
     }
 
     /**
-     * Set idmembre
-     *
-     * @param \Cestom\StoreBundle\Entity\Membre $idmembre
-     * @return Formation
-     */
-    public function setIdmembre(\Cestom\StoreBundle\Entity\Membre $idmembre = null)
-    {
-        $this->idmembre = $idmembre;
-
-        return $this;
-    }
-
-    /**
-     * Get idmembre
-     *
-     * @return \Cestom\StoreBundle\Entity\Membre 
-     */
-    public function getIdmembre()
-    {
-        return $this->idmembre;
-    }
-
-    /**
      * Set iduniv
      *
      * @param \Cestom\StoreBundle\Entity\Universite $iduniv
@@ -247,5 +224,28 @@ class Formation
     public function getIduniv()
     {
         return $this->iduniv;
+    }
+
+    /**
+     * Set idmembre
+     *
+     * @param \Cestom\StoreBundle\Entity\Membre $idmembre
+     * @return Formation
+     */
+    public function setIdmembre(\Cestom\StoreBundle\Entity\Membre $idmembre = null)
+    {
+        $this->idmembre = $idmembre;
+
+        return $this;
+    }
+
+    /**
+     * Get idmembre
+     *
+     * @return \Cestom\StoreBundle\Entity\Membre 
+     */
+    public function getIdmembre()
+    {
+        return $this->idmembre;
     }
 }
