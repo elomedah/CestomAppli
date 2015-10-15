@@ -25,14 +25,14 @@ class BureauVille
     private $idbureau;
 
     /**
-     * @var \Cestom\StoreBundle\Entity\Ville
-     */
-    private $idville;
-
-    /**
      * @var \Cestom\StoreBundle\Entity\Membre
      */
     private $idmembre;
+
+    /**
+     * @var \Cestom\StoreBundle\Entity\Ville
+     */
+    private $idville;
 
 
     /**
@@ -92,29 +92,6 @@ class BureauVille
     }
 
     /**
-     * Set idville
-     *
-     * @param \Cestom\StoreBundle\Entity\Ville $idville
-     * @return BureauVille
-     */
-    public function setIdville(\Cestom\StoreBundle\Entity\Ville $idville = null)
-    {
-        $this->idville = $idville;
-
-        return $this;
-    }
-
-    /**
-     * Get idville
-     *
-     * @return \Cestom\StoreBundle\Entity\Ville 
-     */
-    public function getIdville()
-    {
-        return $this->idville;
-    }
-
-    /**
      * Set idmembre
      *
      * @param \Cestom\StoreBundle\Entity\Membre $idmembre
@@ -135,5 +112,28 @@ class BureauVille
     public function getIdmembre()
     {
         return $this->idmembre;
+    }
+
+    /**
+     * Set idville
+     *
+     * @param \Cestom\StoreBundle\Entity\Ville $idville
+     * @return BureauVille
+     */
+    public function setIdville(\Cestom\StoreBundle\Entity\Ville $idville = null)
+    {
+        $this->idville = $idville;
+
+        return $this;
+    }
+
+    /**
+     * Get idville
+     *
+     * @return \Cestom\StoreBundle\Entity\Ville 
+     */
+    public function getIdville()
+    {
+        return $this->idville;
     }
 }

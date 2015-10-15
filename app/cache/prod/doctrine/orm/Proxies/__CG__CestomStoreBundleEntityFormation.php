@@ -64,10 +64,10 @@ class Formation extends \Cestom\StoreBundle\Entity\Formation implements \Doctrin
     public function __sleep()
     {
         if ($this->__isInitialized__) {
-            return array('__isInitialized__', '' . "\0" . 'Cestom\\StoreBundle\\Entity\\Formation' . "\0" . 'libelleFormation', '' . "\0" . 'Cestom\\StoreBundle\\Entity\\Formation' . "\0" . 'diplomeViseFormation', '' . "\0" . 'Cestom\\StoreBundle\\Entity\\Formation' . "\0" . 'programmeBourse', '' . "\0" . 'Cestom\\StoreBundle\\Entity\\Formation' . "\0" . 'dateDebutFormation', '' . "\0" . 'Cestom\\StoreBundle\\Entity\\Formation' . "\0" . 'dureeFormation', '' . "\0" . 'Cestom\\StoreBundle\\Entity\\Formation' . "\0" . 'competenceAcquise', '' . "\0" . 'Cestom\\StoreBundle\\Entity\\Formation' . "\0" . 'idFormation', '' . "\0" . 'Cestom\\StoreBundle\\Entity\\Formation' . "\0" . 'idmembre', '' . "\0" . 'Cestom\\StoreBundle\\Entity\\Formation' . "\0" . 'iduniv');
+            return array('__isInitialized__', '' . "\0" . 'Cestom\\StoreBundle\\Entity\\Formation' . "\0" . 'libelleFormation', '' . "\0" . 'Cestom\\StoreBundle\\Entity\\Formation' . "\0" . 'diplomeViseFormation', '' . "\0" . 'Cestom\\StoreBundle\\Entity\\Formation' . "\0" . 'programmeBourse', '' . "\0" . 'Cestom\\StoreBundle\\Entity\\Formation' . "\0" . 'dateDebutFormation', '' . "\0" . 'Cestom\\StoreBundle\\Entity\\Formation' . "\0" . 'dureeFormation', '' . "\0" . 'Cestom\\StoreBundle\\Entity\\Formation' . "\0" . 'competenceAcquise', '' . "\0" . 'Cestom\\StoreBundle\\Entity\\Formation' . "\0" . 'idFormation', '' . "\0" . 'Cestom\\StoreBundle\\Entity\\Formation' . "\0" . 'iduniv', '' . "\0" . 'Cestom\\StoreBundle\\Entity\\Formation' . "\0" . 'idmembre');
         }
 
-        return array('__isInitialized__', '' . "\0" . 'Cestom\\StoreBundle\\Entity\\Formation' . "\0" . 'libelleFormation', '' . "\0" . 'Cestom\\StoreBundle\\Entity\\Formation' . "\0" . 'diplomeViseFormation', '' . "\0" . 'Cestom\\StoreBundle\\Entity\\Formation' . "\0" . 'programmeBourse', '' . "\0" . 'Cestom\\StoreBundle\\Entity\\Formation' . "\0" . 'dateDebutFormation', '' . "\0" . 'Cestom\\StoreBundle\\Entity\\Formation' . "\0" . 'dureeFormation', '' . "\0" . 'Cestom\\StoreBundle\\Entity\\Formation' . "\0" . 'competenceAcquise', '' . "\0" . 'Cestom\\StoreBundle\\Entity\\Formation' . "\0" . 'idFormation', '' . "\0" . 'Cestom\\StoreBundle\\Entity\\Formation' . "\0" . 'idmembre', '' . "\0" . 'Cestom\\StoreBundle\\Entity\\Formation' . "\0" . 'iduniv');
+        return array('__isInitialized__', '' . "\0" . 'Cestom\\StoreBundle\\Entity\\Formation' . "\0" . 'libelleFormation', '' . "\0" . 'Cestom\\StoreBundle\\Entity\\Formation' . "\0" . 'diplomeViseFormation', '' . "\0" . 'Cestom\\StoreBundle\\Entity\\Formation' . "\0" . 'programmeBourse', '' . "\0" . 'Cestom\\StoreBundle\\Entity\\Formation' . "\0" . 'dateDebutFormation', '' . "\0" . 'Cestom\\StoreBundle\\Entity\\Formation' . "\0" . 'dureeFormation', '' . "\0" . 'Cestom\\StoreBundle\\Entity\\Formation' . "\0" . 'competenceAcquise', '' . "\0" . 'Cestom\\StoreBundle\\Entity\\Formation' . "\0" . 'idFormation', '' . "\0" . 'Cestom\\StoreBundle\\Entity\\Formation' . "\0" . 'iduniv', '' . "\0" . 'Cestom\\StoreBundle\\Entity\\Formation' . "\0" . 'idmembre');
     }
 
     /**
@@ -323,28 +323,6 @@ class Formation extends \Cestom\StoreBundle\Entity\Formation implements \Doctrin
     /**
      * {@inheritDoc}
      */
-    public function setIdmembre(\Cestom\StoreBundle\Entity\Membre $idmembre = NULL)
-    {
-
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setIdmembre', array($idmembre));
-
-        return parent::setIdmembre($idmembre);
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public function getIdmembre()
-    {
-
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getIdmembre', array());
-
-        return parent::getIdmembre();
-    }
-
-    /**
-     * {@inheritDoc}
-     */
     public function setIduniv(\Cestom\StoreBundle\Entity\Universite $iduniv = NULL)
     {
 
@@ -362,6 +340,28 @@ class Formation extends \Cestom\StoreBundle\Entity\Formation implements \Doctrin
         $this->__initializer__ && $this->__initializer__->__invoke($this, 'getIduniv', array());
 
         return parent::getIduniv();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setIdmembre(\Cestom\StoreBundle\Entity\Membre $idmembre = NULL)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setIdmembre', array($idmembre));
+
+        return parent::setIdmembre($idmembre);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getIdmembre()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getIdmembre', array());
+
+        return parent::getIdmembre();
     }
 
 }

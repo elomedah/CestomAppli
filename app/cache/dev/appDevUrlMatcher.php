@@ -27,6 +27,145 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
         $context = $this->context;
         $request = $this->request;
 
+        if (0 === strpos($pathinfo, '/css/af6ed8a')) {
+            // _assetic_af6ed8a
+            if ($pathinfo === '/css/af6ed8a.css') {
+                return array (  '_controller' => 'assetic.controller:render',  'name' => 'af6ed8a',  'pos' => NULL,  '_format' => 'css',  '_route' => '_assetic_af6ed8a',);
+            }
+
+            if (0 === strpos($pathinfo, '/css/af6ed8a_')) {
+                // _assetic_af6ed8a_0
+                if ($pathinfo === '/css/af6ed8a_accueilStyles_1.css') {
+                    return array (  '_controller' => 'assetic.controller:render',  'name' => 'af6ed8a',  'pos' => 0,  '_format' => 'css',  '_route' => '_assetic_af6ed8a_0',);
+                }
+
+                if (0 === strpos($pathinfo, '/css/af6ed8a_owl.')) {
+                    // _assetic_af6ed8a_1
+                    if ($pathinfo === '/css/af6ed8a_owl.carousel_2.css') {
+                        return array (  '_controller' => 'assetic.controller:render',  'name' => 'af6ed8a',  'pos' => 1,  '_format' => 'css',  '_route' => '_assetic_af6ed8a_1',);
+                    }
+
+                    if (0 === strpos($pathinfo, '/css/af6ed8a_owl.t')) {
+                        // _assetic_af6ed8a_2
+                        if ($pathinfo === '/css/af6ed8a_owl.transitions_3.css') {
+                            return array (  '_controller' => 'assetic.controller:render',  'name' => 'af6ed8a',  'pos' => 2,  '_format' => 'css',  '_route' => '_assetic_af6ed8a_2',);
+                        }
+
+                        // _assetic_af6ed8a_3
+                        if ($pathinfo === '/css/af6ed8a_owl.theme_4.css') {
+                            return array (  '_controller' => 'assetic.controller:render',  'name' => 'af6ed8a',  'pos' => 3,  '_format' => 'css',  '_route' => '_assetic_af6ed8a_3',);
+                        }
+
+                    }
+
+                }
+
+            }
+
+        }
+
+        if (0 === strpos($pathinfo, '/images')) {
+            if (0 === strpos($pathinfo, '/images/d10e26c')) {
+                // _assetic_d10e26c
+                if ($pathinfo === '/images/d10e26c.png') {
+                    return array (  '_controller' => 'assetic.controller:render',  'name' => 'd10e26c',  'pos' => NULL,  '_format' => 'png',  '_route' => '_assetic_d10e26c',);
+                }
+
+                // _assetic_d10e26c_0
+                if ($pathinfo === '/images/d10e26c_logo-cestom-entete_1.png') {
+                    return array (  '_controller' => 'assetic.controller:render',  'name' => 'd10e26c',  'pos' => 0,  '_format' => 'png',  '_route' => '_assetic_d10e26c_0',);
+                }
+
+            }
+
+            if (0 === strpos($pathinfo, '/images/4ced26d')) {
+                // _assetic_4ced26d
+                if ($pathinfo === '/images/4ced26d.png') {
+                    return array (  '_controller' => 'assetic.controller:render',  'name' => '4ced26d',  'pos' => NULL,  '_format' => 'png',  '_route' => '_assetic_4ced26d',);
+                }
+
+                // _assetic_4ced26d_0
+                if ($pathinfo === '/images/4ced26d_logo-cestom-footer_1.png') {
+                    return array (  '_controller' => 'assetic.controller:render',  'name' => '4ced26d',  'pos' => 0,  '_format' => 'png',  '_route' => '_assetic_4ced26d_0',);
+                }
+
+            }
+
+        }
+
+        if (0 === strpos($pathinfo, '/js/971d665')) {
+            // _assetic_971d665
+            if ($pathinfo === '/js/971d665.js') {
+                return array (  '_controller' => 'assetic.controller:render',  'name' => '971d665',  'pos' => NULL,  '_format' => 'js',  '_route' => '_assetic_971d665',);
+            }
+
+            // _assetic_971d665_0
+            if ($pathinfo === '/js/971d665_owl.carousel.min_1.js') {
+                return array (  '_controller' => 'assetic.controller:render',  'name' => '971d665',  'pos' => 0,  '_format' => 'js',  '_route' => '_assetic_971d665_0',);
+            }
+
+        }
+
+        if (0 === strpos($pathinfo, '/css/e9e056b')) {
+            // _assetic_e9e056b
+            if ($pathinfo === '/css/e9e056b.css') {
+                return array (  '_controller' => 'assetic.controller:render',  'name' => 'e9e056b',  'pos' => NULL,  '_format' => 'css',  '_route' => '_assetic_e9e056b',);
+            }
+
+            if (0 === strpos($pathinfo, '/css/e9e056b_')) {
+                if (0 === strpos($pathinfo, '/css/e9e056b_bootstrap')) {
+                    // _assetic_e9e056b_0
+                    if ($pathinfo === '/css/e9e056b_bootstrap.min_1.css') {
+                        return array (  '_controller' => 'assetic.controller:render',  'name' => 'e9e056b',  'pos' => 0,  '_format' => 'css',  '_route' => '_assetic_e9e056b_0',);
+                    }
+
+                    // _assetic_e9e056b_1
+                    if ($pathinfo === '/css/e9e056b_bootstrap-theme.min_2.css') {
+                        return array (  '_controller' => 'assetic.controller:render',  'name' => 'e9e056b',  'pos' => 1,  '_format' => 'css',  '_route' => '_assetic_e9e056b_1',);
+                    }
+
+                }
+
+                // _assetic_e9e056b_2
+                if ($pathinfo === '/css/e9e056b_font-awesome.min_3.css') {
+                    return array (  '_controller' => 'assetic.controller:render',  'name' => 'e9e056b',  'pos' => 2,  '_format' => 'css',  '_route' => '_assetic_e9e056b_2',);
+                }
+
+                // _assetic_e9e056b_3
+                if ($pathinfo === '/css/e9e056b_colorbox_4.css') {
+                    return array (  '_controller' => 'assetic.controller:render',  'name' => 'e9e056b',  'pos' => 3,  '_format' => 'css',  '_route' => '_assetic_e9e056b_3',);
+                }
+
+            }
+
+        }
+
+        if (0 === strpos($pathinfo, '/js/afbcea7')) {
+            // _assetic_afbcea7
+            if ($pathinfo === '/js/afbcea7.js') {
+                return array (  '_controller' => 'assetic.controller:render',  'name' => 'afbcea7',  'pos' => NULL,  '_format' => 'js',  '_route' => '_assetic_afbcea7',);
+            }
+
+            if (0 === strpos($pathinfo, '/js/afbcea7_')) {
+                // _assetic_afbcea7_0
+                if ($pathinfo === '/js/afbcea7_bootstrap.min_1.js') {
+                    return array (  '_controller' => 'assetic.controller:render',  'name' => 'afbcea7',  'pos' => 0,  '_format' => 'js',  '_route' => '_assetic_afbcea7_0',);
+                }
+
+                // _assetic_afbcea7_1
+                if ($pathinfo === '/js/afbcea7_script_2.js') {
+                    return array (  '_controller' => 'assetic.controller:render',  'name' => 'afbcea7',  'pos' => 1,  '_format' => 'js',  '_route' => '_assetic_afbcea7_1',);
+                }
+
+                // _assetic_afbcea7_2
+                if ($pathinfo === '/js/afbcea7_jquery.colorbox-min_3.js') {
+                    return array (  '_controller' => 'assetic.controller:render',  'name' => 'afbcea7',  'pos' => 2,  '_format' => 'js',  '_route' => '_assetic_afbcea7_2',);
+                }
+
+            }
+
+        }
+
         if (0 === strpos($pathinfo, '/_')) {
             // _wdt
             if (0 === strpos($pathinfo, '/_wdt') && preg_match('#^/_wdt/(?P<token>[^/]++)$#s', $pathinfo, $matches)) {
@@ -127,17 +266,196 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
         }
 
-        if (0 === strpos($pathinfo, '/hello')) {
-            // cestom_store_homepage
-            if (preg_match('#^/hello/(?P<name>[^/]++)$#s', $pathinfo, $matches)) {
-                return $this->mergeDefaults(array_replace($matches, array('_route' => 'cestom_store_homepage')), array (  '_controller' => 'Cestom\\StoreBundle\\Controller\\DefaultController::indexAction',));
+        if (0 === strpos($pathinfo, '/cms')) {
+            if (0 === strpos($pathinfo, '/cms/article')) {
+                // cestomarticlebundle_article
+                if (rtrim($pathinfo, '/') === '/cms/article') {
+                    if (substr($pathinfo, -1) !== '/') {
+                        return $this->redirect($pathinfo.'/', 'cestomarticlebundle_article');
+                    }
+
+                    return array (  '_controller' => 'Cestom\\ArticleBundle\\Controller\\ArticleController::indexAction',  '_route' => 'cestomarticlebundle_article',);
+                }
+
+                // cestomarticlebundle_article_show
+                if (preg_match('#^/cms/article/(?P<id>[^/]++)/show$#s', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'cestomarticlebundle_article_show')), array (  '_controller' => 'Cestom\\ArticleBundle\\Controller\\ArticleController::showAction',));
+                }
+
+                // cestomarticlebundle_article_new
+                if ($pathinfo === '/cms/article/new') {
+                    return array (  '_controller' => 'Cestom\\ArticleBundle\\Controller\\ArticleController::newAction',  '_route' => 'cestomarticlebundle_article_new',);
+                }
+
+                // cestomarticlebundle_article_create
+                if ($pathinfo === '/cms/article/create') {
+                    if ($this->context->getMethod() != 'POST') {
+                        $allow[] = 'POST';
+                        goto not_cestomarticlebundle_article_create;
+                    }
+
+                    return array (  '_controller' => 'Cestom\\ArticleBundle\\Controller\\ArticleController::createAction',  '_route' => 'cestomarticlebundle_article_create',);
+                }
+                not_cestomarticlebundle_article_create:
+
+                // cestomarticlebundle_article_edit
+                if (preg_match('#^/cms/article/(?P<id>[^/]++)/edit$#s', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'cestomarticlebundle_article_edit')), array (  '_controller' => 'Cestom\\ArticleBundle\\Controller\\ArticleController::editAction',));
+                }
+
+                // cestomarticlebundle_article_update
+                if (preg_match('#^/cms/article/(?P<id>[^/]++)/update$#s', $pathinfo, $matches)) {
+                    if (!in_array($this->context->getMethod(), array('POST', 'PUT'))) {
+                        $allow = array_merge($allow, array('POST', 'PUT'));
+                        goto not_cestomarticlebundle_article_update;
+                    }
+
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'cestomarticlebundle_article_update')), array (  '_controller' => 'Cestom\\ArticleBundle\\Controller\\ArticleController::updateAction',));
+                }
+                not_cestomarticlebundle_article_update:
+
+                // cestomarticlebundle_article_delete
+                if (preg_match('#^/cms/article/(?P<id>[^/]++)/delete$#s', $pathinfo, $matches)) {
+                    if (!in_array($this->context->getMethod(), array('POST', 'DELETE'))) {
+                        $allow = array_merge($allow, array('POST', 'DELETE'));
+                        goto not_cestomarticlebundle_article_delete;
+                    }
+
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'cestomarticlebundle_article_delete')), array (  '_controller' => 'Cestom\\ArticleBundle\\Controller\\ArticleController::deleteAction',));
+                }
+                not_cestomarticlebundle_article_delete:
+
             }
 
-            // cestom_user_homepage
-            if (preg_match('#^/hello/(?P<name>[^/]++)$#s', $pathinfo, $matches)) {
-                return $this->mergeDefaults(array_replace($matches, array('_route' => 'cestom_user_homepage')), array (  '_controller' => 'Cestom\\UserBundle\\Controller\\DefaultController::indexAction',));
+            if (0 === strpos($pathinfo, '/cms/pays')) {
+                // pays
+                if (rtrim($pathinfo, '/') === '/cms/pays') {
+                    if (substr($pathinfo, -1) !== '/') {
+                        return $this->redirect($pathinfo.'/', 'pays');
+                    }
+
+                    return array (  '_controller' => 'Cestom\\ArticleBundle\\Controller\\PaysController::indexAction',  '_route' => 'pays',);
+                }
+
+                // pays_show
+                if (preg_match('#^/cms/pays/(?P<id>[^/]++)/show$#s', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'pays_show')), array (  '_controller' => 'Cestom\\ArticleBundle\\Controller\\PaysController::showAction',));
+                }
+
+                // pays_new
+                if ($pathinfo === '/cms/pays/new') {
+                    return array (  '_controller' => 'Cestom\\ArticleBundle\\Controller\\PaysController::newAction',  '_route' => 'pays_new',);
+                }
+
+                // pays_create
+                if ($pathinfo === '/cms/pays/create') {
+                    if ($this->context->getMethod() != 'POST') {
+                        $allow[] = 'POST';
+                        goto not_pays_create;
+                    }
+
+                    return array (  '_controller' => 'Cestom\\ArticleBundle\\Controller\\PaysController::createAction',  '_route' => 'pays_create',);
+                }
+                not_pays_create:
+
+                // pays_edit
+                if (preg_match('#^/cms/pays/(?P<id>[^/]++)/edit$#s', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'pays_edit')), array (  '_controller' => 'Cestom\\ArticleBundle\\Controller\\PaysController::editAction',));
+                }
+
+                // pays_update
+                if (preg_match('#^/cms/pays/(?P<id>[^/]++)/update$#s', $pathinfo, $matches)) {
+                    if (!in_array($this->context->getMethod(), array('POST', 'PUT'))) {
+                        $allow = array_merge($allow, array('POST', 'PUT'));
+                        goto not_pays_update;
+                    }
+
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'pays_update')), array (  '_controller' => 'Cestom\\ArticleBundle\\Controller\\PaysController::updateAction',));
+                }
+                not_pays_update:
+
+                // pays_delete
+                if (preg_match('#^/cms/pays/(?P<id>[^/]++)/delete$#s', $pathinfo, $matches)) {
+                    if (!in_array($this->context->getMethod(), array('POST', 'DELETE'))) {
+                        $allow = array_merge($allow, array('POST', 'DELETE'));
+                        goto not_pays_delete;
+                    }
+
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'pays_delete')), array (  '_controller' => 'Cestom\\ArticleBundle\\Controller\\PaysController::deleteAction',));
+                }
+                not_pays_delete:
+
             }
 
+            if (0 === strpos($pathinfo, '/cms/categorie')) {
+                // cestomarticlebundle_categorie
+                if (rtrim($pathinfo, '/') === '/cms/categorie') {
+                    if (substr($pathinfo, -1) !== '/') {
+                        return $this->redirect($pathinfo.'/', 'cestomarticlebundle_categorie');
+                    }
+
+                    return array (  '_controller' => 'Cestom\\ArticleBundle\\Controller\\CategorieController::indexAction',  '_route' => 'cestomarticlebundle_categorie',);
+                }
+
+                // cestomarticlebundle_categorie_show
+                if (preg_match('#^/cms/categorie/(?P<id>[^/]++)/show$#s', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'cestomarticlebundle_categorie_show')), array (  '_controller' => 'Cestom\\ArticleBundle\\Controller\\CategorieController::showAction',));
+                }
+
+                // cestomarticlebundle_categorie_new
+                if ($pathinfo === '/cms/categorie/new') {
+                    return array (  '_controller' => 'Cestom\\ArticleBundle\\Controller\\CategorieController::newAction',  '_route' => 'cestomarticlebundle_categorie_new',);
+                }
+
+                // cestomarticlebundle_categorie_create
+                if ($pathinfo === '/cms/categorie/create') {
+                    if ($this->context->getMethod() != 'POST') {
+                        $allow[] = 'POST';
+                        goto not_cestomarticlebundle_categorie_create;
+                    }
+
+                    return array (  '_controller' => 'Cestom\\ArticleBundle\\Controller\\CategorieController::createAction',  '_route' => 'cestomarticlebundle_categorie_create',);
+                }
+                not_cestomarticlebundle_categorie_create:
+
+                // cestomarticlebundle_categorie_edit
+                if (preg_match('#^/cms/categorie/(?P<id>[^/]++)/edit$#s', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'cestomarticlebundle_categorie_edit')), array (  '_controller' => 'Cestom\\ArticleBundle\\Controller\\CategorieController::editAction',));
+                }
+
+                // cestomarticlebundle_categorie_update
+                if (preg_match('#^/cms/categorie/(?P<id>[^/]++)/update$#s', $pathinfo, $matches)) {
+                    if (!in_array($this->context->getMethod(), array('POST', 'PUT'))) {
+                        $allow = array_merge($allow, array('POST', 'PUT'));
+                        goto not_cestomarticlebundle_categorie_update;
+                    }
+
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'cestomarticlebundle_categorie_update')), array (  '_controller' => 'Cestom\\ArticleBundle\\Controller\\CategorieController::updateAction',));
+                }
+                not_cestomarticlebundle_categorie_update:
+
+                // cestomarticlebundle_categorie_delete
+                if (preg_match('#^/cms/categorie/(?P<id>[^/]++)/delete$#s', $pathinfo, $matches)) {
+                    if (!in_array($this->context->getMethod(), array('POST', 'DELETE'))) {
+                        $allow = array_merge($allow, array('POST', 'DELETE'));
+                        goto not_cestomarticlebundle_categorie_delete;
+                    }
+
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'cestomarticlebundle_categorie_delete')), array (  '_controller' => 'Cestom\\ArticleBundle\\Controller\\CategorieController::deleteAction',));
+                }
+                not_cestomarticlebundle_categorie_delete:
+
+            }
+
+        }
+
+        // cestom_home
+        if (rtrim($pathinfo, '/') === '') {
+            if (substr($pathinfo, -1) !== '/') {
+                return $this->redirect($pathinfo.'/', 'cestom_home');
+            }
+
+            return array (  '_controller' => 'Cestom\\ArticleBundle\\Controller\\CmsController::indexAction',  '_route' => 'cestom_home',);
         }
 
         if (0 === strpos($pathinfo, '/admin')) {

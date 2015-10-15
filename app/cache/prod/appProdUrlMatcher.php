@@ -27,17 +27,196 @@ class appProdUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirecta
         $context = $this->context;
         $request = $this->request;
 
-        if (0 === strpos($pathinfo, '/hello')) {
-            // cestom_store_homepage
-            if (preg_match('#^/hello/(?P<name>[^/]++)$#s', $pathinfo, $matches)) {
-                return $this->mergeDefaults(array_replace($matches, array('_route' => 'cestom_store_homepage')), array (  '_controller' => 'Cestom\\StoreBundle\\Controller\\DefaultController::indexAction',));
+        if (0 === strpos($pathinfo, '/cms')) {
+            if (0 === strpos($pathinfo, '/cms/article')) {
+                // cestomarticlebundle_article
+                if (rtrim($pathinfo, '/') === '/cms/article') {
+                    if (substr($pathinfo, -1) !== '/') {
+                        return $this->redirect($pathinfo.'/', 'cestomarticlebundle_article');
+                    }
+
+                    return array (  '_controller' => 'Cestom\\ArticleBundle\\Controller\\ArticleController::indexAction',  '_route' => 'cestomarticlebundle_article',);
+                }
+
+                // cestomarticlebundle_article_show
+                if (preg_match('#^/cms/article/(?P<id>[^/]++)/show$#s', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'cestomarticlebundle_article_show')), array (  '_controller' => 'Cestom\\ArticleBundle\\Controller\\ArticleController::showAction',));
+                }
+
+                // cestomarticlebundle_article_new
+                if ($pathinfo === '/cms/article/new') {
+                    return array (  '_controller' => 'Cestom\\ArticleBundle\\Controller\\ArticleController::newAction',  '_route' => 'cestomarticlebundle_article_new',);
+                }
+
+                // cestomarticlebundle_article_create
+                if ($pathinfo === '/cms/article/create') {
+                    if ($this->context->getMethod() != 'POST') {
+                        $allow[] = 'POST';
+                        goto not_cestomarticlebundle_article_create;
+                    }
+
+                    return array (  '_controller' => 'Cestom\\ArticleBundle\\Controller\\ArticleController::createAction',  '_route' => 'cestomarticlebundle_article_create',);
+                }
+                not_cestomarticlebundle_article_create:
+
+                // cestomarticlebundle_article_edit
+                if (preg_match('#^/cms/article/(?P<id>[^/]++)/edit$#s', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'cestomarticlebundle_article_edit')), array (  '_controller' => 'Cestom\\ArticleBundle\\Controller\\ArticleController::editAction',));
+                }
+
+                // cestomarticlebundle_article_update
+                if (preg_match('#^/cms/article/(?P<id>[^/]++)/update$#s', $pathinfo, $matches)) {
+                    if (!in_array($this->context->getMethod(), array('POST', 'PUT'))) {
+                        $allow = array_merge($allow, array('POST', 'PUT'));
+                        goto not_cestomarticlebundle_article_update;
+                    }
+
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'cestomarticlebundle_article_update')), array (  '_controller' => 'Cestom\\ArticleBundle\\Controller\\ArticleController::updateAction',));
+                }
+                not_cestomarticlebundle_article_update:
+
+                // cestomarticlebundle_article_delete
+                if (preg_match('#^/cms/article/(?P<id>[^/]++)/delete$#s', $pathinfo, $matches)) {
+                    if (!in_array($this->context->getMethod(), array('POST', 'DELETE'))) {
+                        $allow = array_merge($allow, array('POST', 'DELETE'));
+                        goto not_cestomarticlebundle_article_delete;
+                    }
+
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'cestomarticlebundle_article_delete')), array (  '_controller' => 'Cestom\\ArticleBundle\\Controller\\ArticleController::deleteAction',));
+                }
+                not_cestomarticlebundle_article_delete:
+
             }
 
-            // cestom_user_homepage
-            if (preg_match('#^/hello/(?P<name>[^/]++)$#s', $pathinfo, $matches)) {
-                return $this->mergeDefaults(array_replace($matches, array('_route' => 'cestom_user_homepage')), array (  '_controller' => 'Cestom\\UserBundle\\Controller\\DefaultController::indexAction',));
+            if (0 === strpos($pathinfo, '/cms/pays')) {
+                // pays
+                if (rtrim($pathinfo, '/') === '/cms/pays') {
+                    if (substr($pathinfo, -1) !== '/') {
+                        return $this->redirect($pathinfo.'/', 'pays');
+                    }
+
+                    return array (  '_controller' => 'Cestom\\ArticleBundle\\Controller\\PaysController::indexAction',  '_route' => 'pays',);
+                }
+
+                // pays_show
+                if (preg_match('#^/cms/pays/(?P<id>[^/]++)/show$#s', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'pays_show')), array (  '_controller' => 'Cestom\\ArticleBundle\\Controller\\PaysController::showAction',));
+                }
+
+                // pays_new
+                if ($pathinfo === '/cms/pays/new') {
+                    return array (  '_controller' => 'Cestom\\ArticleBundle\\Controller\\PaysController::newAction',  '_route' => 'pays_new',);
+                }
+
+                // pays_create
+                if ($pathinfo === '/cms/pays/create') {
+                    if ($this->context->getMethod() != 'POST') {
+                        $allow[] = 'POST';
+                        goto not_pays_create;
+                    }
+
+                    return array (  '_controller' => 'Cestom\\ArticleBundle\\Controller\\PaysController::createAction',  '_route' => 'pays_create',);
+                }
+                not_pays_create:
+
+                // pays_edit
+                if (preg_match('#^/cms/pays/(?P<id>[^/]++)/edit$#s', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'pays_edit')), array (  '_controller' => 'Cestom\\ArticleBundle\\Controller\\PaysController::editAction',));
+                }
+
+                // pays_update
+                if (preg_match('#^/cms/pays/(?P<id>[^/]++)/update$#s', $pathinfo, $matches)) {
+                    if (!in_array($this->context->getMethod(), array('POST', 'PUT'))) {
+                        $allow = array_merge($allow, array('POST', 'PUT'));
+                        goto not_pays_update;
+                    }
+
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'pays_update')), array (  '_controller' => 'Cestom\\ArticleBundle\\Controller\\PaysController::updateAction',));
+                }
+                not_pays_update:
+
+                // pays_delete
+                if (preg_match('#^/cms/pays/(?P<id>[^/]++)/delete$#s', $pathinfo, $matches)) {
+                    if (!in_array($this->context->getMethod(), array('POST', 'DELETE'))) {
+                        $allow = array_merge($allow, array('POST', 'DELETE'));
+                        goto not_pays_delete;
+                    }
+
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'pays_delete')), array (  '_controller' => 'Cestom\\ArticleBundle\\Controller\\PaysController::deleteAction',));
+                }
+                not_pays_delete:
+
             }
 
+            if (0 === strpos($pathinfo, '/cms/categorie')) {
+                // cestomarticlebundle_categorie
+                if (rtrim($pathinfo, '/') === '/cms/categorie') {
+                    if (substr($pathinfo, -1) !== '/') {
+                        return $this->redirect($pathinfo.'/', 'cestomarticlebundle_categorie');
+                    }
+
+                    return array (  '_controller' => 'Cestom\\ArticleBundle\\Controller\\CategorieController::indexAction',  '_route' => 'cestomarticlebundle_categorie',);
+                }
+
+                // cestomarticlebundle_categorie_show
+                if (preg_match('#^/cms/categorie/(?P<id>[^/]++)/show$#s', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'cestomarticlebundle_categorie_show')), array (  '_controller' => 'Cestom\\ArticleBundle\\Controller\\CategorieController::showAction',));
+                }
+
+                // cestomarticlebundle_categorie_new
+                if ($pathinfo === '/cms/categorie/new') {
+                    return array (  '_controller' => 'Cestom\\ArticleBundle\\Controller\\CategorieController::newAction',  '_route' => 'cestomarticlebundle_categorie_new',);
+                }
+
+                // cestomarticlebundle_categorie_create
+                if ($pathinfo === '/cms/categorie/create') {
+                    if ($this->context->getMethod() != 'POST') {
+                        $allow[] = 'POST';
+                        goto not_cestomarticlebundle_categorie_create;
+                    }
+
+                    return array (  '_controller' => 'Cestom\\ArticleBundle\\Controller\\CategorieController::createAction',  '_route' => 'cestomarticlebundle_categorie_create',);
+                }
+                not_cestomarticlebundle_categorie_create:
+
+                // cestomarticlebundle_categorie_edit
+                if (preg_match('#^/cms/categorie/(?P<id>[^/]++)/edit$#s', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'cestomarticlebundle_categorie_edit')), array (  '_controller' => 'Cestom\\ArticleBundle\\Controller\\CategorieController::editAction',));
+                }
+
+                // cestomarticlebundle_categorie_update
+                if (preg_match('#^/cms/categorie/(?P<id>[^/]++)/update$#s', $pathinfo, $matches)) {
+                    if (!in_array($this->context->getMethod(), array('POST', 'PUT'))) {
+                        $allow = array_merge($allow, array('POST', 'PUT'));
+                        goto not_cestomarticlebundle_categorie_update;
+                    }
+
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'cestomarticlebundle_categorie_update')), array (  '_controller' => 'Cestom\\ArticleBundle\\Controller\\CategorieController::updateAction',));
+                }
+                not_cestomarticlebundle_categorie_update:
+
+                // cestomarticlebundle_categorie_delete
+                if (preg_match('#^/cms/categorie/(?P<id>[^/]++)/delete$#s', $pathinfo, $matches)) {
+                    if (!in_array($this->context->getMethod(), array('POST', 'DELETE'))) {
+                        $allow = array_merge($allow, array('POST', 'DELETE'));
+                        goto not_cestomarticlebundle_categorie_delete;
+                    }
+
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'cestomarticlebundle_categorie_delete')), array (  '_controller' => 'Cestom\\ArticleBundle\\Controller\\CategorieController::deleteAction',));
+                }
+                not_cestomarticlebundle_categorie_delete:
+
+            }
+
+        }
+
+        // cestom_home
+        if (rtrim($pathinfo, '/') === '') {
+            if (substr($pathinfo, -1) !== '/') {
+                return $this->redirect($pathinfo.'/', 'cestom_home');
+            }
+
+            return array (  '_controller' => 'Cestom\\ArticleBundle\\Controller\\CmsController::indexAction',  '_route' => 'cestom_home',);
         }
 
         if (0 === strpos($pathinfo, '/admin')) {
@@ -112,9 +291,17 @@ class appProdUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirecta
 
                 }
 
-                // cestom_admin_ajouter_bureau
-                if ($pathinfo === '/admin/ville/ajouterBureau') {
-                    return array (  '_controller' => 'Cestom\\AdminBundle\\Controller\\AjouterBureauController::ajouterBureauAction',  '_route' => 'cestom_admin_ajouter_bureau',);
+                if (0 === strpos($pathinfo, '/admin/ville/bureau')) {
+                    // cestom_admin_ajouter_bureau_ville
+                    if ($pathinfo === '/admin/ville/bureau/ajouterBureau') {
+                        return array (  '_controller' => 'Cestom\\AdminBundle\\Controller\\AjouterBureauMembreController::ajouterBureauMembreAction',  '_route' => 'cestom_admin_ajouter_bureau_ville',);
+                    }
+
+                    // cestom_admin_modifier_bureau_ville
+                    if (0 === strpos($pathinfo, '/admin/ville/bureau/modifierBureau') && preg_match('#^/admin/ville/bureau/modifierBureau/(?P<idbureau>[^/]++)$#s', $pathinfo, $matches)) {
+                        return $this->mergeDefaults(array_replace($matches, array('_route' => 'cestom_admin_modifier_bureau_ville')), array (  '_controller' => 'Cestom\\AdminBundle\\Controller\\ModifierBureauMembreController::modifierBureauMembreAction',));
+                    }
+
                 }
 
             }

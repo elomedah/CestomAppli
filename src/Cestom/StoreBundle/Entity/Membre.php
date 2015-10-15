@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * Membre
  */
 class Membre
-{    
+{
     /**
      * @var string
      */
@@ -85,33 +85,10 @@ class Membre
     private $idmembre;
 
     /**
-     * @var \Cestom\UserBundle\Entity\User
+     * @var \Cestom\StoreBundle\Entity\Fosuser
      */
     private $id;
 
-
-    /**
-     * Set id
-     *
-     * @param \Cestom\UserBundle\Entity\User $id
-     * @return Membre
-     */
-    public function setId(\Cestom\UserBundle\Entity\User $id = null)
-    {
-        $this->id = $id;
-
-        return $this;
-    }
-
-    /**
-     * Get id
-     *
-     * @return \Cestom\UserBundle\Entity\User 
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
 
     /**
      * Set sexe
@@ -443,5 +420,28 @@ class Membre
     public function getIdmembre()
     {
         return $this->idmembre;
+    }
+
+    /**
+     * Set id
+     *
+     * @param \Cestom\StoreBundle\Entity\Fosuser $id
+     * @return Membre
+     */
+    public function setId(\Cestom\StoreBundle\Entity\Fosuser $id = null)
+    {
+        $this->id = $id;
+
+        return $this;
+    }
+
+    /**
+     * Get id
+     *
+     * @return \Cestom\StoreBundle\Entity\Fosuser 
+     */
+    public function getId()
+    {
+        return $this->id;
     }
 }

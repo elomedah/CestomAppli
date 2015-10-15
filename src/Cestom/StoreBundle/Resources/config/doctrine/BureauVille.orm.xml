@@ -13,14 +13,14 @@
     </id>
     <field name="anneeScolaire" type="string" column="ANNEE_SCOLAIRE" length="10" nullable="false"/>
     <field name="posteMembre" type="string" column="POSTE_MEMBRE" length="255" nullable="false"/>
-    <many-to-one field="idville" target-entity="Ville">
-      <join-columns>
-        <join-column name="IDVILLE" referenced-column-name="IDVILLE"/>
-      </join-columns>
-    </many-to-one>
     <many-to-one field="idmembre" target-entity="Membre">
       <join-columns>
         <join-column name="IDMEMBRE" referenced-column-name="IDMEMBRE"/>
+      </join-columns>
+    </many-to-one>
+    <many-to-one field="idville" target-entity="Ville">
+      <join-columns>
+        <join-column name="IDVILLE" referenced-column-name="IDVILLE"/>
       </join-columns>
     </many-to-one>
   </entity>

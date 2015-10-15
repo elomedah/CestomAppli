@@ -64,10 +64,10 @@ class VilleMembre extends \Cestom\StoreBundle\Entity\VilleMembre implements \Doc
     public function __sleep()
     {
         if ($this->__isInitialized__) {
-            return array('__isInitialized__', '' . "\0" . 'Cestom\\StoreBundle\\Entity\\VilleMembre' . "\0" . 'adresse', '' . "\0" . 'Cestom\\StoreBundle\\Entity\\VilleMembre' . "\0" . 'dateDebut', '' . "\0" . 'Cestom\\StoreBundle\\Entity\\VilleMembre' . "\0" . 'idvillemembre', '' . "\0" . 'Cestom\\StoreBundle\\Entity\\VilleMembre' . "\0" . 'idville', '' . "\0" . 'Cestom\\StoreBundle\\Entity\\VilleMembre' . "\0" . 'idmembre');
+            return array('__isInitialized__', '' . "\0" . 'Cestom\\StoreBundle\\Entity\\VilleMembre' . "\0" . 'adresse', '' . "\0" . 'Cestom\\StoreBundle\\Entity\\VilleMembre' . "\0" . 'dateDebut', '' . "\0" . 'Cestom\\StoreBundle\\Entity\\VilleMembre' . "\0" . 'idvillemembre', '' . "\0" . 'Cestom\\StoreBundle\\Entity\\VilleMembre' . "\0" . 'idmembre', '' . "\0" . 'Cestom\\StoreBundle\\Entity\\VilleMembre' . "\0" . 'idville');
         }
 
-        return array('__isInitialized__', '' . "\0" . 'Cestom\\StoreBundle\\Entity\\VilleMembre' . "\0" . 'adresse', '' . "\0" . 'Cestom\\StoreBundle\\Entity\\VilleMembre' . "\0" . 'dateDebut', '' . "\0" . 'Cestom\\StoreBundle\\Entity\\VilleMembre' . "\0" . 'idvillemembre', '' . "\0" . 'Cestom\\StoreBundle\\Entity\\VilleMembre' . "\0" . 'idville', '' . "\0" . 'Cestom\\StoreBundle\\Entity\\VilleMembre' . "\0" . 'idmembre');
+        return array('__isInitialized__', '' . "\0" . 'Cestom\\StoreBundle\\Entity\\VilleMembre' . "\0" . 'adresse', '' . "\0" . 'Cestom\\StoreBundle\\Entity\\VilleMembre' . "\0" . 'dateDebut', '' . "\0" . 'Cestom\\StoreBundle\\Entity\\VilleMembre' . "\0" . 'idvillemembre', '' . "\0" . 'Cestom\\StoreBundle\\Entity\\VilleMembre' . "\0" . 'idmembre', '' . "\0" . 'Cestom\\StoreBundle\\Entity\\VilleMembre' . "\0" . 'idville');
     }
 
     /**
@@ -235,28 +235,6 @@ class VilleMembre extends \Cestom\StoreBundle\Entity\VilleMembre implements \Doc
     /**
      * {@inheritDoc}
      */
-    public function setIdville(\Cestom\StoreBundle\Entity\Ville $idville = NULL)
-    {
-
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setIdville', array($idville));
-
-        return parent::setIdville($idville);
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public function getIdville()
-    {
-
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getIdville', array());
-
-        return parent::getIdville();
-    }
-
-    /**
-     * {@inheritDoc}
-     */
     public function setIdmembre(\Cestom\StoreBundle\Entity\Membre $idmembre = NULL)
     {
 
@@ -274,6 +252,28 @@ class VilleMembre extends \Cestom\StoreBundle\Entity\VilleMembre implements \Doc
         $this->__initializer__ && $this->__initializer__->__invoke($this, 'getIdmembre', array());
 
         return parent::getIdmembre();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setIdville(\Cestom\StoreBundle\Entity\Ville $idville = NULL)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setIdville', array($idville));
+
+        return parent::setIdville($idville);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getIdville()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getIdville', array());
+
+        return parent::getIdville();
     }
 
 }

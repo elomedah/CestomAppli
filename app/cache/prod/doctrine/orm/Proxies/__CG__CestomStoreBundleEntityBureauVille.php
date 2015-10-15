@@ -64,10 +64,10 @@ class BureauVille extends \Cestom\StoreBundle\Entity\BureauVille implements \Doc
     public function __sleep()
     {
         if ($this->__isInitialized__) {
-            return array('__isInitialized__', '' . "\0" . 'Cestom\\StoreBundle\\Entity\\BureauVille' . "\0" . 'posteMembre', '' . "\0" . 'Cestom\\StoreBundle\\Entity\\BureauVille' . "\0" . 'idmembre', '' . "\0" . 'Cestom\\StoreBundle\\Entity\\BureauVille' . "\0" . 'idville', '' . "\0" . 'Cestom\\StoreBundle\\Entity\\BureauVille' . "\0" . 'anneeScolaire');
+            return array('__isInitialized__', '' . "\0" . 'Cestom\\StoreBundle\\Entity\\BureauVille' . "\0" . 'anneeScolaire', '' . "\0" . 'Cestom\\StoreBundle\\Entity\\BureauVille' . "\0" . 'posteMembre', '' . "\0" . 'Cestom\\StoreBundle\\Entity\\BureauVille' . "\0" . 'idbureau', '' . "\0" . 'Cestom\\StoreBundle\\Entity\\BureauVille' . "\0" . 'idmembre', '' . "\0" . 'Cestom\\StoreBundle\\Entity\\BureauVille' . "\0" . 'idville');
         }
 
-        return array('__isInitialized__', '' . "\0" . 'Cestom\\StoreBundle\\Entity\\BureauVille' . "\0" . 'posteMembre', '' . "\0" . 'Cestom\\StoreBundle\\Entity\\BureauVille' . "\0" . 'idmembre', '' . "\0" . 'Cestom\\StoreBundle\\Entity\\BureauVille' . "\0" . 'idville', '' . "\0" . 'Cestom\\StoreBundle\\Entity\\BureauVille' . "\0" . 'anneeScolaire');
+        return array('__isInitialized__', '' . "\0" . 'Cestom\\StoreBundle\\Entity\\BureauVille' . "\0" . 'anneeScolaire', '' . "\0" . 'Cestom\\StoreBundle\\Entity\\BureauVille' . "\0" . 'posteMembre', '' . "\0" . 'Cestom\\StoreBundle\\Entity\\BureauVille' . "\0" . 'idbureau', '' . "\0" . 'Cestom\\StoreBundle\\Entity\\BureauVille' . "\0" . 'idmembre', '' . "\0" . 'Cestom\\StoreBundle\\Entity\\BureauVille' . "\0" . 'idville');
     }
 
     /**
@@ -176,6 +176,28 @@ class BureauVille extends \Cestom\StoreBundle\Entity\BureauVille implements \Doc
     /**
      * {@inheritDoc}
      */
+    public function setAnneeScolaire($anneeScolaire)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setAnneeScolaire', array($anneeScolaire));
+
+        return parent::setAnneeScolaire($anneeScolaire);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getAnneeScolaire()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getAnneeScolaire', array());
+
+        return parent::getAnneeScolaire();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
     public function setPosteMembre($posteMembre)
     {
 
@@ -198,7 +220,22 @@ class BureauVille extends \Cestom\StoreBundle\Entity\BureauVille implements \Doc
     /**
      * {@inheritDoc}
      */
-    public function setIdmembre(\Cestom\StoreBundle\Entity\Membre $idmembre)
+    public function getIdbureau()
+    {
+        if ($this->__isInitialized__ === false) {
+            return (int)  parent::getIdbureau();
+        }
+
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getIdbureau', array());
+
+        return parent::getIdbureau();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setIdmembre(\Cestom\StoreBundle\Entity\Membre $idmembre = NULL)
     {
 
         $this->__initializer__ && $this->__initializer__->__invoke($this, 'setIdmembre', array($idmembre));
@@ -220,7 +257,7 @@ class BureauVille extends \Cestom\StoreBundle\Entity\BureauVille implements \Doc
     /**
      * {@inheritDoc}
      */
-    public function setIdville(\Cestom\StoreBundle\Entity\Ville $idville)
+    public function setIdville(\Cestom\StoreBundle\Entity\Ville $idville = NULL)
     {
 
         $this->__initializer__ && $this->__initializer__->__invoke($this, 'setIdville', array($idville));
@@ -237,28 +274,6 @@ class BureauVille extends \Cestom\StoreBundle\Entity\BureauVille implements \Doc
         $this->__initializer__ && $this->__initializer__->__invoke($this, 'getIdville', array());
 
         return parent::getIdville();
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public function setAnneeScolaire(\Cestom\StoreBundle\Entity\AnneeScolaire $anneeScolaire)
-    {
-
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setAnneeScolaire', array($anneeScolaire));
-
-        return parent::setAnneeScolaire($anneeScolaire);
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public function getAnneeScolaire()
-    {
-
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getAnneeScolaire', array());
-
-        return parent::getAnneeScolaire();
     }
 
 }
