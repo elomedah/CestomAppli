@@ -1,0 +1,30 @@
+cestomarticlebundle_article:
+    path:     /
+    defaults: { _controller: "CestomArticleBundle:Article:index" }
+
+cestomarticlebundle_article_show:
+    path:     /{id}/show
+    defaults: { _controller: "CestomArticleBundle:Article:show" }
+
+cestomarticlebundle_article_new:
+    path:     /new
+    defaults: { _controller: "CestomArticleBundle:Article:new" }
+
+cestomarticlebundle_article_create:
+    path:     /create
+    defaults: { _controller: "CestomArticleBundle:Article:create" }
+    methods:  POST
+
+cestomarticlebundle_article_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "CestomArticleBundle:Article:edit" }
+
+cestomarticlebundle_article_update:
+    path:     /{id}/update
+    defaults: { _controller: "CestomArticleBundle:Article:update" }
+    methods:  [POST, PUT]
+
+cestomarticlebundle_article_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "CestomArticleBundle:Article:delete" }
+    methods:  [POST, DELETE]

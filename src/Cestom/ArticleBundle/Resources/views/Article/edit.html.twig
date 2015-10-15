@@ -1,0 +1,33 @@
+{% extends '::base.html.twig' %}
+ 
+
+{% block soustitre %} 
+    Modification d'un article
+{% endblock %}
+
+
+
+{% block content -%}
+
+    {{ form(edit_form) }}
+	
+		<div class="container panel panel-default mypanel">
+			<div class="row panel-body">
+				<span class=" record_actions btn btn-default">
+							<a href="{{ path(mesRoutes.index) }}">
+								Retour
+							</a>
+				</span>
+				<span>
+            <a href="{{ path(mesRoutes.new) }}"  class="btn btn-default ">
+                Ajouter un nouvel <strong>article</strong>
+            </a>
+        </span>
+					<div class="pull-right">
+								{{ form_start(delete_form) }}
+								{{ form_widget(delete_form.submit, {'attr': {'class': 'btn btn-danger'}}) }}
+								{{ form_end(delete_form) }}
+					</div>
+			</div>
+		</div>
+{% endblock %}

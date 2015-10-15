@@ -5,7 +5,7 @@ imports:
 
 framework:
     #esi:             ~
-    #translator:      { fallbacks: ["%locale%"] }
+    translator:      { fallbacks: ["%locale%"] }
     secret:          "%secret%"
     router:
         resource: "%kernel.root_dir%/config/routing.yml"
@@ -34,7 +34,7 @@ twig:
 assetic:
     debug:          "%kernel.debug%"
     use_controller: false
-    bundles:        [CestomAdminBundle ]
+#    bundles:        [ ]
     #java: /usr/bin/java
     filters:
         cssrewrite: ~
@@ -71,6 +71,17 @@ swiftmailer:
     username:  "%mailer_user%"
     password:  "%mailer_password%"
     spool:     { type: memory }
+
+vich_uploader:
+    db_driver: orm # or mongodb or propel or phpcr
+    mappings:
+        article_image:
+            uri_prefix:         /uploads/articles
+            upload_destination: %kernel.root_dir%/../web/uploads/articles
+            inject_on_load:     false
+            delete_on_update:   true
+            delete_on_remove:   true
+
 
 fos_user:
   db_driver: orm

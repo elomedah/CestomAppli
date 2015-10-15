@@ -1,14 +1,22 @@
+cestom_gestion_des_articles:
+    resource: "@CestomArticleBundle/Resources/config/routing.yml"
+    prefix:   /cms/
+
+cestom_home:
+    path:     /
+    defaults: { _controller: "CestomArticleBundle:Cms:index" }
+
 cestom_store:
     resource: "@CestomStoreBundle/Resources/config/routing.yml"
-    prefix:   /
+    prefix:   /admin
 
 cestom_user:
     resource: "@CestomUserBundle/Resources/config/routing.yml"
-    prefix:   /
+    prefix:   /admin
 
 cestom_admin:
     resource: "@CestomAdminBundle/Resources/config/routing.yml"
-    prefix:   /
+    prefix:   /admin
 
 fos_user:
     resource: "@FOSUserBundle/Resources/config/routing/all.xml"

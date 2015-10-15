@@ -1,0 +1,22 @@
+{% extends '::base_articles.html.twig' %}
+
+{% block body -%}
+    <h1>Pays edit</h1>
+
+    {{ form(edit_form) }}
+
+    <div class="container panel panel-default mypanel">
+    <div class="row panel-body ">
+		<span class="btn btn-default">
+			<a href="{{ path('pays') }}">
+				Retour
+			</a>
+		</span>
+		<div class="pull-right">
+			{{ form_start(delete_form) }}
+			{{ form_widget(delete_form.submit, {'attr': {'class': 'btn btn-danger'}}) }}
+			{{ form_end(delete_form) }}
+		</div>
+	</div> 
+	</div>
+{% endblock %}

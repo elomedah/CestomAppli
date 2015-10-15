@@ -1,0 +1,94 @@
+{% extends '::base.html.twig' %}
+ 
+ 
+
+{% block soustitre %} 
+    {{ entity.titre }}
+{% endblock %}
+
+
+{% block content -%}
+    <div class="article-show">
+
+		<table class="table table-hover table-striped table-bordered table-responsive">
+			<tbody>
+				<tr>
+					<th>Id</th>
+					<td>{{ entity.id }}</td>
+				</tr>
+				<tr>
+					<th>Titre</th>
+					<td >{{ entity.titre }}</td>
+				</tr>
+				<tr>
+					<th>Image</th>
+					<!--<td>{{ entity.introImg }}</td>-->
+					<td>
+						<a  href="{{ vich_uploader_asset(entity, 'introImgFile') }}" title="Cliquez pour agrandir" class="zoom">
+							<img src="{{ vich_uploader_asset(entity, 'introImgFile') }}" alt="image article" class="img-responsive img-thumbnail image-articles "/>
+						</a>
+					</td>
+				</tr>
+				<tr>
+					<th>Introduction</th>
+					<td>{{ entity.introduction }}</td>
+				</tr>
+				<tr>
+					<th>Contenu</th>
+					<td>
+						<div class="contenu">
+							{{ entity.contenu }}
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<th>Création</th>
+					<td>{{ entity.creation|date('Y-m-d H:i:s') }}</td>
+				</tr>
+				<tr>
+					<th>Début de publication</th>
+					<td>{{ entity.debutDePublication|date('Y-m-d H:i:s') }}</td>
+				</tr>
+				<tr>
+					<th>Fin de publication</th>
+					<td>{{ entity.finDePublication|date('Y-m-d H:i:s') }}</td>
+				</tr>
+			</tbody>
+		</table>
+		<div class="container panel panel-default mypanel">
+			<div class="row panel-body">
+					<span class=" record_actions btn btn-default">
+								<a href="{{ path(mesRoutes.index) }}">
+									Retour
+								</a>
+					</span>
+					<span>
+				<a href="{{ path(mesRoutes.new) }}"  class="btn btn-default ">
+					Ajouter un nouveau <strong>article</strong>
+				</a>
+			</span>
+			<span>
+					<a href="{{ path(mesRoutes.edit, { 'id': entity.id }) }}" class="btn btn-default ">
+						Editer
+					</a>
+				</span>
+					<span class="pull-right">
+						{{ form_start(delete_form) }}
+						{{ form_widget(delete_form.submit, {'attr': {'class': 'btn btn-danger'}}) }}
+						{{ form_end(delete_form) }}
+					</span>
+			</div>
+		</div>
+	</div>
+		<style>
+			.image-articles{
+				width:150px;
+				height:150px;
+			}
+			.contenu{
+				font-family:"roboto condensed";
+				text-decoration:none;
+				
+			}
+		</style>
+{% endblock %}

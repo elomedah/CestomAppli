@@ -1,0 +1,80 @@
+{% extends '::base.html.twig' %}
+ 
+ 
+{% block soustitre %} 
+    Liste des articles
+{% endblock %}
+
+
+{% block content -%}
+	
+
+    <table class="table table-hover table-striped table-bordered .table-responsive">
+        <thead>
+            <tr>
+                <th>Images</th> 
+				<th>Titre</th>
+				<th>Catégorie</th>
+                <th>Introduction</th>
+                <th>Crée le</th>
+                <th>Actions</th>
+             </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}  
+            <tr>
+                <td>
+					<a href="{{ vich_uploader_asset(entity, 'introImgFile') }}" title="Cliquez pour agrandir" class="zoom">
+						<img src="{{ vich_uploader_asset(entity, 'introImgFile') }}" alt="image article" class="img-responsive img-thumbnail image-liste-articles zoom "/>
+					</a>
+				</td> 
+                <td><a href="{{ path(mesRoutes.show, { 'id': entity.id }) }}">{{ entity.titre }}</a></td>
+				<td>{{ entity.categorie.categorie }}</td>
+				 <td>{{ entity.introduction }}</td>
+                <td>{% if entity.creation %}{{ entity.creation|date('Y-m-d H:i:s') }}{% endif %}</td>
+				
+				<td>
+					<div style="white-space:nowrap">
+							<a href="{{ path(mesRoutes.show, { 'id': entity.id }) }}" class="btn btn-info "><i class="fa fa-eye"></i></a>
+							<a href="{{ path(mesRoutes.edit, { 'id': entity.id }) }}"  class="btn btn-warning "><i class="fa fa-pencil"></i></a>
+					</div>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <div class="container panel panel-default mypanel">
+		<div class="row panel-body">
+			<div class="ajouter-nouvelle-article">
+				<a href="{{ path(mesRoutes.new) }}" class="btn btn-default ">
+                Ajouter un nouveau article
+				</a>
+			</div>
+		</div>
+    </div>
+	<a href="#" title="Haut de page"><i class="fa fa-caret-square-o-up haut-page" ></i></a>
+	<style>
+	.image-liste-articles{
+			width:50px;
+			height:50px;
+		}
+		.haut-page{
+			position:fixed;
+			bottom:0px;
+			left:0px;
+			background-color:black;
+			color:white;
+			width:40px;
+			height:40px;
+			-moz-border-radius:	0px 10px 0px 0px; 
+			border-radius:		0px 10px 0px 0px;
+			font-size:30px;
+			vertical-align:middle;
+			text-align:center;
+			padding-top:5px;
+			padding-right:5px;			
+		}
+	</style>
+	
+    {% endblock %}

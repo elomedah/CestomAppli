@@ -1,0 +1,23 @@
+{% extends '::base.html.twig' %}
+ 
+
+{% block soustitre %} 
+    Nouvel article
+{% endblock %}
+
+
+
+{% block content -%}
+	 {{ form(form) }}
+	<div class="container panel panel-default mypanel">
+        <div class="row panel-body">
+		<div class="record_actions retour btn btn-default ">
+			<div>
+				<a href="{{ path(mesRoutes.index) }}">
+					Retour
+				</a>
+			</div>
+			</div>
+			</div>
+		</div>
+{% endblock %}

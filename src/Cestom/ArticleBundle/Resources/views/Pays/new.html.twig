@@ -1,0 +1,15 @@
+{% extends '::base_articles.html.twig' %}
+
+{% block body -%}
+    <h1>Pays creation</h1>
+
+    {{ form(form) }}
+
+        <div class="container panel panel-default mypanel">
+		<div class="row panel-body">
+        <a href="{{ path('pays') }}" class="btn btn-default">
+            Retour
+        </a>
+    </div>
+</div>
+{% endblock %}
