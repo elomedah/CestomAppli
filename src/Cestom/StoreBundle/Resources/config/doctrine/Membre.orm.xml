@@ -21,7 +21,7 @@
     <field name="infoComplementmembre" type="string" column="INFO_COMPLEMENTMEMBRE" length="4096" nullable="true"/>
     <field name="photoMimMembre" type="blob" column="PHOTO_MIM_MEMBRE" nullable="true"/>
     <field name="dernierLyceeFrequente" type="string" column="DERNIER_LYCEE_FREQUENTE" length="255" nullable="true"/>
-    <many-to-one field="id" target-entity="Fosuser">
+    <many-to-one field="id" target-entity="Cestom\UserBundle\Entity\User">
       <join-columns>
         <join-column name="ID" referenced-column-name="id"/>
       </join-columns>

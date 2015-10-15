@@ -1,3 +1,0 @@
-cestom_user_homepage:
-    path:     /hello/{name}
-    defaults: { _controller: CestomUserBundle:Default:index }

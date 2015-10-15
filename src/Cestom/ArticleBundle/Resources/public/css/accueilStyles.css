@@ -1,0 +1,324 @@
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,700,400italic,700italic);
+@import url(https://fonts.googleapis.com/css?family=Roboto+Condensed);
+/*@import url(http://www-ru.azfonts.net/fonts/e230b780e9f56dada45da8eb79e13828);*/
+
+@font-face{
+    font-family: cafeta;
+    src: url(../fonts/cafeta.ttf);	
+}
+
+/*Général*/
+body{
+	font-family: Roboto;
+}
+/*Header*/
+header{
+	position:relative;
+	background-color:#494c56;
+	color:white;
+	width:auto;
+	height:auto;
+	padding:1px;
+	margin:0px;
+	line-height: 80px;
+	vertical-align: middle;
+}
+.logo-slogan >* {
+	display: inline-block;
+	vertical-align: middle;
+}
+.footer-coordination{
+	display:inline-block;
+	vertical-align: middle;
+	margin-right:5px;
+}
+.logo-cestom-footer{
+	margin-right: 10px;
+	position:relative;
+	left:0px;
+}
+.coordination{
+	margin-top:10px;
+	font-size: 13px;
+  font-family: "Roboto Condensed";
+  color: rgb( 222, 227, 230 );
+  text-transform: uppercase;
+  line-height: 1;
+  text-align: left;
+  width: 127.342px;
+  height: 59.994px;
+  z-index: 130;
+}
+.defit{
+	text-align: right;
+	display: inline-block;
+	position: relative;
+	left: 0px;
+	margin-right: -55px;
+	font-style: italic;
+	font-size: 20px;
+	font-family: "cafeta";
+	color: rgb( 255, 255, 255 );
+	line-height: 1.14;
+	letter-spacing: 4px;
+    -ms-transform: translate(-75px,0px); /* IE 9 */
+    -webkit-transform: translate(-75px,0px); /* Safari */
+    transform: translate(-75px,0px);
+	z-index: 125;
+}
+.coordination span{
+	display: block;
+	line-height: 16px;
+}
+.boutons_header{
+	vertical-align: middle;
+}
+.boutons_header span{
+	margin-right: 10px;
+}
+.option_bars{
+	color:#ecbe0e;
+}
+h1{
+	font-family: cafeta;
+	letter-spacing: 2px;
+	font-size: 33px;
+}
+h3{
+	font-size: 30.097px;
+  font-family: "cafeta";
+  color: rgb( 73, 76, 86 );
+  text-transform: uppercase;
+  line-height: 0.997;
+  text-align: justifyLeft;
+  -moz-transform: matrix( 1.00048176143331,0,0,0.99676862767033,0,0);
+  -webkit-transform: matrix( 1.00048176143331,0,0,0.99676862767033,0,0);
+  -ms-transform: matrix( 1.00048176143331,0,0,0.99676862767033,0,0);
+  z-index: 47;
+}
+
+/*actu togo*/
+.image_actualites{
+	width:100%;
+	height: 200px;
+}
+.banieresMaroc,
+.banieresTogo,
+.titre_actu_maroc{
+	color:white;
+	padding-right:10px;
+	padding-left:10px;
+	font-size: 15px;
+	font-family: "Roboto Condensed";
+}
+.banieresTogo{
+	background-color: #ecbe0e;
+	border-style: none;
+	opacity:1;
+	line-height: 2.3;
+	position: absolute;
+	margin-top: 20px;
+	margin-left: 0px;
+	width: 55%;
+
+}
+h1,
+.banieresMaroc,
+.banieresTogo,
+.titre_actu_maroc{
+	text-transform: uppercase;
+}
+.into-top-actualite {
+    padding-top: 10px;
+}
+.intro-annexe{
+  font-size: 15px;
+  font-family: "Roboto Condensed";
+  color: rgb( 73, 76, 86 );
+  line-height: 1.333;
+  -moz-transform: matrix( 1.00145594670245,0,0,1,0,0);
+  -webkit-transform: matrix( 1.00145594670245,0,0,1,0,0);
+  -ms-transform: matrix( 1.00145594670245,0,0,1,0,0);
+  width: 236.668px;
+  height: 34px;
+  z-index: 73;
+}
+.aside-article-show{
+	marging-top:10px;
+}
+.titre-actualite{
+	font-size: 20px;
+	font-family: "cafeta";
+	margin-top: 0;
+	color: rgb( 73, 76, 86 );
+	text-transform: uppercase;
+	line-height: 1;
+	-moz-transform: matrix( 1.00041067761807,0,0,1,0,0);
+	-webkit-transform: matrix( 1.00041067761807,0,0,1,0,0);
+	-ms-transform: matrix( 1.00041067761807,0,0,1,0,0);
+  
+}
+.intro{
+	color:rgb(159, 157, 157);
+	font-family:"roboto condensed";
+	}
+.actu_togo{
+	background-color:#f5f5f6;
+	display:block;
+	position:relative;
+	top:0px;
+	
+}
+.d-precedent,.d-suivant{
+	position: relative;
+
+	vertical-align:middle;
+	border: 5px solid black;
+	display:none;
+}
+.actu_item{
+	background-color: #ffffff;
+	margin-bottom: 25px;
+	margin-left:5px;
+	margin-right:5px;
+}
+.articles_appercu{
+	padding: 15px 10px;
+	overflow:hidden;
+}
+
+
+/*actu maroc*/
+.titre_le_maroc {
+  background-color: #494c56;
+  color: #494c56;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  position: relative;
+  
+}
+.titre_maroc_droite{
+  line-height: 0.8;
+  background-color: white;
+  text-align: right;
+  padding-left: 3px;
+  position: relative;
+  min-width: 20px;
+  float: right;
+  display: inline-block;
+  margin: 0;
+  padding-left:15px;
+  padding-right:15px;
+  vertical-align: middle;
+}
+.titre_actu_maroc{
+	max-width: 155px;
+	line-height: 1.8;
+}
+section{
+	margin-bottom:25px;
+	padding-left:50px;
+	padding-right:25px;
+}
+.banieresMaroc,.titre_actu_maroc{
+	background-color: #04694c;
+	border-style: none;
+	margin-bottom:10px;
+	padding-left:10px;
+}
+.banieresMaroc{
+	position: absolute;
+	top: 20px;
+	left: 0px;
+	width:40%;
+	line-height: 2.3;
+	max-width: 150px;
+}
+.actu_avance{
+	float:left;
+	margin-right: 15px;
+	margin-top:15px;
+	vertical-align: top;
+	position: relative;
+}
+.actu_avance img{
+	max-width:500px;
+	max-height:325px;
+	width: 400px;
+	height: 100%;
+}
+section aside img{	
+	width:100%;
+	height: 100%;
+	margin-right: 10px;
+	margin-bottom:15px;
+	margin-left:0px;
+	max-height:150px;
+	max-height:100px;
+}
+section aside .actu-reduit{
+	display:inline-block;
+	text-align:left;
+	vertical-align:left;
+}
+
+
+/*bureau executif*/
+.input-mail{
+	background-color: #ecbe0e;
+}
+
+
+/*nous contacter*/
+.bureau_executif{
+	background-color: #ecbe0e;
+	margin-bottom:15px;
+}
+.nous_contacter{
+	margin-top:15px;
+	margin-bottom:15px;
+	position:relative;
+}
+.boutton_enregistrer{
+	color:#ecbe0e;
+	margin-top:10px;
+	vertical-align:center;
+	text-align:center;
+	margin-bottom:30px;
+	width:100%;
+	border:1px solid black;
+	background-color:#494c56;
+}
+.input-mail{
+	width:100%;
+	margin-top:15px;
+	border:1px solid #494c56;
+	
+}
+.liens-utils h3{
+	margin-top:5px;
+}
+.boutons_footer{
+	text-align:right;
+	margin-left:30px;
+	margin-top:10px;
+	margin-bottom:5px;
+}
+
+.newsletter{
+	margin-top:10px;
+}
+.reseaux-sociaux{
+	margin-left:6px;
+}
+.copiright{
+	text-align:center;
+	vertical-align:middle;
+	width:100%;
+}
+.cestom-mail{
+	margin-top:20px;
+}
+a{
+	color:black;
+}

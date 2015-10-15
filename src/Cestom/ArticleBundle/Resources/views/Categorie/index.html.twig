@@ -1,0 +1,64 @@
+{% extends '::base.html.twig' %}
+
+
+
+{% block soustitre %} 
+    Liste des catégories
+{% endblock %}
+
+
+
+{% block content -%}
+	<div class="tab">
+		<table class="table table-hover table-striped table-bordered .table-responsive ">
+			<thead>
+				<tr>
+					<th>Catégorie</th>
+					<th class="act">Actions</th>
+				</tr>
+			</thead>
+			<tbody>
+			{% for entity in entities %}
+				<tr>
+					<td>
+						<a href="{{ path(mesRoutes.show, { 'id': entity.id }) }}">[{{ entity.id }}] {{ entity.categorie }}</a>
+					</td>
+					<td >
+						<div style="white-space:nowrap"> 
+							<a href="{{ path(mesRoutes.show, { 'id': entity.id }) }}"class="btn btn-info ">
+								<i class="fa fa-eye"></i>
+							</a>
+							<a href="{{ path(mesRoutes.edit, { 'id': entity.id }) }}" class="btn btn-warning ">
+								<i class="fa fa-pencil"></i>
+							</a>						
+						</div>
+					</td>
+				</tr>
+			{% endfor %}
+			</tbody>
+		</table>
+		
+		<div class="container panel panel-default mypanel pan">
+			<div class="row panel-body">
+		
+			<div>
+				<a href="{{ path(mesRoutes.new) }}"  class="btn btn-default ">
+					Ajouter une nouvelle <strong>catégorie</strong>
+				</a>
+			</div>
+		</div> 
+		</div>
+	</div>
+	<style>
+	
+	th {
+		width:50%;
+		max-height:150px;
+	}
+	body{
+		margin:15px;
+		font-family:roboto;
+		color:black;
+	}
+	</style>
+    {% endblock %}

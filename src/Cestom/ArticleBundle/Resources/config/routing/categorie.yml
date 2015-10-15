@@ -1,0 +1,30 @@
+cestomarticlebundle_categorie:
+    path:     /
+    defaults: { _controller: "CestomArticleBundle:Categorie:index" }
+
+cestomarticlebundle_categorie_show:
+    path:     /{id}/show
+    defaults: { _controller: "CestomArticleBundle:Categorie:show" }
+
+cestomarticlebundle_categorie_new:
+    path:     /new
+    defaults: { _controller: "CestomArticleBundle:Categorie:new" }
+
+cestomarticlebundle_categorie_create:
+    path:     /create
+    defaults: { _controller: "CestomArticleBundle:Categorie:create" }
+    methods:  POST
+
+cestomarticlebundle_categorie_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "CestomArticleBundle:Categorie:edit" }
+
+cestomarticlebundle_categorie_update:
+    path:     /{id}/update
+    defaults: { _controller: "CestomArticleBundle:Categorie:update" }
+    methods:  [POST, PUT]
+
+cestomarticlebundle_categorie_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "CestomArticleBundle:Categorie:delete" }
+    methods:  [POST, DELETE]

@@ -1,0 +1,277 @@
+{% extends '::base_public.html.twig' %} 
+
+
+ {% block stylesheets %}
+	{{ parent() }}
+	{% stylesheets filter='cssrewrite'
+		'bundles/cestomarticle/css/accueilStyles.css'
+		'bundles/cestomarticle/css/owlcarousel/owl.carousel.css'
+		'bundles/cestomarticle/css/owlcarousel/owl.transitions.css'
+		'bundles/cestomarticle/css/owlcarousel/owl.theme.css'
+	%}
+		<link href="{{ asset_url }}" type="text/css" rel="stylesheet" />
+	{% endstylesheets %}
+{% endblock %}
+
+{% block body -%}
+	<header>
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-6 logo-slogan">
+					<div class="defit">Rélevons le défit</div>
+					{% image '@CestomArticleBundle/Resources/public/images/logo-cestom-entete.png' %}
+						<img src="{{ asset_url }}" alt="logo-CESTOM"/>
+					{% endimage %}
+					<div class="coordination">
+						<span>COORDINATION DES</span>
+						<span>ETUDIANTS ET</span>
+						<span>STAGIAIRES TOGOLAIS</span>
+						<span>AU MAROC</span>
+					</div>
+				</div>
+				<div class="col-sm-6 text-right boutons_header" >
+					<span class="fa fa-2x fa-bars option_bars"></span>
+					<span class="fa fa-2x fa-search "></span>
+					<span class="fa fa-2x fa-user "></span>
+				</div>
+			</div>
+		</div>
+	</header>
+	
+	<!--ACTUALITES AU TOGO ET AU MAROC-->
+	
+	<!-- Bloc Actualités du TOGO-->
+	<div class="actu_togo">
+		<div class="container">
+			<h1>{{block1.pays.pays}}</h1>
+			<div class="row">
+				<div class="owl-carousel" id="owl_carousel">
+					{% for entity in block1.articles %}
+					<div class="actu_item">
+							<div class="banieres">
+								<div class ="banieresTogo">
+									{{ entity.categorie.categorie }}
+								</div>
+								<img src="{{ vich_uploader_asset(entity, 'introImgFile') }}" alt="Image article" class="image_actualites"/>
+							</div>
+							<div class="articles_appercu">
+								<h3 class="titre-actualite"><a href="{{ path(mesRoutes.showArticle, { 'id': entity.id }) }} class="titre-actualite">{{ entity.titre }}</a></h3>
+								<span class="intro">
+										{{ entity.introduction }}
+							</span>
+							</div>
+						</div>
+					{% endfor %}
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<!-- Bloc Actualités du Maroc-->
+	
+	<div class="bloc-maroc">	
+	
+		<section class="container">
+			<div class="titre_le_maroc clearfix">
+		<h1 class="titre_maroc_droite">
+			{{block2.pays.pays}}
+		</h1>
+	</div>
+	<div class="container-fluid">
+			<h3 class="titre-actualite">
+				{{block2.topArticle.titre}}
+			</h3>	
+			<div class="row">
+				{% if block2.topArticle %}
+					<article class="col-sm-7">
+						<div>
+							<div class='actu_avance' >
+								<div class ="banieresMaroc">
+									{{block2.topArticle.categorie.categorie}}
+								</div>
+								<img src="{{ vich_uploader_asset(block2.topArticle, 'introImgFile') }}" alt="Image article" class="image_actualites"/>					
+							</div>
+							<div class="into-top-actualite">
+								<span>	
+								<a  class="intro" href="{{ path(mesRoutes.showArticle, { 'id': block2.topArticle.id }) }}">
+								{{block2.topArticle.introduction}}
+								</a>
+								</span>							
+							</div>					
+						</div>					
+					</article >
+				{% endif %}
+				
+				<aside class="col-sm-5 aside-article-show">
+					{% for entity in block2.articles %}
+					
+						<div class="row">
+							<div class="col-sm-4">
+							<img src="{{ vich_uploader_asset(entity, 'introImgFile') }}" alt="Image de l'article" class="image_actualites"/>
+							</div>
+							<div class="col-sm-8 ">
+								<div class="titre_actu_maroc">{{entity.categorie.categorie}}</div>
+								<div>
+									<span class="intro intro-annexe">	
+										<a href="{{ path(mesRoutes.showArticle, { 'id': entity.id }) }}">
+											{{entity.introduction}}
+										</a>
+									</span>
+								</div>
+							</div>
+						</div>
+					{% endfor %}
+				</aside>
+			</div>
+			</div>
+		</section>
+	</div>
+	
+	<!--Pied de page -->
+	
+	<footer>
+		<div class="bureau_executif">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-3">
+						 <i class="fa fa-database fa-5x boutons_footer"></i>
+						<h3>LE BUREAU EXECUTIF</h3>
+						<h2><a href="#">TOYI LENNAH</a></h2>
+						<div>Le Sécrétaire générale</div>
+						<div>Téléphone: 0021234578964</div>
+						<div>Email: tlennah@gmail.com</div>
+					</div>
+					<div class="col-sm-2">
+						<a href="#"><span class="fa fa-search-plus fa-5x boutons_footer"></span></a>
+						<h3>REHERCHER</h3>
+						<div><a href="#">RETROUVER UN MEMBRE</a></div>
+					</div>
+					<div class="col-sm-3 newsletter">
+						<div ><h3>ETRE INFORME DES DERNIERES NOUVELLES
+							S'INSCRIRE A LA NEWSLETTER</h3>
+							<input type="email" name="newsletter_email" class="input-mail" placeholder="exemple@cestom.org" size="30" maxlength="50" />
+							<input type="submit" value="ENREGISTRER" class="boutton_enregistrer" />
+						</div>
+						<div>NOUS SUIVRE SUR:
+							<a href="https://www.facebook.com/groups/CESTOM228/1094096120618025" class="fa fa-facebook fa-2x reseaux-sociaux"></a>
+							<i class="fa fa-twitter fa-2x reseaux-sociaux"></i>
+							
+						</div>
+					</div>
+					<div class="col-sm-2 liens-utils">
+						<a href="#" class="fa fa-info-circle fa-5x boutons_footer"></a>
+						<h3>INFOS PRATIQUES</h3>
+						<div><a href="#">Retrouvez un ensemble de liens utiles</a></div>
+					</div>
+					<div class="col-sm-2">
+						<i class="fa fa-home fa-5x boutons_footer"></i>
+						<h3>LE CONSULAT</h3>
+						<div><a href="#">CONTACTER LE CONSULAT</a></div>
+						<div>Téléphone: 0522396048</div>
+						<a href="www.ambassadedutogoaumaroc.org">Site:www.consultogomaroc.org</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="nous_contacter">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-3">
+							<h3>Coordination</h3>
+							<div><a  class="intro" href="#">Présentation</a></div>
+							<div><a  class="intro" href="#">Historique</a></div>
+							<div><a  class="intro" href="#">le bureau exécutif</a></div>
+							<div><a  class="intro" href="#">Les sections</a></div>
+							<div><a  class="intro" href="#">Autres organes</a></div>
+					</div>
+					<div class="col-sm-3">
+							<h3>INFOS PRATIQUES</h3>
+							<div><a  class="intro" href="#" class="intro">Le TOGO</a></div>
+							<div><a  class="intro" href="#">Etudier au MAROC</a></div>
+							<div><a  class="intro" href="#">Aller au TOGO</a></div>
+							<div><a  class="intro" href="#">Paser ses vaccances au TOGO</a></div>
+							<div><a  class="intro" href="#">Carte de séjour au MAROC</a></div>	
+					</div>
+					<div class="col-sm-3">
+							<h3>LE CONSULAT</h3>
+							<div><a  class="intro" href="#">Présentation</a></div>
+							<div><a  class="intro" href="#">Carte d'imatriculation consulaire</a></div>
+							<div><a  class="intro" href="#">Attestations de prise en charge</a></div>
+							<div><a  class="intro" href="#">Légalisations et Authentifications</a></div>
+							<div><a  class="intro" href="#">Laisser passer</a></div>
+							<div><a  class="intro" href="#">Contacter le consulat</a></div>
+					</div>
+					<div class="col-sm-3">
+					
+						<div class="row">
+							<div class="footer-coordinations">
+								<span class="col-sm-6 logo-cestom-footer">
+									{% image '@CestomArticleBundle/Resources/public/images/logo-cestom-footer.png' %}
+										<img src="{{ asset_url }}"/>
+									{% endimage %}
+								</span>
+								<span class="col-sm-6 coordination">
+									<span>Coordination des</span>
+									<span>Etudiants et</span>
+									<span>Stagiaires Togolais</span>
+									<span>au Maroc</span>
+								</span>
+							</div>
+							
+						</div>
+						<div class="cestom-mail">
+							email: <a href="https:mail.yahoo.com">cestom_be@yahoo.fr</a>/<a href="https://mail.google.com">cestom.be@gmail.com</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<label class="copiright">© 2009-2015, CESTOM. Certains droits réservés.</label>
+	</footer>
+{% endblock %}
+
+ {% block javascripts %}
+	{{ parent() }}
+	{% javascripts  '@CestomArticleBundle/Resources/public/js/owl.carousel.min.js' %}
+			<script src="{{ asset_url }}" type="text/javascript"></script>
+	{% endjavascripts %}
+	
+	
+	<script>
+		$(document).ready(function(){
+			
+			$('#owl_carousel').owlCarousel({
+				loop:true,
+				items: 4,
+				margin:10,
+				navigation: true,
+				pagination: false,
+				navigationText : ["<div class='navicon'></div>","<div class='navicon'></div>"],
+				beforeUpdate: function(){
+					resetEqualHeight();
+				},
+				afterInit: function(){
+					makeEqualHeight();
+				},
+				afterUpdate: function(){
+					makeEqualHeight();
+				},
+			});
+			function resetEqualHeight(){
+				$('#owl_carousel .actu_item').css('height', '');
+			}
+			function makeEqualHeight(){
+				var tallest = 0 ;
+				resetEqualHeight();
+				$('#owl_carousel .actu_item').each(function(i, el){
+					el = $(el);
+					if(el.height() > tallest)
+					{
+						tallest = el.height();
+					}
+				});
+				$('#owl_carousel .actu_item').css("height", tallest + "px");
+			}
+		});
+	</script>
+{% endblock %}

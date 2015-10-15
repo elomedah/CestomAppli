@@ -16,11 +16,16 @@ class AppKernel extends Kernel
             new Symfony\Bundle\AsseticBundle\AsseticBundle(),
             new Doctrine\Bundle\DoctrineBundle\DoctrineBundle(),
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
+            
+			//Bundles pour la cestom,
+            new Cestom\ArticleBundle\CestomArticleBundle(),
             new Cestom\AdminBundle\CestomAdminBundle(),
             new Cestom\UserBundle\CestomUserBundle(),
             new Cestom\StoreBundle\CestomStoreBundle(),
+			
+			// Bundle tiers
             new FOS\UserBundle\FOSUserBundle(),
-
+			new Vich\UploaderBundle\VichUploaderBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

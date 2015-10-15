@@ -1,0 +1,12 @@
+cestom_article_article:
+    resource: "@CestomArticleBundle/Resources/config/routing/article.yml"
+    prefix:   /article
+
+cestom_article_pays:
+    resource: "@CestomArticleBundle/Resources/config/routing/pays.yml"
+    prefix:   /pays
+
+cestom_article_categorie:
+    resource: "@CestomArticleBundle/Resources/config/routing/categorie.yml"
+    prefix:   /categorie
+
