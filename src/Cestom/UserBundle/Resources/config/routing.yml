@@ -1,0 +1,32 @@
+cestom_user_homepage:
+    path:     /monCompte
+    defaults: { _controller:CestomUserBundle:GestionCompte:gestionCompte }
+cestom_user_gestion_formation :
+    path:     /Formations
+    defaults: { _controller:CestomUserBundle:GestionFormation:gestionFormation }
+
+cestom_user_delete_formation :
+    path:     /deleteFormation/{idformation}
+    defaults: { _controller:CestomUserBundle:GestionFormation:deleteFormation }
+
+cestom_user_ajouter_formation :
+    path:     /ajouterFormation
+    defaults: { _controller:CestomUserBundle:GestionFormation:ajouterFormation }
+cestom_user_modifier_formation :
+    path:     /modifierFormation/{idformation}
+    defaults: { _controller:CestomUserBundle:GestionFormation:modifierFormation }
+
+cestom_user_gestion_ville:
+    path:     /Villes
+    defaults: { _controller:CestomUserBundle:GestionVille:gestionVille }
+
+cestom_user_delete_ville :
+    path:     /deleteVille/{idvillemembre}
+    defaults: { _controller:CestomUserBundle:GestionVille:deleteVille }
+
+cestom_user_ajouter_ville :
+    path:     /ajouterVille
+    defaults: { _controller:CestomUserBundle:GestionVille:ajouterVille }
+cestom_user_modifier_ville :
+    path:     /modifierVille/{idvillemembre}
+    defaults: { _controller:CestomUserBundle:GestionVille:modifierVille }

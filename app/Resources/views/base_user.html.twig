@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>{% block title %}CESTOM{% endblock %}</title>
+		<link rel="icon" type="image/x-icon" href="{{ asset('icone-site-cestom.ico') }}" />
+        
+        <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css')}}" />
+        <link rel="stylesheet" href="{{ asset('assets/css/dataTable.min.css')}}" />
+   <!-- bootstrap & fontawesome -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+        
+        <!-- text fonts -->
+      <!--  <link rel="stylesheet" href="{{ asset('assets/css/ace-fonts.css')}}" /> -->
+
+        <!-- ace styles -->
+        <link rel="stylesheet" href="{{ asset('assets/css/ace.min.css')}}" />
+        <link rel="stylesheet" href="{{ asset('assets/css/ace-skins.min.css')}}" />
+        <link rel="stylesheet" href="{{ asset('assets/css/ace-rtl.min.css')}}" />
+
+        <script src="{{ asset('assets/js/ace-extra.min.js')}}"></script>   
+       
+<!-- Date picker css -->
+<link rel="stylesheet" href="{{asset('assets/css/datepicker.css')}}" />	
+		<link rel="stylesheet" href="{{asset('assets/css/bootstrap-datetimepicker.css')}}" />
+      
+{% block stylesheets %}
+		{% endblock %}
+    </head>
+    <body>
+              {% block header %}
+<header>
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-6 logo-slogan">
+					<div style="padding:20px" class="defit">Rélevons le défi</div>
+					{% image '@CestomArticleBundle/Resources/public/images/logo-cestom-entete.png' %}
+						<img src="{{ asset_url }}" alt="logo-CESTOM"/>
+					{% endimage %}
+					<div class="coordination">
+						<span>COORDINATION DES</span>
+						<span>ETUDIANTS ET</span>
+						<span>STAGIAIRES TOGOLAIS</span>
+						<span>AU MAROC</span>
+					</div>
+				</div>
+				<div class="col-sm-6 text-right boutons_header" >
+					<span class="fa fa-2x fa-bars option_bars"></span>
+					<span class="fa fa-2x fa-search "></span>
+					<span class="fa fa-2x fa-user "></span>
+				</div>
+			</div>
+		</div>
+	</header>
+	
+		{% endblock %}
+              {% block menu %}
+		<nav class="navbar navbar-default">
+			<div class="container-fluid">
+			<!-- Brand and toggle get grouped for better mobile display -->
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+						<span class="sr-only">Navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						
+					</button>					
+				</div>
+
+			<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+					<ul class="nav navbar-nav">
+						<li ><a href="{{path ('cestom_user_homepage') }}" >Mon compte </a></li>
+						<li><a href="{{ path ('cestom_user_gestion_formation') }}" >Mes formations </a></li>
+						<li><a href="{{ path ('cestom_user_gestion_ville') }}"> Mes villes </a></li>
+						<li><a href="#">Dossier bourse </a></li>
+						<li><a href="#">Prise en charge</a></li>
+					</ul>
+				</div><!-- /.navbar-collapse -->
+			</div><!-- /.container-fluid -->
+		</nav>
+		{% endblock %}
+
+                  
+
+		{% block body %}
+		
+		{% endblock %}
+                
+		{% block footer %}
+                 <footer>
+		<div class="bureau_executif">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-3">
+						 <i class="fa fa-database fa-5x boutons_footer"></i>
+						<h3>LE BUREAU EXECUTIF</h3>
+						<h2><a href="#">TOYI LENNAH</a></h2>
+						<div>Le Sécrétaire générale</div>
+						<div>Téléphone: 0021234578964</div>
+						<div>Email: tlennah@gmail.com</div>
+					</div>
+					<div class="col-sm-2">
+						<a href="#"><span class="fa fa-search-plus fa-5x boutons_footer"></span></a>
+						<h3>REHERCHER</h3>
+						<div><a href="#">RETROUVER UN MEMBRE</a></div>
+					</div>
+					<div class="col-sm-3 newsletter">
+						<div ><h3>ETRE INFORME DES DERNIERES NOUVELLES
+							S'INSCRIRE A LA NEWSLETTER</h3>
+							<input type="email" name="newsletter_email" class="input-mail" placeholder="exemple@cestom.org" size="30" maxlength="50" />
+							<input type="submit" value="ENREGISTRER" class="boutton_enregistrer" />
+						</div>
+						<div>NOUS SUIVRE SUR:
+							<a href="https://www.facebook.com/groups/CESTOM228/1094096120618025" class="fa fa-facebook fa-2x reseaux-sociaux"></a>
+							<i class="fa fa-twitter fa-2x reseaux-sociaux"></i>
+							
+						</div>
+					</div>
+					<div class="col-sm-2 liens-utils">
+						<a href="#" class="fa fa-info-circle fa-5x boutons_footer"></a>
+						<h3>INFOS PRATIQUES</h3>
+						<div><a href="#">Retrouvez un ensemble de liens utiles</a></div>
+					</div>
+					<div class="col-sm-2">
+						<i class="fa fa-home fa-5x boutons_footer"></i>
+						<h3>LE CONSULAT</h3>
+						<div><a href="#">CONTACTER LE CONSULAT</a></div>
+						<div>Téléphone: 0522396048</div>
+						<a href="www.ambassadedutogoaumaroc.org">Site:www.consultogomaroc.org</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="nous_contacter">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-3">
+							<h3>Coordination</h3>
+							<div><a  class="intro" href="#">Présentation</a></div>
+							<div><a  class="intro" href="#">Historique</a></div>
+							<div><a  class="intro" href="#">le bureau exécutif</a></div>
+							<div><a  class="intro" href="#">Les sections</a></div>
+							<div><a  class="intro" href="#">Autres organes</a></div>
+					</div>
+					<div class="col-sm-3">
+							<h3>INFOS PRATIQUES</h3>
+							<div><a  class="intro" href="#" class="intro">Le TOGO</a></div>
+							<div><a  class="intro" href="#">Etudier au MAROC</a></div>
+							<div><a  class="intro" href="#">Aller au TOGO</a></div>
+							<div><a  class="intro" href="#">Paser ses vaccances au TOGO</a></div>
+							<div><a  class="intro" href="#">Carte de séjour au MAROC</a></div>	
+					</div>
+					<div class="col-sm-3">
+							<h3>LE CONSULAT</h3>
+							<div><a  class="intro" href="#">Présentation</a></div>
+							<div><a  class="intro" href="#">Carte d'imatriculation consulaire</a></div>
+							<div><a  class="intro" href="#">Attestations de prise en charge</a></div>
+							<div><a  class="intro" href="#">Légalisations et Authentifications</a></div>
+							<div><a  class="intro" href="#">Laisser passer</a></div>
+							<div><a  class="intro" href="#">Contacter le consulat</a></div>
+					</div>
+					<div class="col-sm-3">
+					
+						<div class="row">
+							<div class="footer-coordinations">
+								<span class="col-sm-6 logo-cestom-footer">
+									{% image '@CestomArticleBundle/Resources/public/images/logo-cestom-footer.png' %}
+										<img src="{{ asset_url }}"/>
+									{% endimage %}
+								</span>
+								<span class="col-sm-6 coordination">
+									<span>Coordination des</span>
+									<span>Etudiants et</span>
+									<span>Stagiaires Togolais</span>
+									<span>au Maroc</span>
+								</span>
+							</div>
+							
+						</div>
+						<div class="cestom-mail">
+							email: <a href="https:mail.yahoo.com">cestom_be@yahoo.fr</a>/<a href="https://mail.google.com">cestom.be@gmail.com</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<label class="copiright">© 2009-2015, CESTOM. Certains droits réservés.</label>
+	</footer>
+                 {% endblock %}
+	
+<!-- Ace script -->
+   <script src="{{ asset('assets/js/jquery.min.js')}}"></script>
+
+        <script src="{{ asset('assets/js/bootstrap.min.js')}}"></script>
+
+        <script src="{{ asset('assets/js/jquery-ui.custom.min.js')}}"></script>
+        <script src="{{ asset('assets/js/ace-elements.min.js')}}"></script>
+
+        <script src="{{ asset('assets/js/ace.min.js')}}"></script>
+       
+ 
+		{% block javascripts %}
+			
+		{% endblock %}
+		
+    </body>
+  
+</html>

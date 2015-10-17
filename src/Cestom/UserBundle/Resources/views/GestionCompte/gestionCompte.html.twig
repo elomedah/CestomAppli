@@ -1,0 +1,80 @@
+{% extends '::base_user.html.twig' %} 
+
+
+ {% block stylesheets %}
+	{{ parent() }}
+	{% stylesheets filter='cssrewrite'
+		'bundles/cestomarticle/css/accueilStyles.css'
+		'bundles/cestomarticle/css/owlcarousel/owl.carousel.css'
+		'bundles/cestomarticle/css/owlcarousel/owl.transitions.css'
+		'bundles/cestomarticle/css/owlcarousel/owl.theme.css'
+	%}
+		<link href="{{ asset_url }}" type="text/css" rel="stylesheet" />
+	{% endstylesheets %}
+{% endblock %}
+
+{% block body %}
+	
+	 {% for flashMessage in app.session.flashbag.get('messagesucces') %}
+<div class="alert alert-block alert-success">
+<div class="flash-notice">
+
+{{ flashMessage }}
+</div>
+</div>
+{% endfor %}
+
+{% for flashMessage in app.session.flashbag.get('messageerror') %}
+<div class="alert alert-block alert-danger">
+<div class="flash-notice">
+
+{{ flashMessage }}
+</div>
+</div>
+{% endfor %}
+
+     <div class="widget-body">
+        <div class="widget-main no-padding">
+            <form {{ form_enctype(form) }}  method = "POST"  action = "">	
+              
+                {% include "CestomUserBundle:GestionCompte:formulaireUser.html.twig" %}
+<div class="form-actions center">
+                    <button id="valider" type="submit" class="btn btn-sm btn-success">
+                        Modifier
+                        <i class="ace-icon fa fa-pencil icon-on-right bigger-110"></i>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+                                                                                     
+							
+	
+	
+{% endblock %}
+
+ {% block javascripts %}
+	
+	 <script src="{{asset('assets/js/date-time/bootstrap-datepicker.min.js')}}"></script>
+    <script src="{{asset('assets/js/date-time/bootstrap-timepicker.min.js')}}"></script>
+    <script src="{{asset('assets/js/date-time/moment.min.js')}}"></script>
+    <script src="{{asset('assets/js/date-time/bootstrap-datetimepicker.min.js')}}">< /script>
+              < script src = "{{asset('assets/js/jquery.autosize.min.js')}}" ></script>
+<script src="{{asset('assets/js/ace-elements.min.js')}}"></script>
+<script src="{{asset('assets/js/ace.min.js')}}"></script>
+	<script type="text/javascript">
+        jQuery(function($) {
+//datepicker plugin
+            //link
+            $('.date-picker').datepicker({
+                autoclose: true,
+                todayHighlight: true
+            })
+                    //show datepicker when clicking on the icon
+                    .next().on(ace.click_event, function() {
+                $(this).prev().focus();
+            });
+           
+        });
+        </script>
+{% endblock %}

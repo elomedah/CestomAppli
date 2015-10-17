@@ -106,34 +106,50 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
         }
 
-        if (0 === strpos($pathinfo, '/css/e9e056b')) {
-            // _assetic_e9e056b
-            if ($pathinfo === '/css/e9e056b.css') {
-                return array (  '_controller' => 'assetic.controller:render',  'name' => 'e9e056b',  'pos' => NULL,  '_format' => 'css',  '_route' => '_assetic_e9e056b',);
+        if (0 === strpos($pathinfo, '/css')) {
+            if (0 === strpos($pathinfo, '/css/f78f4db')) {
+                // _assetic_f78f4db
+                if ($pathinfo === '/css/f78f4db.css') {
+                    return array (  '_controller' => 'assetic.controller:render',  'name' => 'f78f4db',  'pos' => NULL,  '_format' => 'css',  '_route' => '_assetic_f78f4db',);
+                }
+
+                // _assetic_f78f4db_0
+                if ($pathinfo === '/css/f78f4db_accueilStyles_1.css') {
+                    return array (  '_controller' => 'assetic.controller:render',  'name' => 'f78f4db',  'pos' => 0,  '_format' => 'css',  '_route' => '_assetic_f78f4db_0',);
+                }
+
             }
 
-            if (0 === strpos($pathinfo, '/css/e9e056b_')) {
-                if (0 === strpos($pathinfo, '/css/e9e056b_bootstrap')) {
-                    // _assetic_e9e056b_0
-                    if ($pathinfo === '/css/e9e056b_bootstrap.min_1.css') {
-                        return array (  '_controller' => 'assetic.controller:render',  'name' => 'e9e056b',  'pos' => 0,  '_format' => 'css',  '_route' => '_assetic_e9e056b_0',);
-                    }
-
-                    // _assetic_e9e056b_1
-                    if ($pathinfo === '/css/e9e056b_bootstrap-theme.min_2.css') {
-                        return array (  '_controller' => 'assetic.controller:render',  'name' => 'e9e056b',  'pos' => 1,  '_format' => 'css',  '_route' => '_assetic_e9e056b_1',);
-                    }
-
+            if (0 === strpos($pathinfo, '/css/e9e056b')) {
+                // _assetic_e9e056b
+                if ($pathinfo === '/css/e9e056b.css') {
+                    return array (  '_controller' => 'assetic.controller:render',  'name' => 'e9e056b',  'pos' => NULL,  '_format' => 'css',  '_route' => '_assetic_e9e056b',);
                 }
 
-                // _assetic_e9e056b_2
-                if ($pathinfo === '/css/e9e056b_font-awesome.min_3.css') {
-                    return array (  '_controller' => 'assetic.controller:render',  'name' => 'e9e056b',  'pos' => 2,  '_format' => 'css',  '_route' => '_assetic_e9e056b_2',);
-                }
+                if (0 === strpos($pathinfo, '/css/e9e056b_')) {
+                    if (0 === strpos($pathinfo, '/css/e9e056b_bootstrap')) {
+                        // _assetic_e9e056b_0
+                        if ($pathinfo === '/css/e9e056b_bootstrap.min_1.css') {
+                            return array (  '_controller' => 'assetic.controller:render',  'name' => 'e9e056b',  'pos' => 0,  '_format' => 'css',  '_route' => '_assetic_e9e056b_0',);
+                        }
 
-                // _assetic_e9e056b_3
-                if ($pathinfo === '/css/e9e056b_colorbox_4.css') {
-                    return array (  '_controller' => 'assetic.controller:render',  'name' => 'e9e056b',  'pos' => 3,  '_format' => 'css',  '_route' => '_assetic_e9e056b_3',);
+                        // _assetic_e9e056b_1
+                        if ($pathinfo === '/css/e9e056b_bootstrap-theme.min_2.css') {
+                            return array (  '_controller' => 'assetic.controller:render',  'name' => 'e9e056b',  'pos' => 1,  '_format' => 'css',  '_route' => '_assetic_e9e056b_1',);
+                        }
+
+                    }
+
+                    // _assetic_e9e056b_2
+                    if ($pathinfo === '/css/e9e056b_font-awesome.min_3.css') {
+                        return array (  '_controller' => 'assetic.controller:render',  'name' => 'e9e056b',  'pos' => 2,  '_format' => 'css',  '_route' => '_assetic_e9e056b_2',);
+                    }
+
+                    // _assetic_e9e056b_3
+                    if ($pathinfo === '/css/e9e056b_colorbox_4.css') {
+                        return array (  '_controller' => 'assetic.controller:render',  'name' => 'e9e056b',  'pos' => 3,  '_format' => 'css',  '_route' => '_assetic_e9e056b_3',);
+                    }
+
                 }
 
             }
@@ -459,20 +475,68 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
         }
 
         if (0 === strpos($pathinfo, '/admin')) {
-            if (0 === strpos($pathinfo, '/admin/membre')) {
-                // cestom_admin_homepage
-                if ($pathinfo === '/admin/membre/gestionMembre') {
-                    return array (  '_controller' => 'Cestom\\AdminBundle\\Controller\\GestionMembreController::membreAction',  '_route' => 'cestom_admin_homepage',);
+            // cestom_user_homepage
+            if ($pathinfo === '/admin/monCompte') {
+                return array (  '_controller' => 'Cestom\\UserBundle\\Controller\\GestionCompteController::gestionCompteAction',  '_route' => 'cestom_user_homepage',);
+            }
+
+            // cestom_user_gestion_formation
+            if ($pathinfo === '/admin/Formations') {
+                return array (  '_controller' => 'Cestom\\UserBundle\\Controller\\GestionFormationController::gestionFormationAction',  '_route' => 'cestom_user_gestion_formation',);
+            }
+
+            // cestom_user_delete_formation
+            if (0 === strpos($pathinfo, '/admin/deleteFormation') && preg_match('#^/admin/deleteFormation/(?P<idformation>[^/]++)$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'cestom_user_delete_formation')), array (  '_controller' => 'Cestom\\UserBundle\\Controller\\GestionFormationController::deleteFormationAction',));
+            }
+
+            // cestom_user_ajouter_formation
+            if ($pathinfo === '/admin/ajouterFormation') {
+                return array (  '_controller' => 'Cestom\\UserBundle\\Controller\\GestionFormationController::ajouterFormationAction',  '_route' => 'cestom_user_ajouter_formation',);
+            }
+
+            // cestom_user_modifier_formation
+            if (0 === strpos($pathinfo, '/admin/modifierFormation') && preg_match('#^/admin/modifierFormation/(?P<idformation>[^/]++)$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'cestom_user_modifier_formation')), array (  '_controller' => 'Cestom\\UserBundle\\Controller\\GestionFormationController::modifierFormationAction',));
+            }
+
+            // cestom_user_gestion_ville
+            if ($pathinfo === '/admin/Villes') {
+                return array (  '_controller' => 'Cestom\\UserBundle\\Controller\\GestionVilleController::gestionVilleAction',  '_route' => 'cestom_user_gestion_ville',);
+            }
+
+            // cestom_user_delete_ville
+            if (0 === strpos($pathinfo, '/admin/deleteVille') && preg_match('#^/admin/deleteVille/(?P<idvillemembre>[^/]++)$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'cestom_user_delete_ville')), array (  '_controller' => 'Cestom\\UserBundle\\Controller\\GestionVilleController::deleteVilleAction',));
+            }
+
+            // cestom_user_ajouter_ville
+            if ($pathinfo === '/admin/ajouterVille') {
+                return array (  '_controller' => 'Cestom\\UserBundle\\Controller\\GestionVilleController::ajouterVilleAction',  '_route' => 'cestom_user_ajouter_ville',);
+            }
+
+            if (0 === strpos($pathinfo, '/admin/m')) {
+                // cestom_user_modifier_ville
+                if (0 === strpos($pathinfo, '/admin/modifierVille') && preg_match('#^/admin/modifierVille/(?P<idvillemembre>[^/]++)$#s', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'cestom_user_modifier_ville')), array (  '_controller' => 'Cestom\\UserBundle\\Controller\\GestionVilleController::modifierVilleAction',));
                 }
 
-                // cestom_admin_ajouter_member
-                if ($pathinfo === '/admin/membre/ajouterMembre') {
-                    return array (  '_controller' => 'Cestom\\AdminBundle\\Controller\\AjouterMembreController::ajouterMembreAction',  '_route' => 'cestom_admin_ajouter_member',);
-                }
+                if (0 === strpos($pathinfo, '/admin/membre')) {
+                    // cestom_admin_homepage
+                    if ($pathinfo === '/admin/membre/gestionMembre') {
+                        return array (  '_controller' => 'Cestom\\AdminBundle\\Controller\\GestionMembreController::membreAction',  '_route' => 'cestom_admin_homepage',);
+                    }
 
-                // cestom_admin_modifier_member
-                if (0 === strpos($pathinfo, '/admin/membre/modifierMembre') && preg_match('#^/admin/membre/modifierMembre/(?P<idmembre>[^/]++)$#s', $pathinfo, $matches)) {
-                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'cestom_admin_modifier_member')), array (  '_controller' => 'Cestom\\AdminBundle\\Controller\\ModifierMembreController::modifierMembreAction',));
+                    // cestom_admin_ajouter_member
+                    if ($pathinfo === '/admin/membre/ajouterMembre') {
+                        return array (  '_controller' => 'Cestom\\AdminBundle\\Controller\\AjouterMembreController::ajouterMembreAction',  '_route' => 'cestom_admin_ajouter_member',);
+                    }
+
+                    // cestom_admin_modifier_member
+                    if (0 === strpos($pathinfo, '/admin/membre/modifierMembre') && preg_match('#^/admin/membre/modifierMembre/(?P<idmembre>[^/]++)$#s', $pathinfo, $matches)) {
+                        return $this->mergeDefaults(array_replace($matches, array('_route' => 'cestom_admin_modifier_member')), array (  '_controller' => 'Cestom\\AdminBundle\\Controller\\ModifierMembreController::modifierMembreAction',));
+                    }
+
                 }
 
             }

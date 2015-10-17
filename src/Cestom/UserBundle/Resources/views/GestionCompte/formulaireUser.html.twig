@@ -1,0 +1,174 @@
+ {{ form_errors(form) }}
+
+                <fieldset >
+                    <div class="col-sm-10 widget-main">
+                        <h4 class="header blue bolder smaller">
+                            Général
+                        </h4>
+                    </div>			
+                    
+                     
+                        
+                    <div class="col-sm-10 widget-main">
+
+                        {{ form_label(form.nomMembre, "Nom ", {'label_attr': {'class': 'col-sm-3 control-label '}}) }}
+
+                        {{ form_widget(form.nomMembre, {'attr': {'class': 'col-xs-10 col-sm-5'}}) }}
+
+                    </div>
+
+                    <div class="col-sm-10 widget-main">
+
+                        {{ form_label(form.prenomMembre, "Prénom (s) ", {'label_attr': {'class': 'col-sm-3 control-label '}}) }}
+
+                        {{ form_widget(form.prenomMembre, {'attr': {'class': 'col-xs-10 col-sm-5'}}) }}
+
+                    </div>
+                        <div class="col-sm-10 widget-main">
+                        
+										
+											<label class="col-sm-3 control-label">Sexe</label>
+                                                                                        <div class=" row ">
+											
+												<label>
+
+													<input  value="M" name="sexe" type="radio" class="ace" {% if sexe=='M' %}
+   checked
+{% endif %} />
+													<span class="lbl">Masculin</span>
+												</label>
+											
+												<label>
+													<input value="F" name="sexe" type="radio" class="ace" {% if sexe=='F' %}
+   checked
+{% endif %}/>
+													<span class="lbl">Féminin</span>
+												</label>
+																						
+                                                                                        </div>
+									</div>
+								
+        
+                        <div class="col-sm-10 widget-main">
+
+                                    <label class = "col-sm-3 control-label bold" for="datenaissance">
+                                        Date de naissance
+                                    </label>
+
+                                    <div class="input-group col-xs-10 col-sm-5">
+                                        <input value="{{datenaissance }}" name="datenaissance" class=" required form-control date-picker" id="datenaissance" type="text" data-date-format="dd-mm-yyyy" />
+																<span class="input-group-addon">
+																	<i class="fa fa-calendar bigger-110"></i>
+																</span>
+                                    </div>
+                        </div>
+                       
+                        
+			  <div class="col-sm-10 widget-main">
+
+                        {{ form_label(form.telephonefirst, "Télephone 1 ", {'label_attr': {'class': 'col-sm-3 control-label '}}) }}
+
+                        {{ form_widget(form.telephonefirst, {'attr': {'class': 'col-xs-10 col-sm-5'}}) }}
+
+                    </div> 
+  <div class="col-sm-10 widget-main">
+
+                        {{ form_label(form.telephonesecond, "Télephone 2 ", {'label_attr': {'class': 'col-sm-3 control-label '}}) }}
+
+                        {{ form_widget(form.telephonesecond, {'attr': {'class': 'col-xs-10 col-sm-5'}}) }}
+
+                    </div> 
+
+                    <div class="col-sm-10 widget-main">
+
+                        {{ form_label(form.promotionMembre, "Promotion ", {'label_attr': {'class': 'col-sm-3 control-label '}}) }}
+
+                        {{ form_widget(form.promotionMembre, {'attr': {'class': 'col-xs-10 col-sm-5'}}) }}
+
+                    </div>
+                        
+                        <div class="col-sm-10 widget-main">
+
+                        {{ form_label(form.dernierLyceeFrequente, "Dernier lycée fréquenté ", {'label_attr': {'class': 'col-sm-3 control-label '}}) }}
+
+                        {{ form_widget(form.dernierLyceeFrequente, {'attr': {'class': 'col-xs-10 col-sm-5'}}) }}
+
+                    </div>
+                    <div class="col-sm-10 widget-main">
+
+                        {{ form_label(form.photoMimMembre, "Photo du membre ", {'label_attr': {'class': 'col-sm-3 control-label '}}) }}
+
+                        {{ form_widget(form.photoMimMembre, {'attr': {'class': 'col-xs-10 col-sm-5'}}) }}
+
+                    </div>
+                 
+                </fieldset>
+                <fieldset >
+                    <div class="col-sm-10 widget-main">
+                        <h4 class="header blue bolder smaller">
+                            Info Passport
+                        </h4>
+                    </div>			
+                    <div class="col-sm-10 widget-main">
+
+                        {{ form_label(form.numeroPassportMembre, "Numéro Passport", {'label_attr': {'class': 'col-sm-3 control-label '}}) }}
+
+                        {{ form_widget(form.numeroPassportMembre, {'attr': {'class': 'col-xs-10 col-sm-5'}}) }}
+
+                    </div>
+
+                                               <div class="col-sm-10 widget-main">
+
+                                    <label class = "col-sm-3 control-label bold" for="dateemission">
+                                        Date d'émission 
+                                    </label>
+
+                                    <div class="input-group col-xs-10 col-sm-5">
+                                        <input value="{{dateemission}}" name="dateemission" class="form-control date-picker" id="dateemission" type="text" data-date-format="dd-mm-yyyy" />
+																<span class="input-group-addon">
+																	<i class="fa fa-calendar bigger-110"></i>
+																</span>
+                                    </div>
+                                </div>
+
+
+                                            <div class="col-sm-10 widget-main">
+
+                                    <label class = "col-sm-3 control-label bold" for="dateexpiration">
+                                        Date d 'expiration
+                                    </label>
+
+                                    <div class="input-group col-xs-10 col-sm-5">
+                                        <input value="{{dateexpiration}}" name="datereception" class="form-control date-picker" id="dateexpiration" type="text" data-date-format="dd-mm-yyyy" />
+																<span class="input-group-addon">
+																	<i class="fa fa-calendar bigger-110"></i>
+																</span>
+                                    </div>
+                                </div>
+
+                </fieldset>
+
+                <fieldset >
+                    <div class="col-sm-10 widget-main">
+                        <h4 class="header blue bolder smaller">
+                            Contact d'urgence
+                        </h4>
+                    </div>			
+                    <div class="col-sm-10 widget-main">
+
+                        {{ form_label(form.contactUrgence, "Nom et numéro (tel) urgence ", {'label_attr': {'class': 'col-sm-3 control-label '}}) }}
+
+                        {{ form_widget(form.contactUrgence, {'attr': {'class': 'col-xs-10 col-sm-5'}}) }}
+
+                    </div>
+                    <div class="col-sm-10 widget-main">
+
+                        {{ form_label(form.infoComplementmembre, "Informations supplémentaires", {'label_attr': {'class': 'col-sm-3 control-label '}}) }}
+
+                        {{ form_widget(form.infoComplementmembre, {'attr': {'class': 'col-xs-10 col-sm-5'}}) }}
+
+                    </div>
+                </fieldset>
+                        
+            {{ form_rest(form) }}
+

@@ -1,0 +1,141 @@
+{% extends '::base_user.html.twig' %} 
+
+
+{% block stylesheets %}
+    {{ parent() }}
+    {% stylesheets filter='cssrewrite'
+		'bundles/cestomarticle/css/accueilStyles.css'
+		
+    %}
+    <link href="{{ asset_url }}" type="text/css" rel="stylesheet" />
+    {% endstylesheets %}
+{% endblock %}
+
+
+{% block body %}
+    <div class="widget-body widget-main no-padding">
+         <h1 class="center">
+            Liste des formations
+        </h1>
+    </div><!-- /.page-header -->
+
+
+
+
+    <div>
+        <div class="widget-body ">
+            <div class="widget-main no-padding ">
+                {% for flashMessage in app.session.flashbag.get('messagesucces') %}
+                    <div class="alert alert-block alert-success">
+                        <div class="flash-notice">
+
+                            {{ flashMessage }}
+                        </div>
+                    </div>
+                {% endfor %}
+
+                {% for flashMessage in app.session.flashbag.get('messageerror') %}
+                    <div class="alert alert-block alert-danger">
+                        <div class="flash-notice">
+
+                            {{ flashMessage }}
+                        </div>
+                    </div>
+                {% endfor %}
+
+                <br>
+                <br>
+
+                {% if  formations|length > 0 %}
+                    {% for formation in formations %}
+                        <div class="container">
+
+                            <div class="panel-group ">
+                                <div class="panel panel-primary">
+                                    <div class="panel-heading">
+                                        <a style="padding:10px;" class="white" href="{{path('cestom_user_modifier_formation',{'idformation':formation.idformation})}}">
+                                            <i class="ace-icon fa fa-pencil bigger-160"></i>
+                                        </a>
+                                        <a style="padding:10px;" class="red delete" href="{{path('cestom_user_delete_formation',{'idformation':formation.idformation})}}">
+                                            <i class="ace-icon fa fa-trash bigger-160"></i>
+                                        </a> 
+
+                                        <a style="padding:10px;" class="white" href="{{path('cestom_user_ajouter_formation')}}">
+                                            <i class="ace-icon fa fa-plus bigger-160"></i>
+                                        </a> 
+
+                                    </div>
+                                    <div class="panel-body">
+
+
+                                        <label> Libelle de la formation</label> : <span> {{ formation.libelleFormation}}</span> <br>
+                                        <label>Université </label> : <span> {{formation.iduniv.nomuniv}}</span> <br>
+                                        <label>Diplôme visé </label> :  <span> {{formation.diplomeViseFormation}}</span> <br>
+                                        <label>Durée de la formation </label> : <span> {{formation.dureeFormation}}</span> <br>
+                                        <label>Date début formation </label> : <span> {{formation.dateDebutFormation}}</span> <br>
+                                        <label>Programme de bourse </label> : <span> {{formation.programmeBourse}}</span> <br>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                {% else %}
+                    <form {{ form_enctype(form) }}  method = "POST"  action ="{{path ('cestom_user_ajouter_formation') }}">	
+
+                        {% include "CestomUserBundle:GestionFormation:formulaireFormation.html.twig" %}
+                        <div class="form-actions center">
+                            <button id="valider" type="submit" class="btn btn-sm btn-success">
+                                Ajouter
+                                <i class="ace-icon fa fa-save icon-on-right bigger-110"></i>
+                            </button>
+                        </div>
+                    </form>
+                {% endif %}
+
+            </div> 
+        </div>
+    </div>   
+
+{% endblock %}
+
+{% block javascripts %}
+ <script src="{{asset('assets/js/jquery-ui.min.js')}}"></script>
+       <script src="{{asset('assets/js/jquery.ui.touch-punch.min.js')}}"></script>  
+       <script src="{{asset('assets/js/bootstrap-dialog.min.js')}}"></script>  
+        <script src="{{asset('assets/js/date-time/bootstrap-datepicker.min.js')}}"></script>
+                                                                    < script src = "{{asset('assets/js/jquery.autosize.min.js')}}" ></script>
+
+    <script src="{{asset('assets/js/ace-elements.min.js')}}"></script>
+    <script src="{{asset('assets/js/ace.min.js')}}"></script>
+    <script type="text/javascript">
+        jQuery(function($) {
+           
+            $(".delete").click(function(e) {
+                var path = $(this);
+                        e.preventDefault();
+                BootstrapDialog.confirm('Voulez-vous supprimer la formation ?', function(result) {
+                    
+                    if (result) {
+                         
+                        window.location.href = path.attr("href");
+                    }
+                });
+            });
+            
+              //link
+                                                                $('.date-picker').datepicker({
+                                                                    autoclose: true,
+                                                                    todayHighlight: true
+                                                                })
+                                                                        //show datepicker when clicking on the icon
+                                                                        .next().on(ace.click_event, function() {
+                                                                    $(this).prev().focus();
+                                                                });
+        });
+
+
+    </script>
+  
+
+{% endblock %}

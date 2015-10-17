@@ -1,0 +1,39 @@
+ {{ form_errors(form) }}
+                 			<fieldset>
+                    <div class="col-sm-10 widget-main">
+
+                        {{ form_label(form.idville, "Ville ", {'label_attr': {'class': 'col-sm-3 control-label '}}) }}
+
+                        {{ form_widget(form.idville, {'attr': {'class': 'col-xs-10 col-sm-5'}}) }}
+
+                    </div>
+
+                    <div class="col-sm-10 widget-main">
+
+                        {{ form_label(form.adresse, "Adresse", {'label_attr': {'class': 'col-sm-3 control-label '}}) }}
+
+                        {{ form_widget(form.adresse, {'attr': {'class': 'col-xs-10 col-sm-5'}}) }}
+
+                    </div>
+                    
+
+                       
+                        <div class="col-sm-10 widget-main">
+
+                                    <label class = "col-sm-3 control-label bold" for="dateDebut">
+                                        Date d'arrivée 
+                                    </label>
+
+                                    <div class="input-group col-xs-10 col-sm-5">
+                                        <input required value="{{dateDebut}}" name="dateDebut" class=" required form-control date-picker" id="datenaissance" type="text" data-date-format="dd-mm-yyyy" />
+																<span class="input-group-addon">
+																	<i class="fa fa-calendar bigger-110"></i>
+																</span>
+                                    </div>
+                        </div>
+                       
+             </fieldset>
+                        
+            {{ form_rest(form) }}
+
+                
