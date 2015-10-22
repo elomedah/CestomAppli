@@ -12,12 +12,17 @@ class GestionFormationController extends Controller
   public function gestionFormationAction(Request $request)
   {
     $em = $this->getDoctrine()->getManager();
-
+        
+        
         $membre = $em->getRepository('CestomStoreBundle:Membre')
                 ->findOneByid($this->getUser()->getId());
-       
+       if ($membre==null ) {
+ $request->getSession()->getFlashBag()->add('messagesucces', 'Configuration initiale : Veuillez enregister vos informations ');
+      return $this->redirect($this->generateUrl('cestom_user_homepage'));
+}
         $formations = $em->getRepository('CestomStoreBundle:Formation')
                 ->findByidmembre($membre->getIdmembre());
+
 $formation = new Formation();
     // On ajoute les champs de l'entité que l'on veut à notre formulaire
     $form = $this->createFormBuilder($formation)

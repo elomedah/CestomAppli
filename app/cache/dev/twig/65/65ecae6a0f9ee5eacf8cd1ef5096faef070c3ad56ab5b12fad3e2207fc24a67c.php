@@ -45,23 +45,38 @@ class __TwigTemplate_5d19b9a2e72699dfbf4f5a7222d68785a31ed755bc386b1657a3d02d6cc
         // line 8
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("assets/css/bootstrap-datetimepicker.css"), "html", null, true);
         echo "\" />
+    <link rel=\"stylesheet\" type=\"text/css\" href=\"";
+        // line 9
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("assets/css/dataTables.bootstrap.min.css"), "html", null, true);
+        echo "\" />
+    <link rel=\"stylesheet\" type=\"text/css\" href=\"";
+        // line 10
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("assets/css/responsive.bootstrap.min.css"), "html", null, true);
+        echo "\" />
+
 ";
     }
 
-    // line 12
+    // line 15
     public function block_navigation($context, array $blocks = array())
     {
-        // line 13
+        // line 16
         echo "
 
     <ul class=\"breadcrumb\">
         <li>
             <i class=\"ace-icon fa fa-home home-icon\"></i>
-            <a href=\"#\">Home</a>
+            <a href=\"";
+        // line 21
+        echo $this->env->getExtension('routing')->getPath("cestom_admin_homepage");
+        echo "\">Home</a>
         </li>
         <li>
 
-            <a href=\"#\">Gestion des membres</a>
+            <a href=\"";
+        // line 25
+        echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("cestom_admin_ajouter_ville_membre", array("idmembre" => (isset($context["idmembre"]) ? $context["idmembre"] : $this->getContext($context, "idmembre")))), "html", null, true);
+        echo "\">Ville du Membre</a>
         </li>
 
         <li class=\"active\">Ville du membre</li>
@@ -70,32 +85,32 @@ class __TwigTemplate_5d19b9a2e72699dfbf4f5a7222d68785a31ed755bc386b1657a3d02d6cc
 ";
     }
 
-    // line 32
+    // line 35
     public function block_soustitre($context, array $blocks = array())
     {
         echo " 
 
     Ajouter une ville au membre 
-    
+
 ";
     }
 
-    // line 38
+    // line 41
     public function block_content($context, array $blocks = array())
     {
-        // line 39
+        // line 42
         echo "
     ";
-        // line 40
+        // line 43
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable($this->getAttribute($this->getAttribute($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "session", array()), "flashbag", array()), "get", array(0 => "messagesucces"), "method"));
         foreach ($context['_seq'] as $context["_key"] => $context["flashMessage"]) {
-            // line 41
+            // line 44
             echo "        <div class=\"alert alert-block alert-success\">
             <div class=\"flash-notice\">
 
                 ";
-            // line 44
+            // line 47
             echo twig_escape_filter($this->env, $context["flashMessage"], "html", null, true);
             echo "
             </div>
@@ -105,19 +120,19 @@ class __TwigTemplate_5d19b9a2e72699dfbf4f5a7222d68785a31ed755bc386b1657a3d02d6cc
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['flashMessage'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 48
+        // line 51
         echo "
     ";
-        // line 49
+        // line 52
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable($this->getAttribute($this->getAttribute($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "session", array()), "flashbag", array()), "get", array(0 => "messageerror"), "method"));
         foreach ($context['_seq'] as $context["_key"] => $context["flashMessage"]) {
-            // line 50
+            // line 53
             echo "        <div class=\"alert alert-block alert-danger\">
             <div class=\"flash-notice\">
 
                 ";
-            // line 53
+            // line 56
             echo twig_escape_filter($this->env, $context["flashMessage"], "html", null, true);
             echo "
             </div>
@@ -127,286 +142,262 @@ class __TwigTemplate_5d19b9a2e72699dfbf4f5a7222d68785a31ed755bc386b1657a3d02d6cc
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['flashMessage'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 57
+        // line 60
         echo "
     <div class=\"widget-body\">
         <div class=\"widget-main no-padding\">
 
             <div class=\"row\">
                 <div class=\"col-xs-12\">
-                    <!-- PAGE CONTENT BEGINS -->
-                    <div class=\"row\">
-                        <div class=\"col-sm-12\">
-                            <!-- #section:elements.tab -->
-                            <div class=\"tabbable\">
-                                <ul class=\"nav nav-tabs\" id=\"myTab\">
-                                    <li class=\"dropdown\">
-                                        <a  href=\"";
-        // line 70
+
+                    <!-- #section:elements.tab -->
+                    <div class=\"tabbable\">
+                        <ul class=\"nav nav-tabs\" id=\"myTab\">
+                            <li class=\"dropdown\">
+                                <a  href=\"";
+        // line 71
         echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("cestom_admin_modifier_member", array("idmembre" => (isset($context["idmembre"]) ? $context["idmembre"] : $this->getContext($context, "idmembre")))), "html", null, true);
         echo "\">
-                                            <i class=\"gblue ace-icon fa fa-user bigger-120\"></i>
-                                            Infos Génerales Membre
-                                        </a>
-                                    </li>
+                                    <i class=\"gblue ace-icon fa fa-user bigger-120\"></i>
+                                    Infos Génerales Membre
+                                </a>
+                            </li>
 
-\t\t\t\t\t<li class=\"active\">
-\t\t\t\t\t\t\t\t\t\t\t\t<a  href=\"";
-        // line 77
+                            <li class=\"active\">
+                                <a  href=\"";
+        // line 78
         echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("cestom_admin_ajouter_ville", array("idmembre" => (isset($context["idmembre"]) ? $context["idmembre"] : $this->getContext($context, "idmembre")))), "html", null, true);
         echo "\">
-\t\t\t\t\t\t\t\t\t\t\t\t\t<i class=\"green ace-icon fa fa-building bigger-120\"></i>
-\t\t\t\t\t\t\t\t\t\t\t\t\t
-                                                                                                    Villes du Membre
-\t\t\t\t\t\t\t\t\t\t\t\t</a>
+                                    <i class=\"green ace-icon fa fa-building bigger-120\"></i>
 
-\t\t\t\t\t\t\t\t\t\t\t\t
-\t\t\t\t\t\t\t\t\t\t\t</li>
+                                    Villes du Membre
+                                </a>
 
-                                    <li class=\"dropdown\">
-                                        <a  href=\"";
-        // line 87
+
+                            </li>
+
+                            <li class=\"dropdown\">
+                                <a  href=\"";
+        // line 88
         echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("cestom_admin_ajouter_formation", array("idmembre" => (isset($context["idmembre"]) ? $context["idmembre"] : $this->getContext($context, "idmembre")))), "html", null, true);
         echo "\">
-                                            <i class=\"green ace-icon fa fa-graduation-cap bigger-120\"></i>
+                                    <i class=\"green ace-icon fa fa-graduation-cap bigger-120\"></i>
 
-                                            Formations du Membre
-                                        </a>
+                                    Formations du Membre
+                                </a>
 
 
-                                    </li>
-                                </ul>
+                            </li>
+                        </ul>
 
-                                <div class=\"tab-content\">
-                                    <div id=\"villemembre\" class=\"tab-pane in active\">
-                                        <div class=\"widget-body\">
+                        <div class=\"tab-content\">
+                            <div id=\"villemembre\" class=\"tab-pane in active\">
 
-                                            
-
-                                                <form ";
-        // line 103
+                                <form ";
+        // line 101
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), 'enctype');
         echo "  method = \"POST\"  action = \"";
         echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("cestom_admin_ajouter_ville_membre", array("idmembre" => (isset($context["idmembre"]) ? $context["idmembre"] : $this->getContext($context, "idmembre")))), "html", null, true);
         echo "\">\t
-<fieldset >
-                    <div class=\"col-sm-10 widget-main\">
-                        <h4 class=\"header blue bolder smaller\">
-                            Ajouter une ville au membre
-                        </h4>
-                    </div>
-                                                    ";
+                                    <fieldset >
+                                        <div class=\"col-sm-12 widget-main\">
+                                            <h4 class=\"header blue bolder smaller\">
+                                                Ajouter une ville au membre
+                                            </h4>
+                                        </div>
+
+                                        ";
+        // line 109
+        $this->loadTemplate("CestomAdminBundle:GestionMembre:formulaireVilleMembre.html.twig", "CestomAdminBundle:GestionMembre:ajouterVilleMembre.html.twig", 109)->display($context);
         // line 110
-        $this->loadTemplate("CestomAdminBundle:GestionMembre:formulaireVilleMembre.html.twig", "CestomAdminBundle:GestionMembre:ajouterVilleMembre.html.twig", 110)->display($context);
-        // line 111
-        echo "                                                    <div class=\"form-actions center\">
-                                                        <button id=\"valider\" type=\"submit\" class=\"btn btn-sm btn-success\">
-                                                            Ajouter
-                                                            <i class=\"ace-icon fa fa-save icon-on-right bigger-110\"></i>
-                                                        </button>
-                                                    </div>
-</fieldset>
-                                                </form>
-                                                    
-                                                    
-                                                <div class=\"table-header\">
-                                                    Liste des villes du membre
-                                                </div>
+        echo "                                    </fieldset>
+                                    <div class=\"form-actions center\">
+                                        <button id=\"valider\" type=\"submit\" class=\"btn btn-sm btn-success\">
+                                            Ajouter
+                                            <i class=\"ace-icon fa fa-save icon-on-right bigger-110\"></i>
+                                        </button>
+                                    </div>
 
-                                                <table id=\"listformation\" style= \"border : solid 1px darkgrey; \"class=\"table table-striped table-bordered table-hover\">
-                                                    <thead>
-                                                        <tr>
-                                                            <th class=\"center\">
-                                                                <label class=\"position-relative\">
-                                                                    <input type=\"checkbox\" class=\"ace\" />
-                                                                    <span class=\"lbl\"></span>
-                                                                </label>
-                                                            </th>
+                                </form>
 
-                                                            <th> </th>
-                                                            <th> Ville  </th>
-                                                            <th>adresse</th>
-                                                            <th>Date du début de séjour </th>
-                                                            
-                                                        </tr>
-                                                    </thead>
 
-                                                    <tbody>
-                                                        ";
-        // line 144
+                                <div class=\"table-header\">
+                                    Liste des villes du membre
+                                </div>
+                                <br>
+                                <div class=\"table-responsive\">
+                                    <table id=\"listformation\" style= \"border : solid 1px darkgrey; \"class=\"table table-striped table-bordered table-hover\">
+                                        <thead>
+                                            <tr>
+                                                <th class=\"center\">
+                                                    <label class=\"position-relative\">
+                                                        <input type=\"checkbox\" class=\"ace\" />
+                                                        <span class=\"lbl\"></span>
+                                                    </label>
+                                                </th>
+
+                                                <th> </th>
+                                                <th> Ville  </th>
+                                                <th>adresse</th>
+                                                <th>Date du début de séjour </th>
+
+                                            </tr>
+                                        </thead>
+
+                                        <tbody>
+                                            ";
+        // line 145
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable((isset($context["villesmembre"]) ? $context["villesmembre"] : $this->getContext($context, "villesmembre")));
         foreach ($context['_seq'] as $context["_key"] => $context["villemembre"]) {
-            // line 145
-            echo "                                                            <tr>
+            // line 146
+            echo "                                                <tr>
 
-                                                                <td class=\"center\">
-                                                                    <label class=\"position-relative\">
-                                                                        <input type=\"checkbox\" class=\"ace\" />
-                                                                        <span class=\"lbl\"></span>
-                                                                    </label>
-                                                                </td >
-
-
-                                                                <td>
+                                                    <td class=\"center\">
+                                                        <label class=\"position-relative\">
+                                                            <input type=\"checkbox\" class=\"ace\" />
+                                                            <span class=\"lbl\"></span>
+                                                        </label>
+                                                    </td >
 
 
+                                                    <td>
 
-                                                                    <a class=\"green\" href=\"";
-            // line 159
+
+
+                                                        <a class=\"green\" href=\"";
+            // line 160
             echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("cestom_admin_modifier_ville_membre", array("idmembre" => (isset($context["idmembre"]) ? $context["idmembre"] : $this->getContext($context, "idmembre")), "idvillemembre" => $this->getAttribute($context["villemembre"], "idvillemembre", array()))), "html", null, true);
             echo "\">
-                                                                        <i class=\"ace-icon fa fa-pencil bigger-130\"></i>
-                                                                    </a>
+                                                            <i class=\"ace-icon fa fa-pencil bigger-130\"></i>
+                                                        </a>
 
-                                                                </td>
+                                                    </td>
 
-                                                                <td>";
-            // line 165
+                                                    <td>";
+            // line 166
             echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($context["villemembre"], "idville", array()), "nomville", array()), "html", null, true);
             echo "</td>
-                                                                <td>";
-            // line 166
+                                                    <td>";
+            // line 167
             echo twig_escape_filter($this->env, $this->getAttribute($context["villemembre"], "adresse", array()), "html", null, true);
             echo "</td>
-                                                                <td>";
-            // line 167
+                                                    <td>";
+            // line 168
             echo twig_escape_filter($this->env, $this->getAttribute($context["villemembre"], "dateDebut", array()), "html", null, true);
             echo " </td>
-                                                                
 
-                                                            </tr>
-                                                        ";
+
+                                                </tr>
+                                            ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['villemembre'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 172
-        echo "                                                    </tbody>
-                                                </table>
-
-
-
-
-                                            </div>
-                                        </div>
-                                    
+        // line 173
+        echo "                                        </tbody>
+                                    </table>
                                 </div>
                             </div>
+                        </div>
 
-                            <!-- /section:elements.tab -->
-                        </div><!-- /.col -->
+                    </div>
+                </div>
+
+                <!-- /section:elements.tab -->
+            </div><!-- /.col -->
 
 
 
-                    </div><!-- /.row -->
+        </div><!-- /.row -->
 
 
+        <!-- PAGE CONTENT ENDS -->
+    </div><!-- /.col -->
 
-                    <script type=\"text/javascript\">
-                        var \$path_assets = \"../assets\";//this will be used in gritter alerts containing images
-                    </script>
-
-                    <!-- PAGE CONTENT ENDS -->
-                </div><!-- /.col -->
-            </div><!-- /.row -->
-        </div>
-    </div>
 
 
 ";
     }
 
-    // line 206
+    // line 197
     public function block_javascript($context, array $blocks = array())
     {
-        // line 207
+        // line 198
         echo "    <script src=\"";
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("assets/js/jquery.dataTables.min.js"), "html", null, true);
+        echo "\"></script>
+    <script type=\"text/javascript\"src=\"";
+        // line 199
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("assets/js/dataTables.responsive.min.js"), "html", null, true);
+        echo "\"></script>
+
+    <script src=\"";
+        // line 201
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("assets/js/date-time/bootstrap-datepicker.min.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 208
+        // line 202
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("assets/js/date-time/bootstrap-timepicker.min.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 209
+        // line 203
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("assets/js/date-time/moment.min.js"), "html", null, true);
         echo "\"></script>
-
     <script src=\"";
-        // line 211
+        // line 204
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("assets/js/date-time/bootstrap-datetimepicker.min.js"), "html", null, true);
         echo "\">< /script>
-                                                                    < script src = \"";
-        // line 212
+                < script src = \"";
+        // line 205
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("assets/js/jquery.autosize.min.js"), "html", null, true);
         echo "\" ></script>
-    <script  src = \"";
-        // line 213
-        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("assets/js/jquery.ui.addresspicker.js"), "html", null, true);
-        echo "\"></script>
     <script src=\"";
-        // line 214
-        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("assets/js/jquery.maskedinput.min.js"), "html", null, true);
-        echo "\"></script>
-    <script src=\"";
-        // line 215
-        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("assets/js/bootstrap-tag.min.js"), "html", null, true);
-        echo "\"></script>
-    <script src=\"";
-        // line 216
+        // line 206
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("assets/js/ace-elements.min.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 217
+        // line 207
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("assets/js/ace.min.js"), "html", null, true);
         echo "\"></script>
-    <script src=\"";
-        // line 218
-        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("assets/js/jquery.dataTables.min.js"), "html", null, true);
-        echo "\"></script>
-    <script\tsrc=\"";
-        // line 219
-        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("assets/js/jquery.dataTables.bootstrap.js"), "html", null, true);
-        echo "\"></script>
-    <script type=\"text/javascript\">
-                                                            jQuery(function(\$) {
-                      
-                                  \$('.main').removeClass('active');
-                                  \$('#menu_membre').addClass('active');
-                                                                //link
-                                                                \$('.date-picker').datepicker({
-                                                                    autoclose: true,
-                                                                    todayHighlight: true
-                                                                })
-                                                                        //show datepicker when clicking on the icon
-                                                                        .next().on(ace.click_event, function() {
-                                                                    \$(this).prev().focus();
-                                                                });
-                                                                \$('#date-debut').datetimepicker().next().on(ace.click_event, function() {
-                                                                    \$(this).prev().focus();
-                                                                });
 
-                                                                \$('#listformation').DataTable({
-                                                                    
-                                                                    \"language\": {
-            \"lengthMenu\": \"Afficher _MENU_ lignes\",
-            \"zeroRecords\": \"Aucune donnée retrouvée\",
-             \"sSearch\": \"Rechercher\",
-            \"info\": \"Page _PAGE_ sur _PAGES_\",
-            \"infoEmpty\": \"Aucune donnée\",
-            \"oPaginate\": {
-            \"sFirst\":    \"Premier\",
-            \"sLast\":    \"FIn\",
-            \"sNext\":    \"Suivant\",
-            \"sPrevious\": \"Précédent\"
-        },
-            \"infoFiltered\": \"(filtré sur _MAX_ total lignes)\"
-        }
-                                                                });
-                                                                
-                                                
-                                                            });
+    <script type=\"text/javascript\">
+        jQuery(function(\$) {
+
+            \$('.main').removeClass('active');
+            \$('#menu_membre').addClass('active');
+            //link
+            \$('.date-picker').datepicker({
+                autoclose: true,
+                todayHighlight: true
+            })
+                    //show datepicker when clicking on the icon
+                    .next().on(ace.click_event, function() {
+                \$(this).prev().focus();
+            });
+            \$('#date-debut').datetimepicker().next().on(ace.click_event, function() {
+                \$(this).prev().focus();
+            });
+
+            \$('#listformation').DataTable({
+                \"language\": {
+                    \"lengthMenu\": \"Afficher _MENU_ lignes\",
+                    \"zeroRecords\": \"Aucune donnée retrouvée\",
+                    \"sSearch\": \"Rechercher\",
+                    \"info\": \"Page _PAGE_ sur _PAGES_\",
+                    \"infoEmpty\": \"Aucune donnée\",
+                    \"oPaginate\": {
+                        \"sFirst\": \"Premier\",
+                        \"sLast\": \"Fin\",
+                        \"sNext\": \"  Suivant  \",
+                        \"sPrevious\": \"  Précédent  \"
+                    },
+                    \"infoFiltered\": \"(filtré sur _MAX_ total lignes)\"
+                }
+            });
+
+
+        });
     </script>
 
 ";
@@ -424,7 +415,7 @@ class __TwigTemplate_5d19b9a2e72699dfbf4f5a7222d68785a31ed755bc386b1657a3d02d6cc
 
     public function getDebugInfo()
     {
-        return array (  370 => 219,  366 => 218,  362 => 217,  358 => 216,  354 => 215,  350 => 214,  346 => 213,  342 => 212,  338 => 211,  333 => 209,  329 => 208,  324 => 207,  321 => 206,  285 => 172,  274 => 167,  270 => 166,  266 => 165,  257 => 159,  241 => 145,  237 => 144,  202 => 111,  200 => 110,  188 => 103,  169 => 87,  156 => 77,  146 => 70,  131 => 57,  121 => 53,  116 => 50,  112 => 49,  109 => 48,  99 => 44,  94 => 41,  90 => 40,  87 => 39,  84 => 38,  74 => 32,  55 => 13,  52 => 12,  46 => 8,  41 => 6,  37 => 5,  32 => 4,  11 => 3,);
+        return array (  361 => 207,  357 => 206,  353 => 205,  349 => 204,  345 => 203,  341 => 202,  337 => 201,  332 => 199,  327 => 198,  324 => 197,  298 => 173,  287 => 168,  283 => 167,  279 => 166,  270 => 160,  254 => 146,  250 => 145,  213 => 110,  211 => 109,  198 => 101,  182 => 88,  169 => 78,  159 => 71,  146 => 60,  136 => 56,  131 => 53,  127 => 52,  124 => 51,  114 => 47,  109 => 44,  105 => 43,  102 => 42,  99 => 41,  89 => 35,  78 => 25,  71 => 21,  64 => 16,  61 => 15,  54 => 10,  50 => 9,  46 => 8,  41 => 6,  37 => 5,  32 => 4,  11 => 3,);
     }
 }
 /* */
@@ -435,6 +426,9 @@ class __TwigTemplate_5d19b9a2e72699dfbf4f5a7222d68785a31ed755bc386b1657a3d02d6cc
 /*     <link rel="stylesheet" href="{{asset('assets/css/datepicker.css')}}" />*/
 /* */
 /*     <link rel="stylesheet" href="{{asset('assets/css/bootstrap-datetimepicker.css')}}" />*/
+/*     <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/dataTables.bootstrap.min.css')}}" />*/
+/*     <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/responsive.bootstrap.min.css')}}" />*/
+/* */
 /* {% endblock %}*/
 /* */
 /* */
@@ -444,11 +438,11 @@ class __TwigTemplate_5d19b9a2e72699dfbf4f5a7222d68785a31ed755bc386b1657a3d02d6cc
 /*     <ul class="breadcrumb">*/
 /*         <li>*/
 /*             <i class="ace-icon fa fa-home home-icon"></i>*/
-/*             <a href="#">Home</a>*/
+/*             <a href="{{path('cestom_admin_homepage')}}">Home</a>*/
 /*         </li>*/
 /*         <li>*/
 /* */
-/*             <a href="#">Gestion des membres</a>*/
+/*             <a href="{{path('cestom_admin_ajouter_ville_membre',{'idmembre':idmembre})}}">Ville du Membre</a>*/
 /*         </li>*/
 /* */
 /*         <li class="active">Ville du membre</li>*/
@@ -461,7 +455,7 @@ class __TwigTemplate_5d19b9a2e72699dfbf4f5a7222d68785a31ed755bc386b1657a3d02d6cc
 /* {% block soustitre %} */
 /* */
 /*     Ajouter une ville au membre */
-/*     */
+/* */
 /* {% endblock %}*/
 /* */
 /* {% block content %}*/
@@ -489,201 +483,186 @@ class __TwigTemplate_5d19b9a2e72699dfbf4f5a7222d68785a31ed755bc386b1657a3d02d6cc
 /* */
 /*             <div class="row">*/
 /*                 <div class="col-xs-12">*/
-/*                     <!-- PAGE CONTENT BEGINS -->*/
-/*                     <div class="row">*/
-/*                         <div class="col-sm-12">*/
-/*                             <!-- #section:elements.tab -->*/
-/*                             <div class="tabbable">*/
-/*                                 <ul class="nav nav-tabs" id="myTab">*/
-/*                                     <li class="dropdown">*/
-/*                                         <a  href="{{path('cestom_admin_modifier_member',{'idmembre':idmembre})}}">*/
-/*                                             <i class="gblue ace-icon fa fa-user bigger-120"></i>*/
-/*                                             Infos Génerales Membre*/
-/*                                         </a>*/
-/*                                     </li>*/
 /* */
-/* 					<li class="active">*/
-/* 												<a  href="{{path('cestom_admin_ajouter_ville',{'idmembre':idmembre})}}">*/
-/* 													<i class="green ace-icon fa fa-building bigger-120"></i>*/
-/* 													*/
-/*                                                                                                     Villes du Membre*/
-/* 												</a>*/
+/*                     <!-- #section:elements.tab -->*/
+/*                     <div class="tabbable">*/
+/*                         <ul class="nav nav-tabs" id="myTab">*/
+/*                             <li class="dropdown">*/
+/*                                 <a  href="{{path('cestom_admin_modifier_member',{'idmembre':idmembre})}}">*/
+/*                                     <i class="gblue ace-icon fa fa-user bigger-120"></i>*/
+/*                                     Infos Génerales Membre*/
+/*                                 </a>*/
+/*                             </li>*/
 /* */
-/* 												*/
-/* 											</li>*/
+/*                             <li class="active">*/
+/*                                 <a  href="{{path('cestom_admin_ajouter_ville',{'idmembre':idmembre})}}">*/
+/*                                     <i class="green ace-icon fa fa-building bigger-120"></i>*/
 /* */
-/*                                     <li class="dropdown">*/
-/*                                         <a  href="{{path('cestom_admin_ajouter_formation',{'idmembre':idmembre})}}">*/
-/*                                             <i class="green ace-icon fa fa-graduation-cap bigger-120"></i>*/
-/* */
-/*                                             Formations du Membre*/
-/*                                         </a>*/
+/*                                     Villes du Membre*/
+/*                                 </a>*/
 /* */
 /* */
-/*                                     </li>*/
-/*                                 </ul>*/
+/*                             </li>*/
 /* */
-/*                                 <div class="tab-content">*/
-/*                                     <div id="villemembre" class="tab-pane in active">*/
-/*                                         <div class="widget-body">*/
+/*                             <li class="dropdown">*/
+/*                                 <a  href="{{path('cestom_admin_ajouter_formation',{'idmembre':idmembre})}}">*/
+/*                                     <i class="green ace-icon fa fa-graduation-cap bigger-120"></i>*/
 /* */
-/*                                             */
-/* */
-/*                                                 <form {{ form_enctype(form) }}  method = "POST"  action = "{{ path('cestom_admin_ajouter_ville_membre',{'idmembre':idmembre})}}">	*/
-/* <fieldset >*/
-/*                     <div class="col-sm-10 widget-main">*/
-/*                         <h4 class="header blue bolder smaller">*/
-/*                             Ajouter une ville au membre*/
-/*                         </h4>*/
-/*                     </div>*/
-/*                                                     {% include "CestomAdminBundle:GestionMembre:formulaireVilleMembre.html.twig" %}*/
-/*                                                     <div class="form-actions center">*/
-/*                                                         <button id="valider" type="submit" class="btn btn-sm btn-success">*/
-/*                                                             Ajouter*/
-/*                                                             <i class="ace-icon fa fa-save icon-on-right bigger-110"></i>*/
-/*                                                         </button>*/
-/*                                                     </div>*/
-/* </fieldset>*/
-/*                                                 </form>*/
-/*                                                     */
-/*                                                     */
-/*                                                 <div class="table-header">*/
-/*                                                     Liste des villes du membre*/
-/*                                                 </div>*/
-/* */
-/*                                                 <table id="listformation" style= "border : solid 1px darkgrey; "class="table table-striped table-bordered table-hover">*/
-/*                                                     <thead>*/
-/*                                                         <tr>*/
-/*                                                             <th class="center">*/
-/*                                                                 <label class="position-relative">*/
-/*                                                                     <input type="checkbox" class="ace" />*/
-/*                                                                     <span class="lbl"></span>*/
-/*                                                                 </label>*/
-/*                                                             </th>*/
-/* */
-/*                                                             <th> </th>*/
-/*                                                             <th> Ville  </th>*/
-/*                                                             <th>adresse</th>*/
-/*                                                             <th>Date du début de séjour </th>*/
-/*                                                             */
-/*                                                         </tr>*/
-/*                                                     </thead>*/
-/* */
-/*                                                     <tbody>*/
-/*                                                         {% for villemembre in villesmembre %}*/
-/*                                                             <tr>*/
-/* */
-/*                                                                 <td class="center">*/
-/*                                                                     <label class="position-relative">*/
-/*                                                                         <input type="checkbox" class="ace" />*/
-/*                                                                         <span class="lbl"></span>*/
-/*                                                                     </label>*/
-/*                                                                 </td >*/
+/*                                     Formations du Membre*/
+/*                                 </a>*/
 /* */
 /* */
-/*                                                                 <td>*/
+/*                             </li>*/
+/*                         </ul>*/
 /* */
+/*                         <div class="tab-content">*/
+/*                             <div id="villemembre" class="tab-pane in active">*/
 /* */
-/* */
-/*                                                                     <a class="green" href="{{path('cestom_admin_modifier_ville_membre',{'idmembre': idmembre,'idvillemembre': villemembre.idvillemembre})}}">*/
-/*                                                                         <i class="ace-icon fa fa-pencil bigger-130"></i>*/
-/*                                                                     </a>*/
-/* */
-/*                                                                 </td>*/
-/* */
-/*                                                                 <td>{{ villemembre.idville.nomville}}</td>*/
-/*                                                                 <td>{{villemembre.adresse}}</td>*/
-/*                                                                 <td>{{villemembre.dateDebut}} </td>*/
-/*                                                                 */
-/* */
-/*                                                             </tr>*/
-/*                                                         {% endfor %}*/
-/*                                                     </tbody>*/
-/*                                                 </table>*/
-/* */
-/* */
-/* */
-/* */
-/*                                             </div>*/
+/*                                 <form {{ form_enctype(form) }}  method = "POST"  action = "{{ path('cestom_admin_ajouter_ville_membre',{'idmembre':idmembre})}}">	*/
+/*                                     <fieldset >*/
+/*                                         <div class="col-sm-12 widget-main">*/
+/*                                             <h4 class="header blue bolder smaller">*/
+/*                                                 Ajouter une ville au membre*/
+/*                                             </h4>*/
 /*                                         </div>*/
-/*                                     */
+/* */
+/*                                         {% include "CestomAdminBundle:GestionMembre:formulaireVilleMembre.html.twig" %}*/
+/*                                     </fieldset>*/
+/*                                     <div class="form-actions center">*/
+/*                                         <button id="valider" type="submit" class="btn btn-sm btn-success">*/
+/*                                             Ajouter*/
+/*                                             <i class="ace-icon fa fa-save icon-on-right bigger-110"></i>*/
+/*                                         </button>*/
+/*                                     </div>*/
+/* */
+/*                                 </form>*/
+/* */
+/* */
+/*                                 <div class="table-header">*/
+/*                                     Liste des villes du membre*/
+/*                                 </div>*/
+/*                                 <br>*/
+/*                                 <div class="table-responsive">*/
+/*                                     <table id="listformation" style= "border : solid 1px darkgrey; "class="table table-striped table-bordered table-hover">*/
+/*                                         <thead>*/
+/*                                             <tr>*/
+/*                                                 <th class="center">*/
+/*                                                     <label class="position-relative">*/
+/*                                                         <input type="checkbox" class="ace" />*/
+/*                                                         <span class="lbl"></span>*/
+/*                                                     </label>*/
+/*                                                 </th>*/
+/* */
+/*                                                 <th> </th>*/
+/*                                                 <th> Ville  </th>*/
+/*                                                 <th>adresse</th>*/
+/*                                                 <th>Date du début de séjour </th>*/
+/* */
+/*                                             </tr>*/
+/*                                         </thead>*/
+/* */
+/*                                         <tbody>*/
+/*                                             {% for villemembre in villesmembre %}*/
+/*                                                 <tr>*/
+/* */
+/*                                                     <td class="center">*/
+/*                                                         <label class="position-relative">*/
+/*                                                             <input type="checkbox" class="ace" />*/
+/*                                                             <span class="lbl"></span>*/
+/*                                                         </label>*/
+/*                                                     </td >*/
+/* */
+/* */
+/*                                                     <td>*/
+/* */
+/* */
+/* */
+/*                                                         <a class="green" href="{{path('cestom_admin_modifier_ville_membre',{'idmembre': idmembre,'idvillemembre': villemembre.idvillemembre})}}">*/
+/*                                                             <i class="ace-icon fa fa-pencil bigger-130"></i>*/
+/*                                                         </a>*/
+/* */
+/*                                                     </td>*/
+/* */
+/*                                                     <td>{{ villemembre.idville.nomville}}</td>*/
+/*                                                     <td>{{villemembre.adresse}}</td>*/
+/*                                                     <td>{{villemembre.dateDebut}} </td>*/
+/* */
+/* */
+/*                                                 </tr>*/
+/*                                             {% endfor %}*/
+/*                                         </tbody>*/
+/*                                     </table>*/
 /*                                 </div>*/
 /*                             </div>*/
+/*                         </div>*/
 /* */
-/*                             <!-- /section:elements.tab -->*/
-/*                         </div><!-- /.col -->*/
+/*                     </div>*/
+/*                 </div>*/
+/* */
+/*                 <!-- /section:elements.tab -->*/
+/*             </div><!-- /.col -->*/
 /* */
 /* */
 /* */
-/*                     </div><!-- /.row -->*/
+/*         </div><!-- /.row -->*/
 /* */
 /* */
+/*         <!-- PAGE CONTENT ENDS -->*/
+/*     </div><!-- /.col -->*/
 /* */
-/*                     <script type="text/javascript">*/
-/*                         var $path_assets = "../assets";//this will be used in gritter alerts containing images*/
-/*                     </script>*/
-/* */
-/*                     <!-- PAGE CONTENT ENDS -->*/
-/*                 </div><!-- /.col -->*/
-/*             </div><!-- /.row -->*/
-/*         </div>*/
-/*     </div>*/
 /* */
 /* */
 /* {% endblock %}*/
 /* */
 /* {% block javascript %}*/
+/*     <script src="{{asset('assets/js/jquery.dataTables.min.js')}}"></script>*/
+/*     <script type="text/javascript"src="{{asset('assets/js/dataTables.responsive.min.js')}}"></script>*/
+/* */
 /*     <script src="{{asset('assets/js/date-time/bootstrap-datepicker.min.js')}}"></script>*/
 /*     <script src="{{asset('assets/js/date-time/bootstrap-timepicker.min.js')}}"></script>*/
 /*     <script src="{{asset('assets/js/date-time/moment.min.js')}}"></script>*/
-/* */
 /*     <script src="{{asset('assets/js/date-time/bootstrap-datetimepicker.min.js')}}">< /script>*/
-/*                                                                     < script src = "{{asset('assets/js/jquery.autosize.min.js')}}" ></script>*/
-/*     <script  src = "{{asset('assets/js/jquery.ui.addresspicker.js')}}"></script>*/
-/*     <script src="{{asset('assets/js/jquery.maskedinput.min.js')}}"></script>*/
-/*     <script src="{{asset('assets/js/bootstrap-tag.min.js')}}"></script>*/
+/*                 < script src = "{{asset('assets/js/jquery.autosize.min.js')}}" ></script>*/
 /*     <script src="{{asset('assets/js/ace-elements.min.js')}}"></script>*/
 /*     <script src="{{asset('assets/js/ace.min.js')}}"></script>*/
-/*     <script src="{{asset('assets/js/jquery.dataTables.min.js')}}"></script>*/
-/*     <script	src="{{asset('assets/js/jquery.dataTables.bootstrap.js')}}"></script>*/
-/*     <script type="text/javascript">*/
-/*                                                             jQuery(function($) {*/
-/*                       */
-/*                                   $('.main').removeClass('active');*/
-/*                                   $('#menu_membre').addClass('active');*/
-/*                                                                 //link*/
-/*                                                                 $('.date-picker').datepicker({*/
-/*                                                                     autoclose: true,*/
-/*                                                                     todayHighlight: true*/
-/*                                                                 })*/
-/*                                                                         //show datepicker when clicking on the icon*/
-/*                                                                         .next().on(ace.click_event, function() {*/
-/*                                                                     $(this).prev().focus();*/
-/*                                                                 });*/
-/*                                                                 $('#date-debut').datetimepicker().next().on(ace.click_event, function() {*/
-/*                                                                     $(this).prev().focus();*/
-/*                                                                 });*/
 /* */
-/*                                                                 $('#listformation').DataTable({*/
-/*                                                                     */
-/*                                                                     "language": {*/
-/*             "lengthMenu": "Afficher _MENU_ lignes",*/
-/*             "zeroRecords": "Aucune donnée retrouvée",*/
-/*              "sSearch": "Rechercher",*/
-/*             "info": "Page _PAGE_ sur _PAGES_",*/
-/*             "infoEmpty": "Aucune donnée",*/
-/*             "oPaginate": {*/
-/*             "sFirst":    "Premier",*/
-/*             "sLast":    "FIn",*/
-/*             "sNext":    "Suivant",*/
-/*             "sPrevious": "Précédent"*/
-/*         },*/
-/*             "infoFiltered": "(filtré sur _MAX_ total lignes)"*/
-/*         }*/
-/*                                                                 });*/
-/*                                                                 */
-/*                                                 */
-/*                                                             });*/
+/*     <script type="text/javascript">*/
+/*         jQuery(function($) {*/
+/* */
+/*             $('.main').removeClass('active');*/
+/*             $('#menu_membre').addClass('active');*/
+/*             //link*/
+/*             $('.date-picker').datepicker({*/
+/*                 autoclose: true,*/
+/*                 todayHighlight: true*/
+/*             })*/
+/*                     //show datepicker when clicking on the icon*/
+/*                     .next().on(ace.click_event, function() {*/
+/*                 $(this).prev().focus();*/
+/*             });*/
+/*             $('#date-debut').datetimepicker().next().on(ace.click_event, function() {*/
+/*                 $(this).prev().focus();*/
+/*             });*/
+/* */
+/*             $('#listformation').DataTable({*/
+/*                 "language": {*/
+/*                     "lengthMenu": "Afficher _MENU_ lignes",*/
+/*                     "zeroRecords": "Aucune donnée retrouvée",*/
+/*                     "sSearch": "Rechercher",*/
+/*                     "info": "Page _PAGE_ sur _PAGES_",*/
+/*                     "infoEmpty": "Aucune donnée",*/
+/*                     "oPaginate": {*/
+/*                         "sFirst": "Premier",*/
+/*                         "sLast": "Fin",*/
+/*                         "sNext": "  Suivant  ",*/
+/*                         "sPrevious": "  Précédent  "*/
+/*                     },*/
+/*                     "infoFiltered": "(filtré sur _MAX_ total lignes)"*/
+/*                 }*/
+/*             });*/
+/* */
+/* */
+/*         });*/
 /*     </script>*/
 /* */
 /* {% endblock %}*/

@@ -85,29 +85,17 @@ class __TwigTemplate_4a16873ce6d786a445ca84791e51a7ee2aaee83e6f15c072e24c295df8a
         ";
         // line 32
         $this->displayBlock('tetiere', $context, $blocks);
-        // line 115
+        // line 107
         echo "        <!-- /section:basics/navbar.layout -->
         <div class=\"main-container\" id=\"main-container\">
-            <script type=\"text/javascript\">
-                try {
-                    ace.settings.check('main-container', 'fixed')
-                } catch (e) {
-                }
-            </script>
-
-            <!-- #section:basics/sidebar -->
+           
             <div id=\"sidebar\" class=\"sidebar                  responsive\">
-                <script type=\"text/javascript\">
-                    try {
-                        ace.settings.check('sidebar', 'fixed')
-                    } catch (e) {
-                    }
-                </script>
+               
 
                 <ul class=\"nav nav-list\">
                     <li id=\"menu_membre\" class=\" main \">
                         <a class=\"mainactive \" href=\"";
-        // line 135
+        // line 115
         echo $this->env->getExtension('routing')->getPath("cestom_admin_homepage");
         echo "\">
                             <i class=\"menu-icon fa fa-user\"></i>
@@ -150,7 +138,7 @@ class __TwigTemplate_4a16873ce6d786a445ca84791e51a7ee2aaee83e6f15c072e24c295df8a
                     </li>
                     <li id=\"menu_ville\" class=\"main\">
                         <a class=\"mainactive\" href=\"";
-        // line 175
+        // line 155
         echo $this->env->getExtension('routing')->getPath("cestom_admin_ajouter_ville");
         echo "\">
                             <i class=\"menu-icon fa fa-building\"></i>
@@ -164,7 +152,7 @@ class __TwigTemplate_4a16873ce6d786a445ca84791e51a7ee2aaee83e6f15c072e24c295df8a
 
                     <li id=\"menu_universite\" class=\"main\">
                         <a class=\"mainactive\" href=\"";
-        // line 186
+        // line 166
         echo $this->env->getExtension('routing')->getPath("cestom_admin_ajouter_universite");
         echo "\">
                             <i class=\"menu-icon fa fa-graduation-cap\"></i>
@@ -176,7 +164,7 @@ class __TwigTemplate_4a16873ce6d786a445ca84791e51a7ee2aaee83e6f15c072e24c295df8a
 
                     <li id=\"menu_articles\" class=\"main\">
                         <a class=\"mainactive\" href=\"";
-        // line 195
+        // line 175
         echo $this->env->getExtension('routing')->getPath("cestomarticlebundle_article");
         echo "\">
                             <i class=\"menu-icon fa fa-newspaper-o\"></i>
@@ -189,7 +177,7 @@ class __TwigTemplate_4a16873ce6d786a445ca84791e51a7ee2aaee83e6f15c072e24c295df8a
 
                     <li id=\"menu_articles\" class=\"main\">
                         <a class=\"mainactive\" href=\"";
-        // line 205
+        // line 185
         echo $this->env->getExtension('routing')->getPath("cestomarticlebundle_categorie");
         echo "\">      
                             <i class=\"menu-icon fa fa-th-list\"></i>
@@ -210,41 +198,33 @@ class __TwigTemplate_4a16873ce6d786a445ca84791e51a7ee2aaee83e6f15c072e24c295df8a
 
             </div>
 
-            <!-- /section:basics/sidebar -->
             <div class=\"main-content\">
-                <!-- #section:basics/content.breadcrumbs -->
 
                 <div class=\"breadcrumbs\" id=\"breadcrumbs\">
                     ";
-        // line 229
+        // line 207
         $this->displayBlock('navigation', $context, $blocks);
-        // line 232
+        // line 210
         echo "                   
-
-                    <!-- /section:basics/content.searchbox -->
                 </div>
 
 
-                <!-- /section:basics/content.breadcrumbs -->
 
                 <div class=\"page-content\">
-                    <!-- #section:settings.box -->
-
-                    <!-- /section:settings.box -->
+                    
                     <div class=\"page-header\">
                         <h1>
                             ";
-        // line 246
+        // line 219
         $this->displayBlock('soustitre', $context, $blocks);
-        // line 249
+        // line 222
         echo "                        </h1>
-                    </div><!-- /.page-header -->
-
+                    </div>
 
                     ";
-        // line 253
+        // line 225
         $this->displayBlock('content', $context, $blocks);
-        // line 256
+        // line 228
         echo "
                 </div><!-- /.page-content -->
 
@@ -252,9 +232,9 @@ class __TwigTemplate_4a16873ce6d786a445ca84791e51a7ee2aaee83e6f15c072e24c295df8a
             </div><!-- /.main-content -->
 
             ";
-        // line 262
+        // line 234
         $this->displayBlock('footer', $context, $blocks);
-        // line 292
+        // line 264
         echo "
             <a href=\"#\" id=\"btn-scroll-up\" class=\"btn-scroll-up btn btn-sm btn-inverse\">
                 <i class=\"ace-icon fa fa-angle-double-up icon-only bigger-110\"></i>
@@ -263,33 +243,33 @@ class __TwigTemplate_4a16873ce6d786a445ca84791e51a7ee2aaee83e6f15c072e24c295df8a
 
         <!-- basic scripts -->
         <script src=\"";
-        // line 299
+        // line 271
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("assets/js/jquery.min.js"), "html", null, true);
         echo "\"></script>
 
         <script src=\"";
-        // line 301
+        // line 273
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("assets/js/bootstrap.min.js"), "html", null, true);
         echo "\"></script>
 
         <script src=\"";
-        // line 303
+        // line 275
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("assets/js/jquery-ui.custom.min.js"), "html", null, true);
         echo "\"></script>
         <script src=\"";
-        // line 304
+        // line 276
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("assets/js/ace-elements.min.js"), "html", null, true);
         echo "\"></script>
 
         <script src=\"";
-        // line 306
+        // line 278
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("assets/js/ace.min.js"), "html", null, true);
         echo "\"></script>
                      
         ";
-        // line 308
+        // line 280
         $this->displayBlock('javascript', $context, $blocks);
-        // line 311
+        // line 283
         echo "    </body>
 </html>
 ";
@@ -307,13 +287,7 @@ class __TwigTemplate_4a16873ce6d786a445ca84791e51a7ee2aaee83e6f15c072e24c295df8a
         // line 33
         echo "            <!-- #section:basics/navbar.layout -->
             <div id=\"navbar\" class=\"navbar navbar-default\">
-                <script type=\"text/javascript\">
-                    try {
-                        ace.settings.check('navbar', 'fixed')
-                    } catch (e) {
-                    }
-                </script>
-
+                
                 <div class=\"navbar-container\" id=\"navbar-container\">
                     <!-- #section:basics/sidebar.mobile.toggle -->
                     <button type=\"button\" class=\"navbar-toggle menu-toggler pull-left\" id=\"menu-toggler\">
@@ -335,8 +309,6 @@ class __TwigTemplate_4a16873ce6d786a445ca84791e51a7ee2aaee83e6f15c072e24c295df8a
                                 Administration Cestom
                             </small>
                         </a>
-
-
                     </div>
 
                     <!-- #section:basics/navbar.dropdown -->
@@ -344,9 +316,9 @@ class __TwigTemplate_4a16873ce6d786a445ca84791e51a7ee2aaee83e6f15c072e24c295df8a
                 <ul class=\"nav ace-nav\">
 \t\t
                     ";
-        // line 71
+        // line 63
         $this->displayBlock('user', $context, $blocks);
-        // line 106
+        // line 98
         echo "                </ul>
 
             </div>
@@ -358,21 +330,21 @@ class __TwigTemplate_4a16873ce6d786a445ca84791e51a7ee2aaee83e6f15c072e24c295df8a
         ";
     }
 
-    // line 71
+    // line 63
     public function block_user($context, array $blocks = array())
     {
-        // line 72
+        // line 64
         echo "                        <!-- #section:basics/navbar.user_menu -->
                         <li class=\"light-blue\">
                             <a data-toggle=\"dropdown\" href=\"#\" class=\"dropdown-toggle\">
                                 <img class=\"nav-user-photo\" src=\"";
-        // line 75
+        // line 67
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("assets/avatars/avatar2.png"), "html", null, true);
         echo "\" alt=\"Admin\" />
                                 <span class=\"user-info\">
                                     <small>Bienvenue,</small>
                                     ";
-        // line 78
+        // line 70
         echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute((isset($context["app"]) ? $context["app"] : null), "user", array()), "username", array()), "html", null, true);
         echo "
                                 </span>
@@ -384,9 +356,12 @@ class __TwigTemplate_4a16873ce6d786a445ca84791e51a7ee2aaee83e6f15c072e24c295df8a
                             <ul class=\"user-menu dropdown-menu-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close\">
 
                                 <li>
-                                    <a href=\"#\">
+                                    <a href=\"";
+        // line 80
+        echo $this->env->getExtension('routing')->getPath("cestom_home");
+        echo "\">
                                         <i class=\"ace-icon fa fa-user\"></i>
-                                        Mon compte
+                                       Site Web
                                     </a>
                                 </li>
 
@@ -394,7 +369,7 @@ class __TwigTemplate_4a16873ce6d786a445ca84791e51a7ee2aaee83e6f15c072e24c295df8a
 
                                 <li>
                                     <a href=\"";
-        // line 97
+        // line 89
         echo $this->env->getExtension('routing')->getPath("fos_user_security_logout");
         echo "\">
                                         <i class=\"ace-icon fa fa-power-off\"></i>
@@ -407,15 +382,15 @@ class __TwigTemplate_4a16873ce6d786a445ca84791e51a7ee2aaee83e6f15c072e24c295df8a
                     ";
     }
 
-    // line 229
+    // line 207
     public function block_navigation($context, array $blocks = array())
     {
-        // line 230
+        // line 208
         echo "
                     ";
     }
 
-    // line 246
+    // line 219
     public function block_soustitre($context, array $blocks = array())
     {
         echo " 
@@ -423,18 +398,18 @@ class __TwigTemplate_4a16873ce6d786a445ca84791e51a7ee2aaee83e6f15c072e24c295df8a
                             ";
     }
 
-    // line 253
+    // line 225
     public function block_content($context, array $blocks = array())
     {
-        // line 254
+        // line 226
         echo "
                     ";
     }
 
-    // line 262
+    // line 234
     public function block_footer($context, array $blocks = array())
     {
-        // line 263
+        // line 235
         echo "                <div class=\"footer\">
                     <div class=\"footer-inner\">
                         <!-- #section:basics/footer -->
@@ -466,10 +441,10 @@ class __TwigTemplate_4a16873ce6d786a445ca84791e51a7ee2aaee83e6f15c072e24c295df8a
             ";
     }
 
-    // line 308
+    // line 280
     public function block_javascript($context, array $blocks = array())
     {
-        // line 309
+        // line 281
         echo "
         ";
     }
@@ -486,7 +461,7 @@ class __TwigTemplate_4a16873ce6d786a445ca84791e51a7ee2aaee83e6f15c072e24c295df8a
 
     public function getDebugInfo()
     {
-        return array (  473 => 309,  470 => 308,  438 => 263,  435 => 262,  430 => 254,  427 => 253,  419 => 246,  414 => 230,  411 => 229,  398 => 97,  376 => 78,  370 => 75,  365 => 72,  362 => 71,  350 => 106,  348 => 71,  308 => 33,  305 => 32,  299 => 27,  293 => 311,  291 => 308,  286 => 306,  281 => 304,  277 => 303,  272 => 301,  267 => 299,  258 => 292,  256 => 262,  248 => 256,  246 => 253,  240 => 249,  238 => 246,  222 => 232,  220 => 229,  193 => 205,  180 => 195,  168 => 186,  154 => 175,  111 => 135,  89 => 115,  87 => 32,  81 => 28,  79 => 27,  75 => 26,  70 => 24,  66 => 23,  62 => 22,  56 => 19,  47 => 13,  43 => 12,  35 => 7,  27 => 1,);
+        return array (  448 => 281,  445 => 280,  413 => 235,  410 => 234,  405 => 226,  402 => 225,  394 => 219,  389 => 208,  386 => 207,  373 => 89,  361 => 80,  348 => 70,  342 => 67,  337 => 64,  334 => 63,  322 => 98,  320 => 63,  288 => 33,  285 => 32,  279 => 27,  273 => 283,  271 => 280,  266 => 278,  261 => 276,  257 => 275,  252 => 273,  247 => 271,  238 => 264,  236 => 234,  228 => 228,  226 => 225,  221 => 222,  219 => 219,  208 => 210,  206 => 207,  181 => 185,  168 => 175,  156 => 166,  142 => 155,  99 => 115,  89 => 107,  87 => 32,  81 => 28,  79 => 27,  75 => 26,  70 => 24,  66 => 23,  62 => 22,  56 => 19,  47 => 13,  43 => 12,  35 => 7,  27 => 1,);
     }
 }
 /* ﻿<!DOCTYPE html>*/
@@ -523,13 +498,7 @@ class __TwigTemplate_4a16873ce6d786a445ca84791e51a7ee2aaee83e6f15c072e24c295df8a
 /*         {% block tetiere %}*/
 /*             <!-- #section:basics/navbar.layout -->*/
 /*             <div id="navbar" class="navbar navbar-default">*/
-/*                 <script type="text/javascript">*/
-/*                     try {*/
-/*                         ace.settings.check('navbar', 'fixed')*/
-/*                     } catch (e) {*/
-/*                     }*/
-/*                 </script>*/
-/* */
+/*                 */
 /*                 <div class="navbar-container" id="navbar-container">*/
 /*                     <!-- #section:basics/sidebar.mobile.toggle -->*/
 /*                     <button type="button" class="navbar-toggle menu-toggler pull-left" id="menu-toggler">*/
@@ -551,8 +520,6 @@ class __TwigTemplate_4a16873ce6d786a445ca84791e51a7ee2aaee83e6f15c072e24c295df8a
 /*                                 Administration Cestom*/
 /*                             </small>*/
 /*                         </a>*/
-/* */
-/* */
 /*                     </div>*/
 /* */
 /*                     <!-- #section:basics/navbar.dropdown -->*/
@@ -576,9 +543,9 @@ class __TwigTemplate_4a16873ce6d786a445ca84791e51a7ee2aaee83e6f15c072e24c295df8a
 /*                             <ul class="user-menu dropdown-menu-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">*/
 /* */
 /*                                 <li>*/
-/*                                     <a href="#">*/
+/*                                     <a href="{{ path('cestom_home')}}">*/
 /*                                         <i class="ace-icon fa fa-user"></i>*/
-/*                                         Mon compte*/
+/*                                        Site Web*/
 /*                                     </a>*/
 /*                                 </li>*/
 /* */
@@ -605,21 +572,9 @@ class __TwigTemplate_4a16873ce6d786a445ca84791e51a7ee2aaee83e6f15c072e24c295df8a
 /*         {% endblock %}*/
 /*         <!-- /section:basics/navbar.layout -->*/
 /*         <div class="main-container" id="main-container">*/
-/*             <script type="text/javascript">*/
-/*                 try {*/
-/*                     ace.settings.check('main-container', 'fixed')*/
-/*                 } catch (e) {*/
-/*                 }*/
-/*             </script>*/
-/* */
-/*             <!-- #section:basics/sidebar -->*/
+/*            */
 /*             <div id="sidebar" class="sidebar                  responsive">*/
-/*                 <script type="text/javascript">*/
-/*                     try {*/
-/*                         ace.settings.check('sidebar', 'fixed')*/
-/*                     } catch (e) {*/
-/*                     }*/
-/*                 </script>*/
+/*                */
 /* */
 /*                 <ul class="nav nav-list">*/
 /*                     <li id="menu_membre" class=" main ">*/
@@ -712,34 +667,26 @@ class __TwigTemplate_4a16873ce6d786a445ca84791e51a7ee2aaee83e6f15c072e24c295df8a
 /* */
 /*             </div>*/
 /* */
-/*             <!-- /section:basics/sidebar -->*/
 /*             <div class="main-content">*/
-/*                 <!-- #section:basics/content.breadcrumbs -->*/
 /* */
 /*                 <div class="breadcrumbs" id="breadcrumbs">*/
 /*                     {% block navigation %}*/
 /* */
 /*                     {% endblock %}*/
 /*                    */
-/* */
-/*                     <!-- /section:basics/content.searchbox -->*/
 /*                 </div>*/
 /* */
 /* */
-/*                 <!-- /section:basics/content.breadcrumbs -->*/
 /* */
 /*                 <div class="page-content">*/
-/*                     <!-- #section:settings.box -->*/
-/* */
-/*                     <!-- /section:settings.box -->*/
+/*                     */
 /*                     <div class="page-header">*/
 /*                         <h1>*/
 /*                             {% block soustitre %} */
 /* */
 /*                             {% endblock %}*/
 /*                         </h1>*/
-/*                     </div><!-- /.page-header -->*/
-/* */
+/*                     </div>*/
 /* */
 /*                     {% block content %}*/
 /* */

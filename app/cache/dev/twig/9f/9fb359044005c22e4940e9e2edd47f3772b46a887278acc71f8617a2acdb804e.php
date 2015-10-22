@@ -32,37 +32,55 @@ class __TwigTemplate_01e5a96be15ec6b550f0e72ceba67cb86e819bc1c844ed6e1095deae8df
     public function block_style($context, array $blocks = array())
     {
         echo " 
-    <link rel=\"stylesheet\" href=\"";
+    <link rel=\"stylesheet\" type=\"text/css\" href=\"";
         // line 5
-        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("assets/css/jquery-ui.custom.min.css"), "html", null, true);
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("assets/css/dataTables.bootstrap.min.css"), "html", null, true);
+        echo "\" />
+    <link rel=\"stylesheet\" type=\"text/css\" href=\"";
+        // line 6
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("assets/css/responsive.bootstrap.min.css"), "html", null, true);
         echo "\" />
 
 ";
     }
 
-    // line 10
+    // line 11
     public function block_navigation($context, array $blocks = array())
     {
-        // line 11
+        // line 12
         echo "
 
     <ul class=\"breadcrumb\">
         <li>
             <i class=\"ace-icon fa fa-home home-icon\"></i>
-            <a href=\"#\">Home</a>
+            <a href=\"";
+        // line 17
+        echo $this->env->getExtension('routing')->getPath("cestom_admin_homepage");
+        echo "\">Home</a>
         </li>
         <li>
 
-            <a href=\"#\">Gestion des villes</a>
+            <a href=\"";
+        // line 21
+        echo $this->env->getExtension('routing')->getPath("cestom_admin_ajouter_ville");
+        echo "\">Gestion des villes</a>
         </li>
 
+        <li>
+
+            <a href=\"";
+        // line 26
+        echo $this->env->getExtension('routing')->getPath("cestom_admin_ajouter_bureau_ville");
+        echo "\">Gestion des bureaux</a>
+        </li>
+        
         <li class=\"active\">Bureau de ville</li>
     </ul>
 
 ";
     }
 
-    // line 30
+    // line 36
     public function block_soustitre($context, array $blocks = array())
     {
         echo " 
@@ -72,22 +90,22 @@ class __TwigTemplate_01e5a96be15ec6b550f0e72ceba67cb86e819bc1c844ed6e1095deae8df
 ";
     }
 
-    // line 36
+    // line 42
     public function block_content($context, array $blocks = array())
     {
-        // line 37
+        // line 43
         echo "
     ";
-        // line 38
+        // line 44
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable($this->getAttribute($this->getAttribute($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "session", array()), "flashbag", array()), "get", array(0 => "messagesucces"), "method"));
         foreach ($context['_seq'] as $context["_key"] => $context["flashMessage"]) {
-            // line 39
+            // line 45
             echo "        <div class=\"alert alert-block alert-success\">
             <div class=\"flash-notice\">
 
                 ";
-            // line 42
+            // line 48
             echo twig_escape_filter($this->env, $context["flashMessage"], "html", null, true);
             echo "
             </div>
@@ -97,19 +115,19 @@ class __TwigTemplate_01e5a96be15ec6b550f0e72ceba67cb86e819bc1c844ed6e1095deae8df
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['flashMessage'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 46
+        // line 52
         echo "
     ";
-        // line 47
+        // line 53
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable($this->getAttribute($this->getAttribute($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "session", array()), "flashbag", array()), "get", array(0 => "messageerror"), "method"));
         foreach ($context['_seq'] as $context["_key"] => $context["flashMessage"]) {
-            // line 48
+            // line 54
             echo "        <div class=\"alert alert-block alert-danger\">
             <div class=\"flash-notice\">
 
                 ";
-            // line 51
+            // line 57
             echo twig_escape_filter($this->env, $context["flashMessage"], "html", null, true);
             echo "
             </div>
@@ -119,22 +137,20 @@ class __TwigTemplate_01e5a96be15ec6b550f0e72ceba67cb86e819bc1c844ed6e1095deae8df
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['flashMessage'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 55
+        // line 61
         echo "
     <div class=\"widget-body\">
         <div class=\"widget-main no-padding\">
 
             <div class=\"row\">
                 <div class=\"col-xs-12\">
-                    <!-- PAGE CONTENT BEGINS -->
-                    <div class=\"row\">
-                        <div class=\"col-sm-12\">
+                    
                             <!-- #section:elements.tab -->
                             <div class=\"tabbable\">
                                 <ul class=\"nav nav-tabs\" id=\"myTab\">
                                     <li class=\"dropdown \">
                                         <a  href=\"";
-        // line 68
+        // line 72
         echo $this->env->getExtension('routing')->getPath("cestom_admin_ajouter_ville");
         echo "\">
                                             <i class=\"gblue ace-icon fa fa-user bigger-120\"></i>
@@ -146,7 +162,7 @@ class __TwigTemplate_01e5a96be15ec6b550f0e72ceba67cb86e819bc1c844ed6e1095deae8df
 
                                     <li class=\"active\">
                                         <a  href=\"";
-        // line 77
+        // line 81
         echo $this->env->getExtension('routing')->getPath("cestom_admin_ajouter_bureau_ville");
         echo "\">
                                             <i class=\"green ace-icon fa fa-star bigger-120\"></i>
@@ -161,188 +177,172 @@ class __TwigTemplate_01e5a96be15ec6b550f0e72ceba67cb86e819bc1c844ed6e1095deae8df
                                     <div id=\"bureau\" class=\"tab-pane in active\">
                                         <div class=\"widget-body\">
 
-                                            
-<form ";
-        // line 91
+
+                                            <form ";
+        // line 95
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), 'enctype');
         echo "  method = \"POST\"  action = \"";
         echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("cestom_admin_modifier_bureau_ville", array("idbureau" => (isset($context["idbureau"]) ? $context["idbureau"] : $this->getContext($context, "idbureau")))), "html", null, true);
         echo "\">\t
 
-<fieldset >
-                    <div class=\"col-sm-10 widget-main\">
-                        <h4 class=\"header blue bolder smaller\">
-                            Modifier un bureau de ville
-                        </h4>
-                    </div>
-                                                    ";
-        // line 99
-        $this->loadTemplate("CestomAdminBundle:GestionMembre:formulaireBureau.html.twig", "CestomAdminBundle:GestionMembre:modifierBureau.html.twig", 99)->display($context);
-        // line 100
-        echo "
-<fieldset >
-                                                    <div class=\"form-actions center\">
-                                                        <button id=\"valider\" type=\"submit\" class=\"btn btn-sm btn-success\">
-                                                            Modifier
-                                                            <i class=\"ace-icon fa fa-save icon-on-right bigger-110\"></i>
-                                                        </button>
+                                                <fieldset >
+                                                    <div class=\"col-sm-12 widget-main\">
+                                                        <h4 class=\"header blue bolder smaller\">
+                                                            Modifier un bureau de ville
+                                                        </h4>
                                                     </div>
+                                                    ";
+        // line 103
+        $this->loadTemplate("CestomAdminBundle:GestionMembre:formulaireBureau.html.twig", "CestomAdminBundle:GestionMembre:modifierBureau.html.twig", 103)->display($context);
+        // line 104
+        echo "
+                                                    </fieldset >
+                                                        <div class=\"form-actions center\">
+                                                            <button id=\"valider\" type=\"submit\" class=\"btn btn-sm btn-success\">
+                                                                Modifier
+                                                                <i class=\"ace-icon fa fa-save icon-on-right bigger-110\"></i>
+                                                            </button>
+                                                        </div>
 
-                                                </form>
+                                                        </form>
 
 
-                                               
-                                                    
-                                                    
-                                                <div class=\"table-header\">
-                                                    Liste des villes
-                                                </div>
 
-                                                <table id=\"listbureau\" style= \"border : solid 1px darkgrey; \" class=\"table table-striped table-bordered \">
-                                                    <thead>
-                                                        <tr>
-                                                            <th class=\"center\">
-                                                                <label class=\"position-relative\">
-                                                                    <input type=\"checkbox\" class=\"ace\" />
-                                                                    <span class=\"lbl\"></span>
-                                                                </label>
-                                                            </th>
 
-                                                            <th> Action</th>
-                                                            <th>Nom de la ville  </th>
-                                                            <th>Membre  </th>
-                                                            <th>Poste  </th>
-                                                            <th>Année universitaire  </th>
-                                                           
-                                                        </tr>
-                                                    </thead>
 
-                                                    <tbody>
-                                                        ";
-        // line 139
+                                                        <div class=\"table-header\">
+                                                            Liste des villes
+                                                        </div>
+                                                        <br>
+                                                        <div class=\"table-responsive\">
+
+                                                            <table id=\"listbureau\" style= \"border : solid 1px darkgrey; \" class=\"table table-striped table-bordered \">
+                                                                <thead>
+                                                                    <tr>
+                                                                                                                                               <th> Action</th>
+                                                                        <th>Nom de la ville  </th>
+                                                                        <th>Membre  </th>
+                                                                        <th>Poste  </th>
+                                                                        <th>Année universitaire  </th>
+
+                                                                    </tr>
+                                                                </thead>
+
+                                                                <tbody>
+                                                                    ";
+        // line 138
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable((isset($context["bureaux"]) ? $context["bureaux"] : $this->getContext($context, "bureaux")));
         foreach ($context['_seq'] as $context["_key"] => $context["bureau"]) {
-            // line 140
-            echo "                                                            <tr>
+            // line 139
+            echo "                                                                        <tr>
 
-                                                                <td class=\"center\">
-                                                                    <label class=\"position-relative\">
-                                                                        <input type=\"checkbox\" class=\"ace\" />
-                                                                        <span class=\"lbl\"></span>
-                                                                    </label>
-                                                                </td >
+                                                                           
+                                                                            <td>
 
-
-                                                                <td>
-
-
-
-                                                                    <a class=\"green\" href=\"";
-            // line 154
+                                                                                <a class=\"green\" href=\"";
+            // line 144
             echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("cestom_admin_modifier_bureau_ville", array("idbureau" => $this->getAttribute($context["bureau"], "idbureau", array()))), "html", null, true);
             echo "\">
-                                                                        <i class=\"ace-icon fa fa-pencil bigger-130\"></i>
-                                                                    </a>
+                                                                                    <i class=\"ace-icon fa fa-pencil bigger-130\"></i>
+                                                                                </a>
 
-                                                                </td>
+                                                                            </td>
 
-                                                                <td>";
-            // line 160
+                                                                            <td>";
+            // line 150
             echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($context["bureau"], "idville", array()), "nomVille", array()), "html", null, true);
             echo "</td>
-                                                                
- \t\t\t\t\t\t\t   <th>";
-            // line 162
+
+                                                                            <th>";
+            // line 152
             echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($context["bureau"], "idmembre", array()), "nomMembre", array()), "html", null, true);
             echo "  ";
             echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($context["bureau"], "idmembre", array()), "prenomMembre", array()), "html", null, true);
             echo "</th>
-                                                            <th>";
-            // line 163
+                                                                            <th>";
+            // line 153
             echo twig_escape_filter($this->env, $this->getAttribute($context["bureau"], "posteMembre", array()), "html", null, true);
             echo "  </th>
-                                                            <th>";
-            // line 164
+                                                                            <th>";
+            // line 154
             echo twig_escape_filter($this->env, $this->getAttribute($context["bureau"], "anneeScolaire", array()), "html", null, true);
             echo "  </th>
-                                                            </tr>
-                                                        ";
+                                                                        </tr>
+                                                                    ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['bureau'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 167
-        echo "                                                    </tbody>
-                                                </table>
+        // line 157
+        echo "                                                                </tbody>
+                                                            </table>
+                                                        </div>
 
- 
-                                            </div>
-                                        </div>
-                                    
-                                </div>
-                            </div>
+                                                        </div>
+                                                        </div>
 
-                            <!-- /section:elements.tab -->
-                        </div><!-- /.col -->
+                                                        </div>
+                                                        </div>
 
-
-
-                    </div><!-- /.row -->
+                                                        <!-- /section:elements.tab -->
+                                                        </div><!-- /.col -->
 
 
 
-                    <!-- PAGE CONTENT ENDS -->
-                </div><!-- /.col -->
-            </div><!-- /.row -->
-        </div>
-    </div>
+                                                        </div><!-- /.row -->
 
 
-";
+
+                                                        <!-- PAGE CONTENT ENDS -->
+                                                        </div><!-- /.col -->
+                                                        </div><!-- /.row -->
+                                                       
+
+
+                                                    ";
     }
 
-    // line 195
+    // line 184
     public function block_javascript($context, array $blocks = array())
     {
-        // line 196
-        echo "    
-    <script src=\"";
-        // line 197
+        // line 185
+        echo "
+                                                        <script src=\"";
+        // line 186
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("assets/js/jquery.dataTables.min.js"), "html", null, true);
         echo "\"></script>
-    <script\tsrc=\"";
-        // line 198
-        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("assets/js/jquery.dataTables.bootstrap.js"), "html", null, true);
+                                                        <script type=\"text/javascript\"src=\"";
+        // line 187
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("assets/js/dataTables.responsive.min.js"), "html", null, true);
         echo "\"></script>
-    <script type=\"text/javascript\">
+ <script type=\"text/javascript\">
                                                             jQuery(function(\$) {
-                                 
-                                  \$('.main').removeClass('active');
-                                  \$('#menu_ville').addClass('active');
-                                                                \$('#listbureau').DataTable({
-                                                                    
-                                                                    \"language\": {
-            \"lengthMenu\": \"Afficher _MENU_ lignes\",
-            \"zeroRecords\": \"Aucune donnée retrouvée\",
-             \"sSearch\": \"Rechercher\",
-            \"info\": \"Page _PAGE_ sur _PAGES_\",
-            \"infoEmpty\": \"Aucune donnée\",
-            \"oPaginate\": {
-            \"sFirst\":    \"Premier\",
-            \"sLast\":    \"FIn\",
-            \"sNext\":    \"Suivant\",
-            \"sPrevious\": \"Précédent\"
-        },
-            \"infoFiltered\": \"(filtré sur _MAX_ total lignes)\"
-        }
-                                                                });
-                                                                
-                                       
-                                                            });
-    </script>
 
-";
+                                                                \$('.main').removeClass('active');
+                                                                \$('#menu_ville').addClass('active');
+                                                                \$('#listbureau').DataTable({
+                                                                    \"language\": {
+                                                                        \"lengthMenu\": \"Afficher _MENU_ lignes\",
+                                                                        \"zeroRecords\": \"Aucune donnée retrouvée\",
+                                                                        \"sSearch\": \"Rechercher\",
+                                                                        \"info\": \"Page _PAGE_ sur _PAGES_\",
+                                                                        \"infoEmpty\": \"Aucune donnée\",
+                                                                        \"oPaginate\": {
+                                                                            \"sFirst\": \"Premier\",
+                                                                            \"sLast\": \"Fin\",
+                                                                            \"sNext\": \"  Suivant  \",
+                                                                            \"sPrevious\": \"  Précédent  \"
+                                                                        },
+                                                                        \"infoFiltered\": \"(filtré sur _MAX_ total lignes)\"
+                                                                    }
+                                                                });
+
+
+                                                            });
+                                                        </script>
+
+                                                    ";
     }
 
     public function getTemplateName()
@@ -357,14 +357,15 @@ class __TwigTemplate_01e5a96be15ec6b550f0e72ceba67cb86e819bc1c844ed6e1095deae8df
 
     public function getDebugInfo()
     {
-        return array (  316 => 198,  312 => 197,  309 => 196,  306 => 195,  276 => 167,  267 => 164,  263 => 163,  257 => 162,  252 => 160,  243 => 154,  227 => 140,  223 => 139,  182 => 100,  180 => 99,  167 => 91,  150 => 77,  138 => 68,  123 => 55,  113 => 51,  108 => 48,  104 => 47,  101 => 46,  91 => 42,  86 => 39,  82 => 38,  79 => 37,  76 => 36,  66 => 30,  47 => 11,  44 => 10,  37 => 5,  32 => 4,  11 => 3,);
+        return array (  317 => 187,  313 => 186,  310 => 185,  307 => 184,  278 => 157,  269 => 154,  265 => 153,  259 => 152,  254 => 150,  245 => 144,  238 => 139,  234 => 138,  198 => 104,  196 => 103,  183 => 95,  166 => 81,  154 => 72,  141 => 61,  131 => 57,  126 => 54,  122 => 53,  119 => 52,  109 => 48,  104 => 45,  100 => 44,  97 => 43,  94 => 42,  84 => 36,  73 => 26,  65 => 21,  58 => 17,  51 => 12,  48 => 11,  41 => 6,  37 => 5,  32 => 4,  11 => 3,);
     }
 }
 /* */
 /* {# app/Resources/views/blog/index.html.twig #}*/
 /* {% extends 'base.html.twig' %}*/
 /* {% block style %} */
-/*     <link rel="stylesheet" href="{{asset('assets/css/jquery-ui.custom.min.css')}}" />*/
+/*     <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/dataTables.bootstrap.min.css')}}" />*/
+/*     <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/responsive.bootstrap.min.css')}}" />*/
 /* */
 /* {% endblock %}*/
 /* */
@@ -375,13 +376,18 @@ class __TwigTemplate_01e5a96be15ec6b550f0e72ceba67cb86e819bc1c844ed6e1095deae8df
 /*     <ul class="breadcrumb">*/
 /*         <li>*/
 /*             <i class="ace-icon fa fa-home home-icon"></i>*/
-/*             <a href="#">Home</a>*/
+/*             <a href="{{path('cestom_admin_homepage')}}">Home</a>*/
 /*         </li>*/
 /*         <li>*/
 /* */
-/*             <a href="#">Gestion des villes</a>*/
+/*             <a href="{{path('cestom_admin_ajouter_ville')}}">Gestion des villes</a>*/
 /*         </li>*/
 /* */
+/*         <li>*/
+/* */
+/*             <a href="{{path('cestom_admin_ajouter_bureau_ville')}}">Gestion des bureaux</a>*/
+/*         </li>*/
+/*         */
 /*         <li class="active">Bureau de ville</li>*/
 /*     </ul>*/
 /* */
@@ -420,9 +426,7 @@ class __TwigTemplate_01e5a96be15ec6b550f0e72ceba67cb86e819bc1c844ed6e1095deae8df
 /* */
 /*             <div class="row">*/
 /*                 <div class="col-xs-12">*/
-/*                     <!-- PAGE CONTENT BEGINS -->*/
-/*                     <div class="row">*/
-/*                         <div class="col-sm-12">*/
+/*                     */
 /*                             <!-- #section:elements.tab -->*/
 /*                             <div class="tabbable">*/
 /*                                 <ul class="nav nav-tabs" id="myTab">*/
@@ -449,143 +453,127 @@ class __TwigTemplate_01e5a96be15ec6b550f0e72ceba67cb86e819bc1c844ed6e1095deae8df
 /*                                     <div id="bureau" class="tab-pane in active">*/
 /*                                         <div class="widget-body">*/
 /* */
-/*                                             */
-/* <form {{ form_enctype(form) }}  method = "POST"  action = "{{ path('cestom_admin_modifier_bureau_ville',{'idbureau': idbureau})}}">	*/
 /* */
-/* <fieldset >*/
-/*                     <div class="col-sm-10 widget-main">*/
-/*                         <h4 class="header blue bolder smaller">*/
-/*                             Modifier un bureau de ville*/
-/*                         </h4>*/
-/*                     </div>*/
+/*                                             <form {{ form_enctype(form) }}  method = "POST"  action = "{{ path('cestom_admin_modifier_bureau_ville',{'idbureau': idbureau})}}">	*/
+/* */
+/*                                                 <fieldset >*/
+/*                                                     <div class="col-sm-12 widget-main">*/
+/*                                                         <h4 class="header blue bolder smaller">*/
+/*                                                             Modifier un bureau de ville*/
+/*                                                         </h4>*/
+/*                                                     </div>*/
 /*                                                     {% include "CestomAdminBundle:GestionMembre:formulaireBureau.html.twig" %}*/
 /* */
-/* <fieldset >*/
-/*                                                     <div class="form-actions center">*/
-/*                                                         <button id="valider" type="submit" class="btn btn-sm btn-success">*/
-/*                                                             Modifier*/
-/*                                                             <i class="ace-icon fa fa-save icon-on-right bigger-110"></i>*/
-/*                                                         </button>*/
-/*                                                     </div>*/
+/*                                                     </fieldset >*/
+/*                                                         <div class="form-actions center">*/
+/*                                                             <button id="valider" type="submit" class="btn btn-sm btn-success">*/
+/*                                                                 Modifier*/
+/*                                                                 <i class="ace-icon fa fa-save icon-on-right bigger-110"></i>*/
+/*                                                             </button>*/
+/*                                                         </div>*/
 /* */
-/*                                                 </form>*/
-/* */
-/* */
-/*                                                */
-/*                                                     */
-/*                                                     */
-/*                                                 <div class="table-header">*/
-/*                                                     Liste des villes*/
-/*                                                 </div>*/
-/* */
-/*                                                 <table id="listbureau" style= "border : solid 1px darkgrey; " class="table table-striped table-bordered ">*/
-/*                                                     <thead>*/
-/*                                                         <tr>*/
-/*                                                             <th class="center">*/
-/*                                                                 <label class="position-relative">*/
-/*                                                                     <input type="checkbox" class="ace" />*/
-/*                                                                     <span class="lbl"></span>*/
-/*                                                                 </label>*/
-/*                                                             </th>*/
-/* */
-/*                                                             <th> Action</th>*/
-/*                                                             <th>Nom de la ville  </th>*/
-/*                                                             <th>Membre  </th>*/
-/*                                                             <th>Poste  </th>*/
-/*                                                             <th>Année universitaire  </th>*/
-/*                                                            */
-/*                                                         </tr>*/
-/*                                                     </thead>*/
-/* */
-/*                                                     <tbody>*/
-/*                                                         {% for bureau in bureaux %}*/
-/*                                                             <tr>*/
-/* */
-/*                                                                 <td class="center">*/
-/*                                                                     <label class="position-relative">*/
-/*                                                                         <input type="checkbox" class="ace" />*/
-/*                                                                         <span class="lbl"></span>*/
-/*                                                                     </label>*/
-/*                                                                 </td >*/
-/* */
-/* */
-/*                                                                 <td>*/
+/*                                                         </form>*/
 /* */
 /* */
 /* */
-/*                                                                     <a class="green" href="{{path('cestom_admin_modifier_bureau_ville',{'idbureau': bureau.idbureau})}}">*/
-/*                                                                         <i class="ace-icon fa fa-pencil bigger-130"></i>*/
-/*                                                                     </a>*/
-/* */
-/*                                                                 </td>*/
-/* */
-/*                                                                 <td>{{ bureau.idville.nomVille}}</td>*/
-/*                                                                 */
-/*  							   <th>{{ bureau.idmembre.nomMembre}}  {{ bureau.idmembre.prenomMembre}}</th>*/
-/*                                                             <th>{{ bureau.posteMembre}}  </th>*/
-/*                                                             <th>{{ bureau.anneeScolaire}}  </th>*/
-/*                                                             </tr>*/
-/*                                                         {% endfor %}*/
-/*                                                     </tbody>*/
-/*                                                 </table>*/
-/* */
-/*  */
-/*                                             </div>*/
-/*                                         </div>*/
-/*                                     */
-/*                                 </div>*/
-/*                             </div>*/
-/* */
-/*                             <!-- /section:elements.tab -->*/
-/*                         </div><!-- /.col -->*/
 /* */
 /* */
+/*                                                         <div class="table-header">*/
+/*                                                             Liste des villes*/
+/*                                                         </div>*/
+/*                                                         <br>*/
+/*                                                         <div class="table-responsive">*/
 /* */
-/*                     </div><!-- /.row -->*/
+/*                                                             <table id="listbureau" style= "border : solid 1px darkgrey; " class="table table-striped table-bordered ">*/
+/*                                                                 <thead>*/
+/*                                                                     <tr>*/
+/*                                                                                                                                                <th> Action</th>*/
+/*                                                                         <th>Nom de la ville  </th>*/
+/*                                                                         <th>Membre  </th>*/
+/*                                                                         <th>Poste  </th>*/
+/*                                                                         <th>Année universitaire  </th>*/
+/* */
+/*                                                                     </tr>*/
+/*                                                                 </thead>*/
+/* */
+/*                                                                 <tbody>*/
+/*                                                                     {% for bureau in bureaux %}*/
+/*                                                                         <tr>*/
+/* */
+/*                                                                            */
+/*                                                                             <td>*/
+/* */
+/*                                                                                 <a class="green" href="{{path('cestom_admin_modifier_bureau_ville',{'idbureau': bureau.idbureau})}}">*/
+/*                                                                                     <i class="ace-icon fa fa-pencil bigger-130"></i>*/
+/*                                                                                 </a>*/
+/* */
+/*                                                                             </td>*/
+/* */
+/*                                                                             <td>{{ bureau.idville.nomVille}}</td>*/
+/* */
+/*                                                                             <th>{{ bureau.idmembre.nomMembre}}  {{ bureau.idmembre.prenomMembre}}</th>*/
+/*                                                                             <th>{{ bureau.posteMembre}}  </th>*/
+/*                                                                             <th>{{ bureau.anneeScolaire}}  </th>*/
+/*                                                                         </tr>*/
+/*                                                                     {% endfor %}*/
+/*                                                                 </tbody>*/
+/*                                                             </table>*/
+/*                                                         </div>*/
+/* */
+/*                                                         </div>*/
+/*                                                         </div>*/
+/* */
+/*                                                         </div>*/
+/*                                                         </div>*/
+/* */
+/*                                                         <!-- /section:elements.tab -->*/
+/*                                                         </div><!-- /.col -->*/
 /* */
 /* */
 /* */
-/*                     <!-- PAGE CONTENT ENDS -->*/
-/*                 </div><!-- /.col -->*/
-/*             </div><!-- /.row -->*/
-/*         </div>*/
-/*     </div>*/
+/*                                                         </div><!-- /.row -->*/
 /* */
 /* */
-/* {% endblock %}*/
 /* */
-/* {% block javascript %}*/
-/*     */
-/*     <script src="{{asset('assets/js/jquery.dataTables.min.js')}}"></script>*/
-/*     <script	src="{{asset('assets/js/jquery.dataTables.bootstrap.js')}}"></script>*/
-/*     <script type="text/javascript">*/
+/*                                                         <!-- PAGE CONTENT ENDS -->*/
+/*                                                         </div><!-- /.col -->*/
+/*                                                         </div><!-- /.row -->*/
+/*                                                        */
+/* */
+/* */
+/*                                                     {% endblock %}*/
+/* */
+/*                                                     {% block javascript %}*/
+/* */
+/*                                                         <script src="{{asset('assets/js/jquery.dataTables.min.js')}}"></script>*/
+/*                                                         <script type="text/javascript"src="{{asset('assets/js/dataTables.responsive.min.js')}}"></script>*/
+/*  <script type="text/javascript">*/
 /*                                                             jQuery(function($) {*/
-/*                                  */
-/*                                   $('.main').removeClass('active');*/
-/*                                   $('#menu_ville').addClass('active');*/
-/*                                                                 $('#listbureau').DataTable({*/
-/*                                                                     */
-/*                                                                     "language": {*/
-/*             "lengthMenu": "Afficher _MENU_ lignes",*/
-/*             "zeroRecords": "Aucune donnée retrouvée",*/
-/*              "sSearch": "Rechercher",*/
-/*             "info": "Page _PAGE_ sur _PAGES_",*/
-/*             "infoEmpty": "Aucune donnée",*/
-/*             "oPaginate": {*/
-/*             "sFirst":    "Premier",*/
-/*             "sLast":    "FIn",*/
-/*             "sNext":    "Suivant",*/
-/*             "sPrevious": "Précédent"*/
-/*         },*/
-/*             "infoFiltered": "(filtré sur _MAX_ total lignes)"*/
-/*         }*/
-/*                                                                 });*/
-/*                                                                 */
-/*                                        */
-/*                                                             });*/
-/*     </script>*/
 /* */
-/* {% endblock %}*/
+/*                                                                 $('.main').removeClass('active');*/
+/*                                                                 $('#menu_ville').addClass('active');*/
+/*                                                                 $('#listbureau').DataTable({*/
+/*                                                                     "language": {*/
+/*                                                                         "lengthMenu": "Afficher _MENU_ lignes",*/
+/*                                                                         "zeroRecords": "Aucune donnée retrouvée",*/
+/*                                                                         "sSearch": "Rechercher",*/
+/*                                                                         "info": "Page _PAGE_ sur _PAGES_",*/
+/*                                                                         "infoEmpty": "Aucune donnée",*/
+/*                                                                         "oPaginate": {*/
+/*                                                                             "sFirst": "Premier",*/
+/*                                                                             "sLast": "Fin",*/
+/*                                                                             "sNext": "  Suivant  ",*/
+/*                                                                             "sPrevious": "  Précédent  "*/
+/*                                                                         },*/
+/*                                                                         "infoFiltered": "(filtré sur _MAX_ total lignes)"*/
+/*                                                                     }*/
+/*                                                                 });*/
+/* */
+/* */
+/*                                                             });*/
+/*                                                         </script>*/
+/* */
+/*                                                     {% endblock %}*/
 /* */
 /* */
 /* */

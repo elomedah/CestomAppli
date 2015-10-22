@@ -10,6 +10,7 @@ class __TwigTemplate_c4179af3f1e03cdbf7b0c7cc559159fd3cc55ff82f3d45597c613b8f86f
         // line 2
         $this->parent = $this->loadTemplate("base.html.twig", "CestomAdminBundle:GestionMembre:gestionMembre.html.twig", 2);
         $this->blocks = array(
+            'style' => array($this, 'block_style'),
             'navigation' => array($this, 'block_navigation'),
             'soustitre' => array($this, 'block_soustitre'),
             'content' => array($this, 'block_content'),
@@ -28,9 +29,26 @@ class __TwigTemplate_c4179af3f1e03cdbf7b0c7cc559159fd3cc55ff82f3d45597c613b8f86f
     }
 
     // line 4
-    public function block_navigation($context, array $blocks = array())
+    public function block_style($context, array $blocks = array())
     {
         // line 5
+        echo "    <link rel=\"stylesheet\" type=\"text/css\" href=\"";
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("assets/css/dataTables.bootstrap.min.css"), "html", null, true);
+        echo "\" />
+    <link rel=\"stylesheet\" type=\"text/css\" href=\"";
+        // line 6
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("assets/css/responsive.bootstrap.min.css"), "html", null, true);
+        echo "\" />
+    <style type=\"text/css\">
+
+    </style>
+";
+    }
+
+    // line 13
+    public function block_navigation($context, array $blocks = array())
+    {
+        // line 14
         echo "
 
     <ul class=\"breadcrumb\">
@@ -44,261 +62,256 @@ class __TwigTemplate_c4179af3f1e03cdbf7b0c7cc559159fd3cc55ff82f3d45597c613b8f86f
 ";
     }
 
-    // line 18
+    // line 27
     public function block_soustitre($context, array $blocks = array())
     {
         echo " 
 
     Liste des membres
-    
+
 ";
     }
 
-    // line 24
+    // line 33
     public function block_content($context, array $blocks = array())
     {
-        // line 25
-        echo "
-      ";
-        // line 26
+        // line 34
+        echo "    <div class=\"widget-body\">
+        <div class=\"widget-main no-padding\"> 
+            <div class=\"row\">
+
+                <div class=\"col-xs-14\">
+
+
+                    ";
+        // line 41
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable($this->getAttribute($this->getAttribute($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "session", array()), "flashbag", array()), "get", array(0 => "messagesucces"), "method"));
         foreach ($context['_seq'] as $context["_key"] => $context["flashMessage"]) {
-            // line 27
-            echo "<div class=\"alert alert-block alert-success\">
-<div class=\"flash-notice\">
+            // line 42
+            echo "                        <div class=\"alert alert-block alert-success\">
+                            <div class=\"flash-notice\">
 
-";
-            // line 30
+                                ";
+            // line 45
             echo twig_escape_filter($this->env, $context["flashMessage"], "html", null, true);
             echo "
-</div>
-</div>
-";
+                            </div>
+                        </div>
+                    ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['flashMessage'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 34
+        // line 49
         echo "
- ";
-        // line 35
+                    ";
+        // line 50
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable($this->getAttribute($this->getAttribute($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "session", array()), "flashbag", array()), "get", array(0 => "messageechec"), "method"));
         foreach ($context['_seq'] as $context["_key"] => $context["flashMessage"]) {
-            // line 36
-            echo "<div class=\"alert alert-block alert-danger\">
-<div class=\"flash-notice\">
+            // line 51
+            echo "                        <div class=\"alert alert-block alert-danger\">
+                            <div class=\"flash-notice\">
 
-";
-            // line 39
+                                ";
+            // line 54
             echo twig_escape_filter($this->env, $context["flashMessage"], "html", null, true);
             echo "
-</div>
-</div>
-";
+                            </div>
+                        </div>
+                    ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['flashMessage'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 43
-        echo "    <div class=\"widget-body\">
-        <div class=\"widget-main no-padding\">
- <div class=\"row\">
+        // line 58
+        echo "                    <div>
+                        <a href=\"";
+        // line 59
+        echo $this->env->getExtension('routing')->getPath("cestom_admin_ajouter_member");
+        echo "\">
+                            <button id=\"ajouter\" type=\"button\" class=\"btn btn-sm btn-success\">
+                                Ajouter nouveau
+                            </button>
+                        </a>
 
-                <div class=\"col-xs-12\">
-                    <!-- PAGE CONTENT BEGINS -->
-                    <div class=\"row\">
-                        <div class=\"col-sm-12\">
 
-<div class=\"nav-search\" id=\"nav-search\">
-                        <form   method = \"POST\"  action = \"";
-        // line 53
+                    </div>
+                    <br>
+                    <div>
+                        <div class=\"nav-search\" id=\"nav-search\">
+                            <form   method = \"POST\"  action = \"";
+        // line 70
         echo $this->env->getExtension('routing')->getPath("cestom_admin_homepage");
         echo "\"class=\"form-search\">
-                            <span class=\"input-icon\">
-                                <input name=\"ville\" type=\"choice\" placeholder=\"Ville ...\" class=\"nav-search-input\" id=\"nav-search-input\" autocomplete=\"off\" />
-                                <i class=\"ace-icon fa fa-search nav-search-icon\"></i>
-                            </span>
-                            <span class=\"input-icon\">
-                                <input name=\"universite\" type=\"text\" placeholder=\"Université ...\" class=\"nav-search-input\" id=\"nav-search-input\" autocomplete=\"off\" />
-                                <i class=\"ace-icon fa fa-search nav-search-icon\"></i>
-                            </span>
-                            
-                              <button id=\"ajouter\" type=\"submit\" class=\"btn btn-sm btn-success\">
-                             Rechercher
-                             </button>
-                        </form>
-                    </div><!-- /.nav-search -->
-    <div> 
-    <a href=\"";
-        // line 69
-        echo $this->env->getExtension('routing')->getPath("cestom_admin_ajouter_member");
-        echo "\"> 
-        <button id=\"ajouter\" type=\"button\" class=\"btn btn-sm btn-success\">
-                        Ajouter nouveau
-                    </button>
-    </a>
-        
-         
-    </div>
-        <br>
-    
-    <div>
-        <div class=\"table-header\">
-           Les membres
-\t</div>
-        <table id=\"listuser\"  style= \"border : solid 1px darkgrey; \"  class=\"table table-striped table-bordered table-hover \" >
-            <thead>
-                <tr>
-                    <th class=\"center\">
-                        <label class=\"position-relative\">
-                            <input type=\"checkbox\" class=\"ace\" />
-                            <span class=\"lbl\"></span>
-                        </label>
-                    </th>
-                     
-\t\t    <th> </th>
-                    <th>Nom </th>
-                    <th>Prénom</th>
-\t\t    <th>Username</th>
-                    <th>Sexe</th>
-                    <th>Numéro Passeport</th>
-                    <th>Date émission</th>
-                    <th>Date d'expiration</th>
-                    <th>Promotion</th>
-                    <th>Contact d'urgence</th>
-                    <th>Lycée fréquenté</th>
+                                <span class=\"input-icon\">
+                                    <input name=\"ville\" type=\"choice\" placeholder=\"Ville ...\" class=\"nav-search-input\" id=\"ville\" autocomplete=\"off\" />
+                                    <i class=\"ace-icon fa fa-search nav-search-icon\"></i>
+                                </span>
+                                <span class=\"input-icon\">
+                                    <input name=\"universite\" type=\"text\" placeholder=\"Université ...\" class=\"nav-search-input\" id=\"universite\" autocomplete=\"off\" />
+                                    <i class=\"ace-icon fa fa-search nav-search-icon\"></i>
+                                </span>
+                                <button class=\"nav-search-button\" id=\"ajouter\" type=\"submit\" class=\"btn btn-sm btn-success\">
+                                    Rechercher
+                                </button>
+                            </form>
+                        </div><!-- /.nav-search -->
+                    </div>
+                    <br>
+                    <br>
+                    <br>
 
-                    
-                </tr>
-            </thead>
+                    <div class=\"table-header col-xs-14\"  width=\"100%\">
+                        Les membres
+                    </div>
+                    <br>
+                    <div class=\"table-responsive\">
 
-            <tbody>
-              ";
-        // line 110
+                        <table id=\"listuser\" style= \"border : solid 1px darkgrey; \" class=\"display\"  cellspacing=\"0\" width=\"100%\">
+                            <thead>
+                                <tr>
+
+                                    <th> </th>
+                                    <th>Nom </th>
+                                    <th>Prénom</th>
+                                    <th>Username</th>
+                                    <th>Sexe</th>
+                                    <th>Numéro Passeport</th>
+                                    <th>Date émission</th>
+                                    <th>Date d'expiration</th>
+                                    <th>Promotion</th>
+                                    <th>Contact d'urgence</th>
+                                    <th>Lycée fréquenté</th>
+
+
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                ";
+        // line 116
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable((isset($context["membres"]) ? $context["membres"] : $this->getContext($context, "membres")));
         foreach ($context['_seq'] as $context["_key"] => $context["membre"]) {
-            // line 111
-            echo "                <tr>
+            // line 117
+            echo "                                    <tr>
 
-                    <td class=\"center\">
-                        <label class=\"position-relative\">
-                            <input type=\"checkbox\" class=\"ace\" />
-                            <span class=\"lbl\"></span>
-                        </label>
-                    </td >
-                   
-                   
-<td>
-                       
-                          
 
-                            <a class=\"green\" href=\"";
-            // line 125
+                                        <td>
+
+
+
+                                            <a class=\"green\" href=\"";
+            // line 124
             echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("cestom_admin_modifier_member", array("idmembre" => $this->getAttribute($context["membre"], "idmembre", array()))), "html", null, true);
             echo "\">
-                                <i class=\"ace-icon fa fa-pencil bigger-130\"></i>
-                            </a>
+                                                <i class=\"ace-icon fa fa-pencil bigger-130\"></i>
+                                            </a>
 
-                    </td>
-                    <td>";
-            // line 130
+                                        </td>
+                                        <td>";
+            // line 129
             echo twig_escape_filter($this->env, $this->getAttribute($context["membre"], "nomMembre", array()), "html", null, true);
             echo " </td>
-                    <td>";
-            // line 131
+                                        <td>";
+            // line 130
             echo twig_escape_filter($this->env, $this->getAttribute($context["membre"], "prenomMembre", array()), "html", null, true);
             echo "</td>
-                    <td>";
-            // line 132
+                                        <td>";
+            // line 131
             echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($context["membre"], "id", array()), "username", array()), "html", null, true);
             echo " </td>
-                    <td>";
-            // line 133
+                                        <td>";
+            // line 132
             echo twig_escape_filter($this->env, $this->getAttribute($context["membre"], "sexe", array()), "html", null, true);
             echo "</td>
-                    
-                    <th>";
-            // line 135
+
+                                        <th>";
+            // line 134
             echo twig_escape_filter($this->env, $this->getAttribute($context["membre"], "numeroPassportMembre", array()), "html", null, true);
             echo "</th>
-                    <th>";
-            // line 136
+                                        <th>";
+            // line 135
             echo twig_escape_filter($this->env, $this->getAttribute($context["membre"], "dateExpiMembre", array()), "html", null, true);
             echo "</th>
-                    <th>";
-            // line 137
+                                        <th>";
+            // line 136
             echo twig_escape_filter($this->env, $this->getAttribute($context["membre"], "dateEtabMembre", array()), "html", null, true);
             echo "</th>
-                    <th>";
-            // line 138
+                                        <th>";
+            // line 137
             echo twig_escape_filter($this->env, $this->getAttribute($context["membre"], "promotionMembre", array()), "html", null, true);
             echo "</th>
-                    <th>";
-            // line 139
+                                        <th>";
+            // line 138
             echo twig_escape_filter($this->env, $this->getAttribute($context["membre"], "contactUrgence", array()), "html", null, true);
             echo "</th>
-                    <th>";
-            // line 140
+                                        <th>";
+            // line 139
             echo twig_escape_filter($this->env, $this->getAttribute($context["membre"], "dernierLyceeFrequente", array()), "html", null, true);
             echo "</th>
-                </tr>
-             ";
+                                    </tr>
+                                ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['membre'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 143
-        echo "            </tbody>
-        </table>
+        // line 142
+        echo "                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
     </div>
-     </div> 
- </div>
-     </div>   
- </div> 
- </div>
-     </div>       
 ";
     }
 
-    // line 154
+    // line 153
     public function block_javascript($context, array $blocks = array())
     {
-        // line 155
-        echo "<script src=\"";
+        // line 154
+        echo "    <script type=\"text/javascript\" src=\"";
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("assets/js/jquery.dataTables.min.js"), "html", null, true);
         echo "\"></script>
-\t<script\tsrc=\"";
-        // line 156
-        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("assets/js/jquery.dataTables.bootstrap.js"), "html", null, true);
+    <script type=\"text/javascript\"src=\"";
+        // line 155
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("assets/js/dataTables.responsive.min.js"), "html", null, true);
         echo "\"></script>
-<script type=\"text/javascript\">
-\t\t\tjQuery(function(\$) {
-\t\t\t\t\$('#listuser').DataTable({
-                                                                    
-                                                                    \"language\": {
-            \"lengthMenu\": \"Afficher _MENU_ lignes\",
-            \"zeroRecords\": \"Aucune donnée retrouvée\",
-             \"sSearch\": \"Rechercher\",
-            \"info\": \"Page _PAGE_ sur _PAGES_\",
-            \"infoEmpty\": \"Aucune donnée\",
-            \"oPaginate\": {
-            \"sFirst\":    \"Premier\",
-            \"sLast\":    \"FIn\",
-            \"sNext\":    \"Suivant\",
-            \"sPrevious\": \"Précedent\"
-        },
-            \"infoFiltered\": \"(filtré sur _MAX_ total lignes)\"
-        }
-                                                                });
-\t\t\t\t
-                                  \$('.main').removeClass('active');
-                                  \$('#menu_membre').addClass('active');
-\t\t\t    } );
-                      
-</script>
+
+
+    <script type=\"text/javascript\" charset=\"utf-8\">
+        jQuery(function(\$) {
+
+            \$('#listuser').removeClass('display')
+                    .addClass('table table-striped table-bordered');
+
+            \$('#listuser').DataTable({
+                \"language\": {
+                    \"lengthMenu\": \"Afficher _MENU_ lignes\",
+                    \"zeroRecords\": \"Aucune donnée retrouvée\",
+                    \"sSearch\": \"Rechercher\",
+                    \"info\": \"Page _PAGE_ sur _PAGES_\",
+                    \"infoEmpty\": \"Aucune donnée\",
+                    \"oPaginate\": {
+                        \"sFirst\": \"Premier\",
+                        \"sLast\": \"FIn\",
+                        \"sNext\": \" Suivant  \",
+                        \"sPrevious\": \" Précedent  \"
+                    },
+                    \"infoFiltered\": \"(filtré sur _MAX_ total lignes)\"
+                }
+            });
+
+            \$('.main').removeClass('active');
+            \$('#menu_membre').addClass('active');
+        });
+
+    </script>
 ";
     }
 
@@ -314,11 +327,20 @@ class __TwigTemplate_c4179af3f1e03cdbf7b0c7cc559159fd3cc55ff82f3d45597c613b8f86f
 
     public function getDebugInfo()
     {
-        return array (  275 => 156,  270 => 155,  267 => 154,  254 => 143,  245 => 140,  241 => 139,  237 => 138,  233 => 137,  229 => 136,  225 => 135,  220 => 133,  216 => 132,  212 => 131,  208 => 130,  200 => 125,  184 => 111,  180 => 110,  136 => 69,  117 => 53,  105 => 43,  95 => 39,  90 => 36,  86 => 35,  83 => 34,  73 => 30,  68 => 27,  64 => 26,  61 => 25,  58 => 24,  48 => 18,  34 => 5,  31 => 4,  11 => 2,);
+        return array (  283 => 155,  278 => 154,  275 => 153,  262 => 142,  253 => 139,  249 => 138,  245 => 137,  241 => 136,  237 => 135,  233 => 134,  228 => 132,  224 => 131,  220 => 130,  216 => 129,  208 => 124,  199 => 117,  195 => 116,  146 => 70,  132 => 59,  129 => 58,  119 => 54,  114 => 51,  110 => 50,  107 => 49,  97 => 45,  92 => 42,  88 => 41,  79 => 34,  76 => 33,  66 => 27,  52 => 14,  49 => 13,  40 => 6,  35 => 5,  32 => 4,  11 => 2,);
     }
 }
 /* {# app/Resources/views/blog/index.html.twig #}*/
 /* {% extends 'base.html.twig' %}*/
+/* */
+/* {% block style %}*/
+/*     <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/dataTables.bootstrap.min.css')}}" />*/
+/*     <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/responsive.bootstrap.min.css')}}" />*/
+/*     <style type="text/css">*/
+/* */
+/*     </style>*/
+/* {% endblock %}*/
+/* */
 /* */
 /* {% block navigation %}*/
 /* */
@@ -337,167 +359,162 @@ class __TwigTemplate_c4179af3f1e03cdbf7b0c7cc559159fd3cc55ff82f3d45597c613b8f86f
 /* {% block soustitre %} */
 /* */
 /*     Liste des membres*/
-/*     */
+/* */
 /* {% endblock %}*/
 /* */
 /* {% block content %}*/
-/* */
-/*       {% for flashMessage in app.session.flashbag.get('messagesucces') %}*/
-/* <div class="alert alert-block alert-success">*/
-/* <div class="flash-notice">*/
-/* */
-/* {{ flashMessage }}*/
-/* </div>*/
-/* </div>*/
-/* {% endfor %}*/
-/* */
-/*  {% for flashMessage in app.session.flashbag.get('messageechec') %}*/
-/* <div class="alert alert-block alert-danger">*/
-/* <div class="flash-notice">*/
-/* */
-/* {{ flashMessage }}*/
-/* </div>*/
-/* </div>*/
-/* {% endfor %}*/
 /*     <div class="widget-body">*/
-/*         <div class="widget-main no-padding">*/
-/*  <div class="row">*/
+/*         <div class="widget-main no-padding"> */
+/*             <div class="row">*/
 /* */
-/*                 <div class="col-xs-12">*/
-/*                     <!-- PAGE CONTENT BEGINS -->*/
-/*                     <div class="row">*/
-/*                         <div class="col-sm-12">*/
+/*                 <div class="col-xs-14">*/
 /* */
-/* <div class="nav-search" id="nav-search">*/
-/*                         <form   method = "POST"  action = "{{ path('cestom_admin_homepage')}}"class="form-search">*/
-/*                             <span class="input-icon">*/
-/*                                 <input name="ville" type="choice" placeholder="Ville ..." class="nav-search-input" id="nav-search-input" autocomplete="off" />*/
-/*                                 <i class="ace-icon fa fa-search nav-search-icon"></i>*/
-/*                             </span>*/
-/*                             <span class="input-icon">*/
-/*                                 <input name="universite" type="text" placeholder="Université ..." class="nav-search-input" id="nav-search-input" autocomplete="off" />*/
-/*                                 <i class="ace-icon fa fa-search nav-search-icon"></i>*/
-/*                             </span>*/
-/*                             */
-/*                               <button id="ajouter" type="submit" class="btn btn-sm btn-success">*/
-/*                              Rechercher*/
-/*                              </button>*/
-/*                         </form>*/
-/*                     </div><!-- /.nav-search -->*/
-/*     <div> */
-/*     <a href="{{ path('cestom_admin_ajouter_member')}}"> */
-/*         <button id="ajouter" type="button" class="btn btn-sm btn-success">*/
-/*                         Ajouter nouveau*/
-/*                     </button>*/
-/*     </a>*/
-/*         */
-/*          */
+/* */
+/*                     {% for flashMessage in app.session.flashbag.get('messagesucces') %}*/
+/*                         <div class="alert alert-block alert-success">*/
+/*                             <div class="flash-notice">*/
+/* */
+/*                                 {{ flashMessage }}*/
+/*                             </div>*/
+/*                         </div>*/
+/*                     {% endfor %}*/
+/* */
+/*                     {% for flashMessage in app.session.flashbag.get('messageechec') %}*/
+/*                         <div class="alert alert-block alert-danger">*/
+/*                             <div class="flash-notice">*/
+/* */
+/*                                 {{ flashMessage }}*/
+/*                             </div>*/
+/*                         </div>*/
+/*                     {% endfor %}*/
+/*                     <div>*/
+/*                         <a href="{{ path('cestom_admin_ajouter_member')}}">*/
+/*                             <button id="ajouter" type="button" class="btn btn-sm btn-success">*/
+/*                                 Ajouter nouveau*/
+/*                             </button>*/
+/*                         </a>*/
+/* */
+/* */
+/*                     </div>*/
+/*                     <br>*/
+/*                     <div>*/
+/*                         <div class="nav-search" id="nav-search">*/
+/*                             <form   method = "POST"  action = "{{ path('cestom_admin_homepage')}}"class="form-search">*/
+/*                                 <span class="input-icon">*/
+/*                                     <input name="ville" type="choice" placeholder="Ville ..." class="nav-search-input" id="ville" autocomplete="off" />*/
+/*                                     <i class="ace-icon fa fa-search nav-search-icon"></i>*/
+/*                                 </span>*/
+/*                                 <span class="input-icon">*/
+/*                                     <input name="universite" type="text" placeholder="Université ..." class="nav-search-input" id="universite" autocomplete="off" />*/
+/*                                     <i class="ace-icon fa fa-search nav-search-icon"></i>*/
+/*                                 </span>*/
+/*                                 <button class="nav-search-button" id="ajouter" type="submit" class="btn btn-sm btn-success">*/
+/*                                     Rechercher*/
+/*                                 </button>*/
+/*                             </form>*/
+/*                         </div><!-- /.nav-search -->*/
+/*                     </div>*/
+/*                     <br>*/
+/*                     <br>*/
+/*                     <br>*/
+/* */
+/*                     <div class="table-header col-xs-14"  width="100%">*/
+/*                         Les membres*/
+/*                     </div>*/
+/*                     <br>*/
+/*                     <div class="table-responsive">*/
+/* */
+/*                         <table id="listuser" style= "border : solid 1px darkgrey; " class="display"  cellspacing="0" width="100%">*/
+/*                             <thead>*/
+/*                                 <tr>*/
+/* */
+/*                                     <th> </th>*/
+/*                                     <th>Nom </th>*/
+/*                                     <th>Prénom</th>*/
+/*                                     <th>Username</th>*/
+/*                                     <th>Sexe</th>*/
+/*                                     <th>Numéro Passeport</th>*/
+/*                                     <th>Date émission</th>*/
+/*                                     <th>Date d'expiration</th>*/
+/*                                     <th>Promotion</th>*/
+/*                                     <th>Contact d'urgence</th>*/
+/*                                     <th>Lycée fréquenté</th>*/
+/* */
+/* */
+/*                                 </tr>*/
+/*                             </thead>*/
+/* */
+/*                             <tbody>*/
+/*                                 {% for membre in membres %}*/
+/*                                     <tr>*/
+/* */
+/* */
+/*                                         <td>*/
+/* */
+/* */
+/* */
+/*                                             <a class="green" href="{{path('cestom_admin_modifier_member',{'idmembre': membre.idmembre})}}">*/
+/*                                                 <i class="ace-icon fa fa-pencil bigger-130"></i>*/
+/*                                             </a>*/
+/* */
+/*                                         </td>*/
+/*                                         <td>{{ membre.nomMembre}} </td>*/
+/*                                         <td>{{membre.prenomMembre}}</td>*/
+/*                                         <td>{{membre.id.username}} </td>*/
+/*                                         <td>{{membre.sexe}}</td>*/
+/* */
+/*                                         <th>{{membre.numeroPassportMembre}}</th>*/
+/*                                         <th>{{membre.dateExpiMembre}}</th>*/
+/*                                         <th>{{membre.dateEtabMembre}}</th>*/
+/*                                         <th>{{membre.promotionMembre}}</th>*/
+/*                                         <th>{{membre.contactUrgence}}</th>*/
+/*                                         <th>{{membre.dernierLyceeFrequente}}</th>*/
+/*                                     </tr>*/
+/*                                 {% endfor %}*/
+/*                             </tbody>*/
+/*                         </table>*/
+/*                     </div>*/
+/* */
+/*                 </div>*/
+/*             </div>*/
+/* */
+/*         </div>*/
 /*     </div>*/
-/*         <br>*/
-/*     */
-/*     <div>*/
-/*         <div class="table-header">*/
-/*            Les membres*/
-/* 	</div>*/
-/*         <table id="listuser"  style= "border : solid 1px darkgrey; "  class="table table-striped table-bordered table-hover " >*/
-/*             <thead>*/
-/*                 <tr>*/
-/*                     <th class="center">*/
-/*                         <label class="position-relative">*/
-/*                             <input type="checkbox" class="ace" />*/
-/*                             <span class="lbl"></span>*/
-/*                         </label>*/
-/*                     </th>*/
-/*                      */
-/* 		    <th> </th>*/
-/*                     <th>Nom </th>*/
-/*                     <th>Prénom</th>*/
-/* 		    <th>Username</th>*/
-/*                     <th>Sexe</th>*/
-/*                     <th>Numéro Passeport</th>*/
-/*                     <th>Date émission</th>*/
-/*                     <th>Date d'expiration</th>*/
-/*                     <th>Promotion</th>*/
-/*                     <th>Contact d'urgence</th>*/
-/*                     <th>Lycée fréquenté</th>*/
-/* */
-/*                     */
-/*                 </tr>*/
-/*             </thead>*/
-/* */
-/*             <tbody>*/
-/*               {% for membre in membres %}*/
-/*                 <tr>*/
-/* */
-/*                     <td class="center">*/
-/*                         <label class="position-relative">*/
-/*                             <input type="checkbox" class="ace" />*/
-/*                             <span class="lbl"></span>*/
-/*                         </label>*/
-/*                     </td >*/
-/*                    */
-/*                    */
-/* <td>*/
-/*                        */
-/*                           */
-/* */
-/*                             <a class="green" href="{{path('cestom_admin_modifier_member',{'idmembre': membre.idmembre})}}">*/
-/*                                 <i class="ace-icon fa fa-pencil bigger-130"></i>*/
-/*                             </a>*/
-/* */
-/*                     </td>*/
-/*                     <td>{{ membre.nomMembre}} </td>*/
-/*                     <td>{{membre.prenomMembre}}</td>*/
-/*                     <td>{{membre.id.username}} </td>*/
-/*                     <td>{{membre.sexe}}</td>*/
-/*                     */
-/*                     <th>{{membre.numeroPassportMembre}}</th>*/
-/*                     <th>{{membre.dateExpiMembre}}</th>*/
-/*                     <th>{{membre.dateEtabMembre}}</th>*/
-/*                     <th>{{membre.promotionMembre}}</th>*/
-/*                     <th>{{membre.contactUrgence}}</th>*/
-/*                     <th>{{membre.dernierLyceeFrequente}}</th>*/
-/*                 </tr>*/
-/*              {% endfor %}*/
-/*             </tbody>*/
-/*         </table>*/
-/*     </div>*/
-/*      </div> */
-/*  </div>*/
-/*      </div>   */
-/*  </div> */
-/*  </div>*/
-/*      </div>       */
 /* {% endblock %}*/
 /* */
 /* {% block javascript %}*/
-/* <script src="{{asset('assets/js/jquery.dataTables.min.js')}}"></script>*/
-/* 	<script	src="{{asset('assets/js/jquery.dataTables.bootstrap.js')}}"></script>*/
-/* <script type="text/javascript">*/
-/* 			jQuery(function($) {*/
-/* 				$('#listuser').DataTable({*/
-/*                                                                     */
-/*                                                                     "language": {*/
-/*             "lengthMenu": "Afficher _MENU_ lignes",*/
-/*             "zeroRecords": "Aucune donnée retrouvée",*/
-/*              "sSearch": "Rechercher",*/
-/*             "info": "Page _PAGE_ sur _PAGES_",*/
-/*             "infoEmpty": "Aucune donnée",*/
-/*             "oPaginate": {*/
-/*             "sFirst":    "Premier",*/
-/*             "sLast":    "FIn",*/
-/*             "sNext":    "Suivant",*/
-/*             "sPrevious": "Précedent"*/
-/*         },*/
-/*             "infoFiltered": "(filtré sur _MAX_ total lignes)"*/
-/*         }*/
-/*                                                                 });*/
-/* 				*/
-/*                                   $('.main').removeClass('active');*/
-/*                                   $('#menu_membre').addClass('active');*/
-/* 			    } );*/
-/*                       */
-/* </script>*/
+/*     <script type="text/javascript" src="{{asset('assets/js/jquery.dataTables.min.js')}}"></script>*/
+/*     <script type="text/javascript"src="{{asset('assets/js/dataTables.responsive.min.js')}}"></script>*/
+/* */
+/* */
+/*     <script type="text/javascript" charset="utf-8">*/
+/*         jQuery(function($) {*/
+/* */
+/*             $('#listuser').removeClass('display')*/
+/*                     .addClass('table table-striped table-bordered');*/
+/* */
+/*             $('#listuser').DataTable({*/
+/*                 "language": {*/
+/*                     "lengthMenu": "Afficher _MENU_ lignes",*/
+/*                     "zeroRecords": "Aucune donnée retrouvée",*/
+/*                     "sSearch": "Rechercher",*/
+/*                     "info": "Page _PAGE_ sur _PAGES_",*/
+/*                     "infoEmpty": "Aucune donnée",*/
+/*                     "oPaginate": {*/
+/*                         "sFirst": "Premier",*/
+/*                         "sLast": "FIn",*/
+/*                         "sNext": " Suivant  ",*/
+/*                         "sPrevious": " Précedent  "*/
+/*                     },*/
+/*                     "infoFiltered": "(filtré sur _MAX_ total lignes)"*/
+/*                 }*/
+/*             });*/
+/* */
+/*             $('.main').removeClass('active');*/
+/*             $('#menu_membre').addClass('active');*/
+/*         });*/
+/* */
+/*     </script>*/
 /* {% endblock %}*/
 /* */
 /* */

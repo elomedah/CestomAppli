@@ -16,6 +16,11 @@ public function gestionVilleAction(Request $request)
 
  $membre = $em->getRepository('CestomStoreBundle:Membre')
                 ->findOneByid($this->getUser()->getId());
+
+if ($membre==null ) {
+ $request->getSession()->getFlashBag()->add('messagesucces', 'Configuration initiale : Veuillez enregister vos informations ');
+      return $this->redirect($this->generateUrl('cestom_user_homepage'));
+}
         $villesmembre = $em->getRepository('CestomStoreBundle:VilleMembre')
                 ->findByidmembre($membre->getIdmembre());
     $villemembre = new VilleMembre();

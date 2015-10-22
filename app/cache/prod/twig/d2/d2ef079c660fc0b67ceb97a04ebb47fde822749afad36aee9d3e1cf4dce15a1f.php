@@ -45,32 +45,54 @@ class __TwigTemplate_2ffbda9d56ee4c6b01ffb02f0ef1a487b801b649365bb4f2675275e1dcf
         // line 8
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("assets/css/bootstrap-datetimepicker.css"), "html", null, true);
         echo "\" />
+    <link rel=\"stylesheet\" type=\"text/css\" href=\"";
+        // line 9
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("assets/css/dataTables.bootstrap.min.css"), "html", null, true);
+        echo "\" />
+    <link rel=\"stylesheet\" type=\"text/css\" href=\"";
+        // line 10
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("assets/css/responsive.bootstrap.min.css"), "html", null, true);
+        echo "\" />
+
 ";
     }
 
-    // line 12
+    // line 15
     public function block_navigation($context, array $blocks = array())
     {
-        // line 13
+        // line 16
         echo "
 
     <ul class=\"breadcrumb\">
         <li>
             <i class=\"ace-icon fa fa-home home-icon\"></i>
-            <a href=\"#\">Home</a>
+            <a href=\"";
+        // line 21
+        echo $this->env->getExtension('routing')->getPath("cestom_admin_homepage");
+        echo "\">Home</a>
         </li>
         <li>
 
-            <a href=\"#\">Gestion des membres</a>
+            <a href=\"";
+        // line 25
+        echo $this->env->getExtension('routing')->getPath("cestom_admin_homepage");
+        echo "\">Gestion des membres</a>
+        </li>
+        <li>
+
+            <a href=\"";
+        // line 29
+        echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("cestom_admin_ajouter_formation", array("idmembre" => (isset($context["idmembre"]) ? $context["idmembre"] : null))), "html", null, true);
+        echo "\">Formations</a>
         </li>
 
-        <li class=\"active\">Formation</li>
+        <li class=\"active\">Modifier une formation du membre</li>
     </ul>
 
 ";
     }
 
-    // line 32
+    // line 39
     public function block_soustitre($context, array $blocks = array())
     {
         echo " 
@@ -80,22 +102,22 @@ class __TwigTemplate_2ffbda9d56ee4c6b01ffb02f0ef1a487b801b649365bb4f2675275e1dcf
 ";
     }
 
-    // line 38
+    // line 45
     public function block_content($context, array $blocks = array())
     {
-        // line 39
+        // line 46
         echo "
     ";
-        // line 40
+        // line 47
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable($this->getAttribute($this->getAttribute($this->getAttribute((isset($context["app"]) ? $context["app"] : null), "session", array()), "flashbag", array()), "get", array(0 => "messagesucces"), "method"));
         foreach ($context['_seq'] as $context["_key"] => $context["flashMessage"]) {
-            // line 41
+            // line 48
             echo "        <div class=\"alert alert-block alert-success\">
             <div class=\"flash-notice\">
 
                 ";
-            // line 44
+            // line 51
             echo twig_escape_filter($this->env, $context["flashMessage"], "html", null, true);
             echo "
             </div>
@@ -105,19 +127,19 @@ class __TwigTemplate_2ffbda9d56ee4c6b01ffb02f0ef1a487b801b649365bb4f2675275e1dcf
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['flashMessage'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 48
+        // line 55
         echo "
     ";
-        // line 49
+        // line 56
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable($this->getAttribute($this->getAttribute($this->getAttribute((isset($context["app"]) ? $context["app"] : null), "session", array()), "flashbag", array()), "get", array(0 => "messageerror"), "method"));
         foreach ($context['_seq'] as $context["_key"] => $context["flashMessage"]) {
-            // line 50
+            // line 57
             echo "        <div class=\"alert alert-block alert-danger\">
             <div class=\"flash-notice\">
 
                 ";
-            // line 53
+            // line 60
             echo twig_escape_filter($this->env, $context["flashMessage"], "html", null, true);
             echo "
             </div>
@@ -127,204 +149,192 @@ class __TwigTemplate_2ffbda9d56ee4c6b01ffb02f0ef1a487b801b649365bb4f2675275e1dcf
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['flashMessage'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 57
+        // line 64
         echo "
     <div class=\"widget-body\">
         <div class=\"widget-main no-padding\">
 
             <div class=\"row\">
                 <div class=\"col-xs-12\">
-                    <!-- PAGE CONTENT BEGINS -->
-                    <div class=\"row\">
-                        <div class=\"col-sm-12\">
-                            <!-- #section:elements.tab -->
-                            <div class=\"tabbable\">
-                                <ul class=\"nav nav-tabs\" id=\"myTab\">
-                                    <li class=\"dropdown\">
-                                        <a  href=\"";
-        // line 70
+                    <!-- #section:elements.tab -->
+                    <div class=\"tabbable\">
+                        <ul class=\"nav nav-tabs\" id=\"myTab\">
+                            <li class=\"dropdown\">
+                                <a  href=\"";
+        // line 74
         echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("cestom_admin_modifier_member", array("idmembre" => (isset($context["idmembre"]) ? $context["idmembre"] : null))), "html", null, true);
         echo "\">
-                                            <i class=\"gblue ace-icon fa fa-user bigger-120\"></i>
-                                            Infos Génerales Membre
-                                        </a>
-                                    </li>
+                                    <i class=\"gblue ace-icon fa fa-user bigger-120\"></i>
+                                    Infos Génerales Membre
+                                </a>
+                            </li>
 
-\t\t\t\t\t<li class=\"dropdown\">
-\t\t\t\t\t\t\t\t\t\t\t\t<a  href=\"";
-        // line 77
+                            <li class=\"dropdown\">
+                                <a  href=\"";
+        // line 81
         echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("cestom_admin_ajouter_ville_membre", array("idmembre" => (isset($context["idmembre"]) ? $context["idmembre"] : null))), "html", null, true);
         echo "\">
-\t\t\t\t\t\t\t\t\t\t\t\t\t<i class=\"green ace-icon fa fa-building bigger-120\"></i>
-\t\t\t\t\t\t\t\t\t\t\t\t\t
-                                                                                                    Villes du Membre
-\t\t\t\t\t\t\t\t\t\t\t\t</a>
+                                    <i class=\"green ace-icon fa fa-building bigger-120\"></i>
 
-\t\t\t\t\t\t\t\t\t\t\t\t
-\t\t\t\t\t\t\t\t\t\t\t</li>
+                                    Villes du Membre
+                                </a>
 
-                                    <li class=\"active\">
-                                        <a  href=\"";
-        // line 87
+
+                            </li>
+
+                            <li class=\"active\">
+                                <a  href=\"";
+        // line 91
         echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("cestom_admin_ajouter_formation", array("idmembre" => (isset($context["idmembre"]) ? $context["idmembre"] : null))), "html", null, true);
         echo "\">
-                                            <i class=\"green ace-icon fa fa-graduation-cap bigger-120\"></i>
+                                    <i class=\"green ace-icon fa fa-graduation-cap bigger-120\"></i>
 
-                                            Formations du Membre
-                                        </a>
+                                    Formations du Membre
+                                </a>
 
 
-                                    </li>
-                                </ul>
+                            </li>
+                        </ul>
 
-                                <div class=\"tab-content\">
-                                    <div id=\"formation\" class=\"tab-pane in active\">
-                                        <div class=\"widget-body\">
+                        <div class=\"tab-content\">
+                            <div id=\"formation\" class=\"tab-pane in active\">
+                                <div class=\"widget-body\">
 
-                                             <fieldset>
-                    <div class=\"col-sm-10 widget-main\">
-                        <h4 class=\"header blue bolder smaller\">
-                            Modifier une formation
-                        </h4>
-                    </div>
+                                    <fieldset>
+                                        <div class=\"col-sm-12 widget-main\">
+                                            <h4 class=\"header blue bolder smaller\">
+                                                Modifier une formation
+                                            </h4>
+                                        </div>
 
-                                                <form ";
-        // line 108
+                                        <form ";
+        // line 112
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock((isset($context["form"]) ? $context["form"] : null), 'enctype');
         echo "  method = \"POST\"  action = \"";
         echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("cestom_admin_modifier_formation", array("idmembre" => (isset($context["idmembre"]) ? $context["idmembre"] : null), "idformation" => (isset($context["idformation"]) ? $context["idformation"] : null))), "html", null, true);
         echo "\">\t
 
-                                                    ";
-        // line 110
-        $this->loadTemplate("CestomAdminBundle:GestionMembre:formulaireFormation.html.twig", "CestomAdminBundle:GestionMembre:modifierFormationMembre.html.twig", 110)->display($context);
-        // line 111
-        echo "                                                    <div class=\"form-actions center\">
-                                                        <button id=\"valider\" type=\"submit\" class=\"btn btn-sm btn-success\">
-                                                            Modifier
-                                                            <i class=\"ace-icon fa fa-pencil icon-on-right bigger-110\"></i>
-                                                        </button>
-                                                    </div>
- </fieldset>
-                                                </form>
-                                                    
-                                                    
-                                                <div class=\"table-header\">
-                                                    Liste des formations
-                                                </div>
+                                            ";
+        // line 114
+        $this->loadTemplate("CestomAdminBundle:GestionMembre:formulaireFormation.html.twig", "CestomAdminBundle:GestionMembre:modifierFormationMembre.html.twig", 114)->display($context);
+        // line 115
+        echo "                                    </fieldset>
+                                    <div class=\"form-actions center\">
+                                        <button id=\"valider\" type=\"submit\" class=\"btn btn-sm btn-success\">
+                                            Modifier
+                                            <i class=\"ace-icon fa fa-pencil icon-on-right bigger-110\"></i>
+                                        </button>
+                                    </div>
 
-                                                <table id=\"listformation\" style= \"border : solid 1px darkgrey; \"class=\"table table-striped table-bordered table-hover\">
-                                                    <thead>
-                                                        <tr>
-                                                            <th class=\"center\">
-                                                                <label class=\"position-relative\">
-                                                                    <input type=\"checkbox\" class=\"ace\" />
-                                                                    <span class=\"lbl\"></span>
-                                                                </label>
-                                                            </th>
+                                    </form>
 
-                                                            <th> </th>
-                                                            <th>Libellé  </th>
-                                                            <th>Université</th>
-                                                            <th>Durée </th>
-                                                            <th>Date début</th>
-                                                            <th>Programme de bourse</th>
-                                                            <th>Diplôme visé</th>
 
-                                                        </tr>
-                                                    </thead>
+                                    <div class=\"table-header\">
+                                        Liste des formations
+                                    </div>
+                                    <br>
+                                    <div class=\"table-responsive\">
+                                        <table id=\"listformation\" style= \"border : solid 1px darkgrey; \"class=\"table table-striped table-bordered table-hover\">
+                                            <thead>
+                                                <tr>
+                                                    <th class=\"center\">
+                                                        <label class=\"position-relative\">
+                                                            <input type=\"checkbox\" class=\"ace\" />
+                                                            <span class=\"lbl\"></span>
+                                                        </label>
+                                                    </th>
 
-                                                    <tbody>
-                                                        ";
-        // line 147
+                                                    <th> </th>
+                                                    <th>Libellé  </th>
+                                                    <th>Université</th>
+                                                    <th>Durée </th>
+                                                    <th>Date début</th>
+                                                    <th>Programme de bourse</th>
+                                                    <th>Diplôme visé</th>
+
+                                                </tr>
+                                            </thead>
+
+                                            <tbody>
+                                                ";
+        // line 153
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable((isset($context["formations"]) ? $context["formations"] : null));
         foreach ($context['_seq'] as $context["_key"] => $context["formation"]) {
-            // line 148
-            echo "                                                            <tr>
+            // line 154
+            echo "                                                    <tr>
 
-                                                                <td class=\"center\">
-                                                                    <label class=\"position-relative\">
-                                                                        <input type=\"checkbox\" class=\"ace\" />
-                                                                        <span class=\"lbl\"></span>
-                                                                    </label>
-                                                                </td >
-
-
-                                                                <td>
+                                                        <td class=\"center\">
+                                                            <label class=\"position-relative\">
+                                                                <input type=\"checkbox\" class=\"ace\" />
+                                                                <span class=\"lbl\"></span>
+                                                            </label>
+                                                        </td >
 
 
+                                                        <td>
 
-                                                                    <a class=\"green\" href=\"";
-            // line 162
+
+
+                                                            <a class=\"green\" href=\"";
+            // line 168
             echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("cestom_admin_modifier_formation", array("idmembre" => (isset($context["idmembre"]) ? $context["idmembre"] : null), "idformation" => $this->getAttribute($context["formation"], "idFormation", array()))), "html", null, true);
             echo "\">
-                                                                        <i class=\"ace-icon fa fa-pencil bigger-130\"></i>
-                                                                    </a>
+                                                                <i class=\"ace-icon fa fa-pencil bigger-130\"></i>
+                                                            </a>
 
-                                                                </td>
+                                                        </td>
 
-                                                                <td>";
-            // line 168
+                                                        <td>";
+            // line 174
             echo twig_escape_filter($this->env, $this->getAttribute($context["formation"], "libelleFormation", array()), "html", null, true);
             echo "</td>
-                                                                <td>";
-            // line 169
+                                                        <td>";
+            // line 175
             echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($context["formation"], "iduniv", array()), "nomuniv", array()), "html", null, true);
             echo "</td>
-                                                                <td>";
-            // line 170
+                                                        <td>";
+            // line 176
             echo twig_escape_filter($this->env, $this->getAttribute($context["formation"], "diplomeViseFormation", array()), "html", null, true);
             echo " </td>
-                                                                <td>";
-            // line 171
+                                                        <td>";
+            // line 177
             echo twig_escape_filter($this->env, $this->getAttribute($context["formation"], "dureeFormation", array()), "html", null, true);
             echo "</td>
 
-                                                                <td>";
-            // line 173
+                                                        <td>";
+            // line 179
             echo twig_escape_filter($this->env, $this->getAttribute($context["formation"], "dateDebutFormation", array()), "html", null, true);
             echo "</td>
-                                                                <td>";
-            // line 174
+                                                        <td>";
+            // line 180
             echo twig_escape_filter($this->env, $this->getAttribute($context["formation"], "programmeBourse", array()), "html", null, true);
             echo "</td>
 
-                                                            </tr>
-                                                        ";
+                                                    </tr>
+                                                ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['formation'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 178
-        echo "                                                    </tbody>
-                                                </table>
-
-
-
-
-                                            </div>
-                                        </div>
-                                    
+        // line 184
+        echo "                                            </tbody>
+                                        </table>
+                                    </div>
                                 </div>
                             </div>
 
-                            <!-- /section:elements.tab -->
-                        </div><!-- /.col -->
+                        </div>
+                    </div>
 
-
-
-                    </div><!-- /.row -->
-
-
-
-                    <script type=\"text/javascript\">
-                        var \$path_assets = \"../assets\";//this will be used in gritter alerts containing images
-                    </script>
-
-                    <!-- PAGE CONTENT ENDS -->
+                    <!-- /section:elements.tab -->
                 </div><!-- /.col -->
+
+
+
             </div><!-- /.row -->
+
+
         </div>
     </div>
 
@@ -332,96 +342,83 @@ class __TwigTemplate_2ffbda9d56ee4c6b01ffb02f0ef1a487b801b649365bb4f2675275e1dcf
 ";
     }
 
-    // line 212
+    // line 207
     public function block_javascript($context, array $blocks = array())
     {
-        // line 213
+        // line 208
         echo "    <script src=\"";
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("assets/js/jquery.dataTables.min.js"), "html", null, true);
+        echo "\"></script>
+    <script type=\"text/javascript\"src=\"";
+        // line 209
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("assets/js/dataTables.responsive.min.js"), "html", null, true);
+        echo "\"></script>
+
+    <script src=\"";
+        // line 211
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("assets/js/date-time/bootstrap-datepicker.min.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 214
+        // line 212
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("assets/js/date-time/bootstrap-timepicker.min.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 215
+        // line 213
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("assets/js/date-time/moment.min.js"), "html", null, true);
         echo "\"></script>
-
     <script src=\"";
-        // line 217
+        // line 214
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("assets/js/date-time/bootstrap-datetimepicker.min.js"), "html", null, true);
         echo "\">< /script>
-                                                                    < script src = \"";
-        // line 218
+                < script src = \"";
+        // line 215
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("assets/js/jquery.autosize.min.js"), "html", null, true);
         echo "\" ></script>
-    <script  src = \"";
-        // line 219
-        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("assets/js/jquery.ui.addresspicker.js"), "html", null, true);
-        echo "\"></script>
     <script src=\"";
-        // line 220
-        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("assets/js/jquery.maskedinput.min.js"), "html", null, true);
-        echo "\"></script>
-    <script src=\"";
-        // line 221
-        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("assets/js/bootstrap-tag.min.js"), "html", null, true);
-        echo "\"></script>
-    <script src=\"";
-        // line 222
+        // line 216
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("assets/js/ace-elements.min.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 223
+        // line 217
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("assets/js/ace.min.js"), "html", null, true);
         echo "\"></script>
-    <script src=\"";
-        // line 224
-        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("assets/js/jquery.dataTables.min.js"), "html", null, true);
-        echo "\"></script>
-    <script\tsrc=\"";
-        // line 225
-        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("assets/js/jquery.dataTables.bootstrap.js"), "html", null, true);
-        echo "\"></script>
     <script type=\"text/javascript\">
-                                                            jQuery(function(\$) {
+        jQuery(function(\$) {
 //datepicker plugin
-                                                                //link
-                                                                \$('.date-picker').datepicker({
-                                                                    autoclose: true,
-                                                                    todayHighlight: true
-                                                                })
-                                                                        //show datepicker when clicking on the icon
-                                                                        .next().on(ace.click_event, function() {
-                                                                    \$(this).prev().focus();
-                                                                });
-                                                                \$('#date-debut').datetimepicker().next().on(ace.click_event, function() {
-                                                                    \$(this).prev().focus();
-                                                                });
+            //link
+            \$('.date-picker').datepicker({
+                autoclose: true,
+                todayHighlight: true
+            })
+                    //show datepicker when clicking on the icon
+                    .next().on(ace.click_event, function() {
+                \$(this).prev().focus();
+            });
+            \$('#date-debut').datetimepicker().next().on(ace.click_event, function() {
+                \$(this).prev().focus();
+            });
 
-                                                                \$('#listformation').DataTable({
-                                                                    
-                                                                    \"language\": {
-            \"lengthMenu\": \"Afficher _MENU_ lignes\",
-            \"zeroRecords\": \"Aucune donnée retrouvée\",
-             \"sSearch\": \"Rechercher\",
-            \"info\": \"Page _PAGE_ sur _PAGES_\",
-            \"infoEmpty\": \"Aucune donnée\",
-            \"oPaginate\": {
-            \"sFirst\":    \"Premier\",
-            \"sLast\":    \"FIn\",
-            \"sNext\":    \"Suivant\",
-            \"sPrevious\": \"Précédent\"
-        },
-            \"infoFiltered\": \"(filtré sur _MAX_ total lignes)\"
-        }
-                                                                });
-                                                                
-                                                                        
-                                  \$('.main').removeClass('active');
-                                  \$('#menu_membre').addClass('active');
-                                                            });
+            \$('#listformation').DataTable({
+                \"language\": {
+                    \"lengthMenu\": \"Afficher _MENU_ lignes\",
+                    \"zeroRecords\": \"Aucune donnée retrouvée\",
+                    \"sSearch\": \"Rechercher\",
+                    \"info\": \"Page _PAGE_ sur _PAGES_\",
+                    \"infoEmpty\": \"Aucune donnée\",
+                    \"oPaginate\": {
+                        \"sFirst\": \"Premier\",
+                        \"sLast\": \"Fin\",
+                        \"sNext\": \"  Suivant  \",
+                        \"sPrevious\": \"  Précédent  \"
+                    },
+                    \"infoFiltered\": \"(filtré sur _MAX_ total lignes)\"
+                }
+            });
+
+
+            \$('.main').removeClass('active');
+            \$('#menu_membre').addClass('active');
+        });
     </script>
 
 ";
@@ -439,7 +436,7 @@ class __TwigTemplate_2ffbda9d56ee4c6b01ffb02f0ef1a487b801b649365bb4f2675275e1dcf
 
     public function getDebugInfo()
     {
-        return array (  385 => 225,  381 => 224,  377 => 223,  373 => 222,  369 => 221,  365 => 220,  361 => 219,  357 => 218,  353 => 217,  348 => 215,  344 => 214,  339 => 213,  336 => 212,  300 => 178,  290 => 174,  286 => 173,  281 => 171,  277 => 170,  273 => 169,  269 => 168,  260 => 162,  244 => 148,  240 => 147,  202 => 111,  200 => 110,  193 => 108,  169 => 87,  156 => 77,  146 => 70,  131 => 57,  121 => 53,  116 => 50,  112 => 49,  109 => 48,  99 => 44,  94 => 41,  90 => 40,  87 => 39,  84 => 38,  74 => 32,  55 => 13,  52 => 12,  46 => 8,  41 => 6,  37 => 5,  32 => 4,  11 => 3,);
+        return array (  383 => 217,  379 => 216,  375 => 215,  371 => 214,  367 => 213,  363 => 212,  359 => 211,  354 => 209,  349 => 208,  346 => 207,  321 => 184,  311 => 180,  307 => 179,  302 => 177,  298 => 176,  294 => 175,  290 => 174,  281 => 168,  265 => 154,  261 => 153,  221 => 115,  219 => 114,  212 => 112,  188 => 91,  175 => 81,  165 => 74,  153 => 64,  143 => 60,  138 => 57,  134 => 56,  131 => 55,  121 => 51,  116 => 48,  112 => 47,  109 => 46,  106 => 45,  96 => 39,  85 => 29,  78 => 25,  71 => 21,  64 => 16,  61 => 15,  54 => 10,  50 => 9,  46 => 8,  41 => 6,  37 => 5,  32 => 4,  11 => 3,);
     }
 }
 /* */
@@ -450,6 +447,9 @@ class __TwigTemplate_2ffbda9d56ee4c6b01ffb02f0ef1a487b801b649365bb4f2675275e1dcf
 /*     <link rel="stylesheet" href="{{asset('assets/css/datepicker.css')}}" />*/
 /* */
 /*     <link rel="stylesheet" href="{{asset('assets/css/bootstrap-datetimepicker.css')}}" />*/
+/*     <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/dataTables.bootstrap.min.css')}}" />*/
+/*     <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/responsive.bootstrap.min.css')}}" />*/
+/* */
 /* {% endblock %}*/
 /* */
 /* */
@@ -459,14 +459,18 @@ class __TwigTemplate_2ffbda9d56ee4c6b01ffb02f0ef1a487b801b649365bb4f2675275e1dcf
 /*     <ul class="breadcrumb">*/
 /*         <li>*/
 /*             <i class="ace-icon fa fa-home home-icon"></i>*/
-/*             <a href="#">Home</a>*/
+/*             <a href="{{path('cestom_admin_homepage')}}">Home</a>*/
 /*         </li>*/
 /*         <li>*/
 /* */
-/*             <a href="#">Gestion des membres</a>*/
+/*             <a href="{{path('cestom_admin_homepage')}}">Gestion des membres</a>*/
+/*         </li>*/
+/*         <li>*/
+/* */
+/*             <a href="{{path('cestom_admin_ajouter_formation',{'idmembre': idmembre })}}">Formations</a>*/
 /*         </li>*/
 /* */
-/*         <li class="active">Formation</li>*/
+/*         <li class="active">Modifier une formation du membre</li>*/
 /*     </ul>*/
 /* */
 /* {% endblock %}*/
@@ -504,149 +508,137 @@ class __TwigTemplate_2ffbda9d56ee4c6b01ffb02f0ef1a487b801b649365bb4f2675275e1dcf
 /* */
 /*             <div class="row">*/
 /*                 <div class="col-xs-12">*/
-/*                     <!-- PAGE CONTENT BEGINS -->*/
-/*                     <div class="row">*/
-/*                         <div class="col-sm-12">*/
-/*                             <!-- #section:elements.tab -->*/
-/*                             <div class="tabbable">*/
-/*                                 <ul class="nav nav-tabs" id="myTab">*/
-/*                                     <li class="dropdown">*/
-/*                                         <a  href="{{path('cestom_admin_modifier_member',{'idmembre':idmembre})}}">*/
-/*                                             <i class="gblue ace-icon fa fa-user bigger-120"></i>*/
-/*                                             Infos Génerales Membre*/
-/*                                         </a>*/
-/*                                     </li>*/
+/*                     <!-- #section:elements.tab -->*/
+/*                     <div class="tabbable">*/
+/*                         <ul class="nav nav-tabs" id="myTab">*/
+/*                             <li class="dropdown">*/
+/*                                 <a  href="{{path('cestom_admin_modifier_member',{'idmembre':idmembre})}}">*/
+/*                                     <i class="gblue ace-icon fa fa-user bigger-120"></i>*/
+/*                                     Infos Génerales Membre*/
+/*                                 </a>*/
+/*                             </li>*/
 /* */
-/* 					<li class="dropdown">*/
-/* 												<a  href="{{path('cestom_admin_ajouter_ville_membre',{'idmembre':idmembre})}}">*/
-/* 													<i class="green ace-icon fa fa-building bigger-120"></i>*/
-/* 													*/
-/*                                                                                                     Villes du Membre*/
-/* 												</a>*/
+/*                             <li class="dropdown">*/
+/*                                 <a  href="{{path('cestom_admin_ajouter_ville_membre',{'idmembre':idmembre})}}">*/
+/*                                     <i class="green ace-icon fa fa-building bigger-120"></i>*/
 /* */
-/* 												*/
-/* 											</li>*/
-/* */
-/*                                     <li class="active">*/
-/*                                         <a  href="{{path('cestom_admin_ajouter_formation',{'idmembre':idmembre})}}">*/
-/*                                             <i class="green ace-icon fa fa-graduation-cap bigger-120"></i>*/
-/* */
-/*                                             Formations du Membre*/
-/*                                         </a>*/
+/*                                     Villes du Membre*/
+/*                                 </a>*/
 /* */
 /* */
-/*                                     </li>*/
-/*                                 </ul>*/
+/*                             </li>*/
 /* */
-/*                                 <div class="tab-content">*/
-/*                                     <div id="formation" class="tab-pane in active">*/
-/*                                         <div class="widget-body">*/
+/*                             <li class="active">*/
+/*                                 <a  href="{{path('cestom_admin_ajouter_formation',{'idmembre':idmembre})}}">*/
+/*                                     <i class="green ace-icon fa fa-graduation-cap bigger-120"></i>*/
 /* */
-/*                                              <fieldset>*/
-/*                     <div class="col-sm-10 widget-main">*/
-/*                         <h4 class="header blue bolder smaller">*/
-/*                             Modifier une formation*/
-/*                         </h4>*/
-/*                     </div>*/
-/* */
-/*                                                 <form {{ form_enctype(form) }}  method = "POST"  action = "{{ path('cestom_admin_modifier_formation',{'idmembre':idmembre,'idformation':idformation})}}">	*/
-/* */
-/*                                                     {% include "CestomAdminBundle:GestionMembre:formulaireFormation.html.twig" %}*/
-/*                                                     <div class="form-actions center">*/
-/*                                                         <button id="valider" type="submit" class="btn btn-sm btn-success">*/
-/*                                                             Modifier*/
-/*                                                             <i class="ace-icon fa fa-pencil icon-on-right bigger-110"></i>*/
-/*                                                         </button>*/
-/*                                                     </div>*/
-/*  </fieldset>*/
-/*                                                 </form>*/
-/*                                                     */
-/*                                                     */
-/*                                                 <div class="table-header">*/
-/*                                                     Liste des formations*/
-/*                                                 </div>*/
-/* */
-/*                                                 <table id="listformation" style= "border : solid 1px darkgrey; "class="table table-striped table-bordered table-hover">*/
-/*                                                     <thead>*/
-/*                                                         <tr>*/
-/*                                                             <th class="center">*/
-/*                                                                 <label class="position-relative">*/
-/*                                                                     <input type="checkbox" class="ace" />*/
-/*                                                                     <span class="lbl"></span>*/
-/*                                                                 </label>*/
-/*                                                             </th>*/
-/* */
-/*                                                             <th> </th>*/
-/*                                                             <th>Libellé  </th>*/
-/*                                                             <th>Université</th>*/
-/*                                                             <th>Durée </th>*/
-/*                                                             <th>Date début</th>*/
-/*                                                             <th>Programme de bourse</th>*/
-/*                                                             <th>Diplôme visé</th>*/
-/* */
-/*                                                         </tr>*/
-/*                                                     </thead>*/
-/* */
-/*                                                     <tbody>*/
-/*                                                         {% for formation in formations %}*/
-/*                                                             <tr>*/
-/* */
-/*                                                                 <td class="center">*/
-/*                                                                     <label class="position-relative">*/
-/*                                                                         <input type="checkbox" class="ace" />*/
-/*                                                                         <span class="lbl"></span>*/
-/*                                                                     </label>*/
-/*                                                                 </td >*/
+/*                                     Formations du Membre*/
+/*                                 </a>*/
 /* */
 /* */
-/*                                                                 <td>*/
+/*                             </li>*/
+/*                         </ul>*/
 /* */
+/*                         <div class="tab-content">*/
+/*                             <div id="formation" class="tab-pane in active">*/
+/*                                 <div class="widget-body">*/
 /* */
-/* */
-/*                                                                     <a class="green" href="{{path('cestom_admin_modifier_formation',{'idmembre': idmembre,'idformation': formation.idFormation})}}">*/
-/*                                                                         <i class="ace-icon fa fa-pencil bigger-130"></i>*/
-/*                                                                     </a>*/
-/* */
-/*                                                                 </td>*/
-/* */
-/*                                                                 <td>{{ formation.libelleFormation}}</td>*/
-/*                                                                 <td>{{formation.iduniv.nomuniv}}</td>*/
-/*                                                                 <td>{{formation.diplomeViseFormation}} </td>*/
-/*                                                                 <td>{{formation.dureeFormation}}</td>*/
-/* */
-/*                                                                 <td>{{formation.dateDebutFormation}}</td>*/
-/*                                                                 <td>{{formation.programmeBourse}}</td>*/
-/* */
-/*                                                             </tr>*/
-/*                                                         {% endfor %}*/
-/*                                                     </tbody>*/
-/*                                                 </table>*/
-/* */
-/* */
-/* */
-/* */
-/*                                             </div>*/
+/*                                     <fieldset>*/
+/*                                         <div class="col-sm-12 widget-main">*/
+/*                                             <h4 class="header blue bolder smaller">*/
+/*                                                 Modifier une formation*/
+/*                                             </h4>*/
 /*                                         </div>*/
-/*                                     */
+/* */
+/*                                         <form {{ form_enctype(form) }}  method = "POST"  action = "{{ path('cestom_admin_modifier_formation',{'idmembre':idmembre,'idformation':idformation})}}">	*/
+/* */
+/*                                             {% include "CestomAdminBundle:GestionMembre:formulaireFormation.html.twig" %}*/
+/*                                     </fieldset>*/
+/*                                     <div class="form-actions center">*/
+/*                                         <button id="valider" type="submit" class="btn btn-sm btn-success">*/
+/*                                             Modifier*/
+/*                                             <i class="ace-icon fa fa-pencil icon-on-right bigger-110"></i>*/
+/*                                         </button>*/
+/*                                     </div>*/
+/* */
+/*                                     </form>*/
+/* */
+/* */
+/*                                     <div class="table-header">*/
+/*                                         Liste des formations*/
+/*                                     </div>*/
+/*                                     <br>*/
+/*                                     <div class="table-responsive">*/
+/*                                         <table id="listformation" style= "border : solid 1px darkgrey; "class="table table-striped table-bordered table-hover">*/
+/*                                             <thead>*/
+/*                                                 <tr>*/
+/*                                                     <th class="center">*/
+/*                                                         <label class="position-relative">*/
+/*                                                             <input type="checkbox" class="ace" />*/
+/*                                                             <span class="lbl"></span>*/
+/*                                                         </label>*/
+/*                                                     </th>*/
+/* */
+/*                                                     <th> </th>*/
+/*                                                     <th>Libellé  </th>*/
+/*                                                     <th>Université</th>*/
+/*                                                     <th>Durée </th>*/
+/*                                                     <th>Date début</th>*/
+/*                                                     <th>Programme de bourse</th>*/
+/*                                                     <th>Diplôme visé</th>*/
+/* */
+/*                                                 </tr>*/
+/*                                             </thead>*/
+/* */
+/*                                             <tbody>*/
+/*                                                 {% for formation in formations %}*/
+/*                                                     <tr>*/
+/* */
+/*                                                         <td class="center">*/
+/*                                                             <label class="position-relative">*/
+/*                                                                 <input type="checkbox" class="ace" />*/
+/*                                                                 <span class="lbl"></span>*/
+/*                                                             </label>*/
+/*                                                         </td >*/
+/* */
+/* */
+/*                                                         <td>*/
+/* */
+/* */
+/* */
+/*                                                             <a class="green" href="{{path('cestom_admin_modifier_formation',{'idmembre': idmembre,'idformation': formation.idFormation})}}">*/
+/*                                                                 <i class="ace-icon fa fa-pencil bigger-130"></i>*/
+/*                                                             </a>*/
+/* */
+/*                                                         </td>*/
+/* */
+/*                                                         <td>{{ formation.libelleFormation}}</td>*/
+/*                                                         <td>{{formation.iduniv.nomuniv}}</td>*/
+/*                                                         <td>{{formation.diplomeViseFormation}} </td>*/
+/*                                                         <td>{{formation.dureeFormation}}</td>*/
+/* */
+/*                                                         <td>{{formation.dateDebutFormation}}</td>*/
+/*                                                         <td>{{formation.programmeBourse}}</td>*/
+/* */
+/*                                                     </tr>*/
+/*                                                 {% endfor %}*/
+/*                                             </tbody>*/
+/*                                         </table>*/
+/*                                     </div>*/
 /*                                 </div>*/
 /*                             </div>*/
 /* */
-/*                             <!-- /section:elements.tab -->*/
-/*                         </div><!-- /.col -->*/
+/*                         </div>*/
+/*                     </div>*/
 /* */
-/* */
-/* */
-/*                     </div><!-- /.row -->*/
-/* */
-/* */
-/* */
-/*                     <script type="text/javascript">*/
-/*                         var $path_assets = "../assets";//this will be used in gritter alerts containing images*/
-/*                     </script>*/
-/* */
-/*                     <!-- PAGE CONTENT ENDS -->*/
+/*                     <!-- /section:elements.tab -->*/
 /*                 </div><!-- /.col -->*/
+/* */
+/* */
+/* */
 /*             </div><!-- /.row -->*/
+/* */
+/* */
 /*         </div>*/
 /*     </div>*/
 /* */
@@ -654,57 +646,53 @@ class __TwigTemplate_2ffbda9d56ee4c6b01ffb02f0ef1a487b801b649365bb4f2675275e1dcf
 /* {% endblock %}*/
 /* */
 /* {% block javascript %}*/
+/*     <script src="{{asset('assets/js/jquery.dataTables.min.js')}}"></script>*/
+/*     <script type="text/javascript"src="{{asset('assets/js/dataTables.responsive.min.js')}}"></script>*/
+/* */
 /*     <script src="{{asset('assets/js/date-time/bootstrap-datepicker.min.js')}}"></script>*/
 /*     <script src="{{asset('assets/js/date-time/bootstrap-timepicker.min.js')}}"></script>*/
 /*     <script src="{{asset('assets/js/date-time/moment.min.js')}}"></script>*/
-/* */
 /*     <script src="{{asset('assets/js/date-time/bootstrap-datetimepicker.min.js')}}">< /script>*/
-/*                                                                     < script src = "{{asset('assets/js/jquery.autosize.min.js')}}" ></script>*/
-/*     <script  src = "{{asset('assets/js/jquery.ui.addresspicker.js')}}"></script>*/
-/*     <script src="{{asset('assets/js/jquery.maskedinput.min.js')}}"></script>*/
-/*     <script src="{{asset('assets/js/bootstrap-tag.min.js')}}"></script>*/
+/*                 < script src = "{{asset('assets/js/jquery.autosize.min.js')}}" ></script>*/
 /*     <script src="{{asset('assets/js/ace-elements.min.js')}}"></script>*/
 /*     <script src="{{asset('assets/js/ace.min.js')}}"></script>*/
-/*     <script src="{{asset('assets/js/jquery.dataTables.min.js')}}"></script>*/
-/*     <script	src="{{asset('assets/js/jquery.dataTables.bootstrap.js')}}"></script>*/
 /*     <script type="text/javascript">*/
-/*                                                             jQuery(function($) {*/
+/*         jQuery(function($) {*/
 /* //datepicker plugin*/
-/*                                                                 //link*/
-/*                                                                 $('.date-picker').datepicker({*/
-/*                                                                     autoclose: true,*/
-/*                                                                     todayHighlight: true*/
-/*                                                                 })*/
-/*                                                                         //show datepicker when clicking on the icon*/
-/*                                                                         .next().on(ace.click_event, function() {*/
-/*                                                                     $(this).prev().focus();*/
-/*                                                                 });*/
-/*                                                                 $('#date-debut').datetimepicker().next().on(ace.click_event, function() {*/
-/*                                                                     $(this).prev().focus();*/
-/*                                                                 });*/
+/*             //link*/
+/*             $('.date-picker').datepicker({*/
+/*                 autoclose: true,*/
+/*                 todayHighlight: true*/
+/*             })*/
+/*                     //show datepicker when clicking on the icon*/
+/*                     .next().on(ace.click_event, function() {*/
+/*                 $(this).prev().focus();*/
+/*             });*/
+/*             $('#date-debut').datetimepicker().next().on(ace.click_event, function() {*/
+/*                 $(this).prev().focus();*/
+/*             });*/
 /* */
-/*                                                                 $('#listformation').DataTable({*/
-/*                                                                     */
-/*                                                                     "language": {*/
-/*             "lengthMenu": "Afficher _MENU_ lignes",*/
-/*             "zeroRecords": "Aucune donnée retrouvée",*/
-/*              "sSearch": "Rechercher",*/
-/*             "info": "Page _PAGE_ sur _PAGES_",*/
-/*             "infoEmpty": "Aucune donnée",*/
-/*             "oPaginate": {*/
-/*             "sFirst":    "Premier",*/
-/*             "sLast":    "FIn",*/
-/*             "sNext":    "Suivant",*/
-/*             "sPrevious": "Précédent"*/
-/*         },*/
-/*             "infoFiltered": "(filtré sur _MAX_ total lignes)"*/
-/*         }*/
-/*                                                                 });*/
-/*                                                                 */
-/*                                                                         */
-/*                                   $('.main').removeClass('active');*/
-/*                                   $('#menu_membre').addClass('active');*/
-/*                                                             });*/
+/*             $('#listformation').DataTable({*/
+/*                 "language": {*/
+/*                     "lengthMenu": "Afficher _MENU_ lignes",*/
+/*                     "zeroRecords": "Aucune donnée retrouvée",*/
+/*                     "sSearch": "Rechercher",*/
+/*                     "info": "Page _PAGE_ sur _PAGES_",*/
+/*                     "infoEmpty": "Aucune donnée",*/
+/*                     "oPaginate": {*/
+/*                         "sFirst": "Premier",*/
+/*                         "sLast": "Fin",*/
+/*                         "sNext": "  Suivant  ",*/
+/*                         "sPrevious": "  Précédent  "*/
+/*                     },*/
+/*                     "infoFiltered": "(filtré sur _MAX_ total lignes)"*/
+/*                 }*/
+/*             });*/
+/* */
+/* */
+/*             $('.main').removeClass('active');*/
+/*             $('#menu_membre').addClass('active');*/
+/*         });*/
 /*     </script>*/
 /* */
 /* {% endblock %}*/

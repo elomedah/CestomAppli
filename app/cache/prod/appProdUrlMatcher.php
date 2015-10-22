@@ -219,69 +219,69 @@ class appProdUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirecta
             return array (  '_controller' => 'Cestom\\ArticleBundle\\Controller\\CmsController::indexAction',  '_route' => 'cestom_home',);
         }
 
-        if (0 === strpos($pathinfo, '/admin')) {
+        if (0 === strpos($pathinfo, '/user')) {
             // cestom_user_homepage
-            if ($pathinfo === '/admin/monCompte') {
+            if ($pathinfo === '/user/monCompte') {
                 return array (  '_controller' => 'Cestom\\UserBundle\\Controller\\GestionCompteController::gestionCompteAction',  '_route' => 'cestom_user_homepage',);
             }
 
             // cestom_user_gestion_formation
-            if ($pathinfo === '/admin/Formations') {
+            if ($pathinfo === '/user/Formations') {
                 return array (  '_controller' => 'Cestom\\UserBundle\\Controller\\GestionFormationController::gestionFormationAction',  '_route' => 'cestom_user_gestion_formation',);
             }
 
             // cestom_user_delete_formation
-            if (0 === strpos($pathinfo, '/admin/deleteFormation') && preg_match('#^/admin/deleteFormation/(?P<idformation>[^/]++)$#s', $pathinfo, $matches)) {
+            if (0 === strpos($pathinfo, '/user/deleteFormation') && preg_match('#^/user/deleteFormation/(?P<idformation>[^/]++)$#s', $pathinfo, $matches)) {
                 return $this->mergeDefaults(array_replace($matches, array('_route' => 'cestom_user_delete_formation')), array (  '_controller' => 'Cestom\\UserBundle\\Controller\\GestionFormationController::deleteFormationAction',));
             }
 
             // cestom_user_ajouter_formation
-            if ($pathinfo === '/admin/ajouterFormation') {
+            if ($pathinfo === '/user/ajouterFormation') {
                 return array (  '_controller' => 'Cestom\\UserBundle\\Controller\\GestionFormationController::ajouterFormationAction',  '_route' => 'cestom_user_ajouter_formation',);
             }
 
             // cestom_user_modifier_formation
-            if (0 === strpos($pathinfo, '/admin/modifierFormation') && preg_match('#^/admin/modifierFormation/(?P<idformation>[^/]++)$#s', $pathinfo, $matches)) {
+            if (0 === strpos($pathinfo, '/user/modifierFormation') && preg_match('#^/user/modifierFormation/(?P<idformation>[^/]++)$#s', $pathinfo, $matches)) {
                 return $this->mergeDefaults(array_replace($matches, array('_route' => 'cestom_user_modifier_formation')), array (  '_controller' => 'Cestom\\UserBundle\\Controller\\GestionFormationController::modifierFormationAction',));
             }
 
             // cestom_user_gestion_ville
-            if ($pathinfo === '/admin/Villes') {
+            if ($pathinfo === '/user/Villes') {
                 return array (  '_controller' => 'Cestom\\UserBundle\\Controller\\GestionVilleController::gestionVilleAction',  '_route' => 'cestom_user_gestion_ville',);
             }
 
             // cestom_user_delete_ville
-            if (0 === strpos($pathinfo, '/admin/deleteVille') && preg_match('#^/admin/deleteVille/(?P<idvillemembre>[^/]++)$#s', $pathinfo, $matches)) {
+            if (0 === strpos($pathinfo, '/user/deleteVille') && preg_match('#^/user/deleteVille/(?P<idvillemembre>[^/]++)$#s', $pathinfo, $matches)) {
                 return $this->mergeDefaults(array_replace($matches, array('_route' => 'cestom_user_delete_ville')), array (  '_controller' => 'Cestom\\UserBundle\\Controller\\GestionVilleController::deleteVilleAction',));
             }
 
             // cestom_user_ajouter_ville
-            if ($pathinfo === '/admin/ajouterVille') {
+            if ($pathinfo === '/user/ajouterVille') {
                 return array (  '_controller' => 'Cestom\\UserBundle\\Controller\\GestionVilleController::ajouterVilleAction',  '_route' => 'cestom_user_ajouter_ville',);
             }
 
-            if (0 === strpos($pathinfo, '/admin/m')) {
-                // cestom_user_modifier_ville
-                if (0 === strpos($pathinfo, '/admin/modifierVille') && preg_match('#^/admin/modifierVille/(?P<idvillemembre>[^/]++)$#s', $pathinfo, $matches)) {
-                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'cestom_user_modifier_ville')), array (  '_controller' => 'Cestom\\UserBundle\\Controller\\GestionVilleController::modifierVilleAction',));
+            // cestom_user_modifier_ville
+            if (0 === strpos($pathinfo, '/user/modifierVille') && preg_match('#^/user/modifierVille/(?P<idvillemembre>[^/]++)$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'cestom_user_modifier_ville')), array (  '_controller' => 'Cestom\\UserBundle\\Controller\\GestionVilleController::modifierVilleAction',));
+            }
+
+        }
+
+        if (0 === strpos($pathinfo, '/admin')) {
+            if (0 === strpos($pathinfo, '/admin/membre')) {
+                // cestom_admin_homepage
+                if ($pathinfo === '/admin/membre/gestionMembre') {
+                    return array (  '_controller' => 'Cestom\\AdminBundle\\Controller\\GestionMembreController::membreAction',  '_route' => 'cestom_admin_homepage',);
                 }
 
-                if (0 === strpos($pathinfo, '/admin/membre')) {
-                    // cestom_admin_homepage
-                    if ($pathinfo === '/admin/membre/gestionMembre') {
-                        return array (  '_controller' => 'Cestom\\AdminBundle\\Controller\\GestionMembreController::membreAction',  '_route' => 'cestom_admin_homepage',);
-                    }
+                // cestom_admin_ajouter_member
+                if ($pathinfo === '/admin/membre/ajouterMembre') {
+                    return array (  '_controller' => 'Cestom\\AdminBundle\\Controller\\AjouterMembreController::ajouterMembreAction',  '_route' => 'cestom_admin_ajouter_member',);
+                }
 
-                    // cestom_admin_ajouter_member
-                    if ($pathinfo === '/admin/membre/ajouterMembre') {
-                        return array (  '_controller' => 'Cestom\\AdminBundle\\Controller\\AjouterMembreController::ajouterMembreAction',  '_route' => 'cestom_admin_ajouter_member',);
-                    }
-
-                    // cestom_admin_modifier_member
-                    if (0 === strpos($pathinfo, '/admin/membre/modifierMembre') && preg_match('#^/admin/membre/modifierMembre/(?P<idmembre>[^/]++)$#s', $pathinfo, $matches)) {
-                        return $this->mergeDefaults(array_replace($matches, array('_route' => 'cestom_admin_modifier_member')), array (  '_controller' => 'Cestom\\AdminBundle\\Controller\\ModifierMembreController::modifierMembreAction',));
-                    }
-
+                // cestom_admin_modifier_member
+                if (0 === strpos($pathinfo, '/admin/membre/modifierMembre') && preg_match('#^/admin/membre/modifierMembre/(?P<idmembre>[^/]++)$#s', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'cestom_admin_modifier_member')), array (  '_controller' => 'Cestom\\AdminBundle\\Controller\\ModifierMembreController::modifierMembreAction',));
                 }
 
             }

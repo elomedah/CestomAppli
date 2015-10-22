@@ -10,6 +10,9 @@ use Symfony\Component\HttpFoundation\Response;
 
 class GestionMembreController extends Controller
 {
+
+// controlleur sollicité apres la connexion
+// selon le profil on redirige sur la page de gestion ou sur le compte de l'utilisateur
     public function membreAction()
 	{
 //TO DO ACTIVATE FILTER
@@ -21,11 +24,16 @@ class GestionMembreController extends Controller
         $villesmembre = $em->getRepository('CestomStoreBundle:VilleMembre')
                 ->findByidville($ville->getIdville());
 }*/
+
+
+
 $em = $this->getDoctrine()->getManager();
  $membres = $em->getRepository('CestomStoreBundle:Membre')
 	       ->findAll();
 
    return $this->render('CestomAdminBundle:GestionMembre:gestionMembre.html.twig', array('membres' => $membres));
+
+
 	}
 }
 

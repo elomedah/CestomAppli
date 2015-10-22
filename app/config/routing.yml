@@ -12,7 +12,7 @@ cestom_store:
 
 cestom_user:
     resource: "@CestomUserBundle/Resources/config/routing.yml"
-    prefix:   /admin
+    prefix:   /user
 
 cestom_admin:
     resource: "@CestomAdminBundle/Resources/config/routing.yml"

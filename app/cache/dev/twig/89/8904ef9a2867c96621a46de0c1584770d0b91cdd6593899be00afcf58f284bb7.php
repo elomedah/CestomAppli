@@ -32,28 +32,38 @@ class __TwigTemplate_bb7e0923abd93ca9f5783cf73eed927cdcd46322ad4a3ad072c34a9d023
     public function block_style($context, array $blocks = array())
     {
         echo " 
-    <link rel=\"stylesheet\" href=\"";
+      <link rel=\"stylesheet\" type=\"text/css\" href=\"";
         // line 5
-        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("assets/css/jquery-ui.custom.min.css"), "html", null, true);
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("assets/css/dataTables.bootstrap.min.css"), "html", null, true);
+        echo "\" />
+    <link rel=\"stylesheet\" type=\"text/css\" href=\"";
+        // line 6
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("assets/css/responsive.bootstrap.min.css"), "html", null, true);
         echo "\" />
 
 ";
     }
 
-    // line 10
+    // line 11
     public function block_navigation($context, array $blocks = array())
     {
-        // line 11
+        // line 12
         echo "
 
     <ul class=\"breadcrumb\">
         <li>
             <i class=\"ace-icon fa fa-home home-icon\"></i>
-            <a href=\"#\">Home</a>
+            <a href=\"";
+        // line 17
+        echo $this->env->getExtension('routing')->getPath("cestom_admin_homepage");
+        echo "\">Home</a>
         </li>
         <li>
 
-            <a href=\"#\">Gestion des universités</a>
+            <a href=\"";
+        // line 21
+        echo $this->env->getExtension('routing')->getPath("cestom_admin_ajouter_universite");
+        echo "\">Gestion des universités</a>
         </li>
 
         <li class=\"active\">Liste des universités</li>
@@ -62,7 +72,7 @@ class __TwigTemplate_bb7e0923abd93ca9f5783cf73eed927cdcd46322ad4a3ad072c34a9d023
 ";
     }
 
-    // line 30
+    // line 31
     public function block_soustitre($context, array $blocks = array())
     {
         echo " 
@@ -72,22 +82,22 @@ class __TwigTemplate_bb7e0923abd93ca9f5783cf73eed927cdcd46322ad4a3ad072c34a9d023
 ";
     }
 
-    // line 36
+    // line 37
     public function block_content($context, array $blocks = array())
     {
-        // line 37
+        // line 38
         echo "
     ";
-        // line 38
+        // line 39
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable($this->getAttribute($this->getAttribute($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "session", array()), "flashbag", array()), "get", array(0 => "messagesucces"), "method"));
         foreach ($context['_seq'] as $context["_key"] => $context["flashMessage"]) {
-            // line 39
+            // line 40
             echo "        <div class=\"alert alert-block alert-success\">
             <div class=\"flash-notice\">
 
                 ";
-            // line 42
+            // line 43
             echo twig_escape_filter($this->env, $context["flashMessage"], "html", null, true);
             echo "
             </div>
@@ -97,19 +107,19 @@ class __TwigTemplate_bb7e0923abd93ca9f5783cf73eed927cdcd46322ad4a3ad072c34a9d023
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['flashMessage'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 46
+        // line 47
         echo "
     ";
-        // line 47
+        // line 48
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable($this->getAttribute($this->getAttribute($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "session", array()), "flashbag", array()), "get", array(0 => "messageerror"), "method"));
         foreach ($context['_seq'] as $context["_key"] => $context["flashMessage"]) {
-            // line 48
+            // line 49
             echo "        <div class=\"alert alert-block alert-danger\">
             <div class=\"flash-notice\">
 
                 ";
-            // line 51
+            // line 52
             echo twig_escape_filter($this->env, $context["flashMessage"], "html", null, true);
             echo "
             </div>
@@ -119,34 +129,27 @@ class __TwigTemplate_bb7e0923abd93ca9f5783cf73eed927cdcd46322ad4a3ad072c34a9d023
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['flashMessage'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 55
+        // line 56
         echo "
     <div class=\"widget-body\">
         <div class=\"widget-main no-padding\">
 
             <div class=\"row\">
                 <div class=\"col-xs-12\">
-                    <!-- PAGE CONTENT BEGINS -->
-                    <div class=\"row\">
-                        <div class=\"col-sm-12\">
+                   
                             <!-- #section:elements.tab -->
                                                                        
                                                 <div class=\"table-header\">
                                                     Liste des universités
                                                 </div>
-
+ <br>
+                                    <div class=\"table-responsive\">
                             
                                  <table id=\"listuniv\" style= \"border : solid 1px darkgrey; \" class=\"table table-striped table-bordered \">
                                           
                                      <thead >
                                                         <tr>
-                                                            <th class=\"center\">
-                                                                <label class=\"position-relative\">
-                                                                    <input type=\"checkbox\" class=\"ace\" />
-                                                                    <span class=\"lbl\"></span>
-                                                                </label>
-                                                            </th>
-
+                                                       
                                                             <th> Action</th>
                                                             <th>Nom de l'université  </th>
                                                                                                                        <th>Contact </th>
@@ -157,27 +160,17 @@ class __TwigTemplate_bb7e0923abd93ca9f5783cf73eed927cdcd46322ad4a3ad072c34a9d023
 
                                                     <tbody>
                                                         ";
-        // line 91
+        // line 85
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable((isset($context["universites"]) ? $context["universites"] : $this->getContext($context, "universites")));
         foreach ($context['_seq'] as $context["_key"] => $context["universite"]) {
-            // line 92
+            // line 86
             echo "                                                            <tr>
-
-                                                                <td class=\"center\">
-                                                                    <label class=\"position-relative\">
-                                                                        <input type=\"checkbox\" class=\"ace\" />
-                                                                        <span class=\"lbl\"></span>
-                                                                    </label>
-                                                                </td >
-
 
                                                                 <td>
 
-
-
                                                                     <a class=\"green\" href=\"";
-            // line 106
+            // line 90
             echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("cestom_admin_modifier_universite", array("iduniversite" => $this->getAttribute($context["universite"], "iduniv", array()))), "html", null, true);
             echo "\">
                                                                         <i class=\"ace-icon fa fa-pencil bigger-130\"></i>
@@ -186,15 +179,15 @@ class __TwigTemplate_bb7e0923abd93ca9f5783cf73eed927cdcd46322ad4a3ad072c34a9d023
                                                                 </td>
 
                                                                 <td>";
-            // line 112
+            // line 96
             echo twig_escape_filter($this->env, $this->getAttribute($context["universite"], "nomuniv", array()), "html", null, true);
             echo "</td>
                                                                                                                                 <td>";
-            // line 113
+            // line 97
             echo twig_escape_filter($this->env, $this->getAttribute($context["universite"], "contactuniv", array()), "html", null, true);
             echo "</td>
                                                                 <td>";
-            // line 114
+            // line 98
             echo twig_escape_filter($this->env, $this->getAttribute($context["universite"], "addresseuniv", array()), "html", null, true);
             echo "</td>
 
@@ -205,28 +198,28 @@ class __TwigTemplate_bb7e0923abd93ca9f5783cf73eed927cdcd46322ad4a3ad072c34a9d023
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['universite'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 119
+        // line 103
         echo "                                                    </tbody>
                                                     
                                                 </table>
                            
-
+                                    </div>
  <form ";
-        // line 124
+        // line 108
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), 'enctype');
         echo "  method = \"POST\"  action = \"";
         echo $this->env->getExtension('routing')->getPath("cestom_admin_ajouter_universite");
         echo "\">\t
  <fieldset>
-                    <div class=\"col-sm-10 widget-main\">
+                    <div class=\"col-sm-12 widget-main\">
                         <h4 class=\"header blue bolder smaller\">
                             Ajouter une nouvelle université
                         </h4>
                     </div>
                                                     ";
-        // line 131
-        $this->loadTemplate("CestomAdminBundle:GestionMembre:formulaireUniversite.html.twig", "CestomAdminBundle:GestionMembre:ajouterUniversite.html.twig", 131)->display($context);
-        // line 132
+        // line 115
+        $this->loadTemplate("CestomAdminBundle:GestionMembre:formulaireUniversite.html.twig", "CestomAdminBundle:GestionMembre:ajouterUniversite.html.twig", 115)->display($context);
+        // line 116
         echo "                                                    <div class=\"form-actions center\">
                                                         <button id=\"valider\" type=\"submit\" class=\"btn btn-sm btn-success\">
                                                             Ajouter
@@ -247,25 +240,22 @@ class __TwigTemplate_bb7e0923abd93ca9f5783cf73eed927cdcd46322ad4a3ad072c34a9d023
                     <!-- PAGE CONTENT ENDS -->
                 </div><!-- /.col -->
             </div><!-- /.row -->
-        </div>
-    </div>
-
-
+      
 ";
     }
 
-    // line 158
+    // line 139
     public function block_javascript($context, array $blocks = array())
     {
-        // line 159
+        // line 140
         echo "    
-    <script src=\"";
-        // line 160
+     <script src=\"";
+        // line 141
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("assets/js/jquery.dataTables.min.js"), "html", null, true);
         echo "\"></script>
-    <script\tsrc=\"";
-        // line 161
-        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("assets/js/jquery.dataTables.bootstrap.js"), "html", null, true);
+    <script type=\"text/javascript\"src=\"";
+        // line 142
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("assets/js/dataTables.responsive.min.js"), "html", null, true);
         echo "\"></script>
     <script type=\"text/javascript\">
                                                             jQuery(function(\$) {
@@ -284,9 +274,9 @@ class __TwigTemplate_bb7e0923abd93ca9f5783cf73eed927cdcd46322ad4a3ad072c34a9d023
             \"infoEmpty\": \"Aucune donnée\",
             \"oPaginate\": {
             \"sFirst\":    \"Premier\",
-            \"sLast\":    \"FIn\",
-            \"sNext\":    \"Suivant\",
-            \"sPrevious\": \"Précédent\"
+            \"sLast\":    \"Fin\",
+            \"sNext\":    \"  Suivant  \",
+            \"sPrevious\": \"  Précédent  \"
         },
             \"infoFiltered\": \"(filtré sur _MAX_ total lignes)\"
         }
@@ -309,14 +299,15 @@ class __TwigTemplate_bb7e0923abd93ca9f5783cf73eed927cdcd46322ad4a3ad072c34a9d023
 
     public function getDebugInfo()
     {
-        return array (  268 => 161,  264 => 160,  261 => 159,  258 => 158,  230 => 132,  228 => 131,  216 => 124,  209 => 119,  198 => 114,  194 => 113,  190 => 112,  181 => 106,  165 => 92,  161 => 91,  123 => 55,  113 => 51,  108 => 48,  104 => 47,  101 => 46,  91 => 42,  86 => 39,  82 => 38,  79 => 37,  76 => 36,  66 => 30,  47 => 11,  44 => 10,  37 => 5,  32 => 4,  11 => 3,);
+        return array (  258 => 142,  254 => 141,  251 => 140,  248 => 139,  223 => 116,  221 => 115,  209 => 108,  202 => 103,  191 => 98,  187 => 97,  183 => 96,  174 => 90,  168 => 86,  164 => 85,  133 => 56,  123 => 52,  118 => 49,  114 => 48,  111 => 47,  101 => 43,  96 => 40,  92 => 39,  89 => 38,  86 => 37,  76 => 31,  65 => 21,  58 => 17,  51 => 12,  48 => 11,  41 => 6,  37 => 5,  32 => 4,  11 => 3,);
     }
 }
 /* */
 /* {# app/Resources/views/blog/index.html.twig #}*/
 /* {% extends 'base.html.twig' %}*/
 /* {% block style %} */
-/*     <link rel="stylesheet" href="{{asset('assets/css/jquery-ui.custom.min.css')}}" />*/
+/*       <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/dataTables.bootstrap.min.css')}}" />*/
+/*     <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/responsive.bootstrap.min.css')}}" />*/
 /* */
 /* {% endblock %}*/
 /* */
@@ -327,11 +318,11 @@ class __TwigTemplate_bb7e0923abd93ca9f5783cf73eed927cdcd46322ad4a3ad072c34a9d023
 /*     <ul class="breadcrumb">*/
 /*         <li>*/
 /*             <i class="ace-icon fa fa-home home-icon"></i>*/
-/*             <a href="#">Home</a>*/
+/*             <a href="{{path('cestom_admin_homepage')}}">Home</a>*/
 /*         </li>*/
 /*         <li>*/
 /* */
-/*             <a href="#">Gestion des universités</a>*/
+/*             <a href="{{path('cestom_admin_ajouter_universite')}}">Gestion des universités</a>*/
 /*         </li>*/
 /* */
 /*         <li class="active">Liste des universités</li>*/
@@ -372,27 +363,20 @@ class __TwigTemplate_bb7e0923abd93ca9f5783cf73eed927cdcd46322ad4a3ad072c34a9d023
 /* */
 /*             <div class="row">*/
 /*                 <div class="col-xs-12">*/
-/*                     <!-- PAGE CONTENT BEGINS -->*/
-/*                     <div class="row">*/
-/*                         <div class="col-sm-12">*/
+/*                    */
 /*                             <!-- #section:elements.tab -->*/
 /*                                                                        */
 /*                                                 <div class="table-header">*/
 /*                                                     Liste des universités*/
 /*                                                 </div>*/
-/* */
+/*  <br>*/
+/*                                     <div class="table-responsive">*/
 /*                             */
 /*                                  <table id="listuniv" style= "border : solid 1px darkgrey; " class="table table-striped table-bordered ">*/
 /*                                           */
 /*                                      <thead >*/
 /*                                                         <tr>*/
-/*                                                             <th class="center">*/
-/*                                                                 <label class="position-relative">*/
-/*                                                                     <input type="checkbox" class="ace" />*/
-/*                                                                     <span class="lbl"></span>*/
-/*                                                                 </label>*/
-/*                                                             </th>*/
-/* */
+/*                                                        */
 /*                                                             <th> Action</th>*/
 /*                                                             <th>Nom de l'université  </th>*/
 /*                                                                                                                        <th>Contact </th>*/
@@ -405,17 +389,7 @@ class __TwigTemplate_bb7e0923abd93ca9f5783cf73eed927cdcd46322ad4a3ad072c34a9d023
 /*                                                         {% for universite in universites %}*/
 /*                                                             <tr>*/
 /* */
-/*                                                                 <td class="center">*/
-/*                                                                     <label class="position-relative">*/
-/*                                                                         <input type="checkbox" class="ace" />*/
-/*                                                                         <span class="lbl"></span>*/
-/*                                                                     </label>*/
-/*                                                                 </td >*/
-/* */
-/* */
 /*                                                                 <td>*/
-/* */
-/* */
 /* */
 /*                                                                     <a class="green" href="{{path('cestom_admin_modifier_universite',{'iduniversite': universite.iduniv})}}">*/
 /*                                                                         <i class="ace-icon fa fa-pencil bigger-130"></i>*/
@@ -434,10 +408,10 @@ class __TwigTemplate_bb7e0923abd93ca9f5783cf73eed927cdcd46322ad4a3ad072c34a9d023
 /*                                                     */
 /*                                                 </table>*/
 /*                            */
-/* */
+/*                                     </div>*/
 /*  <form {{ form_enctype(form) }}  method = "POST"  action = "{{ path('cestom_admin_ajouter_universite')}}">	*/
 /*  <fieldset>*/
-/*                     <div class="col-sm-10 widget-main">*/
+/*                     <div class="col-sm-12 widget-main">*/
 /*                         <h4 class="header blue bolder smaller">*/
 /*                             Ajouter une nouvelle université*/
 /*                         </h4>*/
@@ -463,16 +437,13 @@ class __TwigTemplate_bb7e0923abd93ca9f5783cf73eed927cdcd46322ad4a3ad072c34a9d023
 /*                     <!-- PAGE CONTENT ENDS -->*/
 /*                 </div><!-- /.col -->*/
 /*             </div><!-- /.row -->*/
-/*         </div>*/
-/*     </div>*/
-/* */
-/* */
+/*       */
 /* {% endblock %}*/
 /* */
 /* {% block javascript %}*/
 /*     */
-/*     <script src="{{asset('assets/js/jquery.dataTables.min.js')}}"></script>*/
-/*     <script	src="{{asset('assets/js/jquery.dataTables.bootstrap.js')}}"></script>*/
+/*      <script src="{{asset('assets/js/jquery.dataTables.min.js')}}"></script>*/
+/*     <script type="text/javascript"src="{{asset('assets/js/dataTables.responsive.min.js')}}"></script>*/
 /*     <script type="text/javascript">*/
 /*                                                             jQuery(function($) {*/
 /* //datepicker plugin*/
@@ -490,9 +461,9 @@ class __TwigTemplate_bb7e0923abd93ca9f5783cf73eed927cdcd46322ad4a3ad072c34a9d023
 /*             "infoEmpty": "Aucune donnée",*/
 /*             "oPaginate": {*/
 /*             "sFirst":    "Premier",*/
-/*             "sLast":    "FIn",*/
-/*             "sNext":    "Suivant",*/
-/*             "sPrevious": "Précédent"*/
+/*             "sLast":    "Fin",*/
+/*             "sNext":    "  Suivant  ",*/
+/*             "sPrevious": "  Précédent  "*/
 /*         },*/
 /*             "infoFiltered": "(filtré sur _MAX_ total lignes)"*/
 /*         }*/
