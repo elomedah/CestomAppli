@@ -33,8 +33,6 @@ if ($request->getMethod() == 'POST') {
 
       if ($form->isValid()) {
 try{  
-  
-
       $em->persist($bureau);
       $em->flush();
       $request->getSession()->getFlashBag()->add('messagesucces', 'Membre du Bureau ajouté avec succès ');
@@ -119,7 +117,11 @@ public  function collectPoste(){
     $postes['Président']=('Président') ; 
 	
     $postes['Sécretaire']=('Sécretaire') ; 
-	
+ $postes['Sécretaire-Adjoint']=('Sécretaire-Adjoint') ; 
+ $postes['Trésorier']=('Trésorier') ; 
+ $postes['Trésorier-adjoint']=('Trésorier-adjoint') ;
+ $postes['Conseiller']=('Conseiller') ;  
+	 $postes['Membre du bureau']=('Membre du bureau') ;  
 return $postes;
 }
 }

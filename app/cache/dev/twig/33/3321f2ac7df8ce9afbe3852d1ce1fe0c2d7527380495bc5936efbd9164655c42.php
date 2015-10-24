@@ -169,10 +169,9 @@ class __TwigTemplate_c4179af3f1e03cdbf7b0c7cc559159fd3cc55ff82f3d45597c613b8f86f
                     <br>
                     <div class=\"table-responsive\">
 
-                        <table id=\"listuser\" style= \"border : solid 1px darkgrey; \" class=\"display\"  cellspacing=\"0\" width=\"100%\">
+                        <table id=\"listuser\" style= \"border : solid 1px darkgrey; \" class=\"table table-striped table-bordered\"  cellspacing=\"0\" width=\"100%\">
                             <thead>
                                 <tr>
-
                                     <th> </th>
                                     <th>Nom </th>
                                     <th>Prénom</th>
@@ -184,18 +183,16 @@ class __TwigTemplate_c4179af3f1e03cdbf7b0c7cc559159fd3cc55ff82f3d45597c613b8f86f
                                     <th>Promotion</th>
                                     <th>Contact d'urgence</th>
                                     <th>Lycée fréquenté</th>
-
-
                                 </tr>
                             </thead>
 
                             <tbody>
                                 ";
-        // line 116
+        // line 113
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable((isset($context["membres"]) ? $context["membres"] : $this->getContext($context, "membres")));
         foreach ($context['_seq'] as $context["_key"] => $context["membre"]) {
-            // line 117
+            // line 114
             echo "                                    <tr>
 
 
@@ -204,7 +201,7 @@ class __TwigTemplate_c4179af3f1e03cdbf7b0c7cc559159fd3cc55ff82f3d45597c613b8f86f
 
 
                                             <a class=\"green\" href=\"";
-            // line 124
+            // line 121
             echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("cestom_admin_modifier_member", array("idmembre" => $this->getAttribute($context["membre"], "idmembre", array()))), "html", null, true);
             echo "\">
                                                 <i class=\"ace-icon fa fa-pencil bigger-130\"></i>
@@ -212,44 +209,44 @@ class __TwigTemplate_c4179af3f1e03cdbf7b0c7cc559159fd3cc55ff82f3d45597c613b8f86f
 
                                         </td>
                                         <td>";
-            // line 129
+            // line 126
             echo twig_escape_filter($this->env, $this->getAttribute($context["membre"], "nomMembre", array()), "html", null, true);
             echo " </td>
                                         <td>";
-            // line 130
+            // line 127
             echo twig_escape_filter($this->env, $this->getAttribute($context["membre"], "prenomMembre", array()), "html", null, true);
             echo "</td>
                                         <td>";
-            // line 131
+            // line 128
             echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($context["membre"], "id", array()), "username", array()), "html", null, true);
             echo " </td>
                                         <td>";
-            // line 132
+            // line 129
             echo twig_escape_filter($this->env, $this->getAttribute($context["membre"], "sexe", array()), "html", null, true);
             echo "</td>
 
                                         <th>";
-            // line 134
+            // line 131
             echo twig_escape_filter($this->env, $this->getAttribute($context["membre"], "numeroPassportMembre", array()), "html", null, true);
             echo "</th>
                                         <th>";
-            // line 135
+            // line 132
             echo twig_escape_filter($this->env, $this->getAttribute($context["membre"], "dateExpiMembre", array()), "html", null, true);
             echo "</th>
                                         <th>";
-            // line 136
+            // line 133
             echo twig_escape_filter($this->env, $this->getAttribute($context["membre"], "dateEtabMembre", array()), "html", null, true);
             echo "</th>
                                         <th>";
-            // line 137
+            // line 134
             echo twig_escape_filter($this->env, $this->getAttribute($context["membre"], "promotionMembre", array()), "html", null, true);
             echo "</th>
                                         <th>";
-            // line 138
+            // line 135
             echo twig_escape_filter($this->env, $this->getAttribute($context["membre"], "contactUrgence", array()), "html", null, true);
             echo "</th>
                                         <th>";
-            // line 139
+            // line 136
             echo twig_escape_filter($this->env, $this->getAttribute($context["membre"], "dernierLyceeFrequente", array()), "html", null, true);
             echo "</th>
                                     </tr>
@@ -258,7 +255,7 @@ class __TwigTemplate_c4179af3f1e03cdbf7b0c7cc559159fd3cc55ff82f3d45597c613b8f86f
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['membre'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 142
+        // line 139
         echo "                            </tbody>
                         </table>
                     </div>
@@ -271,15 +268,15 @@ class __TwigTemplate_c4179af3f1e03cdbf7b0c7cc559159fd3cc55ff82f3d45597c613b8f86f
 ";
     }
 
-    // line 153
+    // line 150
     public function block_javascript($context, array $blocks = array())
     {
-        // line 154
+        // line 151
         echo "    <script type=\"text/javascript\" src=\"";
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("assets/js/jquery.dataTables.min.js"), "html", null, true);
         echo "\"></script>
     <script type=\"text/javascript\"src=\"";
-        // line 155
+        // line 152
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("assets/js/dataTables.responsive.min.js"), "html", null, true);
         echo "\"></script>
 
@@ -287,8 +284,7 @@ class __TwigTemplate_c4179af3f1e03cdbf7b0c7cc559159fd3cc55ff82f3d45597c613b8f86f
     <script type=\"text/javascript\" charset=\"utf-8\">
         jQuery(function(\$) {
 
-            \$('#listuser').removeClass('display')
-                    .addClass('table table-striped table-bordered');
+           
 
             \$('#listuser').DataTable({
                 \"language\": {
@@ -327,7 +323,7 @@ class __TwigTemplate_c4179af3f1e03cdbf7b0c7cc559159fd3cc55ff82f3d45597c613b8f86f
 
     public function getDebugInfo()
     {
-        return array (  283 => 155,  278 => 154,  275 => 153,  262 => 142,  253 => 139,  249 => 138,  245 => 137,  241 => 136,  237 => 135,  233 => 134,  228 => 132,  224 => 131,  220 => 130,  216 => 129,  208 => 124,  199 => 117,  195 => 116,  146 => 70,  132 => 59,  129 => 58,  119 => 54,  114 => 51,  110 => 50,  107 => 49,  97 => 45,  92 => 42,  88 => 41,  79 => 34,  76 => 33,  66 => 27,  52 => 14,  49 => 13,  40 => 6,  35 => 5,  32 => 4,  11 => 2,);
+        return array (  280 => 152,  275 => 151,  272 => 150,  259 => 139,  250 => 136,  246 => 135,  242 => 134,  238 => 133,  234 => 132,  230 => 131,  225 => 129,  221 => 128,  217 => 127,  213 => 126,  205 => 121,  196 => 114,  192 => 113,  146 => 70,  132 => 59,  129 => 58,  119 => 54,  114 => 51,  110 => 50,  107 => 49,  97 => 45,  92 => 42,  88 => 41,  79 => 34,  76 => 33,  66 => 27,  52 => 14,  49 => 13,  40 => 6,  35 => 5,  32 => 4,  11 => 2,);
     }
 }
 /* {# app/Resources/views/blog/index.html.twig #}*/
@@ -424,10 +420,9 @@ class __TwigTemplate_c4179af3f1e03cdbf7b0c7cc559159fd3cc55ff82f3d45597c613b8f86f
 /*                     <br>*/
 /*                     <div class="table-responsive">*/
 /* */
-/*                         <table id="listuser" style= "border : solid 1px darkgrey; " class="display"  cellspacing="0" width="100%">*/
+/*                         <table id="listuser" style= "border : solid 1px darkgrey; " class="table table-striped table-bordered"  cellspacing="0" width="100%">*/
 /*                             <thead>*/
 /*                                 <tr>*/
-/* */
 /*                                     <th> </th>*/
 /*                                     <th>Nom </th>*/
 /*                                     <th>Prénom</th>*/
@@ -439,8 +434,6 @@ class __TwigTemplate_c4179af3f1e03cdbf7b0c7cc559159fd3cc55ff82f3d45597c613b8f86f
 /*                                     <th>Promotion</th>*/
 /*                                     <th>Contact d'urgence</th>*/
 /*                                     <th>Lycée fréquenté</th>*/
-/* */
-/* */
 /*                                 </tr>*/
 /*                             </thead>*/
 /* */
@@ -490,8 +483,7 @@ class __TwigTemplate_c4179af3f1e03cdbf7b0c7cc559159fd3cc55ff82f3d45597c613b8f86f
 /*     <script type="text/javascript" charset="utf-8">*/
 /*         jQuery(function($) {*/
 /* */
-/*             $('#listuser').removeClass('display')*/
-/*                     .addClass('table table-striped table-bordered');*/
+/*            */
 /* */
 /*             $('#listuser').DataTable({*/
 /*                 "language": {*/

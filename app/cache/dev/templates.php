@@ -153,6 +153,7 @@
   'FOSUserBundle:Profile:edit_content.html.twig' => '/var/www/cestom/vendor/friendsofsymfony/user-bundle/Resources/views/Profile/edit_content.html.twig',
   'FOSUserBundle:Profile:show_content.html.twig' => '/var/www/cestom/vendor/friendsofsymfony/user-bundle/Resources/views/Profile/show_content.html.twig',
   'VichUploaderBundle:Form:fields.html.twig' => '/var/www/cestom/vendor/vich/uploader-bundle/Resources/views/Form/fields.html.twig',
+  'CestomLoginBundle:Default:index.html.twig' => '/var/www/cestom/src/CestomLoginBundle/Resources/views/Default/index.html.twig',
   'DebugBundle:Profiler:dump.html.twig' => '/var/www/cestom/vendor/symfony/symfony/src/Symfony/Bundle/DebugBundle/Resources/views/Profiler/dump.html.twig',
   'WebProfilerBundle:Profiler:header.html.twig' => '/var/www/cestom/vendor/symfony/symfony/src/Symfony/Bundle/WebProfilerBundle/Resources/views/Profiler/header.html.twig',
   'WebProfilerBundle:Profiler:toolbar_item.html.twig' => '/var/www/cestom/vendor/symfony/symfony/src/Symfony/Bundle/WebProfilerBundle/Resources/views/Profiler/toolbar_item.html.twig',

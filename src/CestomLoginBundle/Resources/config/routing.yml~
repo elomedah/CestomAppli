@@ -1,0 +1,3 @@
+cestom_login_homepage:
+    path:     /redirect/login
+    defaults: { _controller: CestomLoginBundle:Default:index }

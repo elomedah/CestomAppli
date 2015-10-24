@@ -26,6 +26,7 @@ class AppKernel extends Kernel
 			// Bundle tiers
             new FOS\UserBundle\FOSUserBundle(),
 			new Vich\UploaderBundle\VichUploaderBundle(),
+            new CestomLoginBundle\CestomLoginBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

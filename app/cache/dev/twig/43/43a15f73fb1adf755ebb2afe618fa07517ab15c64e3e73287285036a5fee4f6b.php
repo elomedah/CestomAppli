@@ -247,10 +247,10 @@ class __TwigTemplate_7c7a0b381ee23a100463dc942b696cd455f7c83e349a999683241efee32
                                                     <th> </th>
                                                     <th>Libellé  </th>
                                                     <th>Université</th>
-                                                    <th>Durée </th>
+                                                    <th>Diplôme visé </th>
+                                                    <th>Durée</th>
                                                     <th>Date début</th>
                                                     <th>Programme de bourse</th>
-                                                    <th>Diplôme visé</th>
 
                                                 </tr>
                                             </thead>
@@ -582,10 +582,10 @@ class __TwigTemplate_7c7a0b381ee23a100463dc942b696cd455f7c83e349a999683241efee32
 /*                                                     <th> </th>*/
 /*                                                     <th>Libellé  </th>*/
 /*                                                     <th>Université</th>*/
-/*                                                     <th>Durée </th>*/
+/*                                                     <th>Diplôme visé </th>*/
+/*                                                     <th>Durée</th>*/
 /*                                                     <th>Date début</th>*/
 /*                                                     <th>Programme de bourse</th>*/
-/*                                                     <th>Diplôme visé</th>*/
 /* */
 /*                                                 </tr>*/
 /*                                             </thead>*/

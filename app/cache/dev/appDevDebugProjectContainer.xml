@@ -22,6 +22,7 @@
       <parameter key="CestomStoreBundle">Cestom\StoreBundle\CestomStoreBundle</parameter>
       <parameter key="FOSUserBundle">FOS\UserBundle\FOSUserBundle</parameter>
       <parameter key="VichUploaderBundle">Vich\UploaderBundle\VichUploaderBundle</parameter>
+      <parameter key="CestomLoginBundle">CestomLoginBundle\CestomLoginBundle</parameter>
       <parameter key="DebugBundle">Symfony\Bundle\DebugBundle\DebugBundle</parameter>
       <parameter key="WebProfilerBundle">Symfony\Bundle\WebProfilerBundle\WebProfilerBundle</parameter>
       <parameter key="SensioDistributionBundle">Sensio\Bundle\DistributionBundle\SensioDistributionBundle</parameter>
@@ -466,6 +467,7 @@
       <parameter>CestomStoreBundle</parameter>
       <parameter>FOSUserBundle</parameter>
       <parameter>VichUploaderBundle</parameter>
+      <parameter>CestomLoginBundle</parameter>
       <parameter>DebugBundle</parameter>
       <parameter>WebProfilerBundle</parameter>
       <parameter>SensioDistributionBundle</parameter>
@@ -2182,6 +2184,12 @@
         <argument>en</argument>
         <argument>VichUploaderBundle</argument>
       </call>
+      <call method="addResource">
+        <argument>xlf</argument>
+        <argument>/var/www/cestom/src/CestomLoginBundle/Resources/translations/messages.fr.xlf</argument>
+        <argument>fr</argument>
+        <argument>messages</argument>
+      </call>
     </service>
     <service id="translation.loader.php" class="Symfony\Component\Translation\Loader\PhpFileLoader">
       <tag name="translation.loader" alias="php"/>
@@ -3156,7 +3164,7 @@
         </argument>
         <argument type="service">
           <service class="Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider" public="false">
-            <argument>5628c80d7e9aa2.02544574</argument>
+            <argument>562b9ff6905fe2.07758537</argument>
           </service>
         </argument>
       </argument>
@@ -3415,7 +3423,7 @@
                 <argument type="collection"/>
                 <call method="setOptions">
                   <argument type="collection">
-                    <argument key="default_target_path">cestom_admin_homepage</argument>
+                    <argument key="default_target_path">cestom_login_homepage</argument>
                     <argument key="always_use_default_target_path">true</argument>
                     <argument key="use_referer">true</argument>
                     <argument key="login_path">/login</argument>
@@ -3466,7 +3474,7 @@
         <argument type="service">
           <service class="Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener" public="false">
             <argument type="service" id="security.context"/>
-            <argument>5628c80d7e9aa2.02544574</argument>
+            <argument>562b9ff6905fe2.07758537</argument>
             <argument type="service" id="monolog.logger.security" on-invalid="null"/>
             <argument type="service" id="security.authentication.manager"/>
           </service>
@@ -3737,6 +3745,7 @@
               <argument>CestomStoreBundle</argument>
               <argument>FOSUserBundle</argument>
               <argument>VichUploaderBundle</argument>
+              <argument>CestomLoginBundle</argument>
               <argument>DebugBundle</argument>
               <argument>WebProfilerBundle</argument>
               <argument>SensioDistributionBundle</argument>
@@ -4243,6 +4252,33 @@
                   <argument type="service" id="templating.loader"/>
                   <argument>VichUploaderBundle</argument>
                   <argument>/var/www/cestom/vendor/vich/uploader-bundle/Resources/views</argument>
+                  <argument>/\.[^.]+\.twig$/</argument>
+                </service>
+              </argument>
+            </argument>
+          </service>
+        </argument>
+        <argument>twig</argument>
+      </call>
+      <call method="addResource">
+        <argument type="service">
+          <service class="Symfony\Bundle\AsseticBundle\Factory\Resource\CoalescingDirectoryResource" public="false">
+            <tag name="assetic.templating.twig"/>
+            <tag name="assetic.formula_resource" loader="twig"/>
+            <argument type="collection">
+              <argument type="service">
+                <service class="%assetic.directory_resource.class%" public="false">
+                  <argument type="service" id="templating.loader"/>
+                  <argument>CestomLoginBundle</argument>
+                  <argument>/var/www/cestom/app/Resources/CestomLoginBundle/views</argument>
+                  <argument>/\.[^.]+\.twig$/</argument>
+                </service>
+              </argument>
+              <argument type="service">
+                <service class="%assetic.directory_resource.class%" public="false">
+                  <argument type="service" id="templating.loader"/>
+                  <argument>CestomLoginBundle</argument>
+                  <argument>/var/www/cestom/src/CestomLoginBundle/Resources/views</argument>
                   <argument>/\.[^.]+\.twig$/</argument>
                 </service>
               </argument>
@@ -5280,6 +5316,10 @@
       <call method="addPath">
         <argument>/var/www/cestom/vendor/vich/uploader-bundle/Resources/views</argument>
         <argument>VichUploader</argument>
+      </call>
+      <call method="addPath">
+        <argument>/var/www/cestom/src/CestomLoginBundle/Resources/views</argument>
+        <argument>CestomLogin</argument>
       </call>
       <call method="addPath">
         <argument>/var/www/cestom/vendor/symfony/symfony/src/Symfony/Bundle/DebugBundle/Resources/views</argument>

@@ -1,3 +1,7 @@
+cestom_login:
+    resource: "@CestomLoginBundle/Resources/config/routing.yml"
+    prefix:   /login
+
 cestom_gestion_des_articles:
     resource: "@CestomArticleBundle/Resources/config/routing.yml"
     prefix:   /cms/

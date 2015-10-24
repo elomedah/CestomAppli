@@ -210,12 +210,12 @@ class __TwigTemplate_a7c525e232e0a2fba27ebe257d2d87d11c6253d5e66c35803c25f8f1923
                                                 <tr>
 
                                                     <th> </th>
-                                                    <th>Libellé  </th>
+                                                      <th>Libellé  </th>
                                                     <th>Université</th>
-                                                    <th>Durée </th>
+                                                    <th>Diplôme visé </th>
+                                                    <th>Durée</th>
                                                     <th>Date début</th>
                                                     <th>Programme de bourse</th>
-                                                    <th>Diplôme visé</th>
 
                                                 </tr>
                                             </thead>
@@ -533,12 +533,12 @@ class __TwigTemplate_a7c525e232e0a2fba27ebe257d2d87d11c6253d5e66c35803c25f8f1923
 /*                                                 <tr>*/
 /* */
 /*                                                     <th> </th>*/
-/*                                                     <th>Libellé  </th>*/
+/*                                                       <th>Libellé  </th>*/
 /*                                                     <th>Université</th>*/
-/*                                                     <th>Durée </th>*/
+/*                                                     <th>Diplôme visé </th>*/
+/*                                                     <th>Durée</th>*/
 /*                                                     <th>Date début</th>*/
 /*                                                     <th>Programme de bourse</th>*/
-/*                                                     <th>Diplôme visé</th>*/
 /* */
 /*                                                 </tr>*/
 /*                                             </thead>*/

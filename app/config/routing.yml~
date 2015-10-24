@@ -1,0 +1,26 @@
+cestom_login:
+    resource: "@CestomLoginBundle/Resources/config/routing.yml"
+    prefix:   /
+
+cestom_gestion_des_articles:
+    resource: "@CestomArticleBundle/Resources/config/routing.yml"
+    prefix:   /cms/
+
+cestom_home:
+    path:     /
+    defaults: { _controller: "CestomArticleBundle:Cms:index" }
+
+cestom_store:
+    resource: "@CestomStoreBundle/Resources/config/routing.yml"
+    prefix:   /admin
+
+cestom_user:
+    resource: "@CestomUserBundle/Resources/config/routing.yml"
+    prefix:   /user
+
+cestom_admin:
+    resource: "@CestomAdminBundle/Resources/config/routing.yml"
+    prefix:   /admin
+
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"
