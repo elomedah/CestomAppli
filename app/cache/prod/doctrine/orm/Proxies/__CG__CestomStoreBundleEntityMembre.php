@@ -64,10 +64,10 @@ class Membre extends \Cestom\StoreBundle\Entity\Membre implements \Doctrine\ORM\
     public function __sleep()
     {
         if ($this->__isInitialized__) {
-            return array('__isInitialized__', '' . "\0" . 'Cestom\\StoreBundle\\Entity\\Membre' . "\0" . 'sexe', '' . "\0" . 'Cestom\\StoreBundle\\Entity\\Membre' . "\0" . 'nomMembre', '' . "\0" . 'Cestom\\StoreBundle\\Entity\\Membre' . "\0" . 'prenomMembre', '' . "\0" . 'Cestom\\StoreBundle\\Entity\\Membre' . "\0" . 'numeroPassportMembre', '' . "\0" . 'Cestom\\StoreBundle\\Entity\\Membre' . "\0" . 'dateExpiMembre', '' . "\0" . 'Cestom\\StoreBundle\\Entity\\Membre' . "\0" . 'dateEtabMembre', '' . "\0" . 'Cestom\\StoreBundle\\Entity\\Membre' . "\0" . 'promotionMembre', '' . "\0" . 'Cestom\\StoreBundle\\Entity\\Membre' . "\0" . 'dateNaissanceMembre', '' . "\0" . 'Cestom\\StoreBundle\\Entity\\Membre' . "\0" . 'contactUrgence', '' . "\0" . 'Cestom\\StoreBundle\\Entity\\Membre' . "\0" . 'telephonefirst', '' . "\0" . 'Cestom\\StoreBundle\\Entity\\Membre' . "\0" . 'telephonesecond', '' . "\0" . 'Cestom\\StoreBundle\\Entity\\Membre' . "\0" . 'infoComplementmembre', '' . "\0" . 'Cestom\\StoreBundle\\Entity\\Membre' . "\0" . 'photoMimMembre', '' . "\0" . 'Cestom\\StoreBundle\\Entity\\Membre' . "\0" . 'dernierLyceeFrequente', '' . "\0" . 'Cestom\\StoreBundle\\Entity\\Membre' . "\0" . 'idmembre', '' . "\0" . 'Cestom\\StoreBundle\\Entity\\Membre' . "\0" . 'id');
+            return array('__isInitialized__', '' . "\0" . 'Cestom\\StoreBundle\\Entity\\Membre' . "\0" . 'sexe', '' . "\0" . 'Cestom\\StoreBundle\\Entity\\Membre' . "\0" . 'nomMembre', '' . "\0" . 'Cestom\\StoreBundle\\Entity\\Membre' . "\0" . 'prenomMembre', '' . "\0" . 'Cestom\\StoreBundle\\Entity\\Membre' . "\0" . 'numeroPassportMembre', '' . "\0" . 'Cestom\\StoreBundle\\Entity\\Membre' . "\0" . 'dateExpiMembre', '' . "\0" . 'Cestom\\StoreBundle\\Entity\\Membre' . "\0" . 'dateEtabMembre', '' . "\0" . 'Cestom\\StoreBundle\\Entity\\Membre' . "\0" . 'promotionMembre', '' . "\0" . 'Cestom\\StoreBundle\\Entity\\Membre' . "\0" . 'dateNaissanceMembre', '' . "\0" . 'Cestom\\StoreBundle\\Entity\\Membre' . "\0" . 'contactUrgence', '' . "\0" . 'Cestom\\StoreBundle\\Entity\\Membre' . "\0" . 'telephonefirst', '' . "\0" . 'Cestom\\StoreBundle\\Entity\\Membre' . "\0" . 'telephonesecond', '' . "\0" . 'Cestom\\StoreBundle\\Entity\\Membre' . "\0" . 'infoComplementmembre', '' . "\0" . 'Cestom\\StoreBundle\\Entity\\Membre' . "\0" . 'photoMimMembre', '' . "\0" . 'Cestom\\StoreBundle\\Entity\\Membre' . "\0" . 'dernierLyceeFrequente', '' . "\0" . 'Cestom\\StoreBundle\\Entity\\Membre' . "\0" . 'idmembre', '' . "\0" . 'Cestom\\StoreBundle\\Entity\\Membre' . "\0" . 'id', '' . "\0" . 'Cestom\\StoreBundle\\Entity\\Membre' . "\0" . 'fichierPhotoMimMembre', '' . "\0" . 'Cestom\\StoreBundle\\Entity\\Membre' . "\0" . 'misAJour');
         }
 
-        return array('__isInitialized__', '' . "\0" . 'Cestom\\StoreBundle\\Entity\\Membre' . "\0" . 'sexe', '' . "\0" . 'Cestom\\StoreBundle\\Entity\\Membre' . "\0" . 'nomMembre', '' . "\0" . 'Cestom\\StoreBundle\\Entity\\Membre' . "\0" . 'prenomMembre', '' . "\0" . 'Cestom\\StoreBundle\\Entity\\Membre' . "\0" . 'numeroPassportMembre', '' . "\0" . 'Cestom\\StoreBundle\\Entity\\Membre' . "\0" . 'dateExpiMembre', '' . "\0" . 'Cestom\\StoreBundle\\Entity\\Membre' . "\0" . 'dateEtabMembre', '' . "\0" . 'Cestom\\StoreBundle\\Entity\\Membre' . "\0" . 'promotionMembre', '' . "\0" . 'Cestom\\StoreBundle\\Entity\\Membre' . "\0" . 'dateNaissanceMembre', '' . "\0" . 'Cestom\\StoreBundle\\Entity\\Membre' . "\0" . 'contactUrgence', '' . "\0" . 'Cestom\\StoreBundle\\Entity\\Membre' . "\0" . 'telephonefirst', '' . "\0" . 'Cestom\\StoreBundle\\Entity\\Membre' . "\0" . 'telephonesecond', '' . "\0" . 'Cestom\\StoreBundle\\Entity\\Membre' . "\0" . 'infoComplementmembre', '' . "\0" . 'Cestom\\StoreBundle\\Entity\\Membre' . "\0" . 'photoMimMembre', '' . "\0" . 'Cestom\\StoreBundle\\Entity\\Membre' . "\0" . 'dernierLyceeFrequente', '' . "\0" . 'Cestom\\StoreBundle\\Entity\\Membre' . "\0" . 'idmembre', '' . "\0" . 'Cestom\\StoreBundle\\Entity\\Membre' . "\0" . 'id');
+        return array('__isInitialized__', '' . "\0" . 'Cestom\\StoreBundle\\Entity\\Membre' . "\0" . 'sexe', '' . "\0" . 'Cestom\\StoreBundle\\Entity\\Membre' . "\0" . 'nomMembre', '' . "\0" . 'Cestom\\StoreBundle\\Entity\\Membre' . "\0" . 'prenomMembre', '' . "\0" . 'Cestom\\StoreBundle\\Entity\\Membre' . "\0" . 'numeroPassportMembre', '' . "\0" . 'Cestom\\StoreBundle\\Entity\\Membre' . "\0" . 'dateExpiMembre', '' . "\0" . 'Cestom\\StoreBundle\\Entity\\Membre' . "\0" . 'dateEtabMembre', '' . "\0" . 'Cestom\\StoreBundle\\Entity\\Membre' . "\0" . 'promotionMembre', '' . "\0" . 'Cestom\\StoreBundle\\Entity\\Membre' . "\0" . 'dateNaissanceMembre', '' . "\0" . 'Cestom\\StoreBundle\\Entity\\Membre' . "\0" . 'contactUrgence', '' . "\0" . 'Cestom\\StoreBundle\\Entity\\Membre' . "\0" . 'telephonefirst', '' . "\0" . 'Cestom\\StoreBundle\\Entity\\Membre' . "\0" . 'telephonesecond', '' . "\0" . 'Cestom\\StoreBundle\\Entity\\Membre' . "\0" . 'infoComplementmembre', '' . "\0" . 'Cestom\\StoreBundle\\Entity\\Membre' . "\0" . 'photoMimMembre', '' . "\0" . 'Cestom\\StoreBundle\\Entity\\Membre' . "\0" . 'dernierLyceeFrequente', '' . "\0" . 'Cestom\\StoreBundle\\Entity\\Membre' . "\0" . 'idmembre', '' . "\0" . 'Cestom\\StoreBundle\\Entity\\Membre' . "\0" . 'id', '' . "\0" . 'Cestom\\StoreBundle\\Entity\\Membre' . "\0" . 'fichierPhotoMimMembre', '' . "\0" . 'Cestom\\StoreBundle\\Entity\\Membre' . "\0" . 'misAJour');
     }
 
     /**
@@ -173,6 +173,50 @@ class Membre extends \Cestom\StoreBundle\Entity\Membre implements \Doctrine\ORM\
     }
 
     
+    /**
+     * {@inheritDoc}
+     */
+    public function setFichierPhotoMimMembre(\Symfony\Component\HttpFoundation\File\File $image = NULL)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setFichierPhotoMimMembre', array($image));
+
+        return parent::setFichierPhotoMimMembre($image);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getFichierPhotoMimMembre()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getFichierPhotoMimMembre', array());
+
+        return parent::getFichierPhotoMimMembre();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setMisAJour($misAJour)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setMisAJour', array($misAJour));
+
+        return parent::setMisAJour($misAJour);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getMisAJour()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getMisAJour', array());
+
+        return parent::getMisAJour();
+    }
+
     /**
      * {@inheritDoc}
      */
@@ -499,7 +543,7 @@ class Membre extends \Cestom\StoreBundle\Entity\Membre implements \Doctrine\ORM\
     /**
      * {@inheritDoc}
      */
-    public function setId(\Cestom\StoreBundle\Entity\Fosuser $id = NULL)
+    public function setId(\Cestom\UserBundle\Entity\User $id = NULL)
     {
 
         $this->__initializer__ && $this->__initializer__->__invoke($this, 'setId', array($id));

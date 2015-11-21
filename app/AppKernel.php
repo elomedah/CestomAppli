@@ -22,11 +22,11 @@ class AppKernel extends Kernel
             new Cestom\AdminBundle\CestomAdminBundle(),
             new Cestom\UserBundle\CestomUserBundle(),
             new Cestom\StoreBundle\CestomStoreBundle(),
-			
+            new CestomLoginBundle\CestomLoginBundle(),			
 			// Bundle tiers
             new FOS\UserBundle\FOSUserBundle(),
-			new Vich\UploaderBundle\VichUploaderBundle(),
-            new CestomLoginBundle\CestomLoginBundle(),
+	    new Vich\UploaderBundle\VichUploaderBundle(),
+            new Cestom\Bundle\TestBundle\CestomTestBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

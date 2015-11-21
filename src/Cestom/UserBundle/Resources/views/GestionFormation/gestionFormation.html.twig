@@ -8,6 +8,7 @@
 		
     %}
     <link href="{{ asset_url }}" type="text/css" rel="stylesheet" />
+	<link rel="stylesheet" type="text/css" href="{{ asset('assets/css/formulaires.css')}}" />
     {% endstylesheets %}
 {% endblock %}
 
@@ -53,27 +54,43 @@
                             <div class="panel-group ">
                                 <div class="panel panel-primary">
                                     <div class="panel-heading">
-                                        <a style="padding:10px;" class="white" href="{{path('cestom_user_modifier_formation',{'idformation':formation.idformation})}}">
-                                            <i class="ace-icon fa fa-pencil bigger-160"></i>
-                                        </a>
-                                        <a style="padding:10px;" class="red delete" href="{{path('cestom_user_delete_formation',{'idformation':formation.idformation})}}">
-                                            <i class="ace-icon fa fa-trash bigger-160"></i>
-                                        </a> 
+                                        <!--<div class="col-sm-3">-->
+											<a style="padding:10px;" class="white" href="{{path('cestom_user_modifier_formation',{'idformation':formation.idformation})}}">
+												<i class="ace-icon fa fa-pencil bigger-160"></i>
+											</a>
+											<a style="padding:10px;" class="red delete" href="{{path('cestom_user_delete_formation',{'idformation':formation.idformation})}}">
+												<i class="ace-icon fa fa-trash bigger-160"></i>
+											</a> 
 
-                                        <a style="padding:10px;" class="white" href="{{path('cestom_user_ajouter_formation')}}">
-                                            <i class="ace-icon fa fa-plus bigger-160"></i>
-                                        </a> 
-
+											<a style="padding:10px;" class="white" href="{{path('cestom_user_ajouter_formation')}}">
+												<i class="ace-icon fa fa-plus bigger-160"></i>
+											</a> 
+                                      <!--  </div>
+										
+										<div class="titre-formaction col-sm-9">
+											{{ 	formation.libelleFormation}}
+										</div>-->
                                     </div>
                                     <div class="panel-body">
-
-
-                                        <label> Libelle de la formation</label> : <span> {{ formation.libelleFormation}}</span> <br>
-                                        <label>Université </label> : <span> {{formation.iduniv.nomuniv}}</span> <br>
-                                        <label>Diplôme visé </label> :  <span> {{formation.diplomeViseFormation}}</span> <br>
-                                        <label>Durée de la formation </label> : <span> {{formation.dureeFormation}}</span> <br>
-                                        <label>Date début formation </label> : <span> {{formation.dateDebutFormation}}</span> <br>
-                                        <label>Programme de bourse </label> : <span> {{formation.programmeBourse}}</span> <br>
+										<div class="row white-background">
+											<label class="col-sm-6  label-formation"> Formation   </label>
+											<span class="col-sm-6  label-formation "> {{ 	formation.libelleFormation}}</span> <br>
+										</div>
+										<div class="row white-background">
+                                        <label class="col-sm-6  label-formation">Université </label>   <span class="col-sm-6  label-formation"> {{formation.iduniv.nomuniv}}</span> <br>
+                                        </div>
+										<div class="row white-background">
+											<label class="col-sm-6  label-formation">Diplôme visé </label>    <span class="col-sm-6  label-formation"> {{formation.diplomeViseFormation}}</span> <br>
+                                        </div>
+										<div class="row white-background">
+											<label class="col-sm-6  label-formation">Durée  </label>   <span class="col-sm-6  label-formation"> {{formation.dureeFormation}}</span> <br>
+										</div>
+                                        <div class="row white-background">
+											<label class="col-sm-6  label-formation">Début </label>   <span class="col-sm-6  label-formation"> {{formation.dateDebutFormation}}</span> <br>
+										</div>
+                                        <div class="row white-background">
+											<label class="col-sm-6  label-formation">Programme de bourse </label>   <span class="col-sm-6  label-formation"> {{formation.programmeBourse}}</span> <br>
+										</div>
 
                                     </div>
                                 </div>

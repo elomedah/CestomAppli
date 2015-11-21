@@ -1,0 +1,3 @@
+<vich_uploader class="Cestom\StoreBundle\Entity\Bourse">
+  <field mapping="fichier_bourse" name="fichierBourse" filename_property="docBourse" />
+</vich_uploader>

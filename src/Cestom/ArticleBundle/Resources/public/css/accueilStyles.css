@@ -38,10 +38,10 @@ header{
 	left:0px;
 }
 .coordination{
-	margin-top:10px;
-	font-size: 13px;
+   margin-top:10px;
+  font-size: 13px;
   font-family: "Roboto Condensed";
-  color: rgb( 222, 227, 230 );
+  color: rgb(177, 175, 175);
   text-transform: uppercase;
   line-height: 1;
   text-align: left;
@@ -66,10 +66,12 @@ header{
     transform: translate(-75px,0px);
 	z-index: 125;
 }
+/*
 .coordination span{
 	display: block;
 	line-height: 16px;
 }
+*/
 .boutons_header{
 	vertical-align: middle;
 }
@@ -97,7 +99,7 @@ h3{
   z-index: 47;
 }
 
-/*actu togo*/
+/* actu togo */
 .image_actualites{
 	width:100%;
 	height: 200px;
@@ -111,17 +113,16 @@ h3{
 	font-size: 15px;
 	font-family: "Roboto Condensed";
 }
-.banieresTogo{
-	background-color: #ecbe0e;
-	border-style: none;
-	opacity:1;
-	line-height: 2.3;
-	position: absolute;
-	margin-top: 20px;
-	margin-left: 0px;
-	width: 55%;
-
+.banieresTogo {
+    background-color: #ecbe0e;
+    border-style: none;
+    opacity: 1;
+    line-height: 2.3;
+    position: absolute;
+    margin-top: 12px;
+    margin-left: 0px;
 }
+
 h1,
 .banieresMaroc,
 .banieresTogo,
@@ -159,7 +160,7 @@ h1,
   
 }
 .intro{
-	color:rgb(159, 157, 157);
+	color: rgb(177, 175, 175);
 	font-family:"roboto condensed";
 	}
 .actu_togo{
@@ -167,7 +168,6 @@ h1,
 	display:block;
 	position:relative;
 	top:0px;
-	
 }
 .d-precedent,.d-suivant{
 	position: relative;
@@ -211,9 +211,10 @@ h1,
   padding-right:15px;
   vertical-align: middle;
 }
-.titre_actu_maroc{
-	max-width: 155px;
-	line-height: 1.8;
+.titre_actu_maroc {
+    max-width: 155px;
+    width: 100px;
+    line-height: 1.8;
 }
 section{
 	margin-bottom:25px;
@@ -226,13 +227,13 @@ section{
 	margin-bottom:10px;
 	padding-left:10px;
 }
-.banieresMaroc{
-	position: absolute;
-	top: 20px;
-	left: 0px;
-	width:40%;
-	line-height: 2.3;
-	max-width: 150px;
+.banieresMaroc {
+    position: absolute;
+    top: 20px;
+    left: 0px;
+    /* width: 40%; */
+    line-height: 2.3;
+    max-width: 150px;
 }
 .actu_avance{
 	float:left;
@@ -261,14 +262,10 @@ section aside .actu-reduit{
 	text-align:left;
 	vertical-align:left;
 }
-
-
 /*bureau executif*/
 .input-mail{
 	background-color: #ecbe0e;
 }
-
-
 /*nous contacter*/
 .bureau_executif{
 	background-color: #ecbe0e;
@@ -304,7 +301,6 @@ section aside .actu-reduit{
 	margin-top:10px;
 	margin-bottom:5px;
 }
-
 .newsletter{
 	margin-top:10px;
 }
@@ -316,9 +312,26 @@ section aside .actu-reduit{
 	vertical-align:middle;
 	width:100%;
 }
-.cestom-mail{
-	margin-top:20px;
+.cestom-mail, .cestom-mail a {
+    margin-top: 20px;
+    text-align: left;
+    color: rgb(177, 175, 175);
 }
 a{
 	color:black;
+}
+.menu-principal{
+	background-color:#ECBE0E;
+	display:none;
+}
+.search-input{
+	display:none;
+	background-color:#def021;
+	position:relative;
+	width: 250px;
+	position: absolute;
+	right:0px;
+}
+.search-icon{
+	color:white;
 }

@@ -1,0 +1,51 @@
+ {{ form_errors(form) }}
+	<fieldset >	
+		<div class="col-sm-10 widget-main">
+
+			{{ form_label(form.libelleExperience, "Expérience", {'label_attr': {'class': 'col-sm-3 control-label '}}) }}
+
+			{{ form_widget(form.libelleExperience, {'attr': {'class': 'col-xs-10 col-sm-5'}}) }}
+
+		</div>
+
+		<div class="col-sm-10 widget-main">
+
+			{{ form_label(form.iduniv, "Société", {'label_attr': {'class': 'col-sm-3 control-label '}}) }}
+
+			{{ form_widget(form.iduniv, {'attr': {'class': 'col-xs-10 col-sm-5'}}) }}
+
+		</div>
+		<div class="col-sm-10 widget-main">
+
+			{{ form_label(form.competenceAcquise, "Compétance acquise ", {'label_attr': {'class': 'col-sm-3 control-label '}}) }}
+
+			{{ form_widget(form.competenceAcquise, {'attr': {'class': 'col-xs-10 col-sm-5'}}) }}
+
+		</div>
+
+		<div class="col-sm-10 widget-main">
+
+			{{ form_label(form.dureeExperience, "Durée ", {'label_attr': {'class': 'col-sm-3 control-label '}}) }}
+
+			{{ form_widget(form.dureeExperience, {'attr': {'class': 'col-xs-10 col-sm-5'}}) }}
+
+		</div>
+		   
+			<div class="col-sm-10 widget-main">
+
+						<label class = "col-sm-3 control-label bold" for="dateDebutExperience">
+							Début
+						</label>
+
+						<div class="input-group col-xs-10 col-sm-5">
+							<input value="{{dateDebutExperience}}" name="dateDebutExperience" class=" required form-control date-picker" id="datenaissance" type="text" data-date-format="dd-mm-yyyy" />
+													<span class="input-group-addon">
+														<i class="fa fa-calendar bigger-110"></i>
+													</span>
+						</div>
+			</div>
+	</fieldset>
+				
+	{{ form_rest(form) }}
+
+                

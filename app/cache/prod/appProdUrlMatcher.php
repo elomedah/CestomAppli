@@ -27,6 +27,49 @@ class appProdUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirecta
         $context = $this->context;
         $request = $this->request;
 
+        // cestom_test_homepage
+        if (0 === strpos($pathinfo, '/sylvain') && preg_match('#^/sylvain/(?P<name>[^/]++)/(?P<prenom>[^/]++)$#s', $pathinfo, $matches)) {
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'cestom_test_homepage')), array (  '_controller' => 'Cestom\\Bundle\\TestBundle\\Controller\\DefaultController::indexAction',));
+        }
+
+        if (0 === strpos($pathinfo, '/page')) {
+            // cestom_test_Pages2
+            if ($pathinfo === '/page2') {
+                return array (  '_controller' => 'Cestom\\Bundle\\TestBundle\\Controller\\Page2Controller::page2Action',  '_route' => 'cestom_test_Pages2',);
+            }
+
+            // cestom_test_Pages1
+            if ($pathinfo === '/page1') {
+                return array (  '_controller' => 'Cestom\\Bundle\\TestBundle\\Controller\\Page1Controller::page1Action',  '_route' => 'cestom_test_Pages1',);
+            }
+
+        }
+
+        // cestom_test_statuts
+        if ($pathinfo === '/statuts') {
+            return array (  '_controller' => 'Cestom\\Bundle\\TestBundle\\Controller\\StatutsController::statutsAction',  '_route' => 'cestom_test_statuts',);
+        }
+
+        // cestom_test_gestion_experience
+        if ($pathinfo === '/gestionexperience') {
+            return array (  '_controller' => 'Cestom\\Bundle\\TestBundle\\Controller\\GestionExperienceController::listeExperienceAction',  '_route' => 'cestom_test_gestion_experience',);
+        }
+
+        // cestom_user_delete_experience
+        if (0 === strpos($pathinfo, '/deleteExperience') && preg_match('#^/deleteExperience/(?P<idexperience>[^/]++)$#s', $pathinfo, $matches)) {
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'cestom_user_delete_experience')), array (  '_controller' => 'Cestom\\Bundle\\TestBundle\\Controller\\GestionExperienceController::deleteExperienceAction',));
+        }
+
+        // cestom_user_ajouter_experience
+        if ($pathinfo === '/ajouterExperience') {
+            return array (  '_controller' => 'Cestom\\Bundle\\TestBundle\\Controller\\GestionExperienceController::ajouterExperienceAction',  '_route' => 'cestom_user_ajouter_experience',);
+        }
+
+        // cestom_user_modifier_experience
+        if (0 === strpos($pathinfo, '/modifierExperience') && preg_match('#^/modifierExperience/(?P<idexperience>[^/]++)$#s', $pathinfo, $matches)) {
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'cestom_user_modifier_experience')), array (  '_controller' => 'Cestom\\Bundle\\TestBundle\\Controller\\GestionExperienceController::modifierExperienceAction',));
+        }
+
         // cestom_login_homepage
         if ($pathinfo === '/login/redirect/login') {
             return array (  '_controller' => 'CestomLoginBundle\\Controller\\DefaultController::indexAction',  '_route' => 'cestom_login_homepage',);
@@ -46,6 +89,11 @@ class appProdUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirecta
                 // cestomarticlebundle_article_show
                 if (preg_match('#^/cms/article/(?P<id>[^/]++)/show$#s', $pathinfo, $matches)) {
                     return $this->mergeDefaults(array_replace($matches, array('_route' => 'cestomarticlebundle_article_show')), array (  '_controller' => 'Cestom\\ArticleBundle\\Controller\\ArticleController::showAction',));
+                }
+
+                // cestomarticlebundle_article_showPublic
+                if (preg_match('#^/cms/article/(?P<id>[^/]++)/showPublic$#s', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'cestomarticlebundle_article_showPublic')), array (  '_controller' => 'Cestom\\ArticleBundle\\Controller\\ArticleController::showPublicAction',));
                 }
 
                 // cestomarticlebundle_article_new
@@ -230,6 +278,11 @@ class appProdUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirecta
                 return array (  '_controller' => 'Cestom\\UserBundle\\Controller\\GestionCompteController::gestionCompteAction',  '_route' => 'cestom_user_homepage',);
             }
 
+            // cestom_user_image
+            if ($pathinfo === '/user/image/profil') {
+                return array (  '_controller' => 'Cestom\\UserBundle\\Controller\\GestionCompteController::gestionImageAction',  '_route' => 'cestom_user_image',);
+            }
+
             // cestom_user_gestion_formation
             if ($pathinfo === '/user/Formations') {
                 return array (  '_controller' => 'Cestom\\UserBundle\\Controller\\GestionFormationController::gestionFormationAction',  '_route' => 'cestom_user_gestion_formation',);
@@ -268,6 +321,16 @@ class appProdUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirecta
             // cestom_user_modifier_ville
             if (0 === strpos($pathinfo, '/user/modifierVille') && preg_match('#^/user/modifierVille/(?P<idvillemembre>[^/]++)$#s', $pathinfo, $matches)) {
                 return $this->mergeDefaults(array_replace($matches, array('_route' => 'cestom_user_modifier_ville')), array (  '_controller' => 'Cestom\\UserBundle\\Controller\\GestionVilleController::modifierVilleAction',));
+            }
+
+            // cestom_user_ajouter_fichier
+            if ($pathinfo === '/user/gestionBourse') {
+                return array (  '_controller' => 'Cestom\\UserBundle\\Controller\\GestionBourseController::ajouterDocBourseAction',  '_route' => 'cestom_user_ajouter_fichier',);
+            }
+
+            // cestom_user_supprimer_fichier
+            if (0 === strpos($pathinfo, '/user/deleteFichier') && preg_match('#^/user/deleteFichier/(?P<idbourse>[^/]++)$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'cestom_user_supprimer_fichier')), array (  '_controller' => 'Cestom\\UserBundle\\Controller\\GestionBourseController::deleteDocBourseAction',));
             }
 
         }
@@ -357,6 +420,11 @@ class appProdUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirecta
 
                 }
 
+            }
+
+            // cestom_admin_attente_bourse
+            if ($pathinfo === '/admin/bourse/attenteValidation') {
+                return array (  '_controller' => 'Cestom\\AdminBundle\\Controller\\GestionBourseController::listeAttenteBourseAction',  '_route' => 'cestom_admin_attente_bourse',);
             }
 
         }

@@ -9,6 +9,8 @@ drop table if exists BUREAU_VILLE;
 
 drop table if exists FORMATION;
 
+drop table if exists EXPERIENCE;
+
 drop table if exists VILLE_MEMBRE;
 
 drop table if exists MEMBRE;
@@ -19,6 +21,8 @@ drop table if exists UNIVERSITE;
 drop table if exists VILLE;
 
 drop table if exists FOSUSER;
+
+
 
 
 /*==============================================================*/
@@ -50,6 +54,22 @@ create table FORMATION
    COMPETENCE_ACQUISE   varchar (1000 ),
    ID_FORMATION int not null AUTO_INCREMENT ,
    primary key ( ID_FORMATION )
+);
+
+/*==============================================================*/
+/* Table : EXPERIENCE                                           */
+/*==============================================================*/
+
+create table EXPERIENCE
+(
+   IDMEMBRE             			int not null,
+   ID_EXPERIENCE               		int not null AUTO_INCREMENT,
+   LIBELLE_EXPERIENCE    			varchar(255) not null,
+   SOCIETE              			varchar(255) not null,
+   DATE_DEBUT_EXPERIENCE 			varchar(255),
+   DATE_FIN_EXPERIENCE      		varchar(255),
+   COMPETENCE_ACQUISE_EXPERIENCE    varchar (1000),
+   primary key ( ID_EXPERIENCE )
 );
 
 /*==============================================================*/
@@ -149,6 +169,9 @@ alter table BUREAU_VILLE add constraint FK_BUREAU_VILLE2 foreign key (IDMEMBRE)
       references MEMBRE (IDMEMBRE) on delete restrict on update restrict;
 
 alter table FORMATION add constraint FK_FORMATION_MEMBRE foreign key (IDMEMBRE)
+      references MEMBRE (IDMEMBRE) on delete restrict on update restrict;
+	  
+alter table EXPERIENCE add constraint FK_EXPERIENCE_MEMBRE foreign key (IDMEMBRE)
       references MEMBRE (IDMEMBRE) on delete restrict on update restrict;
 
 alter table FORMATION add constraint FK_UNIVERSITE_FORMATION foreign key (IDUNIV)

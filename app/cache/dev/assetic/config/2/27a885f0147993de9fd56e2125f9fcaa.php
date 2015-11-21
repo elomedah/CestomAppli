@@ -42,7 +42,7 @@ return array (
       ),
     ),
   ),
-  'e9e056b' => 
+  'ec27934' => 
   array (
     0 => 
     array (
@@ -50,6 +50,7 @@ return array (
       1 => 'bundles/cestomarticle/css/bootstrap-theme.min.css',
       2 => 'bundles/cestomarticle/css/font-awesome.min.css',
       3 => 'bundles/cestomarticle/css/colorbox.css',
+      4 => 'bundles/cestomarticle/css/accueilStyles.css',
     ),
     1 => 
     array (
@@ -57,8 +58,8 @@ return array (
     ),
     2 => 
     array (
-      'output' => '_controller/css/e9e056b.css',
-      'name' => 'e9e056b',
+      'output' => '_controller/css/ec27934.css',
+      'name' => 'ec27934',
       'debug' => NULL,
       'combine' => NULL,
       'vars' => 

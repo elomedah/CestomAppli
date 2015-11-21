@@ -6,6 +6,7 @@
         <link rel="icon" type="image/x-icon" href="{{ asset('icone-site-cestom.ico') }}" />
 
         <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css')}}" />
+        <link rel="stylesheet" href="{{ asset('assets/css/formulaires.css')}}" />
         <link rel="stylesheet" href="{{ asset('assets/css/dataTable.min.css')}}" />
         <!-- bootstrap & fontawesome -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
@@ -23,32 +24,40 @@
         <!-- Date picker css -->
         <link rel="stylesheet" href="{{asset('assets/css/datepicker.css')}}" />	
         <link rel="stylesheet" href="{{asset('assets/css/bootstrap-datetimepicker.css')}}" />
-
-        {% block stylesheets %}
-        {% endblock %}
+<style>
+		
+		.navbar{ 
+		background-color:#337ab7
+		}
+ 		
+	</style>
+        {% block stylesheets %}{% endblock %}
     </head>
     <body>
         {% block header %}
-            <header>
-                <div class="container">
-                    <div class="row">
-                        <div class="col-sm-6 logo-slogan">
-                            <div style="padding:20px" class="defit">Rélevons le défi</div>
-                            {% image '@CestomArticleBundle/Resources/public/images/logo-cestom-entete.png' %}
-                            <img src="{{ asset_url }}" alt="logo-CESTOM"/>
-                            {% endimage %}
-                            <div class="coordination">
-                                <span>COORDINATION DES</span>
-                                <span>ETUDIANTS ET</span>
-                                <span>STAGIAIRES TOGOLAIS</span>
-                                <span>AU MAROC</span>
-                            </div>
-                        </div>
-                        <div class="col-sm-6 text-right boutons_header" >
-                            <span class="fa fa-2x fa-bars option_bars"></span>
-                            <span class="fa fa-2x fa-search "></span>
-
-                            <a style="color:white" data-toggle="dropdown" href="#" class="dropdown-toggle">
+          <header>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6 logo-slogan">
+                    <div class="defit">Rélevons le défi</div>
+                    {% image '@CestomArticleBundle/Resources/public/images/logo-cestom-entete.png' %}
+                    <img src="{{ asset_url }}" alt="logo-CESTOM"/>
+                    {% endimage %}
+                    <div class="coordination">
+                        <span>COORDINATION DES</span>
+                        <span>ETUDIANTS ET</span>
+                        <span>STAGIAIRES TOGOLAIS</span>
+                        <span>AU MAROC</span>
+                    </div>
+                </div>
+                <div class="col-sm-6 text-right boutons_header" >
+                    <a href="#" onclick="afficheMasquerMenup()">
+						<span class="fa fa-2x fa-bars option_bars" title="cliquer pour développer"></span>
+					</a>
+					<a href="#" onclick="afficheMasquerRechercher()">
+						<span class="fa fa-2x fa-search search-icon" title="Rechercher sur ce site"></span>
+					</a>
+ <a style="color:white" data-toggle="dropdown" href="#" class="dropdown-toggle">
                                 <span class="fa fa-2x fa-user "></span>
                                 <span class="">
                                     Bienvenue, {{ app.user.username }}
@@ -78,12 +87,85 @@
                                 </ul>
                                 <!--/ #section:basics/navbar.user_menu -->
                             {% endblock %}
-
-                        </div>
-                    </div>
-                </div>
-            </header>
-
+				</div>
+				
+            </div>
+        </div>
+    </header>
+	
+	<!--MENU PRINCIPAL-->
+		<div class="container menu-principal" id="menu-p">
+			<div class="row">
+				<div class="col-sm-2">
+					<h3>ACCUEIL</h3>
+					<div>
+						<a  class="" href="#">AG 2015</a>
+					</div>
+					<div>
+						<a  class="" href="#">27 Avril</a>
+					</div>
+					<div>
+						<a  class="" href="#">JETM 2015</a>
+					</div>
+				</div>
+				<div class="col-sm-2">
+					<h3>ACTUALITES</h3>
+					<div><a  class="" href="#" title="aller aux actualités du Togo">Togo</a></div>
+					<div><a  class="" href="#"title="aller aux actualités du Maroc">Maroc</a></div>
+				</div>
+				<div class="col-sm-2">
+					<h3>CORDINATION</h3>
+					<div><a  class="" href="#">Présentation</a></div>
+					<div><a  class="" href="#">Historique</a></div>
+					<div><a  class="" href="#">Le Bureau Exécutif</a></div>
+					<div><a  class="" href="#">Les sections</a></div>
+					<div><a  class="" href="#">Autres organes</a></div>
+				</div>
+				<div class="col-sm-2">
+					<h3>Membres</h3>
+					<div><a  class="" href="#" title="Dossiers à fournir">Devenir membre</a></div>
+					<div><a  class="" href="#" title="Dossiers à fournir">Bourses</a></div>
+					<div><a  class="" href="#" title="Dossiers à fournir">Laisser passer</a></div>
+					<div><a  class="" href="#" title="Dossiers à fournir">Passport</a></div>
+					<div><a  class="" href="#" title="Dossiers à fournir">Carte consulaire</a></div>
+					<div><a  class="" href="#" title="Dossiers à fournir">Carte de séjour</a></div>
+				</div>
+				<div class="col-sm-2">
+					<h3>INFOS PRATIQUES</h3>
+					<div><a  href="#">Le Togo</a></div>
+					<div><a  href="#">Etudier au Maroc</a></div>
+					<div><a  href="#">Bourses et aides</a></div>
+					<div><a  href="#">Liens utils</a></div>
+				</div>
+				<div class="col-sm-2">
+					<h3>LE CONSULAT</h3>
+					<div><a  class="" href="#">Présentation</a></div>
+					<div><a  class="" href="#">Carte consulaire</a></div>
+					<div><a  class="" href="#">Prise en charge</a></div>
+					<div><a  class="" href="#">Légalisations</a></div>
+					<div><a  class="" href="#">Authentifications</a></div>
+					<div><a  class="" href="#">Laisser passer</a></div>
+				</div>
+			</div>
+		</div>
+	<!--REHERCHER-->
+	<div class="search-input" id="search-in">
+		<div class="input-group">
+		  <input type="text" class="form-control" placeholder="Rechercher">
+		  <span class="input-group-btn">
+			<a class="btn btn-default" href="#" >
+				<span class="fa fa-search "></span>
+			</a>
+		  </span>
+		</div>
+	</div>
+	
+	
+	
+	
+	
+	
+	
         {% endblock %}
         {% block menu %}
             <nav class="navbar navbar-default">
@@ -103,10 +185,71 @@
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul class="nav navbar-nav">
                             <li ><a href="{{path ('cestom_user_homepage') }}" >Mon compte </a></li>
-                            <li><a href="{{ path ('cestom_user_gestion_formation') }}" >Mes formations </a></li>
+                            <li>
+								<!--<a href="{{ path ('cestom_user_gestion_formation') }}" >Mes formations</a>-->
+								<a style="color:white" data-toggle="dropdown" href="#" class="dropdown-toggle">
+									<span class="">
+										Mes formations
+									</span> 
+								</a>
+								<ul class="user-menu dropdown-menu-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
+
+									<li>
+                                        <a href="{{ path ('cestom_user_gestion_formation') }}">
+                                            Formations
+                                        </a>
+                                    </li>
+
+                                    <li class="divider"></li>
+
+                                    <li>
+                                        <a href="#">
+                                            Expériences
+                                        </a>
+                                    </li>
+                                </ul>
+							</li>
+							
                             <li><a href="{{ path ('cestom_user_gestion_ville') }}"> Mes villes </a></li>
-                            <li><a href="#">Dossier bourse </a></li>
-                            <li><a href="#">Prise en charge</a></li>
+                           <!-- <li><a href="#">Mes dossiers</a></li>-->
+							<li>
+								<a style="color:white" data-toggle="dropdown" href="#" class="dropdown-toggle">
+									<span class="">
+										Mes dossiers
+									</span> 
+								</a>
+								<ul class="user-menu dropdown-menu-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
+
+									<li>
+                                        <a href="{{ path ('cestom_user_ajouter_fichier') }}"">
+                                            Bourse
+                                        </a>
+                                    </li>
+
+                                    <li class="divider"></li>
+
+                                    <li>
+                                        <a href="#">
+                                            Prise en charge
+                                        </a>
+                                    </li>
+									<li class="divider"></li>
+
+                                    <li>
+                                        <a href="#">
+                                            Laisser passer
+                                        </a>
+                                    </li>
+									<li class="divider"></li>
+
+                                    <li>
+                                        <a href="#">
+                                            Authentifications
+                                        </a>
+                                    </li>
+                                </ul>
+							</li>
+                            <li><a href="#">Messages<span class="badge">5</span></a></li>
                         </ul>
                     </div><!-- /.navbar-collapse -->
                 </div><!-- /.container-fluid -->
@@ -115,9 +258,11 @@
 
 
 
+        <div class="widget-body col-sm-12">
         {% block body %}
 
         {% endblock %}
+       </div>
 
         {% block footer %}
             <footer>
@@ -230,9 +375,23 @@
         <script src="{{ asset('assets/js/ace-elements.min.js')}}"></script>
 
         <script src="{{ asset('assets/js/ace.min.js')}}"></script>
+		<script type="text/javascript">
+				$("a.zoom").colorbox();
+				function afficheMasquerMenup(){
+					if(document.getElementById('menu-p').style.display == 'block')
+						document.getElementById('menu-p').style.display='none';
+						else document.getElementById('menu-p').style.display='block';
+					document.getElementById('search-in').style.display='none';
+				}
+				function afficheMasquerRechercher(){
+					if(document.getElementById('search-in').style.display == 'block')
+						document.getElementById('search-in').style.display='none';
+						else document.getElementById('search-in').style.display='block';
+						document.getElementById('menu-p').style.display='none';
+				}
+			</script>
 
-
-        {% block javascripts %}
+		{% block javascripts %}
 
         {% endblock %}
 

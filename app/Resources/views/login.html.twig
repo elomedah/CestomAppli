@@ -3,7 +3,8 @@
     <head>
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
         <meta charset="utf-8" />
-        <title>Admin Cestom</title>
+		<link rel="icon" type="image/x-icon" href="{{ asset('icone-site-cestom.ico') }}" />
+        <title>Connectez-vous, Cestom</title>
 
         <meta name="description" content="overview &amp; stats" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
@@ -26,34 +27,15 @@
         {% block style %}  {% endblock %}
     </head>
 
- <body class="login-layout  blur-login">
-		<div class="main-container">
-                    {% block fos_user_logo %}
-                    <div class="center">
-								<h1>
-                                <img class="nav-user-photo" src="{{asset('assets/logo/cestom.jpg')}}" alt="Admin" />
-									
-								</h1>
-							</div>
-                                 {% endblock %}
-			<div class="main-content">
-				<div class="row">
-					<div class="col-sm-10 col-sm-offset-1">
-						<div class="login-container">
-							
-
-							<div class="space-6"></div>
-							{% block fos_user_content %}
-                                                            
-                                                            {% endblock %}
-						</div>
-					</div><!-- /.col -->
-				</div><!-- /.row -->
-			</div><!-- /.main-content -->
-                        
-		</div><!-- /.main-container -->
-
-     
+ <body class="container-fluid">
+		<div class="panel panel-primary">
+			<span class="panel-heading">
+				{% image '@CestomArticleBundle/Resources/public/images/icone-site-cestom.png' %}
+					<img src="{{ asset_url }}" class="etoile-cestom" alt="etoile-cestom"/>
+				{% endimage %}Authentification</span>
+			{% block fos_user_content %}{% endblock %}
+		</div>
+		
         <!-- basic scripts -->
         <script src="{{ asset('assets/js/jquery.min.js')}}"></script>
 
@@ -67,5 +49,43 @@
         {% block javascript %}
 
         {% endblock %}
+		<style>
+			.login-box .toolbar {
+				background: #838383;
+				border-top: 2px solid #838383;
+			}
+			.btn-primary, .btn-primary:active, .open .btn-primary.dropdown-toggle {
+				background-color: #4CAF50 !important;
+				border-color: #4CAF50;
+			}
+			.login-box .user-signup-link {
+				color: #fff;
+			}
+			body{
+				color:black;
+				background-color:white;
+				background-image: url(../../../images/icone-site-cestom.png);
+			}
+			.panel-primary>.panel-heading {
+				background-color: #838383;
+				width: 50%;
+				/*color: black; */
+				border-color: #838383;
+				font-size:25px;
+			}
+			.panel-primary{
+				background-color: #838383;
+				border-color: 	  #838383;
+			}
+			.panel{
+				margin-top: 50px;
+				width: 320px;
+				margin-left: auto;
+				margin-right: auto;
+			}
+			.panel-heading{
+				padding:0px;
+			}
+			</style>
 </body>
 </html>

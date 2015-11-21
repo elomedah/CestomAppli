@@ -1,3 +1,7 @@
+cestom_test:
+    resource: "@CestomTestBundle/Resources/config/routing.yml"
+    # prefix:   /
+
 cestom_login:
     resource: "@CestomLoginBundle/Resources/config/routing.yml"
     prefix:   /login

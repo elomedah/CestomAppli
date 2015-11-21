@@ -14,7 +14,7 @@
 {% endblock %}
 
 {% block body %}
-	
+
 	 {% for flashMessage in app.session.flashbag.get('messagesucces') %}
 <div class="alert alert-block alert-success">
 <div class="flash-notice">
@@ -32,27 +32,59 @@
 </div>
 </div>
 {% endfor %}
+  
+<div class="col-sm-12 ">
+<div class="  col-sm-4">
+<div class=" widget-main">
+<form {{ form_enctype(form) }}  method = "POST"  action = "{{path('cestom_user_image')}}">
+<fieldset>
+	
+<img  src="{{ vich_uploader_asset(membre, 'fichierPhotoMimMembre') }}" alt="profil" class="img-responsive img-thumbnail  zoom "/>
 
-     <div class="widget-body">
-        <div class="widget-main no-padding">
-            <form {{ form_enctype(form) }}  method = "POST"  action = "">	
-              
+<input id="upload" style="margin-top:10px" class=" btn btn-sm btn-success" type="button"  value="Modifier"/>
+                        <div id="fichier" style="padding:10px" class="  hidden col-sm-12">
+							<div class="vich-image">
+								<div class="col-sm-10 widget-main">
+									<input class= " col-sm-10 " style="padding:10px" type="file" 
+									id="form_fichier_bourse_file" name="form[fichierBourse][file]" />
+								</div>    
+							</div>
+							<div class="clearfix">														
+								<input id="annuler" class=" pull-right btn btn-sm btn-cancel" type="button"  value="Annuler" /> 
+							    <input id="valider" class=" pull-left btn btn-sm btn-primary" type="submit"  value="Valider" />                                                                                                                  
+							</div>
+						</div>	
+</fieldset>
+</form>
+</div>
+</div>
+<div class="  col-sm-8">
+        <div class="widget-main ">
+            <form {{ form_enctype(form) }}  method = "POST"  action = "{{path('cestom_user_homepage')}}">
+
                 {% include "CestomUserBundle:GestionCompte:formulaireUser.html.twig" %}
+<fieldset>  
 <div class="form-actions center">
-                    <button id="valider" type="submit" class="btn btn-sm btn-success">
-                        Modifier
-                        <i class="ace-icon fa fa-pencil icon-on-right bigger-110"></i>
-                    </button>
-                </div>
+                                                        <button id="valider" type="submit" class="btn btn-sm btn-success">
+                                                            Enregistrer
+                                                            <i class="ace-icon fa fa-save icon-on-right bigger-110"></i>
+                                                        </button>
+                                                    </div>
+   
+   </fieldset>
             </form>
         </div>
+     
     </div>
                                                                                      
-							
-	
-	
-{% endblock %}
+	 </div>
+     
+    </div>
+            						
+	</div>	
 
+
+{% endblock %}
  {% block javascripts %}
 	
 	 <script src="{{asset('assets/js/date-time/bootstrap-datepicker.min.js')}}"></script>
@@ -62,10 +94,21 @@
               < script src = "{{asset('assets/js/jquery.autosize.min.js')}}" ></script>
 <script src="{{asset('assets/js/ace-elements.min.js')}}"></script>
 <script src="{{asset('assets/js/ace.min.js')}}"></script>
+
 	<script type="text/javascript">
-        jQuery(function($) {
-//datepicker plugin
-            //link
+$(document).ready(function() {
+
+           $('#upload').click( function(e) { 
+
+		 $('#fichier').removeClass('hidden');
+$('#upload').hide();
+		} );
+
+ $('#annuler').click( function(e) { 
+                      e.preventDefault();
+		 $('#fichier').addClass('hidden');
+               $('#upload').show();
+		} );
             $('.date-picker').datepicker({
                 autoclose: true,
                 todayHighlight: true
@@ -75,6 +118,7 @@
                 $(this).prev().focus();
             });
            
+	   
         });
         </script>
 {% endblock %}

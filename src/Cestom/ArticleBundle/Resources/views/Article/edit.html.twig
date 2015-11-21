@@ -19,15 +19,15 @@
 							</a>
 				</span>
 				<span>
-            <a href="{{ path(mesRoutes.new) }}"  class="btn btn-default ">
-                Ajouter un nouvel <strong>article</strong>
-            </a>
-        </span>
-					<div class="pull-right">
-								{{ form_start(delete_form) }}
-								{{ form_widget(delete_form.submit, {'attr': {'class': 'btn btn-danger'}}) }}
-								{{ form_end(delete_form) }}
-					</div>
+					<a href="{{ path(mesRoutes.new) }}"  class="btn btn-success ">
+						Ajouter un <strong>article</strong>
+					</a>
+				</span>
+				<div class="pull-right">
+							{{ form_start(delete_form) }}
+							{{ form_widget(delete_form.submit, {'attr': {'class': 'btn btn-danger'}}) }}
+							{{ form_end(delete_form) }}
+				</div>
 			</div>
 		</div>
 {% endblock %}

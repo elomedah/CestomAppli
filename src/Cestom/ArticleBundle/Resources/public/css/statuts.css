@@ -1,0 +1,101 @@
+
+		.sub-title {
+    margin-left: 150px;
+    font-size: x-large;
+    color: #F44336;
+    margin-top: 50px;
+}.sub-title-2 {
+    margin-left: 185px;
+    font-size: large;
+    color: #F44336;
+    margin-top: 20px;
+}
+			h1 {
+				letter-spacing: 2px;
+				font-size: 33px;
+				color: #F44336;
+				margin-left: 150px;
+			}
+			.titre-partie {
+				color: #F44336;
+				text-transform: uppercase;
+				font-size: xx-large;
+				margin: 15px;
+				margin-left: 60px;
+				border-bottom: 4px solid #838383;
+				    margin-top: 200px;
+			}
+			.statut {
+				margin: 25px;
+				padding: 10px;
+				background-color: #ffffff;
+				border-color: black;
+				border: 1px solid #D2CECE;
+				border-radius: 10px;
+				width: 60%;
+				margin-left: 25%;
+				font-size: px;
+				-webkit-box-shadow: 7px 7px 5px 0 #A9A9A9;
+				box-shadow: 7px 7px 5px 0 #A9A9A9;
+				font: large "trebuchet ms", helvetica, arial, sans-serif;
+				background-color: white;
+				word-wrap: break-word;
+			}
+			legend {
+				display: block;
+				width: 100%;
+				padding: 0;
+				margin-bottom: 20px;
+				font-size: 21px;
+				line-height: inherit;
+				color: #F44336;
+				border: 0;
+				border-bottom: 1px solid #e5e5e5;
+				font: x-large "trebuchet ms", helvetica, arial, sans-serif;
+				text-transform: uppercase;
+				background-color: white;
+				word-wrap: break-word;
+			}
+			.def-cestom {
+				font-size: 20px;
+				text-align: center;
+			}
+			.preambule-u{
+				margin-left: 60px;
+				max-width: 60%;
+				padding: 5px;
+			}
+			.title-cestom-status {
+    font-size: xx-large;
+    color: #494C56;
+    text-align: center;
+    border-bottom: 7px solid #494C56;
+    margin-top: 15px;
+}
+			.revision-statuts {
+				text-align: center;
+				margin-top: 50px;
+			}.preambule {
+				text-align: left;
+				margin: 10px;
+				border-bottom: 2px solid #838383;
+				border-top: 2px solid #838383;
+				padding: 50px;
+				font-size: xx-large;
+				margin-top: 200px;
+				margin-bottom: 30px;
+			}.italic {
+				font-style: italic;
+				font-family: Andale Mono;
+				margin-bottom: 50px;
+			}body {
+				background-color: rgba(228, 228, 228, 0.68);
+			}
+			.chapitre-titre {
+				color: #F44336;
+				font-size: x-large;
+				margin: 15px;
+				margin-left: 90px;
+				BORDER-BOTTOM: 1px solid red;
+				margin-top: 75px;
+			}

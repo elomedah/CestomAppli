@@ -1,6 +1,9 @@
 cestom_user_homepage:
     path:     /monCompte
     defaults: { _controller:CestomUserBundle:GestionCompte:gestionCompte }
+cestom_user_image:
+    path:     /image/profil
+    defaults: { _controller:CestomUserBundle:GestionCompte:gestionImage }
 cestom_user_gestion_formation :
     path:     /Formations
     defaults: { _controller:CestomUserBundle:GestionFormation:gestionFormation }
@@ -30,3 +33,9 @@ cestom_user_ajouter_ville :
 cestom_user_modifier_ville :
     path:     /modifierVille/{idvillemembre}
     defaults: { _controller:CestomUserBundle:GestionVille:modifierVille }
+cestom_user_ajouter_fichier :
+    path:     /gestionBourse
+    defaults: { _controller:CestomUserBundle:GestionBourse:ajouterDocBourse }
+cestom_user_supprimer_fichier :
+    path:     /deleteFichier/{idbourse}
+    defaults: { _controller:CestomUserBundle:GestionBourse:deleteDocBourse }

@@ -11,8 +11,8 @@
 
     {{ form(edit_form) }}
 
-	<div class="container panel panel-default mypanel">
-		<div class="row panel-body">
+	<div class="panel">
+		<div class="panel-primary">
 		
 			<span class="record_actions btn btn-default">
 			<a href="{{ path(mesRoutes.index) }}">
@@ -20,7 +20,7 @@
 			</a>
 			</span>
 			<span>
-			<a href="{{ path(mesRoutes.new) }}"  class="btn btn-default ">
+			<a href="{{ path(mesRoutes.new) }}"  class="btn btn-sucess">
 				Ajouter une nouvelle <strong>catégorie</strong>
 			</a>
 			</span>
@@ -33,4 +33,40 @@
 		
 		</div>
 	</div>
+	<style>
+	/*.panel-primary {
+		border-color: #337ab7;
+		padding: 15px;
+		border: 1px solid #838383;
+		border-radius: 7px;
+		background-color: #838383;
+		margin: 25px;
+	}
+	#cestom_articlebundle_categorie_submit {
+		margin: 25px;
+		width: 100px;
+		font-size: x-large;
+		margin-left: 50%;
+		border-raduis: 10px;
+		border-radius: 10px;
+		border-color: #838383;
+		color: #0A0909;
+	}
+	#cestom_articlebundle_categorie_submit:hover{
+		border-color:#FFC107;
+	}*/
+/*#cestom_articlebundle_categorie_submit:hover {
+    border-color: #FFC107;
+}
+
+#cestom_articlebundle_categorie_submit {
+    left: 40%;
+    background-color: aquamarine;
+    font-size: x-large;
+    border-radius: 7px;
+    margin-left: 40%;
+}
+
+*/
+	</style>
 {% endblock %}

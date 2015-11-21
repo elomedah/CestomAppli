@@ -1,0 +1,147 @@
+{% extends '::base_user.html.twig' %} 
+
+
+{% block stylesheets %}
+    {{ parent() }}
+    {% stylesheets filter='cssrewrite'
+		'bundles/cestomarticle/css/accueilStyles.css'
+	%}
+    <link href="{{ asset_url }}" type="text/css" rel="stylesheet" />
+	<link rel="stylesheet" type="text/css" href="{{ asset('assets/css/formulaires.css')}}" />
+    {% endstylesheets %}
+{% endblock %}
+
+
+{% block body %}
+    <div class="widget-body widget-main no-padding">
+         <h1 class="center">
+            Liste des Expériences
+        </h1>
+    </div>
+
+
+
+
+    <div>
+        <div class="widget-body ">
+            <div class="widget-main no-padding ">
+                {% for flashMessage in app.session.flashbag.get('messagesucces') %}
+                    <div class="alert alert-block alert-success">
+                        <div class="flash-notice">
+
+                            {{ flashMessage }}
+                        </div>
+                    </div>
+                {% endfor %}
+
+                {% for flashMessage in app.session.flashbag.get('messageerror') %}
+                    <div class="alert alert-block alert-danger">
+                        <div class="flash-notice">
+							{{ flashMessage }}
+                        </div>
+                    </div>
+                {% endfor %}
+
+                <br>
+                <br>
+
+                {% if  experiences|length > 0 %}
+                    {% for experience in experiences %}
+                        <div class="container">
+
+                            <div class="panel-group ">
+                                <div class="panel panel-primary">
+                                    <div class="panel-heading">
+                                         <a style="padding:10px;" class="white" href="{{path('cestom_user_modifier_experience',{'idexperience':experience.idexperience})}}">
+												<i class="ace-icon fa fa-pencil bigger-160"></i>
+											</a>
+											<a style="padding:10px;" class="red delete" href="{{path('cestom_user_delete_experience',{'idexperience':experience.idexperience})}}">
+												<i class="ace-icon fa fa-trash bigger-160"></i>
+											</a> 
+
+											<a style="padding:10px;" class="white" href="{{path('cestom_user_ajouter_experience')}}">
+												<i class="ace-icon fa fa-plus bigger-160"></i>
+											</a> 
+                                    </div>
+                                    <div class="panel-body">
+										<div class="row white-background">
+											<label class="col-sm-6  label-formation"> Expérience  </label>
+											<span class="col-sm-6  label-formation "> {{ 	experience.libelleExperience}}</span> <br>
+										</div>
+										<div class="row white-background">
+                                        <label class="col-sm-6  label-formation">Société</label>   <span class="col-sm-6  label-formation"> {{experience.idSociete.nomsociete}}</span> <br>
+                                        </div>
+										<div class="row white-background">
+											<label class="col-sm-6  label-formation">Compétance acquise </label>    <span class="col-sm-6  label-formation"> {{experience.competenceAcquise}}</span> <br>
+                                        </div>
+										<div class="row white-background">
+											<label class="col-sm-6  label-formation">Durée  </label>   <span class="col-sm-6  label-formation"> {{experience.dureeExperience}}</span> <br>
+										</div>
+                                        <div class="row white-background">
+											<label class="col-sm-6  label-formation">Début </label>   <span class="col-sm-6  label-formation"> {{experience.dateDebutExperience}}</span> <br>
+										</div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                {% else %}
+                    <form {{ form_enctype(form) }}  method = "POST"  action ="{{path ('cestom_user_ajouter_experience') }}">	
+
+                        {% include "CestomTestBundle:GestionExperience:formulaireExperience.html.twig" %}
+                        <div class="form-actions center">
+                            <button id="valider" type="submit" class="btn btn-sm btn-success">
+                                Ajouter
+                                <i class="ace-icon fa fa-save icon-on-right bigger-110"></i>
+                            </button>
+                        </div>
+                    </form>
+                {% endif %}
+
+            </div> 
+        </div>
+    </div>   
+
+{% endblock %}
+
+{% block javascripts %}
+ <script src="{{asset('assets/js/jquery-ui.min.js')}}"></script>
+       <script src="{{asset('assets/js/jquery.ui.touch-punch.min.js')}}"></script>  
+       <script src="{{asset('assets/js/bootstrap-dialog.min.js')}}"></script>  
+        <script src="{{asset('assets/js/date-time/bootstrap-datepicker.min.js')}}"></script>
+                                                                    < script src = "{{asset('assets/js/jquery.autosize.min.js')}}" ></script>
+
+    <script src="{{asset('assets/js/ace-elements.min.js')}}"></script>
+    <script src="{{asset('assets/js/ace.min.js')}}"></script>
+    <script type="text/javascript">
+        jQuery(function($) {
+           
+            $(".delete").click(function(e) {
+                var path = $(this);
+                        e.preventDefault();
+                BootstrapDialog.confirm("Voulez-vous supprimer l'expérience ?", function(result) {
+                    
+                    if (result) {
+                         
+                        window.location.href = path.attr("href");
+                    }
+                });
+            });
+            
+              //link
+                                                                $('.date-picker').datepicker({
+                                                                    autoclose: true,
+                                                                    todayHighlight: true
+                                                                })
+                                                                        //show datepicker when clicking on the icon
+                                                                        .next().on(ace.click_event, function() {
+                                                                    $(this).prev().focus();
+                                                                });
+        });
+
+
+    </script>
+  
+
+{% endblock %}

@@ -1,0 +1,4 @@
+services:
+#    cestom_test.example:
+#        class: Cestom\Bundle\TestBundle\Example
+#        arguments: [@service_id, "plain_value", %parameter%]

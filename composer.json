@@ -23,7 +23,8 @@
         "incenteev/composer-parameter-handler": "~2.0",
 
         "vich/uploader-bundle": "^0.14.0",
-		"friendsofsymfony/user-bundle": "~2.0@dev"
+		"friendsofsymfony/user-bundle": "~2.0@dev",
+        "stof/doctrine-extensions-bundle": "dev-master"
     },
     "require-dev": {
         "sensio/generator-bundle": "~2.3"

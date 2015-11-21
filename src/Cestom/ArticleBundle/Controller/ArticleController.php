@@ -21,6 +21,7 @@ class ArticleController extends Controller
 			'edit' => 'CestomArticleBundle:Article:edit.html.twig',
 			'index' => 'CestomArticleBundle:Article:index.html.twig',
 			'show' => 'CestomArticleBundle:Article:show.html.twig',
+			'showPublic' => 'CestomArticleBundle:Article:showPublic.html.twig',
 		);
 		$this->mesRoutes = array(
 			'index'   => 'cestomarticlebundle_article',
@@ -30,6 +31,7 @@ class ArticleController extends Controller
 			'edit'    => 'cestomarticlebundle_article_edit',
 			'update'  => 'cestomarticlebundle_article_update',
 			'delete'  => 'cestomarticlebundle_article_delete',
+			'showPublic'  => 'cestomarticlebundle_article_showPublic'
 		);
 	}
 
@@ -128,6 +130,25 @@ class ArticleController extends Controller
         return $this->render($this->templates["show"], array(
             'entity'      => $entity,
             'delete_form' => $deleteForm->createView(),
+			'mesRoutes'   => $this->mesRoutes,
+        ));
+    }
+	/**
+     * Finds and displays a Article entity.
+     *
+     */
+    public function showPublicAction($id)
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $entity = $em->getRepository('CestomArticleBundle:Article')->find($id);
+
+        if (!$entity) {
+            throw $this->createNotFoundException('Unable to find Article entity.');
+        }
+
+        return $this->render($this->templates["showPublic"], array(
+            'entity'      => $entity,
 			'mesRoutes'   => $this->mesRoutes,
         ));
     }

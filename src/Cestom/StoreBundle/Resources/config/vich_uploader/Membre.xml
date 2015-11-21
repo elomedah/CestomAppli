@@ -1,0 +1,3 @@
+<vich_uploader class="Cestom\StoreBundle\Entity\Membre">
+  <field mapping="membre_image_profil" name="fichierPhotoMimMembre" filename_property="photoMimMembre" />
+</vich_uploader>

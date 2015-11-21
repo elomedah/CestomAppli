@@ -3,8 +3,12 @@ cestomarticlebundle_article:
     defaults: { _controller: "CestomArticleBundle:Article:index" }
 
 cestomarticlebundle_article_show:
-    path:     /{id}/show
+    path:   /{id}/show
     defaults: { _controller: "CestomArticleBundle:Article:show" }
+
+cestomarticlebundle_article_showPublic:
+    path:   /{id}/showPublic
+    defaults: { _controller: "CestomArticleBundle:Article:showPublic" }
 
 cestomarticlebundle_article_new:
     path:     /new

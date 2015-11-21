@@ -1,0 +1,182 @@
+{% extends '::base_user.html.twig' %} 
+
+
+ {% block stylesheets %}
+	{{ parent() }}
+	{% stylesheets filter='cssrewrite'
+		'bundles/cestomarticle/css/accueilStyles.css'
+		
+	%}
+		<link href="{{ asset_url }}" type="text/css" rel="stylesheet" />
+<style>
+.delete { 
+padding:10px;
+}
+.label-doc{
+padding :9px;
+margin-left :15px;
+font-size: 20px;
+font-family: cursive;
+font-color: black;
+}
+</style>
+	{% endstylesheets %}
+{% endblock %}
+
+{% block body %}
+	 <div>
+                        <h1 class="center">
+                            Gestion bourse
+                        </h1>
+                    </div>
+    <div class="widget-body ">
+       <div class="widget-main no-padding ">
+{% for flashMessage in app.session.flashbag.get('messagesucces') %}
+<div class="alert alert-block alert-success">
+<div class="flash-notice">
+
+{{ flashMessage }}
+</div>
+</div>
+{% endfor %}
+
+{% for flashMessage in app.session.flashbag.get('messageerror') %}
+<div class="alert alert-block alert-danger">
+<div class="flash-notice">
+
+{{ flashMessage }}
+</div>
+</div>
+{% endfor %}
+
+  <div class="col-md-12 col-xs-12 col-sm-12 widget-main row ">
+    <div class="col-md-6 col-xs-6 col-sm-6  ">
+	{% if  bourses|length > 0 %}
+                    {% for bourse in bourses %}
+
+                            <div class="panel-group ">
+                                <div class="panel panel-primary">
+                                    <div class="panel-heading">
+                                        
+											
+											<a  class="red delete" href="{{ path ('cestom_user_supprimer_fichier',{'idbourse': bourse.idBourse }) }}">
+												<i class="ace-icon fa fa-trash bigger-160"></i> 
+											</a> 
+
+								<span class=" "> {{ bourse.typeDoc}}</span> 			
+                                     
+                                    </div>
+									
+								
+	                                 <div style="background:white" class="panel-body">
+										<div class="row ">
+											<label class="col-sm-6  "> Type de document   </label>
+											<span class="col-sm-6 "> {{ bourse.typeDoc}}</span> <br>
+										</div>
+										
+										<div class="row ">
+											<label class="col-sm-6  "> Etat validation   </label>
+											<span class="col-sm-6 "> <span class="label label-sm label-warning">{{bourse.etatDoc }}</span></span> <br>
+										</div>
+										<div class="row ">
+											<label class="col-sm-6  "> Année universitaire   </label>
+											<span class="col-sm-6 "> {{ bourse.anneeUniversitaire}} <br>
+										</div>
+										<div class="row ">
+											<label class="col-sm-6  "> Date d'upload   </label>
+											<span class="col-sm-6 "> {{ bourse.dateCreation | date ('d/m/Y')}} <br>
+										</div>
+<div class="row ">
+											<label class="col-sm-6  "> Télécharger   </label>
+											<span class="col-sm-6 "> <a href="{{ vich_uploader_asset(bourse, 'fichierBourse') }} " target="_blank">Cliquer</a></span></span> <br>
+										</div>
+										
+
+                                    </div>
+                                
+                                </div>
+                            </div>
+                    {% endfor %}
+                {% else %}
+<div class="panel-group ">
+                    <div class="panel-group ">
+                                <div class="panel panel-primary">
+<div class="panel-heading">
+                                        
+											
+											<span class=" "> Aucun document</span>
+											
+											
+                                     
+                                    </div>
+	<div class="row">
+		<label class=" label-doc"> Veuillez ajouter un document <i class=" blue ace-icon fa fa-plus bigger-120">  </i> </label>  
+        </div>
+       <div class="row ">
+		<label class=" label-doc"> <i class=" green ace-icon fa fa-check bigger-50"></i> Choisir le type de document  </label>  
+       </div>
+       <div class="row">
+		<label class=" label-doc"> <i class="green ace-icon fa fa-check bigger-50"> </i>  Choisir le fichier correspondant   </label>
+       </div>
+       <div class="row">
+		<label class=" label-doc"> <i class="green ace-icon fa fa-check bigger-50"> </i>  Valider ... </label>
+       </div>
+		
+		
+				</div>
+		</div>		
+</div>
+                {% endif %}
+     </div>
+	    <div class="col-md-6 col-xs-6  col-sm-6   ">
+			<div class="panel-group ">
+                                <div class="panel panel-primary">
+<div class="panel-heading">
+                                        
+											
+											
+												<i class="ace-icon fa fa-plus bigger-160"></i>
+											
+											
+                                     
+                                    </div>
+				<form {{ form_enctype(form) }}  method = "POST"  action ="{{path ('cestom_user_ajouter_fichier') }}">	
+              
+					{% include "CestomUserBundle:GestionBourse:formulaireBourse.html.twig" %}
+
+				</form>
+				</div>
+			</div>
+		</div>
+    </div>
+</div>
+</div>                                           
+{% endblock %}
+
+ {% block javascripts %}
+	<script src="{{asset('assets/js/date-time/bootstrap-datepicker.min.js')}}"></script>
+                                                                    < script src = "{{asset('assets/js/jquery.autosize.min.js')}}" ></script>
+       <script src="{{asset('assets/js/bootstrap-dialog.min.js')}}"></script>  
+
+    <script src="{{asset('assets/js/ace-elements.min.js')}}"></script>
+    <script src="{{asset('assets/js/ace.min.js')}}"></script>
+<script type="text/javascript">
+        jQuery(function($) {
+           
+            $(".delete").click(function(e) {
+                var path = $(this);
+                        e.preventDefault();
+                BootstrapDialog.confirm('Voulez-vous supprimer ce document ?', function(result) {
+                    
+                    if (result) {
+                         
+                        window.location.href = path.attr("href");
+                    }
+                });
+            });
+            
+        });
+
+
+    </script>
+{% endblock %}

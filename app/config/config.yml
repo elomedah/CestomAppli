@@ -29,6 +29,9 @@ framework:
 twig:
     debug:            "%kernel.debug%"
     strict_variables: "%kernel.debug%"
+    form_themes:
+        # other form themes
+        - 'VichUploaderBundle:Form:fields.html.twig'
 
 # Assetic Configuration
 assetic:
@@ -81,7 +84,20 @@ vich_uploader:
             inject_on_load:     false
             delete_on_update:   true
             delete_on_remove:   true
-
+        membre_image_profil:
+            uri_prefix:         /uploads/membre/profil
+            upload_destination: %kernel.root_dir%/../web/uploads/membre/profil
+            namer:              vich_uploader.namer_uniqid
+            inject_on_load:     false
+            delete_on_update:   true
+            delete_on_remove:   true
+        fichier_bourse:
+            uri_prefix:         /uploads/Bourse/2015-2016
+            upload_destination: %kernel.root_dir%/../web/uploads/Bourse/2015-2016
+            namer:              vich_uploader.namer_uniqid
+            inject_on_load:     false
+            delete_on_update:   true
+            delete_on_remove:   true
 
 fos_user:
   db_driver: orm

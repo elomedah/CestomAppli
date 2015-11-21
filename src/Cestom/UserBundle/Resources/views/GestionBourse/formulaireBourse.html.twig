@@ -1,0 +1,28 @@
+ {{ form_errors(form) }}
+                 			<fieldset>
+                    <div class="col-sm-10 widget-main">
+
+                        {{ form_label(form.typeDoc, "Type de document ", {'label_attr': {'class': 'col-sm-3 control-label '}}) }}
+
+                        {{ form_widget(form.typeDoc, {'attr': {'class': 'col-xs-10 col-sm-5'}}) }}
+
+                    </div>
+
+                 
+								<div class="  col-sm-10 widget-main">
+									<div class="center">
+									<input class= " col-xs-10 col-sm-5 "  type="file" 
+									id="form_fichierBourse_file" name="form[fichierBourse][file]" />
+								        </div>    
+								</div>    
+							
+							<div class="clearfix">														
+								<input id="annuler" class=" pull-right btn btn-sm btn-cancel" type="button"  value="Annuler" /> 
+							    <input id="valider" class=" pull-left btn btn-sm btn-primary" type="submit"  value="Valider" />                                                                                                                  
+							</div>
+			
+             </fieldset>
+                        
+{{ form_widget(form._token) }}
+
+                

@@ -1,0 +1,36 @@
+cestom_test_homepage:
+    path:     /sylvain/{name}/{prenom}
+    defaults: { _controller: CestomTestBundle:Default:index }
+
+
+
+
+cestom_test_Pages2:
+    path:     /page2
+    defaults: { _controller: CestomTestBundle:Page2:page2 }
+cestom_test_Pages1:
+    path:     /page1
+    defaults: { _controller: CestomTestBundle:Page1:page1 }
+
+
+
+
+cestom_test_statuts:
+    path:     /statuts
+    defaults: { _controller: CestomTestBundle:Statuts:statuts }
+
+
+cestom_test_gestion_experience:
+    path:     /gestionexperience
+    defaults: { _controller: CestomTestBundle:GestionExperience:listeExperience }
+
+cestom_user_delete_experience :
+    path:     /deleteExperience/{idexperience}
+    defaults: { _controller:CestomTestBundle:GestionExperience:deleteExperience }
+
+cestom_user_ajouter_experience :
+    path:     /ajouterExperience
+    defaults: { _controller:CestomTestBundle:GestionExperience:ajouterExperience }
+cestom_user_modifier_experience :
+    path:     /modifierExperience/{idexperience}
+    defaults: { _controller:CestomTestBundle:GestionExperience:modifierExperience }

@@ -3,6 +3,9 @@
 namespace Cestom\StoreBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+ 
+use Symfony\Component\HttpFoundation\File\File;
+
 
 /**
  * Membre
@@ -85,9 +88,81 @@ class Membre
     private $idmembre;
 
     /**
-     * @var \Cestom\StoreBundle\Entity\Fosuser
+     * @var \Cestom\UserBundle\Entity\User
      */
     private $id;
+
+
+    /**
+     * @var File
+     */
+    private $fichierPhotoMimMembre;
+
+    /**
+     * @var \DateTime
+     */
+    private $misAJour;
+
+
+
+    public function __construct()
+    {
+		$this->misAJour = new \DateTime();
+    }
+
+	
+	/**
+     * If manually uploading a file (i.e. not using Symfony Form) ensure an instance
+     * of 'UploadedFile' is injected into this setter to trigger the  update. If this
+     * bundle's configuration parameter 'inject_on_load' is set to 'true' this setter
+     * must be able to accept an instance of 'File' as the bundle will inject one here
+     * during Doctrine hydration.
+     *
+     * @param File|\Symfony\Component\HttpFoundation\File\UploadedFile $image
+     */
+    public function setFichierPhotoMimMembre(File $image = null)
+    {
+        $this->fichierPhotoMimMembre = $image;
+
+        if ($image) {
+            // It is required that at least one field changes if you are using doctrine
+            // otherwise the event listeners won't be called and the file is lost
+            $this->misAJour = new \DateTime('now');
+        }
+    }
+	
+
+    /**
+     * @return File
+     */
+    public function getFichierPhotoMimMembre()
+    {
+        return $this->fichierPhotoMimMembre;
+    }
+
+
+    /**
+     * Set misAJour
+     *
+     * @param \DateTime $misAJour
+     * @return User
+     */
+    public function setMisAJour($misAJour)
+    {
+        $this->misAJour = $misAJour;
+
+        return $this;
+    }
+
+    /**
+     * Get misAJour
+     *
+     * @return \DateTime 
+     */
+    public function getMisAJour()
+    {
+        return $this->misajour;
+    }
 
 
     /**
@@ -425,10 +500,10 @@ class Membre
     /**
      * Set id
      *
-     * @param \Cestom\StoreBundle\Entity\Fosuser $id
+     * @param \Cestom\UserBundle\Entity\User $id
      * @return Membre
      */
-    public function setId(\Cestom\StoreBundle\Entity\Fosuser $id = null)
+    public function setId(\Cestom\UserBundle\Entity\User $id = null)
     {
         $this->id = $id;
 
@@ -438,7 +513,7 @@ class Membre
     /**
      * Get id
      *
-     * @return \Cestom\StoreBundle\Entity\Fosuser 
+     * @return \Cestom\UserBundle\Entity\User 
      */
     public function getId()
     {

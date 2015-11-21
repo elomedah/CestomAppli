@@ -1,32 +1,36 @@
+{% block style %} 
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/formulaires.css')}}" />
+{% endblock %}
+
 {{ form_errors(form) }}
 <div class="col-sm-10 widget-main">
 
-    {{ form_label(form.libelleFormation, "Libelle de la formation", {'label_attr': {'class': 'col-sm-3 control-label '}}) }}
+    {{ form_label(form.libelleFormation, "Libelle de la formation", {'label_attr': {'class': 'col-sm-3 control-label label-fromation'}}) }}
 
-    {{ form_widget(form.libelleFormation, {'attr': {'class': 'col-xs-10 col-sm-5'}}) }}
+    {{ form_widget(form.libelleFormation, {'attr': {'class': 'col-xs-10 col-sm-5 label-fromation'}}) }}
+ 
+</div>
+
+<div class="col-sm-10 widget-main">
+
+    {{ form_label(form.iduniv, "Université", {'label_attr': {'class': 'col-sm-3 control-label label-fromation'}}) }}
+
+    {{ form_widget(form.iduniv, {'attr': {'class': 'col-xs-10 col-sm-5 label-fromation'}}) }}
+
+</div>
+<div class="col-sm-10 widget-main">
+
+    {{ form_label(form.diplomeViseFormation, "Diplôme visé ", {'label_attr': {'class': 'col-sm-3 control-label label-fromation'}}) }}
+
+    {{ form_widget(form.diplomeViseFormation, {'attr': {'class': 'col-xs-10 col-sm-5 label-fromation'}}) }}
 
 </div>
 
 <div class="col-sm-10 widget-main">
 
-    {{ form_label(form.iduniv, "Université", {'label_attr': {'class': 'col-sm-3 control-label '}}) }}
+    {{ form_label(form.dureeFormation, "Durée de la formation ", {'label_attr': {'class': 'col-sm-3 control-label label-fromation'}}) }}
 
-    {{ form_widget(form.iduniv, {'attr': {'class': 'col-xs-10 col-sm-5'}}) }}
-
-</div>
-<div class="col-sm-10 widget-main">
-
-    {{ form_label(form.diplomeViseFormation, "Diplôme visé ", {'label_attr': {'class': 'col-sm-3 control-label '}}) }}
-
-    {{ form_widget(form.diplomeViseFormation, {'attr': {'class': 'col-xs-10 col-sm-5'}}) }}
-
-</div>
-
-<div class="col-sm-10 widget-main">
-
-    {{ form_label(form.dureeFormation, "Durée de la formation ", {'label_attr': {'class': 'col-sm-3 control-label '}}) }}
-
-    {{ form_widget(form.dureeFormation, {'attr': {'class': 'col-xs-10 col-sm-5'}}) }}
+    {{ form_widget(form.dureeFormation, {'attr': {'class': 'col-xs-10 col-sm-5 label-fromation'}}) }}
 
 </div>
 
@@ -47,12 +51,10 @@
 
 <div class="col-sm-10 widget-main">
 
-    {{ form_label(form.programmeBourse, "Programme de bourse ", {'label_attr': {'class': 'col-sm-3 control-label '}}) }}
+    {{ form_label(form.programmeBourse, "Programme de bourse ", {'label_attr': {'class': 'col-sm-3 control-label label-fromation'}}) }}
 
-    {{ form_widget(form.programmeBourse, {'attr': {'class': 'col-xs-10 col-sm-5'}}) }}
+    {{ form_widget(form.programmeBourse, {'attr': {'class': 'col-xs-10 col-sm-5 label-fromation'}}) }}
 
 </div>
 
 {{ form_rest(form) }}
-
-

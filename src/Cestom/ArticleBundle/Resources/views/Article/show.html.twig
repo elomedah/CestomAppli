@@ -24,10 +24,10 @@
 					<th>Image</th>
 					<!--<td>{{ entity.introImg }}</td>-->
 					<td>
-						<a  href="{{ vich_uploader_asset(entity, 'introImgFile') }}" title="Cliquez pour agrandir" class="zoom">
-							<img src="{{ vich_uploader_asset(entity, 'introImgFile') }}" alt="image article" class="img-responsive img-thumbnail image-articles "/>
-						</a>
-					</td>
+					<a href="{{ vich_uploader_asset(entity, 'introImgFile') }}" title="Cliquez pour agrandir" class="zoom">
+						<img src="{{ vich_uploader_asset(entity, 'introImgFile') }}" alt="image article" class="img-responsive img-thumbnail image-articles zoom "/>
+					</a>
+				</td> 
 				</tr>
 				<tr>
 					<th>Introduction</th>
@@ -67,8 +67,8 @@
 					Ajouter un nouveau <strong>article</strong>
 				</a>
 			</span>
-			<span>
-					<a href="{{ path(mesRoutes.edit, { 'id': entity.id }) }}" class="btn btn-default ">
+			<span class="btn-edit">
+					<a href="{{ path(mesRoutes.edit, { 'id': entity.id }) }}" class="btn btn-edit ">
 						Editer
 					</a>
 				</span>
@@ -89,6 +89,10 @@
 				font-family:"roboto condensed";
 				text-decoration:none;
 				
+			}
+			.btn-edit{
+				background-color: #D0881D
+				border-bottom-color:#D0881D;
 			}
 		</style>
 {% endblock %}

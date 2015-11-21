@@ -4,7 +4,8 @@ namespace Cestom\UserBundle\Entity;
  
 use Doctrine\ORM\Mapping as ORM;
 use FOS\UserBundle\Model\User as BaseUser;
- 
+
+
 /**
  * User
  *
@@ -21,8 +22,8 @@ class User extends BaseUser
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     protected $id;
- 
- 
+
+
     /**
      * Get idmembre
      *
@@ -35,7 +36,8 @@ class User extends BaseUser
 
     public function __construct()
     {
-      parent::__construct();
-     $this->addRole('ROLE_USER');
+		parent::__construct();
+		$this->addRole('ROLE_USER');
     }
+
 }

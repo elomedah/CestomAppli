@@ -44,7 +44,7 @@ class GestionMembreController extends Controller {
                 ->add('promotionMembre', 'number', array('required' => true))
                 ->add('contactUrgence', 'textarea', array('required' => true))
                 ->add('infoComplementmembre', 'textarea', array('required' => false))
-                ->add('photoMimMembre', 'file', array('required' => false))
+                ->add('fichierPhotoMimMembre', 'vich_image', array('required' => false, 'allow_delete'  => true, 'download_link' => true))
                 ->add('telephonefirst', 'text', array('required' => false))
                 ->add('telephonesecond', 'text', array('required' => false))
                 ->add('dernierLyceeFrequente', 'text', array('required' => true));
@@ -92,7 +92,7 @@ class GestionMembreController extends Controller {
 
             $user = $this->getDoctrine()
                     ->getManager()
-                    ->getRepository('CestomStoreBundle:Fosuser')
+                    ->getRepository('CestomUserBundle:User')
                     ->findOneByid($id);
 
             $membre->setId($user);
@@ -133,7 +133,7 @@ class GestionMembreController extends Controller {
                 return $this->redirect($this->generateUrl('cestom_admin_homepage'));
             } catch (\Exception $e) {
 
-                $this->messageAfterRequest($request, $this->typeMessage['error'], $this->errors['integrity']);
+                $this->messageAfterRequest($request, $this->typeMessage['error'], $this->errors['integrity'].$e);
                 return $this->render('CestomAdminBundle:GestionMembre:ajouterMembre.html.twig', array(
                             'form' => $form->createView(), 'sexe' => $membre->getSexe(), 'datenaissance' => $membre->getDateNaissanceMembre(), 'dateemission' => $membre->getDateEtabMembre(), 'dateexpiration' => $membre->getDateExpiMembre()));
             }

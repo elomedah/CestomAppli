@@ -8,6 +8,7 @@
 		
     %}
     <link href="{{ asset_url }}" type="text/css" rel="stylesheet" />
+	<link rel="stylesheet" href="{{ asset('assets/css/formulaires.css')}}" />
     {% endstylesheets %}
 {% endblock %}
 
@@ -66,13 +67,18 @@
 
                                     </div>
                                     <div class="panel-body">
-
-
-                                        <label> Ville</label> : <span> {{ villemembre.idville.nomville}}</span> <br>
-                                        <label>Adresse </label> : <span> {{villemembre.adresse}}</span> <br>
-                                        <label>Date début du séjour </label> : <span> {{villemembre.dateDebut}}</span> <br>
-                                        
-
+										<div class="row white-background">
+											<label class="col-sm-6  label-formation"> Ville  </label>
+											<span class="col-sm-6  label-formation "> {{ villemembre.idville.nomville}}</span> <br>
+										</div>
+										<div class="row white-background">
+											<label class="col-sm-6  label-formation"> Adresse </label>
+											<span class="col-sm-6  label-formation "> {{villemembre.adresse}}</span> <br>
+										</div>
+										<div class="row white-background">
+											<label class="col-sm-6  label-formation">Date début du séjour  </label>
+											<span class="col-sm-6  label-formation "> {{villemembre.dateDebut}}</span> <br>
+										</div>
                                     </div>
                                 </div>
                             </div>

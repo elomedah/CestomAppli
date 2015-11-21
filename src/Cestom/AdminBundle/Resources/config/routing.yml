@@ -37,3 +37,6 @@ cestom_admin_ajouter_bureau_ville:
 cestom_admin_modifier_bureau_ville:
     path:     /ville/bureau/modifierBureau/{idbureau}
     defaults: { _controller: CestomAdminBundle:GestionBureau:modifierBureau }
+cestom_admin_attente_bourse:
+    path:     /bourse/attenteValidation
+    defaults: { _controller: CestomAdminBundle:GestionBourse:listeAttenteBourse}
