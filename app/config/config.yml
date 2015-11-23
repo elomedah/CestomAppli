@@ -103,4 +103,13 @@ fos_user:
   db_driver: orm
   firewall_name: main
   user_class: Cestom\UserBundle\Entity\User
-
+  registration:
+        confirmation:
+            from_email:
+                address:        cestomtest@gmail.com
+                sender_name:    Cestom
+  service:
+        mailer: fos_user.mailer.twig_swift
+  resetting:
+        email:
+            template: email/password_resetting.email.twig

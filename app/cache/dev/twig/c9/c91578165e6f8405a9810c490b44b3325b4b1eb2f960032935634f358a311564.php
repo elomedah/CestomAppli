@@ -1,6 +1,6 @@
 <?php
 
-/* WebProfilerBundle:Collector:form.html.twig */
+/* @WebProfiler/Collector/form.html.twig */
 class __TwigTemplate_55b035c565e47c6336f925cfb95b4c23f48f147e070e411e02303b3fb6c855ff extends Twig_Template
 {
     public function __construct(Twig_Environment $env)
@@ -8,7 +8,7 @@ class __TwigTemplate_55b035c565e47c6336f925cfb95b4c23f48f147e070e411e02303b3fb6c
         parent::__construct($env);
 
         // line 1
-        $this->parent = $this->loadTemplate("@WebProfiler/Profiler/layout.html.twig", "WebProfilerBundle:Collector:form.html.twig", 1);
+        $this->parent = $this->loadTemplate("@WebProfiler/Profiler/layout.html.twig", "@WebProfiler/Collector/form.html.twig", 1);
         $this->blocks = array(
             'toolbar' => array($this, 'block_toolbar'),
             'menu' => array($this, 'block_menu'),
@@ -24,7 +24,7 @@ class __TwigTemplate_55b035c565e47c6336f925cfb95b4c23f48f147e070e411e02303b3fb6c
     protected function doDisplay(array $context, array $blocks = array())
     {
         // line 3
-        $context["__internal_69339e23e70bb8fde78c2ce4f2a9ee4ccbbed21de07f21552ecba1dc9f2be948"] = $this;
+        $context["__internal_5a42983c589db95f0a4123c7ed7aa928a9afa43871120571063cf570714a4f58"] = $this;
         // line 1
         $this->parent->display($context, array_merge($this->blocks, $blocks));
     }
@@ -60,7 +60,7 @@ class __TwigTemplate_55b035c565e47c6336f925cfb95b4c23f48f147e070e411e02303b3fb6c
             echo "
         ";
             // line 12
-            $this->loadTemplate("@WebProfiler/Profiler/toolbar_item.html.twig", "WebProfilerBundle:Collector:form.html.twig", 12)->display(array_merge($context, array("link" => (isset($context["profiler_url"]) ? $context["profiler_url"] : $this->getContext($context, "profiler_url")))));
+            $this->loadTemplate("@WebProfiler/Profiler/toolbar_item.html.twig", "@WebProfiler/Collector/form.html.twig", 12)->display(array_merge($context, array("link" => (isset($context["profiler_url"]) ? $context["profiler_url"] : $this->getContext($context, "profiler_url")))));
             // line 13
             echo "    ";
         }
@@ -261,7 +261,7 @@ class __TwigTemplate_55b035c565e47c6336f925cfb95b4c23f48f147e070e411e02303b3fb6c
             foreach ($context['_seq'] as $context["formName"] => $context["formData"]) {
                 // line 188
                 echo "                    ";
-                echo $context["__internal_69339e23e70bb8fde78c2ce4f2a9ee4ccbbed21de07f21552ecba1dc9f2be948"]->getform_tree_entry($context["formName"], $context["formData"], true);
+                echo $context["__internal_5a42983c589db95f0a4123c7ed7aa928a9afa43871120571063cf570714a4f58"]->getform_tree_entry($context["formName"], $context["formData"], true);
                 echo "
                 ";
             }
@@ -279,7 +279,7 @@ class __TwigTemplate_55b035c565e47c6336f925cfb95b4c23f48f147e070e411e02303b3fb6c
             foreach ($context['_seq'] as $context["formName"] => $context["formData"]) {
                 // line 194
                 echo "                ";
-                echo $context["__internal_69339e23e70bb8fde78c2ce4f2a9ee4ccbbed21de07f21552ecba1dc9f2be948"]->getform_tree_details($context["formName"], $context["formData"], $this->getAttribute($this->getAttribute((isset($context["collector"]) ? $context["collector"] : $this->getContext($context, "collector")), "data", array()), "forms_by_hash", array()));
+                echo $context["__internal_5a42983c589db95f0a4123c7ed7aa928a9afa43871120571063cf570714a4f58"]->getform_tree_details($context["formName"], $context["formData"], $this->getAttribute($this->getAttribute((isset($context["collector"]) ? $context["collector"] : $this->getContext($context, "collector")), "data", array()), "forms_by_hash", array()));
                 echo "
             ";
             }
@@ -1173,7 +1173,7 @@ $context["trace"], "message", array(), "any", true, true)) {
 
     public function getTemplateName()
     {
-        return "WebProfilerBundle:Collector:form.html.twig";
+        return "@WebProfiler/Collector/form.html.twig";
     }
 
     public function isTraitable()

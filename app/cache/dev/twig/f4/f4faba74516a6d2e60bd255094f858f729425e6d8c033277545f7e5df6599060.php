@@ -40,8 +40,12 @@ class __TwigTemplate_bcb898a83f6ea38596e61d276b3302914ef6a03c049df957be11c03ec6f
         // line 6
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("assets/css/responsive.bootstrap.min.css"), "html", null, true);
         echo "\" />
-        <script src=\"";
+    <link rel=\"stylesheet\" type=\"text/css\" href=\"";
         // line 7
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("assets/css/jquery-ui.min.css"), "html", null, true);
+        echo "\" />
+        <script src=\"";
+        // line 8
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("assets/js/ace-extra.min.js"), "html", null, true);
         echo "\"></script>
 \t<style>
@@ -53,25 +57,25 @@ class __TwigTemplate_bcb898a83f6ea38596e61d276b3302914ef6a03c049df957be11c03ec6f
 ";
     }
 
-    // line 17
+    // line 18
     public function block_navigation($context, array $blocks = array())
     {
-        // line 18
+        // line 19
         echo "
 
     <ul class=\"breadcrumb\">
         <li>
             <i class=\"ace-icon fa fa-home home-icon\"></i>
             <a href=\"";
-        // line 23
+        // line 24
         echo $this->env->getExtension('routing')->getPath("cestom_admin_homepage");
         echo "\">Home</a>
         </li>
         <li>
 
             <a href=\"";
-        // line 27
-        echo $this->env->getExtension('routing')->getPath("cestom_admin_ajouter_ville");
+        // line 28
+        echo $this->env->getExtension('routing')->getPath("cestom_admin_attente_bourse");
         echo "\">Gestion des Bourses</a>
         </li>
 
@@ -81,32 +85,32 @@ class __TwigTemplate_bcb898a83f6ea38596e61d276b3302914ef6a03c049df957be11c03ec6f
 ";
     }
 
-    // line 37
+    // line 38
     public function block_soustitre($context, array $blocks = array())
     {
         echo " 
 
-    Gestion des villes
+    Gestion des bourses
 
 ";
     }
 
-    // line 43
+    // line 44
     public function block_content($context, array $blocks = array())
     {
-        // line 44
+        // line 45
         echo "
     ";
-        // line 45
+        // line 46
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable($this->getAttribute($this->getAttribute($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "session", array()), "flashbag", array()), "get", array(0 => "messagesucces"), "method"));
         foreach ($context['_seq'] as $context["_key"] => $context["flashMessage"]) {
-            // line 46
+            // line 47
             echo "        <div class=\"alert alert-block alert-success\">
             <div class=\"flash-notice\">
 
                 ";
-            // line 49
+            // line 50
             echo twig_escape_filter($this->env, $context["flashMessage"], "html", null, true);
             echo "
             </div>
@@ -116,19 +120,19 @@ class __TwigTemplate_bcb898a83f6ea38596e61d276b3302914ef6a03c049df957be11c03ec6f
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['flashMessage'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 53
+        // line 54
         echo "
     ";
-        // line 54
+        // line 55
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable($this->getAttribute($this->getAttribute($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "session", array()), "flashbag", array()), "get", array(0 => "messageerror"), "method"));
         foreach ($context['_seq'] as $context["_key"] => $context["flashMessage"]) {
-            // line 55
+            // line 56
             echo "        <div class=\"alert alert-block alert-danger\">
             <div class=\"flash-notice\">
 
                 ";
-            // line 58
+            // line 59
             echo twig_escape_filter($this->env, $context["flashMessage"], "html", null, true);
             echo "
             </div>
@@ -138,7 +142,7 @@ class __TwigTemplate_bcb898a83f6ea38596e61d276b3302914ef6a03c049df957be11c03ec6f
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['flashMessage'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 62
+        // line 63
         echo "
     <div class=\"widget-body\">
         <div class=\"widget-main no-padding\">
@@ -149,10 +153,10 @@ class __TwigTemplate_bcb898a83f6ea38596e61d276b3302914ef6a03c049df957be11c03ec6f
                     <!-- #section:elements.tab -->
                     <div class=\"tabbable\">
                         <ul class=\"nav nav-tabs\" id=\"myTab\">
-                            <li class=\" active\">
+                            <li class=\" active \">
                                 <a  href=\"";
-        // line 73
-        echo $this->env->getExtension('routing')->getPath("cestom_admin_ajouter_ville");
+        // line 74
+        echo $this->env->getExtension('routing')->getPath("cestom_admin_attente_bourse");
         echo "\">
                                     <i class=\"blue ace-icon fa fa-pause bigger-120\"></i>
                                     En attente
@@ -161,17 +165,17 @@ class __TwigTemplate_bcb898a83f6ea38596e61d276b3302914ef6a03c049df957be11c03ec6f
 
                             <li class=\"dropdown\">
                                 <a  href=\"";
-        // line 80
-        echo $this->env->getExtension('routing')->getPath("cestom_admin_ajouter_bureau_ville");
+        // line 81
+        echo $this->env->getExtension('routing')->getPath("cestom_admin_valide_liste_bourse");
         echo "\">
                                     <i class=\"green ace-icon fa fa-check bigger-120\"></i>
                                     Validé
                                 </a>
                             </li>
-\t\t\t\t\t\t\t<li class=\"dropdown\">
+\t\t\t    <li class=\"dropdown \">
                                 <a  href=\"";
-        // line 86
-        echo $this->env->getExtension('routing')->getPath("cestom_admin_ajouter_bureau_ville");
+        // line 87
+        echo $this->env->getExtension('routing')->getPath("cestom_admin_rejete_liste_bourse");
         echo "\">
                                     <i class=\"red ace-icon fa fa-ban bigger-120\"></i>
                                     Rejeté
@@ -192,7 +196,7 @@ class __TwigTemplate_bcb898a83f6ea38596e61d276b3302914ef6a03c049df957be11c03ec6f
                                             <thead>
                                                 <tr>
 
-                                                    <th> Action</th>
+
                                                     <th>Nom & Prénom  </th>
 \t\t\t\t\t\t\t\t\t\t\t\t\t<th> Type de doc </th>
 \t\t\t\t\t\t\t\t\t\t\t\t\t<th> Date d'upload </th>
@@ -207,47 +211,43 @@ class __TwigTemplate_bcb898a83f6ea38596e61d276b3302914ef6a03c049df957be11c03ec6f
 
                                             <tbody>
                                                 ";
-        // line 120
+        // line 121
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable((isset($context["bourses"]) ? $context["bourses"] : $this->getContext($context, "bourses")));
         foreach ($context['_seq'] as $context["_key"] => $context["bourse"]) {
-            // line 121
+            // line 122
             echo "                                                    <tr>
-                                                        <td>
-
-                                                            <a class=\"green\" href=\"#\">
-                                                                <i class=\"ace-icon fa fa-pencil bigger-130\"></i>
-                                                            </a>
-
-                                                        </td>
-
+                                                        
                                                         <td>";
-            // line 130
+            // line 124
             echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($context["bourse"], "idmembre", array()), "nomMembre", array()), "html", null, true);
             echo " ";
             echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($context["bourse"], "idmembre", array()), "prenomMembre", array()), "html", null, true);
             echo "</td>
                                                         <td>";
-            // line 131
+            // line 125
             echo twig_escape_filter($this->env, $this->getAttribute($context["bourse"], "typeDoc", array()), "html", null, true);
             echo " </td>
                                                         <td>";
-            // line 132
+            // line 126
             echo twig_escape_filter($this->env, twig_date_format_filter($this->env, $this->getAttribute($context["bourse"], "dateCreation", array()), "d/m/Y"), "html", null, true);
             echo " </td>
                                                         <td><span class=\"label label-sm label-info arrowed arrowed-righ\"><a href=\"";
-            // line 133
+            // line 127
             echo twig_escape_filter($this->env, $this->env->getExtension('vich_uploader')->asset($context["bourse"], "fichierBourse"), "html", null, true);
             echo " \" style=\"color:white\" target=\"_blank\">Cliquer ";
             echo twig_escape_filter($this->env, $this->getAttribute($context["bourse"], "docBourse", array()), "html", null, true);
             echo "</a></span> </td>
                                                         <td> <span class=\"label label-sm label-warning\">";
-            // line 134
+            // line 128
             echo twig_escape_filter($this->env, $this->getAttribute($context["bourse"], "etatDoc", array()), "html", null, true);
             echo "</span> </td>
-                                                        <td><button  class=\"validerDoc btn btn-xs btn-success\">
+                                                        <td><a class=\"validerDoc\" href=\"";
+            // line 129
+            echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("cestom_admin_valide_bourse", array("idbourse" => $this->getAttribute($context["bourse"], "idbourse", array()))), "html", null, true);
+            echo "\"> <button  class=\" btn btn-xs btn-success\">
 \t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<i class=\"ace-icon fa fa-check bigger-120\"></i>Valider
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t</button></td>
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t</button></a></td>
                                                         <td><button class=\"btn btn-xs btn-default\">
 \t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<i class=\"ace-icon fa fa-ban red bigger-130\"></i>\t\t\t\t\t\t\t\t\t\t\t\t\t\t<span class=\"label label-sm label-inverse arrowed-in\">Rejeter</span>
 
@@ -259,7 +259,7 @@ class __TwigTemplate_bcb898a83f6ea38596e61d276b3302914ef6a03c049df957be11c03ec6f
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['bourse'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 145
+        // line 139
         echo "                                            </tbody>
                                         </table>
                                     </div>
@@ -282,41 +282,37 @@ class __TwigTemplate_bcb898a83f6ea38596e61d276b3302914ef6a03c049df957be11c03ec6f
         </div><!-- /.col -->
     </div><!-- /.row -->
 
-<div id=\"dialog-form\" title=\"Create new user\">
-\t<p class=\"validateTips\">All form fields are required.</p>
+<div id=\"dialog-form\" title=\"Valider le dossier\">
+\t<h4 class=\"validateTips\">Attention! Vous êtes sur le point de valider le dossier. Veuillez ouvrir le document au moins une seule fois. </h4>
 
 \t<form>
 \t\t<fieldset>
-\t\t\t<label for=\"name\">Name</label>
-\t\t\t<input type=\"text\" name=\"name\" id=\"name\" value=\"Jane Smith\" class=\"text ui-widget-content ui-corner-all\">
-\t\t\t<label for=\"email\">Email</label>
-\t\t\t<input type=\"text\" name=\"email\" id=\"email\" value=\"jane@smith.com\" class=\"text ui-widget-content ui-corner-all\">
-\t\t\t<label for=\"password\">Password</label>
-\t\t\t<input type=\"password\" name=\"password\" id=\"password\" value=\"xxxxxxx\" class=\"text ui-widget-content ui-corner-all\">
+\t\t\t\t\t\t<input type=\"submit\" tabindex=\"-1\" style=\"position:absolute; top:-1000px\">
 
-\t\t\t<!-- Allow form submission with keyboard without duplicating the dialog button -->
-\t\t\t<input type=\"submit\" tabindex=\"-1\" style=\"position:absolute; top:-1000px\">
 \t\t</fieldset>
 \t</form>
-</div>
+</div> 
 
 ";
     }
 
-    // line 187
+    // line 174
     public function block_javascript($context, array $blocks = array())
     {
-        // line 188
+        // line 175
         echo "
     <script src=\"";
-        // line 189
+        // line 176
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("assets/js/jquery.dataTables.min.js"), "html", null, true);
         echo "\"></script>
     <script type=\"text/javascript\"src=\"";
-        // line 190
+        // line 177
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("assets/js/dataTables.responsive.min.js"), "html", null, true);
         echo "\"></script>
-
+    <script type=\"text/javascript\"src=\"";
+        // line 178
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("assets/js/jquery-ui.min.js"), "html", null, true);
+        echo "\"></script>
     <script type=\"text/javascript\">
         jQuery(function(\$) {
             \$('.main').removeClass('active');
@@ -338,44 +334,45 @@ class __TwigTemplate_bcb898a83f6ea38596e61d276b3302914ef6a03c049df957be11c03ec6f
                 }
             });
 
-var dialog, form,
-\t\t
-\t\t\tallFields = \$( [] ).add( name ).add( email ).add( password );
+              var dialog, form,theHREF;
 \t\t\t
 
-\t\tfunction addUser() {
+\t\tfunction valider() {
 \t\t\tvar valid = true;
-\t\t\t
+\t\t\t window.location.href = theHREF;
+\t\t\tdialog.dialog( \"close\" );
 \t\t\treturn valid;
 \t\t}
 
+
 \t\tdialog = \$( \"#dialog-form\" ).dialog({
 \t\t\tautoOpen: false,
-\t\t\theight: 300,
-\t\t\twidth: 350,
+\t\t\theight: 200,
+\t\t\twidth: 400,
 \t\t\tmodal: true,
 \t\t\tbuttons: {
-\t\t\t\t\"Create an account\": addUser,
-\t\t\t\tCancel: function() {
+\t\t\t\t\"Valider\": valider,
+\t\t\t\tAnnuler: function(event) {
+
 \t\t\t\t\tdialog.dialog( \"close\" );
 \t\t\t\t}
 \t\t\t},
 \t\t\tclose: function() {
 \t\t\t\tform[ 0 ].reset();
-\t\t\t\tallFields.removeClass( \"ui-state-error\" );
+
 \t\t\t}
 \t\t});
 
 \t\tform = dialog.find( \"form\" ).on( \"submit\", function( event ) {
-\t\t\tevent.preventDefault();
-\t\t\taddUser();
-\t\t});
 
-\t\t\$(\".validerDoc\" ).button().on( \"click\", function() {
-                        alert(\"jjjj\");
+\t\t\t
+\t\t});
+         \$(\".validerDoc\" ).on( \"click\", function(e) {
+                       \te.preventDefault();
+\t\t\t theHREF = \$(this).attr(\"href\");
 \t\t\tdialog.dialog( \"open\" );
 \t\t});
-
+\t\t
         });
     </script>
 
@@ -394,7 +391,7 @@ var dialog, form,
 
     public function getDebugInfo()
     {
-        return array (  317 => 190,  313 => 189,  310 => 188,  307 => 187,  263 => 145,  246 => 134,  240 => 133,  236 => 132,  232 => 131,  226 => 130,  215 => 121,  211 => 120,  174 => 86,  165 => 80,  155 => 73,  142 => 62,  132 => 58,  127 => 55,  123 => 54,  120 => 53,  110 => 49,  105 => 46,  101 => 45,  98 => 44,  95 => 43,  85 => 37,  74 => 27,  67 => 23,  60 => 18,  57 => 17,  45 => 7,  41 => 6,  37 => 5,  32 => 4,  11 => 3,);
+        return array (  314 => 178,  310 => 177,  306 => 176,  303 => 175,  300 => 174,  263 => 139,  247 => 129,  243 => 128,  237 => 127,  233 => 126,  229 => 125,  223 => 124,  219 => 122,  215 => 121,  178 => 87,  169 => 81,  159 => 74,  146 => 63,  136 => 59,  131 => 56,  127 => 55,  124 => 54,  114 => 50,  109 => 47,  105 => 46,  102 => 45,  99 => 44,  89 => 38,  78 => 28,  71 => 24,  64 => 19,  61 => 18,  49 => 8,  45 => 7,  41 => 6,  37 => 5,  32 => 4,  11 => 3,);
     }
 }
 /* */
@@ -403,6 +400,7 @@ var dialog, form,
 /* {% block style %} */
 /*     <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/dataTables.bootstrap.min.css')}}" />*/
 /*     <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/responsive.bootstrap.min.css')}}" />*/
+/*     <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/jquery-ui.min.css')}}" />*/
 /*         <script src="{{ asset('assets/js/ace-extra.min.js')}}"></script>*/
 /* 	<style>*/
 /* 		*/
@@ -423,7 +421,7 @@ var dialog, form,
 /*         </li>*/
 /*         <li>*/
 /* */
-/*             <a href="{{path('cestom_admin_ajouter_ville')}}">Gestion des Bourses</a>*/
+/*             <a href="{{path('cestom_admin_attente_bourse')}}">Gestion des Bourses</a>*/
 /*         </li>*/
 /* */
 /*         <li class="active">Dossier en attente de validation</li>*/
@@ -435,7 +433,7 @@ var dialog, form,
 /* */
 /* {% block soustitre %} */
 /* */
-/*     Gestion des villes*/
+/*     Gestion des bourses*/
 /* */
 /* {% endblock %}*/
 /* */
@@ -468,21 +466,21 @@ var dialog, form,
 /*                     <!-- #section:elements.tab -->*/
 /*                     <div class="tabbable">*/
 /*                         <ul class="nav nav-tabs" id="myTab">*/
-/*                             <li class=" active">*/
-/*                                 <a  href="{{path('cestom_admin_ajouter_ville')}}">*/
+/*                             <li class=" active ">*/
+/*                                 <a  href="{{path('cestom_admin_attente_bourse')}}">*/
 /*                                     <i class="blue ace-icon fa fa-pause bigger-120"></i>*/
 /*                                     En attente*/
 /*                                 </a>*/
 /*                             </li>*/
 /* */
 /*                             <li class="dropdown">*/
-/*                                 <a  href="{{path('cestom_admin_ajouter_bureau_ville')}}">*/
+/*                                 <a  href="{{path('cestom_admin_valide_liste_bourse')}}">*/
 /*                                     <i class="green ace-icon fa fa-check bigger-120"></i>*/
 /*                                     Validé*/
 /*                                 </a>*/
 /*                             </li>*/
-/* 							<li class="dropdown">*/
-/*                                 <a  href="{{path('cestom_admin_ajouter_bureau_ville')}}">*/
+/* 			    <li class="dropdown ">*/
+/*                                 <a  href="{{path('cestom_admin_rejete_liste_bourse')}}">*/
 /*                                     <i class="red ace-icon fa fa-ban bigger-120"></i>*/
 /*                                     Rejeté*/
 /*                                 </a>*/
@@ -502,7 +500,7 @@ var dialog, form,
 /*                                             <thead>*/
 /*                                                 <tr>*/
 /* */
-/*                                                     <th> Action</th>*/
+/* */
 /*                                                     <th>Nom & Prénom  </th>*/
 /* 													<th> Type de doc </th>*/
 /* 													<th> Date d'upload </th>*/
@@ -518,22 +516,15 @@ var dialog, form,
 /*                                             <tbody>*/
 /*                                                 {% for bourse in bourses %}*/
 /*                                                     <tr>*/
-/*                                                         <td>*/
-/* */
-/*                                                             <a class="green" href="#">*/
-/*                                                                 <i class="ace-icon fa fa-pencil bigger-130"></i>*/
-/*                                                             </a>*/
-/* */
-/*                                                         </td>*/
-/* */
+/*                                                         */
 /*                                                         <td>{{bourse.idmembre.nomMembre }} {{bourse.idmembre.prenomMembre }}</td>*/
 /*                                                         <td>{{bourse.typeDoc }} </td>*/
 /*                                                         <td>{{bourse.dateCreation | date("d/m/Y") }} </td>*/
 /*                                                         <td><span class="label label-sm label-info arrowed arrowed-righ"><a href="{{ vich_uploader_asset(bourse, 'fichierBourse') }} " style="color:white" target="_blank">Cliquer {{bourse.docBourse }}</a></span> </td>*/
 /*                                                         <td> <span class="label label-sm label-warning">{{bourse.etatDoc }}</span> </td>*/
-/*                                                         <td><button  class="validerDoc btn btn-xs btn-success">*/
+/*                                                         <td><a class="validerDoc" href="{{path ('cestom_admin_valide_bourse',{'idbourse':bourse.idbourse})}}"> <button  class=" btn btn-xs btn-success">*/
 /* 															<i class="ace-icon fa fa-check bigger-120"></i>Valider*/
-/* 														</button></td>*/
+/* 														</button></a></td>*/
 /*                                                         <td><button class="btn btn-xs btn-default">*/
 /* 															<i class="ace-icon fa fa-ban red bigger-130"></i>														<span class="label label-sm label-inverse arrowed-in">Rejeter</span>*/
 /* */
@@ -563,23 +554,16 @@ var dialog, form,
 /*         </div><!-- /.col -->*/
 /*     </div><!-- /.row -->*/
 /* */
-/* <div id="dialog-form" title="Create new user">*/
-/* 	<p class="validateTips">All form fields are required.</p>*/
+/* <div id="dialog-form" title="Valider le dossier">*/
+/* 	<h4 class="validateTips">Attention! Vous êtes sur le point de valider le dossier. Veuillez ouvrir le document au moins une seule fois. </h4>*/
 /* */
 /* 	<form>*/
 /* 		<fieldset>*/
-/* 			<label for="name">Name</label>*/
-/* 			<input type="text" name="name" id="name" value="Jane Smith" class="text ui-widget-content ui-corner-all">*/
-/* 			<label for="email">Email</label>*/
-/* 			<input type="text" name="email" id="email" value="jane@smith.com" class="text ui-widget-content ui-corner-all">*/
-/* 			<label for="password">Password</label>*/
-/* 			<input type="password" name="password" id="password" value="xxxxxxx" class="text ui-widget-content ui-corner-all">*/
+/* 						<input type="submit" tabindex="-1" style="position:absolute; top:-1000px">*/
 /* */
-/* 			<!-- Allow form submission with keyboard without duplicating the dialog button -->*/
-/* 			<input type="submit" tabindex="-1" style="position:absolute; top:-1000px">*/
 /* 		</fieldset>*/
 /* 	</form>*/
-/* </div>*/
+/* </div> */
 /* */
 /* {% endblock %}*/
 /* */
@@ -587,7 +571,7 @@ var dialog, form,
 /* */
 /*     <script src="{{asset('assets/js/jquery.dataTables.min.js')}}"></script>*/
 /*     <script type="text/javascript"src="{{asset('assets/js/dataTables.responsive.min.js')}}"></script>*/
-/* */
+/*     <script type="text/javascript"src="{{asset('assets/js/jquery-ui.min.js')}}"></script>*/
 /*     <script type="text/javascript">*/
 /*         jQuery(function($) {*/
 /*             $('.main').removeClass('active');*/
@@ -609,44 +593,45 @@ var dialog, form,
 /*                 }*/
 /*             });*/
 /* */
-/* var dialog, form,*/
-/* 		*/
-/* 			allFields = $( [] ).add( name ).add( email ).add( password );*/
+/*               var dialog, form,theHREF;*/
 /* 			*/
 /* */
-/* 		function addUser() {*/
+/* 		function valider() {*/
 /* 			var valid = true;*/
-/* 			*/
+/* 			 window.location.href = theHREF;*/
+/* 			dialog.dialog( "close" );*/
 /* 			return valid;*/
 /* 		}*/
 /* */
+/* */
 /* 		dialog = $( "#dialog-form" ).dialog({*/
 /* 			autoOpen: false,*/
-/* 			height: 300,*/
-/* 			width: 350,*/
+/* 			height: 200,*/
+/* 			width: 400,*/
 /* 			modal: true,*/
 /* 			buttons: {*/
-/* 				"Create an account": addUser,*/
-/* 				Cancel: function() {*/
+/* 				"Valider": valider,*/
+/* 				Annuler: function(event) {*/
+/* */
 /* 					dialog.dialog( "close" );*/
 /* 				}*/
 /* 			},*/
 /* 			close: function() {*/
 /* 				form[ 0 ].reset();*/
-/* 				allFields.removeClass( "ui-state-error" );*/
+/* */
 /* 			}*/
 /* 		});*/
 /* */
 /* 		form = dialog.find( "form" ).on( "submit", function( event ) {*/
-/* 			event.preventDefault();*/
-/* 			addUser();*/
-/* 		});*/
 /* */
-/* 		$(".validerDoc" ).button().on( "click", function() {*/
-/*                         alert("jjjj");*/
+/* 			*/
+/* 		});*/
+/*          $(".validerDoc" ).on( "click", function(e) {*/
+/*                        	e.preventDefault();*/
+/* 			 theHREF = $(this).attr("href");*/
 /* 			dialog.dialog( "open" );*/
 /* 		});*/
-/* */
+/* 		*/
 /*         });*/
 /*     </script>*/
 /* */

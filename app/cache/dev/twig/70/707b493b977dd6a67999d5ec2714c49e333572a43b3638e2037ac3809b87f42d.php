@@ -1,6 +1,6 @@
 <?php
 
-/* SwiftmailerBundle:Collector:swiftmailer.html.twig */
+/* @Swiftmailer/Collector/swiftmailer.html.twig */
 class __TwigTemplate_a911cbc9706fd1aa602a87e1db27bcffa5ff1e00bcb19863cf06f083f6cfaa44 extends Twig_Template
 {
     public function __construct(Twig_Environment $env)
@@ -8,7 +8,7 @@ class __TwigTemplate_a911cbc9706fd1aa602a87e1db27bcffa5ff1e00bcb19863cf06f083f6c
         parent::__construct($env);
 
         // line 1
-        $this->parent = $this->loadTemplate("WebProfilerBundle:Profiler:layout.html.twig", "SwiftmailerBundle:Collector:swiftmailer.html.twig", 1);
+        $this->parent = $this->loadTemplate("WebProfilerBundle:Profiler:layout.html.twig", "@Swiftmailer/Collector/swiftmailer.html.twig", 1);
         $this->blocks = array(
             'toolbar' => array($this, 'block_toolbar'),
             'menu' => array($this, 'block_menu'),
@@ -89,7 +89,7 @@ class __TwigTemplate_a911cbc9706fd1aa602a87e1db27bcffa5ff1e00bcb19863cf06f083f6c
             $context["text"] = ('' === $tmp = ob_get_clean()) ? '' : new Twig_Markup($tmp, $this->env->getCharset());
             // line 27
             echo "        ";
-            $this->loadTemplate("WebProfilerBundle:Profiler:toolbar_item.html.twig", "SwiftmailerBundle:Collector:swiftmailer.html.twig", 27)->display(array_merge($context, array("link" => (isset($context["profiler_url"]) ? $context["profiler_url"] : $this->getContext($context, "profiler_url")))));
+            $this->loadTemplate("WebProfilerBundle:Profiler:toolbar_item.html.twig", "@Swiftmailer/Collector/swiftmailer.html.twig", 27)->display(array_merge($context, array("link" => (isset($context["profiler_url"]) ? $context["profiler_url"] : $this->getContext($context, "profiler_url")))));
             // line 28
             echo "    ";
         }
@@ -279,7 +279,7 @@ class __TwigTemplate_a911cbc9706fd1aa602a87e1db27bcffa5ff1e00bcb19863cf06f083f6c
 
     public function getTemplateName()
     {
-        return "SwiftmailerBundle:Collector:swiftmailer.html.twig";
+        return "@Swiftmailer/Collector/swiftmailer.html.twig";
     }
 
     public function isTraitable()

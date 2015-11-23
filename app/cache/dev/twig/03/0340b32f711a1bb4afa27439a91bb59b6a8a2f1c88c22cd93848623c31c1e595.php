@@ -1,6 +1,6 @@
 <?php
 
-/* ::base.html.twig */
+/* base.html.twig */
 class __TwigTemplate_c58c3f25214a91c5080757f14677ee1e3e6540f9e1191595017e62effb61349f extends Twig_Template
 {
     public function __construct(Twig_Environment $env)
@@ -48,35 +48,34 @@ class __TwigTemplate_c58c3f25214a91c5080757f14677ee1e3e6540f9e1191595017e62effb6
         echo "\" />
         <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css\">
         
-        <!-- page specific plugin styles -->
 
         <!-- text fonts -->
       <!--  <link rel=\"stylesheet\" href=\"";
-        // line 19
+        // line 18
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("assets/css/ace-fonts.css"), "html", null, true);
         echo "\" /> -->
 
         <!-- ace styles -->
         <link rel=\"stylesheet\" href=\"";
-        // line 22
+        // line 21
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("assets/css/ace.min.css"), "html", null, true);
         echo "\" />
         <link rel=\"stylesheet\" href=\"";
-        // line 23
+        // line 22
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("assets/css/ace-skins.min.css"), "html", null, true);
         echo "\" />
         <link rel=\"stylesheet\" href=\"";
-        // line 24
+        // line 23
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("assets/css/ace-rtl.min.css"), "html", null, true);
         echo "\" />
 \t\t<!-- Articles new-edit-show-style -->
        <!-- <link rel=\"stylesheet\" href=\"";
-        // line 26
+        // line 25
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("assets/css/gestion_article.css"), "html", null, true);
         echo "\" /> -->
 
         <script src=\"";
-        // line 28
+        // line 27
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("assets/js/ace-extra.min.js"), "html", null, true);
         echo "\"></script>
 \t<style>
@@ -89,19 +88,27 @@ class __TwigTemplate_c58c3f25214a91c5080757f14677ee1e3e6540f9e1191595017e62effb6
  \t\t.table-header{ 
 \t\tbackground-color:#337ab7
 \t\t}
+\t\t.table-header,.form-actions{
+\t\t\t\tbackground-color:#838383;
+\t\t\t\ttext-align:center;
+\t\t\t\tfont-size:xx-large;
+\t\t\t}
+\t\t\t.page-header h1{
+\t\t\t\tcolor: black;
+\t\t\t}
 \t</style>
         ";
-        // line 40
+        // line 47
         $this->displayBlock('style', $context, $blocks);
-        // line 41
+        // line 48
         echo "    </head>
 
     <body class=\"no-skin\">
         <!-- #section:basics/navbar.layout -->
         ";
-        // line 45
+        // line 52
         $this->displayBlock('tetiere', $context, $blocks);
-        // line 122
+        // line 129
         echo "        <!-- /section:basics/navbar.layout -->
         <div class=\"main-container\" id=\"main-container\">
            
@@ -111,7 +118,7 @@ class __TwigTemplate_c58c3f25214a91c5080757f14677ee1e3e6540f9e1191595017e62effb6
                 <ul class=\"nav nav-list\">
                     <li id=\"menu_membre\" class=\" main \">
                         <a class=\"mainactive \" href=\"";
-        // line 130
+        // line 137
         echo $this->env->getExtension('routing')->getPath("cestom_admin_homepage");
         echo "\">
                             <i class=\"menu-icon fa fa-user\"></i>
@@ -123,7 +130,7 @@ class __TwigTemplate_c58c3f25214a91c5080757f14677ee1e3e6540f9e1191595017e62effb6
 
                     <li class=\" main \">
                         <a href=\"";
-        // line 139
+        // line 146
         echo $this->env->getExtension('routing')->getPath("cestom_admin_attente_bourse");
         echo "\" class=\"mainactive \">
                             <i class=\"menu-icon fa fa-money\"></i>
@@ -157,7 +164,7 @@ class __TwigTemplate_c58c3f25214a91c5080757f14677ee1e3e6540f9e1191595017e62effb6
                     </li>
                     <li id=\"menu_ville\" class=\"main\">
                         <a class=\"mainactive\" href=\"";
-        // line 170
+        // line 177
         echo $this->env->getExtension('routing')->getPath("cestom_admin_ajouter_ville");
         echo "\">
                             <i class=\"menu-icon fa fa-building\"></i>
@@ -171,7 +178,7 @@ class __TwigTemplate_c58c3f25214a91c5080757f14677ee1e3e6540f9e1191595017e62effb6
 
                     <li id=\"menu_universite\" class=\"main\">
                         <a class=\"mainactive\" href=\"";
-        // line 181
+        // line 188
         echo $this->env->getExtension('routing')->getPath("cestom_admin_ajouter_universite");
         echo "\">
                             <i class=\"menu-icon fa fa-graduation-cap\"></i>
@@ -183,7 +190,7 @@ class __TwigTemplate_c58c3f25214a91c5080757f14677ee1e3e6540f9e1191595017e62effb6
 
                     <li id=\"menu_articles\" class=\"main\">
                         <a class=\"mainactive\" href=\"";
-        // line 190
+        // line 197
         echo $this->env->getExtension('routing')->getPath("cestomarticlebundle_article");
         echo "\">
                             <i class=\"menu-icon fa fa-newspaper-o\"></i>
@@ -196,7 +203,7 @@ class __TwigTemplate_c58c3f25214a91c5080757f14677ee1e3e6540f9e1191595017e62effb6
 
                     <li id=\"menu_articles\" class=\"main\">
                         <a class=\"mainactive\" href=\"";
-        // line 200
+        // line 207
         echo $this->env->getExtension('routing')->getPath("cestomarticlebundle_categorie");
         echo "\">      
                             <i class=\"menu-icon fa fa-th-list\"></i>
@@ -221,9 +228,9 @@ class __TwigTemplate_c58c3f25214a91c5080757f14677ee1e3e6540f9e1191595017e62effb6
 
                 <div class=\"breadcrumbs\" id=\"breadcrumbs\">
                     ";
-        // line 222
+        // line 229
         $this->displayBlock('navigation', $context, $blocks);
-        // line 225
+        // line 232
         echo "                   
                 </div>
 
@@ -234,16 +241,16 @@ class __TwigTemplate_c58c3f25214a91c5080757f14677ee1e3e6540f9e1191595017e62effb6
                     <div class=\"page-header\">
                         <h1>
                             ";
-        // line 234
+        // line 241
         $this->displayBlock('soustitre', $context, $blocks);
-        // line 237
+        // line 244
         echo "                        </h1>
                     </div>
 
                     ";
-        // line 240
+        // line 247
         $this->displayBlock('content', $context, $blocks);
-        // line 243
+        // line 250
         echo "
                 </div><!-- /.page-content -->
 
@@ -251,9 +258,9 @@ class __TwigTemplate_c58c3f25214a91c5080757f14677ee1e3e6540f9e1191595017e62effb6
             </div><!-- /.main-content -->
 
             ";
-        // line 249
+        // line 256
         $this->displayBlock('footer', $context, $blocks);
-        // line 279
+        // line 286
         echo "
             <a href=\"#\" id=\"btn-scroll-up\" class=\"btn-scroll-up btn btn-sm btn-inverse\">
                 <i class=\"ace-icon fa fa-angle-double-up icon-only bigger-110\"></i>
@@ -261,60 +268,40 @@ class __TwigTemplate_c58c3f25214a91c5080757f14677ee1e3e6540f9e1191595017e62effb6
         </div><!-- /.main-container -->
 \t\t
 \t\t<!--style-->
-\t\t<style>
-\t\t\t.table-header,.form-actions{
-\t\t\t\tbackground-color:#838383;
-\t\t\t\ttext-align:center;
-\t\t\t\tfont-size:xx-large;
-\t\t\t}
-\t\t\t.page-header h1{
-\t\t\t\tcolor: black;
-\t\t\t}
-\t\t</style>
+\t\t
         <!-- basic scripts -->
         <script src=\"";
-        // line 297
+        // line 295
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("assets/js/jquery.min.js"), "html", null, true);
         echo "\"></script>
-
         <script src=\"";
-        // line 299
-        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("assets/js/bootstrap.min.js"), "html", null, true);
-        echo "\"></script>
-
-        <script src=\"";
-        // line 301
-        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("assets/js/jquery-ui.custom.min.js"), "html", null, true);
-        echo "\"></script>
-        <script src=\"";
-        // line 302
+        // line 296
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("assets/js/ace-elements.min.js"), "html", null, true);
         echo "\"></script>
-
         <script src=\"";
-        // line 304
+        // line 297
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("assets/js/ace.min.js"), "html", null, true);
         echo "\"></script>
                      
         ";
-        // line 306
+        // line 299
         $this->displayBlock('javascript', $context, $blocks);
-        // line 309
+        // line 302
         echo "    </body>
 </html>
 ";
     }
 
-    // line 40
+    // line 47
     public function block_style($context, array $blocks = array())
     {
         echo "  ";
     }
 
-    // line 45
+    // line 52
     public function block_tetiere($context, array $blocks = array())
     {
-        // line 46
+        // line 53
         echo "            <!-- #section:basics/navbar.layout -->
             <div id=\"navbar\"  class=\" navbar navbar-default\">
                 
@@ -336,11 +323,11 @@ class __TwigTemplate_c58c3f25214a91c5080757f14677ee1e3e6540f9e1191595017e62effb6
                         <a href=\"#\" class=\"navbar-brand\">
                             <small>
                                 ";
-        // line 66
+        // line 73
         if (isset($context['assetic']['debug']) && $context['assetic']['debug']) {
             // asset "e7a029c_0"
             $context["asset_url"] = isset($context['assetic']['use_controller']) && $context['assetic']['use_controller'] ? $this->env->getExtension('routing')->getPath("_assetic_e7a029c_0") : $this->env->getExtension('assets')->getAssetUrl("_controller/images/e7a029c_icone-site-cestom_1.png");
-            // line 67
+            // line 74
             echo "\t\t\t\t\t\t\t\t\t<img src=\"";
             echo twig_escape_filter($this->env, (isset($context["asset_url"]) ? $context["asset_url"] : $this->getContext($context, "asset_url")), "html", null, true);
             echo "\" class=\"etoile-cestom\" alt=\"etoile-cestom\"/>
@@ -354,7 +341,7 @@ class __TwigTemplate_c58c3f25214a91c5080757f14677ee1e3e6540f9e1191595017e62effb6
 \t\t\t\t\t\t\t\t";
         }
         unset($context["asset_url"]);
-        // line 69
+        // line 76
         echo "                                Administration Cestom
                             </small>
                         </a>
@@ -365,9 +352,9 @@ class __TwigTemplate_c58c3f25214a91c5080757f14677ee1e3e6540f9e1191595017e62effb6
                 <ul class=\"nav ace-nav\">
 \t\t
                     ";
-        // line 78
+        // line 85
         $this->displayBlock('user', $context, $blocks);
-        // line 113
+        // line 120
         echo "                </ul>
 
             </div>
@@ -379,21 +366,21 @@ class __TwigTemplate_c58c3f25214a91c5080757f14677ee1e3e6540f9e1191595017e62effb6
         ";
     }
 
-    // line 78
+    // line 85
     public function block_user($context, array $blocks = array())
     {
-        // line 79
+        // line 86
         echo "                        <!-- #section:basics/navbar.user_menu -->
                         <li class=\"gray-black\">
                             <a data-toggle=\"dropdown\" href=\"#\" class=\"dropdown-toggle\">
                                 <img class=\"nav-user-photo\" src=\"";
-        // line 82
+        // line 89
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("assets/avatars/avatar2.png"), "html", null, true);
         echo "\" alt=\"Admin\" />
                                 <span class=\"user-info\">
                                     <small>Bienvenue,</small>
                                     ";
-        // line 85
+        // line 92
         echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "user", array()), "username", array()), "html", null, true);
         echo "
                                 </span>
@@ -406,7 +393,7 @@ class __TwigTemplate_c58c3f25214a91c5080757f14677ee1e3e6540f9e1191595017e62effb6
 
                                 <li>
                                     <a href=\"";
-        // line 95
+        // line 102
         echo $this->env->getExtension('routing')->getPath("cestom_home");
         echo "\">
                                         <i class=\"ace-icon fa fa-user\"></i>
@@ -418,7 +405,7 @@ class __TwigTemplate_c58c3f25214a91c5080757f14677ee1e3e6540f9e1191595017e62effb6
 
                                 <li>
                                     <a href=\"";
-        // line 104
+        // line 111
         echo $this->env->getExtension('routing')->getPath("fos_user_security_logout");
         echo "\">
                                         <i class=\"ace-icon fa fa-power-off\"></i>
@@ -431,15 +418,15 @@ class __TwigTemplate_c58c3f25214a91c5080757f14677ee1e3e6540f9e1191595017e62effb6
                     ";
     }
 
-    // line 222
+    // line 229
     public function block_navigation($context, array $blocks = array())
     {
-        // line 223
+        // line 230
         echo "
                     ";
     }
 
-    // line 234
+    // line 241
     public function block_soustitre($context, array $blocks = array())
     {
         echo " 
@@ -447,18 +434,18 @@ class __TwigTemplate_c58c3f25214a91c5080757f14677ee1e3e6540f9e1191595017e62effb6
                             ";
     }
 
-    // line 240
+    // line 247
     public function block_content($context, array $blocks = array())
     {
-        // line 241
+        // line 248
         echo "
                     ";
     }
 
-    // line 249
+    // line 256
     public function block_footer($context, array $blocks = array())
     {
-        // line 250
+        // line 257
         echo "                <div class=\"footer\">
                     <div class=\"footer-inner\">
                         <!-- #section:basics/footer -->
@@ -490,17 +477,17 @@ class __TwigTemplate_c58c3f25214a91c5080757f14677ee1e3e6540f9e1191595017e62effb6
             ";
     }
 
-    // line 306
+    // line 299
     public function block_javascript($context, array $blocks = array())
     {
-        // line 307
+        // line 300
         echo "
         ";
     }
 
     public function getTemplateName()
     {
-        return "::base.html.twig";
+        return "base.html.twig";
     }
 
     public function isTraitable()
@@ -510,7 +497,7 @@ class __TwigTemplate_c58c3f25214a91c5080757f14677ee1e3e6540f9e1191595017e62effb6
 
     public function getDebugInfo()
     {
-        return array (  497 => 307,  494 => 306,  462 => 250,  459 => 249,  454 => 241,  451 => 240,  443 => 234,  438 => 223,  435 => 222,  422 => 104,  410 => 95,  397 => 85,  391 => 82,  386 => 79,  383 => 78,  371 => 113,  369 => 78,  358 => 69,  344 => 67,  340 => 66,  318 => 46,  315 => 45,  309 => 40,  303 => 309,  301 => 306,  296 => 304,  291 => 302,  287 => 301,  282 => 299,  277 => 297,  257 => 279,  255 => 249,  247 => 243,  245 => 240,  240 => 237,  238 => 234,  227 => 225,  225 => 222,  200 => 200,  187 => 190,  175 => 181,  161 => 170,  127 => 139,  115 => 130,  105 => 122,  103 => 45,  97 => 41,  95 => 40,  80 => 28,  75 => 26,  70 => 24,  66 => 23,  62 => 22,  56 => 19,  47 => 13,  43 => 12,  35 => 7,  27 => 1,);
+        return array (  484 => 300,  481 => 299,  449 => 257,  446 => 256,  441 => 248,  438 => 247,  430 => 241,  425 => 230,  422 => 229,  409 => 111,  397 => 102,  384 => 92,  378 => 89,  373 => 86,  370 => 85,  358 => 120,  356 => 85,  345 => 76,  331 => 74,  327 => 73,  305 => 53,  302 => 52,  296 => 47,  290 => 302,  288 => 299,  283 => 297,  279 => 296,  275 => 295,  264 => 286,  262 => 256,  254 => 250,  252 => 247,  247 => 244,  245 => 241,  234 => 232,  232 => 229,  207 => 207,  194 => 197,  182 => 188,  168 => 177,  134 => 146,  122 => 137,  112 => 129,  110 => 52,  104 => 48,  102 => 47,  79 => 27,  74 => 25,  69 => 23,  65 => 22,  61 => 21,  55 => 18,  47 => 13,  43 => 12,  35 => 7,  27 => 1,);
     }
 }
 /* ﻿<!DOCTYPE html>*/
@@ -528,7 +515,6 @@ class __TwigTemplate_c58c3f25214a91c5080757f14677ee1e3e6540f9e1191595017e62effb6
 /*         <link rel="stylesheet" href="{{ asset('assets/css/dataTable.min.css')}}" />*/
 /*         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">*/
 /*         */
-/*         <!-- page specific plugin styles -->*/
 /* */
 /*         <!-- text fonts -->*/
 /*       <!--  <link rel="stylesheet" href="{{ asset('assets/css/ace-fonts.css')}}" /> -->*/
@@ -551,6 +537,14 @@ class __TwigTemplate_c58c3f25214a91c5080757f14677ee1e3e6540f9e1191595017e62effb6
 /*  		.table-header{ */
 /* 		background-color:#337ab7*/
 /* 		}*/
+/* 		.table-header,.form-actions{*/
+/* 				background-color:#838383;*/
+/* 				text-align:center;*/
+/* 				font-size:xx-large;*/
+/* 			}*/
+/* 			.page-header h1{*/
+/* 				color: black;*/
+/* 			}*/
 /* 	</style>*/
 /*         {% block style %}  {% endblock %}*/
 /*     </head>*/
@@ -798,24 +792,10 @@ class __TwigTemplate_c58c3f25214a91c5080757f14677ee1e3e6540f9e1191595017e62effb6
 /*         </div><!-- /.main-container -->*/
 /* 		*/
 /* 		<!--style-->*/
-/* 		<style>*/
-/* 			.table-header,.form-actions{*/
-/* 				background-color:#838383;*/
-/* 				text-align:center;*/
-/* 				font-size:xx-large;*/
-/* 			}*/
-/* 			.page-header h1{*/
-/* 				color: black;*/
-/* 			}*/
-/* 		</style>*/
+/* 		*/
 /*         <!-- basic scripts -->*/
 /*         <script src="{{ asset('assets/js/jquery.min.js')}}"></script>*/
-/* */
-/*         <script src="{{ asset('assets/js/bootstrap.min.js')}}"></script>*/
-/* */
-/*         <script src="{{ asset('assets/js/jquery-ui.custom.min.js')}}"></script>*/
 /*         <script src="{{ asset('assets/js/ace-elements.min.js')}}"></script>*/
-/* */
 /*         <script src="{{ asset('assets/js/ace.min.js')}}"></script>*/
 /*                      */
 /*         {% block javascript %}*/

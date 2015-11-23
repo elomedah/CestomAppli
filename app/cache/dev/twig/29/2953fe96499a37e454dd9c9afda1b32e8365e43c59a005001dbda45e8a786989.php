@@ -116,7 +116,10 @@ class __TwigTemplate_74d7073149702e77d227a14deef9501a5165d1e06fb0c1393217e958490
 
                 <div class=\"toolbar clearfix\">
                     <div>
-                        <a href=\"#\" data-target=\"#forgot-box\" class=\"forgot-password-link\">
+                        <a href=\"";
+        // line 78
+        echo $this->env->getExtension('routing')->getPath("fos_user_resetting_request");
+        echo "\" data-target=\"#forgot-box\" class=\"forgot-password-link\">
                             Mot de passe oublié
                         </a>
                     </div>
@@ -154,7 +157,7 @@ class __TwigTemplate_74d7073149702e77d227a14deef9501a5165d1e06fb0c1393217e958490
 
     public function getDebugInfo()
     {
-        return array (  127 => 84,  74 => 34,  63 => 26,  58 => 25,  50 => 20,  47 => 19,  45 => 18,  31 => 6,  28 => 5,  11 => 1,);
+        return array (  130 => 84,  121 => 78,  74 => 34,  63 => 26,  58 => 25,  50 => 20,  47 => 19,  45 => 18,  31 => 6,  28 => 5,  11 => 1,);
     }
 }
 /* {% extends 'login.html.twig' %}*/
@@ -234,7 +237,7 @@ class __TwigTemplate_74d7073149702e77d227a14deef9501a5165d1e06fb0c1393217e958490
 /* */
 /*                 <div class="toolbar clearfix">*/
 /*                     <div>*/
-/*                         <a href="#" data-target="#forgot-box" class="forgot-password-link">*/
+/*                         <a href="{{path ('fos_user_resetting_request') }}" data-target="#forgot-box" class="forgot-password-link">*/
 /*                             Mot de passe oublié*/
 /*                         </a>*/
 /*                     </div>*/

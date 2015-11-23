@@ -40,3 +40,15 @@ cestom_admin_modifier_bureau_ville:
 cestom_admin_attente_bourse:
     path:     /bourse/attenteValidation
     defaults: { _controller: CestomAdminBundle:GestionBourse:listeAttenteBourse}
+cestom_admin_valide_liste_bourse:
+    path:     /bourse/valide
+    defaults: { _controller: CestomAdminBundle:GestionBourse:listeValideBourse}
+cestom_admin_rejete_liste_bourse:
+    path:     /bourse/rejete
+    defaults: { _controller: CestomAdminBundle:GestionBourse:listeRejeteBourse}
+cestom_admin_valide_bourse:
+    path:     /bourse/validation/{idbourse}
+    defaults: { _controller: CestomAdminBundle:GestionBourse:validerBourse}
+cestom_admin_valide_mail:
+    path:     /bourse/validemail
+    defaults: { _controller: CestomAdminBundle:GestionBourse:validMail}

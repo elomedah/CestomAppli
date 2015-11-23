@@ -94,6 +94,9 @@
   'CestomArticleBundle:Cms:index.html.twig' => '/data/www/cestom/src/Cestom/ArticleBundle/Resources/views/Cms/index.html.twig',
   'CestomAdminBundle:Default:index.html.twig' => '/data/www/cestom/src/Cestom/AdminBundle/Resources/views/Default/index.html.twig',
   'CestomAdminBundle:GestionBourse:listeAttenteBourse.html.twig' => '/data/www/cestom/src/Cestom/AdminBundle/Resources/views/GestionBourse/listeAttenteBourse.html.twig',
+  'CestomAdminBundle:GestionBourse:listeRejeteBourse.html.twig' => '/data/www/cestom/src/Cestom/AdminBundle/Resources/views/GestionBourse/listeRejeteBourse.html.twig',
+  'CestomAdminBundle:GestionBourse:listeValideBourse.html.twig' => '/data/www/cestom/src/Cestom/AdminBundle/Resources/views/GestionBourse/listeValideBourse.html.twig',
+  'CestomAdminBundle:Email:validationDossier.html.twig' => '/data/www/cestom/src/Cestom/AdminBundle/Resources/views/Email/validationDossier.html.twig',
   'CestomAdminBundle::layout.html.twig' => '/data/www/cestom/src/Cestom/AdminBundle/Resources/views/layout.html.twig',
   'CestomAdminBundle:GestionMembre:ajouterVille.html.twig' => '/data/www/cestom/src/Cestom/AdminBundle/Resources/views/GestionMembre/ajouterVille.html.twig',
   'CestomAdminBundle:GestionMembre:formulaireUniversite.html.twig' => '/data/www/cestom/src/Cestom/AdminBundle/Resources/views/GestionMembre/formulaireUniversite.html.twig',
@@ -209,6 +212,7 @@
   '::layout.html.twig' => '/data/www/cestom/app/Resources/views/layout.html.twig',
   ':default:index.html.twig' => '/data/www/cestom/app/Resources/views/default/index.html.twig',
   '::base.html.twig.bak' => '/data/www/cestom/app/Resources/views/base.html.twig.bak',
+  ':email:password_resetting.email.twig' => '/data/www/cestom/app/Resources/views/email/password_resetting.email.twig',
   '::base.html.twig' => '/data/www/cestom/app/Resources/views/base.html.twig',
   '::base_articles.html.twig' => '/data/www/cestom/app/Resources/views/base_articles.html.twig',
 );

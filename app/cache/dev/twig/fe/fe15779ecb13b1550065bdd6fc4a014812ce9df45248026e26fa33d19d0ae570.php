@@ -132,17 +132,31 @@ class __TwigTemplate_a0a9426a7e2fc1a058d81c1e0dc9dbd874db47d5ca47c3068206cb2f1a3
         echo "\">
 <fieldset>
 \t
-<img  src=\"";
-        // line 42
-        echo twig_escape_filter($this->env, $this->env->getExtension('vich_uploader')->asset((isset($context["membre"]) ? $context["membre"] : $this->getContext($context, "membre")), "fichierPhotoMimMembre"), "html", null, true);
-        echo "\" alt=\"profil\" class=\"img-responsive img-thumbnail  zoom \"/>
 
-<input id=\"upload\" style=\"margin-top:10px\" class=\" btn btn-sm btn-success\" type=\"button\"  value=\"Modifier\"/>
+
+";
+        // line 44
+        if (($this->getAttribute((isset($context["membre"]) ? $context["membre"] : $this->getContext($context, "membre")), "photoMimMembre", array()) == null)) {
+            // line 45
+            echo "<img  src=\"";
+            echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("assets/avatars/avatarbig.jpg"), "html", null, true);
+            echo "\" alt=\"profil\" class=\"img-responsive img-thumbnail  zoom \"/>
+";
+        } else {
+            // line 47
+            echo "<img  src=\"";
+            echo twig_escape_filter($this->env, $this->env->getExtension('vich_uploader')->asset((isset($context["membre"]) ? $context["membre"] : $this->getContext($context, "membre")), "fichierPhotoMimMembre"), "html", null, true);
+            echo "\" alt=\"profil\" class=\"img-responsive img-thumbnail  zoom \"/>
+";
+        }
+        // line 49
+        echo "<div class=\"row\" style=\"margin-top:10px\">
+<input id=\"upload\"  class=\"  btn btn-sm btn-success\" type=\"button\"  value=\"Modifier\"/>
+</div>
                         <div id=\"fichier\" style=\"padding:10px\" class=\"  hidden col-sm-12\">
 \t\t\t\t\t\t\t<div class=\"vich-image\">
 \t\t\t\t\t\t\t\t<div class=\"col-sm-10 widget-main\">
-\t\t\t\t\t\t\t\t\t<input class= \" col-sm-10 \" style=\"padding:10px\" type=\"file\" 
-\t\t\t\t\t\t\t\t\tid=\"form_fichier_bourse_file\" name=\"form[fichierBourse][file]\" />
+\t\t\t\t\t\t\t\t<input class= \" col-sm-10 \" style=\"padding:10px\" type=\"file\" id=\"form_fichierPhotoMimMembre_file\" name=\"form[fichierPhotoMimMembre][file]\" />
 \t\t\t\t\t\t\t\t</div>    
 \t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t\t<div class=\"clearfix\">\t\t\t\t\t\t\t\t\t\t\t\t\t\t
@@ -157,16 +171,16 @@ class __TwigTemplate_a0a9426a7e2fc1a058d81c1e0dc9dbd874db47d5ca47c3068206cb2f1a3
 <div class=\"  col-sm-8\">
         <div class=\"widget-main \">
             <form ";
-        // line 63
+        // line 69
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), 'enctype');
         echo "  method = \"POST\"  action = \"";
         echo $this->env->getExtension('routing')->getPath("cestom_user_homepage");
         echo "\">
 
                 ";
-        // line 65
-        $this->loadTemplate("CestomUserBundle:GestionCompte:formulaireUser.html.twig", "CestomUserBundle:GestionCompte:gestionCompte.html.twig", 65)->display($context);
-        // line 66
+        // line 71
+        $this->loadTemplate("CestomUserBundle:GestionCompte:formulaireUser.html.twig", "CestomUserBundle:GestionCompte:gestionCompte.html.twig", 71)->display($context);
+        // line 72
         echo "<fieldset>  
 <div class=\"form-actions center\">
                                                         <button id=\"valider\" type=\"submit\" class=\"btn btn-sm btn-success\">
@@ -191,37 +205,37 @@ class __TwigTemplate_a0a9426a7e2fc1a058d81c1e0dc9dbd874db47d5ca47c3068206cb2f1a3
 ";
     }
 
-    // line 88
+    // line 94
     public function block_javascripts($context, array $blocks = array())
     {
-        // line 89
+        // line 95
         echo "\t
 \t <script src=\"";
-        // line 90
+        // line 96
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("assets/js/date-time/bootstrap-datepicker.min.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 91
+        // line 97
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("assets/js/date-time/bootstrap-timepicker.min.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 92
+        // line 98
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("assets/js/date-time/moment.min.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 93
+        // line 99
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("assets/js/date-time/bootstrap-datetimepicker.min.js"), "html", null, true);
         echo "\">< /script>
               < script src = \"";
-        // line 94
+        // line 100
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("assets/js/jquery.autosize.min.js"), "html", null, true);
         echo "\" ></script>
 <script src=\"";
-        // line 95
+        // line 101
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("assets/js/ace-elements.min.js"), "html", null, true);
         echo "\"></script>
 <script src=\"";
-        // line 96
+        // line 102
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("assets/js/ace.min.js"), "html", null, true);
         echo "\"></script>
 
@@ -266,7 +280,7 @@ class __TwigTemplate_a0a9426a7e2fc1a058d81c1e0dc9dbd874db47d5ca47c3068206cb2f1a3
 
     public function getDebugInfo()
     {
-        return array (  225 => 96,  221 => 95,  217 => 94,  213 => 93,  209 => 92,  205 => 91,  201 => 90,  198 => 89,  195 => 88,  170 => 66,  168 => 65,  161 => 63,  137 => 42,  129 => 39,  123 => 35,  113 => 31,  108 => 28,  104 => 27,  101 => 26,  91 => 22,  86 => 19,  82 => 18,  79 => 17,  76 => 16,  42 => 12,  38 => 6,  33 => 5,  30 => 4,  11 => 1,);
+        return array (  239 => 102,  235 => 101,  231 => 100,  227 => 99,  223 => 98,  219 => 97,  215 => 96,  212 => 95,  209 => 94,  184 => 72,  182 => 71,  175 => 69,  153 => 49,  147 => 47,  141 => 45,  139 => 44,  129 => 39,  123 => 35,  113 => 31,  108 => 28,  104 => 27,  101 => 26,  91 => 22,  86 => 19,  82 => 18,  79 => 17,  76 => 16,  42 => 12,  38 => 6,  33 => 5,  30 => 4,  11 => 1,);
     }
 }
 /* {% extends '::base_user.html.twig' %} */
@@ -310,14 +324,20 @@ class __TwigTemplate_a0a9426a7e2fc1a058d81c1e0dc9dbd874db47d5ca47c3068206cb2f1a3
 /* <form {{ form_enctype(form) }}  method = "POST"  action = "{{path('cestom_user_image')}}">*/
 /* <fieldset>*/
 /* 	*/
-/* <img  src="{{ vich_uploader_asset(membre, 'fichierPhotoMimMembre') }}" alt="profil" class="img-responsive img-thumbnail  zoom "/>*/
 /* */
-/* <input id="upload" style="margin-top:10px" class=" btn btn-sm btn-success" type="button"  value="Modifier"/>*/
+/* */
+/* {% if membre.photoMimMembre == null  %}*/
+/* <img  src="{{ asset('assets/avatars/avatarbig.jpg') }}" alt="profil" class="img-responsive img-thumbnail  zoom "/>*/
+/* {% else %}*/
+/* <img  src="{{ vich_uploader_asset(membre, 'fichierPhotoMimMembre') }}" alt="profil" class="img-responsive img-thumbnail  zoom "/>*/
+/* {% endif %}*/
+/* <div class="row" style="margin-top:10px">*/
+/* <input id="upload"  class="  btn btn-sm btn-success" type="button"  value="Modifier"/>*/
+/* </div>*/
 /*                         <div id="fichier" style="padding:10px" class="  hidden col-sm-12">*/
 /* 							<div class="vich-image">*/
 /* 								<div class="col-sm-10 widget-main">*/
-/* 									<input class= " col-sm-10 " style="padding:10px" type="file" */
-/* 									id="form_fichier_bourse_file" name="form[fichierBourse][file]" />*/
+/* 								<input class= " col-sm-10 " style="padding:10px" type="file" id="form_fichierPhotoMimMembre_file" name="form[fichierPhotoMimMembre][file]" />*/
 /* 								</div>    */
 /* 							</div>*/
 /* 							<div class="clearfix">														*/

@@ -750,9 +750,35 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
             }
 
-            // cestom_admin_attente_bourse
-            if ($pathinfo === '/admin/bourse/attenteValidation') {
-                return array (  '_controller' => 'Cestom\\AdminBundle\\Controller\\GestionBourseController::listeAttenteBourseAction',  '_route' => 'cestom_admin_attente_bourse',);
+            if (0 === strpos($pathinfo, '/admin/bourse')) {
+                // cestom_admin_attente_bourse
+                if ($pathinfo === '/admin/bourse/attenteValidation') {
+                    return array (  '_controller' => 'Cestom\\AdminBundle\\Controller\\GestionBourseController::listeAttenteBourseAction',  '_route' => 'cestom_admin_attente_bourse',);
+                }
+
+                // cestom_admin_valide_liste_bourse
+                if ($pathinfo === '/admin/bourse/valide') {
+                    return array (  '_controller' => 'Cestom\\AdminBundle\\Controller\\GestionBourseController::listeValideBourseAction',  '_route' => 'cestom_admin_valide_liste_bourse',);
+                }
+
+                // cestom_admin_rejete_liste_bourse
+                if ($pathinfo === '/admin/bourse/rejete') {
+                    return array (  '_controller' => 'Cestom\\AdminBundle\\Controller\\GestionBourseController::listeRejeteBourseAction',  '_route' => 'cestom_admin_rejete_liste_bourse',);
+                }
+
+                if (0 === strpos($pathinfo, '/admin/bourse/valid')) {
+                    // cestom_admin_valide_bourse
+                    if (0 === strpos($pathinfo, '/admin/bourse/validation') && preg_match('#^/admin/bourse/validation/(?P<idbourse>[^/]++)$#s', $pathinfo, $matches)) {
+                        return $this->mergeDefaults(array_replace($matches, array('_route' => 'cestom_admin_valide_bourse')), array (  '_controller' => 'Cestom\\AdminBundle\\Controller\\GestionBourseController::validerBourseAction',));
+                    }
+
+                    // cestom_admin_valide_mail
+                    if ($pathinfo === '/admin/bourse/validemail') {
+                        return array (  '_controller' => 'Cestom\\AdminBundle\\Controller\\GestionBourseController::validMailAction',  '_route' => 'cestom_admin_valide_mail',);
+                    }
+
+                }
+
             }
 
         }

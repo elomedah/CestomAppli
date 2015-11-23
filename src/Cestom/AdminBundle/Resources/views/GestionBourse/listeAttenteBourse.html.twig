@@ -4,6 +4,7 @@
 {% block style %} 
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/dataTables.bootstrap.min.css')}}" />
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/responsive.bootstrap.min.css')}}" />
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/jquery-ui.min.css')}}" />
         <script src="{{ asset('assets/js/ace-extra.min.js')}}"></script>
 	<style>
 		
@@ -24,7 +25,7 @@
         </li>
         <li>
 
-            <a href="{{path('cestom_admin_ajouter_ville')}}">Gestion des Bourses</a>
+            <a href="{{path('cestom_admin_attente_bourse')}}">Gestion des Bourses</a>
         </li>
 
         <li class="active">Dossier en attente de validation</li>
@@ -36,7 +37,7 @@
 
 {% block soustitre %} 
 
-    Gestion des villes
+    Gestion des bourses
 
 {% endblock %}
 
@@ -69,21 +70,21 @@
                     <!-- #section:elements.tab -->
                     <div class="tabbable">
                         <ul class="nav nav-tabs" id="myTab">
-                            <li class=" active">
-                                <a  href="{{path('cestom_admin_ajouter_ville')}}">
+                            <li class=" active ">
+                                <a  href="{{path('cestom_admin_attente_bourse')}}">
                                     <i class="blue ace-icon fa fa-pause bigger-120"></i>
                                     En attente
                                 </a>
                             </li>
 
                             <li class="dropdown">
-                                <a  href="{{path('cestom_admin_ajouter_bureau_ville')}}">
+                                <a  href="{{path('cestom_admin_valide_liste_bourse')}}">
                                     <i class="green ace-icon fa fa-check bigger-120"></i>
                                     Validé
                                 </a>
                             </li>
-							<li class="dropdown">
-                                <a  href="{{path('cestom_admin_ajouter_bureau_ville')}}">
+			    <li class="dropdown ">
+                                <a  href="{{path('cestom_admin_rejete_liste_bourse')}}">
                                     <i class="red ace-icon fa fa-ban bigger-120"></i>
                                     Rejeté
                                 </a>
@@ -103,7 +104,7 @@
                                             <thead>
                                                 <tr>
 
-                                                    <th> Action</th>
+
                                                     <th>Nom & Prénom  </th>
 													<th> Type de doc </th>
 													<th> Date d'upload </th>
@@ -119,22 +120,15 @@
                                             <tbody>
                                                 {% for bourse in bourses %}
                                                     <tr>
-                                                        <td>
-
-                                                            <a class="green" href="#">
-                                                                <i class="ace-icon fa fa-pencil bigger-130"></i>
-                                                            </a>
-
-                                                        </td>
-
+                                                        
                                                         <td>{{bourse.idmembre.nomMembre }} {{bourse.idmembre.prenomMembre }}</td>
                                                         <td>{{bourse.typeDoc }} </td>
                                                         <td>{{bourse.dateCreation | date("d/m/Y") }} </td>
                                                         <td><span class="label label-sm label-info arrowed arrowed-righ"><a href="{{ vich_uploader_asset(bourse, 'fichierBourse') }} " style="color:white" target="_blank">Cliquer {{bourse.docBourse }}</a></span> </td>
                                                         <td> <span class="label label-sm label-warning">{{bourse.etatDoc }}</span> </td>
-                                                        <td><button  class="validerDoc btn btn-xs btn-success">
+                                                        <td><a class="validerDoc" href="{{path ('cestom_admin_valide_bourse',{'idbourse':bourse.idbourse})}}"> <button  class=" btn btn-xs btn-success">
 															<i class="ace-icon fa fa-check bigger-120"></i>Valider
-														</button></td>
+														</button></a></td>
                                                         <td><button class="btn btn-xs btn-default">
 															<i class="ace-icon fa fa-ban red bigger-130"></i>														<span class="label label-sm label-inverse arrowed-in">Rejeter</span>
 
@@ -164,23 +158,16 @@
         </div><!-- /.col -->
     </div><!-- /.row -->
 
-<div id="dialog-form" title="Create new user">
-	<p class="validateTips">All form fields are required.</p>
+<div id="dialog-form" title="Valider le dossier">
+	<h4 class="validateTips">Attention! Vous êtes sur le point de valider le dossier. Veuillez ouvrir le document au moins une seule fois. </h4>
 
 	<form>
 		<fieldset>
-			<label for="name">Name</label>
-			<input type="text" name="name" id="name" value="Jane Smith" class="text ui-widget-content ui-corner-all">
-			<label for="email">Email</label>
-			<input type="text" name="email" id="email" value="jane@smith.com" class="text ui-widget-content ui-corner-all">
-			<label for="password">Password</label>
-			<input type="password" name="password" id="password" value="xxxxxxx" class="text ui-widget-content ui-corner-all">
+						<input type="submit" tabindex="-1" style="position:absolute; top:-1000px">
 
-			<!-- Allow form submission with keyboard without duplicating the dialog button -->
-			<input type="submit" tabindex="-1" style="position:absolute; top:-1000px">
 		</fieldset>
 	</form>
-</div>
+</div> 
 
 {% endblock %}
 
@@ -188,7 +175,7 @@
 
     <script src="{{asset('assets/js/jquery.dataTables.min.js')}}"></script>
     <script type="text/javascript"src="{{asset('assets/js/dataTables.responsive.min.js')}}"></script>
-
+    <script type="text/javascript"src="{{asset('assets/js/jquery-ui.min.js')}}"></script>
     <script type="text/javascript">
         jQuery(function($) {
             $('.main').removeClass('active');
@@ -210,44 +197,45 @@
                 }
             });
 
-var dialog, form,
-		
-			allFields = $( [] ).add( name ).add( email ).add( password );
+              var dialog, form,theHREF;
 			
 
-		function addUser() {
+		function valider() {
 			var valid = true;
-			
+			 window.location.href = theHREF;
+			dialog.dialog( "close" );
 			return valid;
 		}
 
+
 		dialog = $( "#dialog-form" ).dialog({
 			autoOpen: false,
-			height: 300,
-			width: 350,
+			height: 200,
+			width: 400,
 			modal: true,
 			buttons: {
-				"Create an account": addUser,
-				Cancel: function() {
+				"Valider": valider,
+				Annuler: function(event) {
+
 					dialog.dialog( "close" );
 				}
 			},
 			close: function() {
 				form[ 0 ].reset();
-				allFields.removeClass( "ui-state-error" );
+
 			}
 		});
 
 		form = dialog.find( "form" ).on( "submit", function( event ) {
-			event.preventDefault();
-			addUser();
-		});
 
-		$(".validerDoc" ).button().on( "click", function() {
-                        alert("jjjj");
+			
+		});
+         $(".validerDoc" ).on( "click", function(e) {
+                       	e.preventDefault();
+			 theHREF = $(this).attr("href");
 			dialog.dialog( "open" );
 		});
-
+		
         });
     </script>
 

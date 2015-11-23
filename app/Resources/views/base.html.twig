@@ -13,7 +13,6 @@
         <link rel="stylesheet" href="{{ asset('assets/css/dataTable.min.css')}}" />
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
         
-        <!-- page specific plugin styles -->
 
         <!-- text fonts -->
       <!--  <link rel="stylesheet" href="{{ asset('assets/css/ace-fonts.css')}}" /> -->
@@ -36,6 +35,14 @@
  		.table-header{ 
 		background-color:#337ab7
 		}
+		.table-header,.form-actions{
+				background-color:#838383;
+				text-align:center;
+				font-size:xx-large;
+			}
+			.page-header h1{
+				color: black;
+			}
 	</style>
         {% block style %}  {% endblock %}
     </head>
@@ -283,24 +290,10 @@
         </div><!-- /.main-container -->
 		
 		<!--style-->
-		<style>
-			.table-header,.form-actions{
-				background-color:#838383;
-				text-align:center;
-				font-size:xx-large;
-			}
-			.page-header h1{
-				color: black;
-			}
-		</style>
+		
         <!-- basic scripts -->
         <script src="{{ asset('assets/js/jquery.min.js')}}"></script>
-
-        <script src="{{ asset('assets/js/bootstrap.min.js')}}"></script>
-
-        <script src="{{ asset('assets/js/jquery-ui.custom.min.js')}}"></script>
         <script src="{{ asset('assets/js/ace-elements.min.js')}}"></script>
-
         <script src="{{ asset('assets/js/ace.min.js')}}"></script>
                      
         {% block javascript %}
